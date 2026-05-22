@@ -20,7 +20,17 @@
       </tbody>
     </table>
 
-    <p>目前 App 的核心 index spec 包含 insurance、surrender、hard hand、10,10 分牌，以及部分 double。</p>
+    <p>目前 App 的核心 index spec 包含 insurance、surrender、hard hand、10,10 分牌，以及部分 double。和 Hi-Lo 相比，Hi-Opt I 的概念更精細，但也多了 ace side count 與 true count 修正，因此實際結果會受到 Side A 的估算方式、下注門檻 k 值與使用情境影響。</p>
+
+    <h3 class="simulation-heading">App 模擬統計</h3>
+    <p>以下是 Hi-Lo 與 Hi-Opt I 各跑 100000 局的比較。這組結果中 Hi-Opt I 的 EV 較高，但 SD / 100 局也較大；從整體來看，兩者差距沒有想像中明顯。</p>
+
+    <figure class="content-figure">
+      <img src="../../assets/img/hilo-vs-hiopt.png" alt="Hi-Lo 與 Hi-Opt I 跑 100000 局的模擬比較">
+      <figcaption>Hi-Lo vs Hi-Opt I，100000 局模擬結果</figcaption>
+    </figure>
+
+    <p>解讀這類比較時要保留一點彈性。Hi-Opt I 不是單純換一組牌值就能直接和 Hi-Lo 對照，因為它會搭配 A 的 side count，並依不同 k 值修正 betting / insurance true count。換句話說，單次模擬可以提供方向，但不適合只靠一張總表就判定哪個系統絕對比較好。</p>
 
     <div class="note">Hi-Opt I 比 Hi-Lo 更吃紀律與追蹤能力，建議先把基本策略與 Hi-Lo 練穩，再進階到 Hi-Opt I。</div>
   </article>

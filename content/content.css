@@ -21,6 +21,10 @@ h3 {
   font-size: 1.12rem;
 }
 
+.simulation-heading {
+  color: #287432;
+}
+
 p {
   margin: 0 0 14px;
 }
@@ -47,6 +51,42 @@ ul {
   color: #66727e;
   background: #f6f8f5;
   text-align: center;
+}
+
+.content-figure {
+  margin: 22px 0 20px;
+}
+
+.content-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0 20px;
+}
+
+.content-figure-grid .content-figure {
+  margin: 0;
+}
+
+.content-figure img {
+  display: block;
+  width: min(100%, 680px);
+  height: auto;
+  border: 1px solid #dce4dc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.content-figure figcaption {
+  margin-top: 8px;
+  color: #66727e;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .content-figure-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .data-table {

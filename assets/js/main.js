@@ -20,6 +20,7 @@ const sections = {
     eyebrow: "App Features",
     subtitle: "練習、統計與回放",
     items: [
+      { title: "概要", path: "content/app/overview.html" },
       { title: "遊戲", path: "content/app/game.html" },
       { title: "訓練", path: "content/app/training.html" },
       { title: "統計", path: "content/app/statistics.html" },
@@ -38,19 +39,20 @@ const tabButtons = [...document.querySelectorAll(".tab-button")];
 const languageSelect = document.querySelector("#languageSelect");
 
 const contentHeights = {
-  "content/cardcounting/rules.html": 1700,
-  "content/cardcounting/basic-strategy.html": 2800,
-  "content/cardcounting/hilo.html": 1250,
-  "content/cardcounting/bet-ramp.html": 1450,
-  "content/cardcounting/high-cards.html": 1280,
-  "content/cardcounting/deviations.html": 2300,
-  "content/cardcounting/ev-variance.html": 2600,
-  "content/cardcounting/reality.html": 700,
-  "content/cardcounting/hiopt.html": 1300,
-  "content/app/game.html": 700,
-  "content/app/training.html": 700,
-  "content/app/statistics.html": 700,
-  "content/app/replay.html": 700
+  "content/cardcounting/rules.html": 2000,
+  "content/cardcounting/basic-strategy.html": 3000,
+  "content/cardcounting/hilo.html": 2400,
+  "content/cardcounting/bet-ramp.html": 1800,
+  "content/cardcounting/high-cards.html": 1700,
+  "content/cardcounting/deviations.html": 2600,
+  "content/cardcounting/ev-variance.html": 3200,
+  "content/cardcounting/reality.html": 900,
+  "content/cardcounting/hiopt.html": 1700,
+  "content/app/overview.html": 1600,
+  "content/app/game.html": 900,
+  "content/app/training.html": 900,
+  "content/app/statistics.html": 900,
+  "content/app/replay.html": 900
 };
 
 let activeSection = "cardcounting";
@@ -86,12 +88,17 @@ function watchContentFrameSize() {
     contentFrame._resizeObserver = new ResizeObserver(resizeContentFrame);
     contentFrame._resizeObserver.observe(doc.documentElement);
     contentFrame._resizeObserver.observe(doc.body);
+    doc.querySelectorAll("img").forEach((image) => {
+      image.addEventListener("load", resizeContentFrame, { once: true });
+    });
   } catch (error) {
     // Same-origin local content is expected; fallback height is handled above.
   }
   requestAnimationFrame(resizeContentFrame);
   setTimeout(resizeContentFrame, 150);
   setTimeout(resizeContentFrame, 500);
+  setTimeout(resizeContentFrame, 1000);
+  setTimeout(resizeContentFrame, 2000);
 }
 
 function setActiveContent(sectionKey, itemIndex = 0, shouldUpdateHash = true) {

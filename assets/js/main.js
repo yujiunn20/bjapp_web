@@ -49,10 +49,10 @@ const contentHeights = {
   "content/cardcounting/reality.html": 900,
   "content/cardcounting/hiopt.html": 1700,
   "content/app/overview.html": 1600,
-  "content/app/game.html": 900,
-  "content/app/training.html": 900,
+  "content/app/game.html": 7200,
+  "content/app/training.html": 5600,
   "content/app/statistics.html": 900,
-  "content/app/replay.html": 900
+  "content/app/replay.html": 3200
 };
 
 let activeSection = "cardcounting";
@@ -63,17 +63,23 @@ function resizeContentFrame() {
     const doc = contentFrame.contentDocument || contentFrame.contentWindow.document;
     const body = doc.body;
     const root = doc.documentElement;
+    const bottom = Math.max(
+      0,
+      ...[...doc.body.querySelectorAll("article, figure, img, table, .app-screenshot-grid, .app-screenshot-card")]
+        .map((element) => element.getBoundingClientRect().bottom)
+    );
     const height = Math.max(
       body.scrollHeight,
       body.offsetHeight,
       root.clientHeight,
       root.scrollHeight,
-      root.offsetHeight
+      root.offsetHeight,
+      bottom + 40
     );
-        const fallbackHeight = contentHeights[contentFrame.getAttribute("src")] || 900;
+    const fallbackHeight = contentHeights[contentFrame.getAttribute("src")] || 900;
     contentFrame.style.height = `${Math.max(height + 80, fallbackHeight)}px`;
   } catch (error) {
-        const fallbackHeight = contentHeights[contentFrame.getAttribute("src")] || 900;
+    const fallbackHeight = contentHeights[contentFrame.getAttribute("src")] || 900;
     contentFrame.style.height = `${fallbackHeight}px`;
   }
 }
@@ -89,7 +95,11 @@ function watchContentFrameSize() {
     contentFrame._resizeObserver.observe(doc.documentElement);
     contentFrame._resizeObserver.observe(doc.body);
     doc.querySelectorAll("img").forEach((image) => {
-      image.addEventListener("load", resizeContentFrame, { once: true });
+      if (image.complete) {
+        resizeContentFrame();
+      } else {
+        image.addEventListener("load", resizeContentFrame, { once: true });
+      }
     });
   } catch (error) {
     // Same-origin local content is expected; fallback height is handled above.

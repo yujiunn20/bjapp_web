@@ -147,6 +147,38 @@ ul {
   color: #3d4a55;
 }
 
+.app-screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 18px 0 26px;
+}
+
+.app-screenshot-card {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #dce4dc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.app-screenshot-card img {
+  display: block;
+  width: min(100%, 220px);
+  height: auto;
+  margin: 0 auto;
+  border: 1px solid #dce4dc;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.app-screenshot-card figcaption {
+  margin-top: 10px;
+  color: #3d4a55;
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
 .content-figure {
   margin: 22px 0 20px;
 }
@@ -180,6 +212,7 @@ ul {
 @media (max-width: 720px) {
   .video-link-card,
   .feature-grid,
+  .app-screenshot-grid,
   .content-figure-grid {
     grid-template-columns: 1fr;
   }

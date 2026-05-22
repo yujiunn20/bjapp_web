@@ -55,7 +55,8 @@ ul {
 
 .video-embed {
   position: relative;
-  width: min(100%, 680px);
+  width: 100%;
+  max-width: 760px;
   aspect-ratio: 16 / 9;
   margin: 18px 0 24px;
   overflow: hidden;

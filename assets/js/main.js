@@ -39,20 +39,20 @@ const tabButtons = [...document.querySelectorAll(".tab-button")];
 const languageSelect = document.querySelector("#languageSelect");
 
 const contentHeights = {
-  "content/cardcounting/rules.html": 2000,
-  "content/cardcounting/basic-strategy.html": 3000,
-  "content/cardcounting/hilo.html": 2400,
+  "content/cardcounting/rules.html": 1800,
+  "content/cardcounting/basic-strategy.html": 2800,
+  "content/cardcounting/hilo.html": 2200,
   "content/cardcounting/bet-ramp.html": 1800,
   "content/cardcounting/high-cards.html": 1700,
-  "content/cardcounting/deviations.html": 2600,
-  "content/cardcounting/ev-variance.html": 3200,
+  "content/cardcounting/deviations.html": 2400,
+  "content/cardcounting/ev-variance.html": 3000,
   "content/cardcounting/reality.html": 900,
   "content/cardcounting/hiopt.html": 1700,
-  "content/app/overview.html": 1600,
-  "content/app/game.html": 7200,
-  "content/app/training.html": 5600,
-  "content/app/statistics.html": 900,
-  "content/app/replay.html": 3200
+  "content/app/overview.html": 1200,
+  "content/app/game.html": 4200,
+  "content/app/training.html": 4200,
+  "content/app/statistics.html": 4200,
+  "content/app/replay.html": 2400
 };
 
 let activeSection = "cardcounting";
@@ -109,6 +109,14 @@ function watchContentFrameSize() {
   setTimeout(resizeContentFrame, 500);
   setTimeout(resizeContentFrame, 1000);
   setTimeout(resizeContentFrame, 2000);
+  let ticks = 0;
+  const interval = setInterval(() => {
+    resizeContentFrame();
+    ticks += 1;
+    if (ticks >= 16) {
+      clearInterval(interval);
+    }
+  }, 250);
 }
 
 function setActiveContent(sectionKey, itemIndex = 0, shouldUpdateHash = true) {

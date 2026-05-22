@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../content.css">
+</head>
+<body>
+  <article>
+    <h2>補充：Hi-Opt</h2>
+    <p class="lead">Hi-Opt I 是比 Hi-Lo 更進階的系統。這個專案中的 Hi-Opt I 使用 playing count、ace side count，以及修正過的 betting / insurance true count。</p>
+
+    <h3>Hi-Opt I 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>3-6</td><td>+1</td></tr>
+        <tr><td>2、7、8、9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K</td><td>-1</td></tr>
+        <tr><td>A</td><td>0，另外用 ace side count 追蹤</td></tr>
+      </tbody>
+    </table>
+
+    <p>目前 App 的核心 index spec 包含 insurance、surrender、hard hand、10,10 分牌，以及部分 double。</p>
+
+    <div class="note">Hi-Opt I 比 Hi-Lo 更吃紀律與追蹤能力，建議先把基本策略與 Hi-Lo 練穩，再進階到 Hi-Opt I。</div>
+  </article>
+</body>
+</html>

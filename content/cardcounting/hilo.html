@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../content.css">
+</head>
+<body>
+  <article>
+    <h2>Hi-Lo 算牌</h2>
+    <p class="lead">算牌不是記住每一張牌，而是估計剩餘牌堆中高牌的密度。最主要的用途有兩個：調整下注大小，以及套用 deviation。</p>
+
+    <h3>Hi-Lo 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>2-6</td><td>+1</td></tr>
+        <tr><td>7-9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K、A</td><td>-1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>RC / TC</h3>
+    <p>Running Count（RC）會隨著每張已曝光的牌更新。True Count（TC）= RC / 剩餘牌副數。TC 的作用是把不同牌鞋深度下的優勢強度標準化。</p>
+
+    <h3>算牌訊號怎麼用？</h3>
+    <ul>
+      <li>TC 越高，代表剩餘牌堆高牌密度越高。</li>
+      <li>高 TC 常用於提高下注。</li>
+      <li>部分牌局在 TC 達到門檻時，會從基本策略改成 deviation。</li>
+    </ul>
+
+    <div class="note">算牌通常不違法，但賭場仍可能拒絕服務。這個網站與 App 主要用於學習機率與策略，不是鼓勵賭博。</div>
+  </article>
+</body>
+</html>

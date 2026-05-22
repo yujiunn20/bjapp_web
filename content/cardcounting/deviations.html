@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../content.css">
+</head>
+<body>
+  <article>
+    <h2>Deviations</h2>
+    <p class="lead">Deviations 是在 TC 達到特定門檻時，從基本策略改成另一個動作。Illustrious 18 是 Hi-Lo 裡最有價值的一批 index play。</p>
+
+    <h3>實作前提</h3>
+    <p>App 以畫面顯示的 TC 為準。只有當 TC 達到表格門檻時才套用 deviation，否則回到基本策略。</p>
+
+    <h3>Illustrious 18</h3>
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>門檻</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>保險</td><td>TC >= +3</td><td>買保險</td></tr>
+        <tr><td>16 vs 10</td><td>TC >= 0</td><td>未投降時 Stand</td></tr>
+        <tr><td>15 vs 10</td><td>TC >= +4</td><td>未投降時 Stand</td></tr>
+        <tr><td>10 vs 10</td><td>TC >= +4</td><td>Double</td></tr>
+        <tr><td>16 vs 9</td><td>TC >= +5</td><td>Stand</td></tr>
+        <tr><td>13 vs 2</td><td>TC >= -1</td><td>Stand</td></tr>
+        <tr><td>13 vs 3</td><td>TC >= -2</td><td>Stand</td></tr>
+        <tr><td>12 vs 2</td><td>TC >= +3</td><td>Stand</td></tr>
+        <tr><td>12 vs 3</td><td>TC >= +2</td><td>Stand</td></tr>
+        <tr><td>11 vs A</td><td>TC >= +1</td><td>Double</td></tr>
+        <tr><td>10 vs A</td><td>TC >= +4</td><td>Double</td></tr>
+        <tr><td>9 vs 2</td><td>TC >= +1</td><td>Double</td></tr>
+        <tr><td>9 vs 7</td><td>TC >= +3</td><td>Double</td></tr>
+        <tr><td>10,10 vs 5</td><td>TC >= +5</td><td>Split</td></tr>
+        <tr><td>10,10 vs 6</td><td>TC >= +4</td><td>Split</td></tr>
+        <tr><td>12 vs 4</td><td>TC < 0</td><td>Hit</td></tr>
+        <tr><td>12 vs 5</td><td>TC < -2</td><td>Hit</td></tr>
+        <tr><td>12 vs 6</td><td>TC < -1</td><td>Hit</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Fab 4</h3>
+    <p>Fab 4 指的是 Hi-Lo 裡四個很重要的 late surrender index play。</p>
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>門檻</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15 vs 10</td><td>基本策略 R</td><td>投降</td></tr>
+        <tr><td>15 vs A</td><td>H17 +1 / S17 +2</td><td>投降</td></tr>
+        <tr><td>15 vs 9</td><td>TC >= +2</td><td>投降</td></tr>
+        <tr><td>14 vs 10</td><td>TC >= +3</td><td>投降</td></tr>
+      </tbody>
+    </table>
+  </article>
+</body>
+</html>

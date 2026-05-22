@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="../content.css">
+</head>
+<body>
+  <article>
+    <h2>基本策略</h2>
+    <p class="lead">Basic Strategy 是所有 count-based deviation 套用前的基礎行動表。它包含 hard totals、soft totals、pairs，以及啟用時的 surrender 規則。</p>
+
+    <h3>行動代號</h3>
+    <ul>
+      <li>H = Hit，再拿一張牌。</li>
+      <li>S = Stand，停牌。</li>
+      <li>D = Double，加倍下注並只再拿一張。</li>
+      <li>P = Split，拆牌。</li>
+      <li>R = Surrender，投降；H / R 表示可投降就投降，不能投降時 Hit。</li>
+    </ul>
+
+    <h3>基本策略 - 硬牌</h3>
+    <div class="table-wrap">
+      <table class="data-table strategy-table">
+        <thead><tr><th>牌型</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+        <tbody>
+          <tr><td>17+</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
+          <tr><td>16</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H / R</td><td>H / R</td><td>H / R</td></tr>
+          <tr><td>15</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td><td>H / R</td><td>H</td></tr>
+          <tr><td>13-14</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>12</td><td>H</td><td>H</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>11</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td></tr>
+          <tr><td>10</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td></tr>
+          <tr><td>9</td><td>H</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>8以下</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>基本策略 - 軟牌</h3>
+    <div class="table-wrap">
+      <table class="data-table strategy-table">
+        <thead><tr><th>牌型</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+        <tbody>
+          <tr><td>A,8+</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
+          <tr><td>A,7</td><td>S</td><td>D</td><td>D</td><td>D</td><td>D</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>A,6</td><td>H</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>A,4-A,5</td><td>H</td><td>H</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>A,2-A,3</td><td>H</td><td>H</td><td>H</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>基本策略 - 對子</h3>
+    <div class="table-wrap">
+      <table class="data-table strategy-table">
+        <thead><tr><th>牌型</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+        <tbody>
+          <tr><td>A,A</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td></tr>
+          <tr><td>10,10</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
+          <tr><td>9,9</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>S</td><td>P</td><td>P</td><td>S</td><td>S</td></tr>
+          <tr><td>8,8</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td></tr>
+          <tr><td>7,7</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>6,6</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>5,5</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td></tr>
+          <tr><td>4,4</td><td>H</td><td>H</td><td>H</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>2,2 / 3,3</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>H17 補充</h3>
+    <p>H17 代表莊家在 soft 17 時要繼續補牌，通常會讓玩家更不利，差異常出現在 soft hand 的臨界判斷。</p>
+    <p class="note">目前 surrender 規則：hard 16 vs 9-10-A，以及 hard 15 vs 10。只會在兩張牌、硬牌、非對子的手牌上檢查 surrender。</p>
+  </article>
+</body>
+</html>

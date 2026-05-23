@@ -24,7 +24,8 @@ const sections = {
       { title: "遊戲", path: "content/app/game.html" },
       { title: "訓練", path: "content/app/training.html" },
       { title: "統計", path: "content/app/statistics.html" },
-      { title: "回放", path: "content/app/replay.html" }
+      { title: "回放", path: "content/app/replay.html" },
+      { title: "隱私權政策", path: "content/app/privacy.html" }
     ]
   }
 };
@@ -82,7 +83,8 @@ const translations = {
           { title: "Game", path: "content/app/game.html" },
           { title: "Training", path: "content/app/training.html" },
           { title: "Statistics", path: "content/app/statistics.html" },
-          { title: "Replay", path: "content/app/replay.html" }
+          { title: "Replay", path: "content/app/replay.html" },
+          { title: "Privacy Policy", path: "content/app/privacy.html" }
         ]
       }
     }
@@ -125,7 +127,8 @@ const translations = {
           { title: "ゲーム", path: "content/app/game.html" },
           { title: "トレーニング", path: "content/app/training.html" },
           { title: "統計", path: "content/app/statistics.html" },
-          { title: "リプレイ", path: "content/app/replay.html" }
+          { title: "リプレイ", path: "content/app/replay.html" },
+          { title: "プライバシーポリシー", path: "content/app/privacy.html" }
         ]
       }
     }
@@ -144,6 +147,8 @@ const imageLightbox = document.querySelector("#imageLightbox");
 const lightboxImage = document.querySelector("#lightboxImage");
 const lightboxCaption = document.querySelector("#lightboxCaption");
 const lightboxClose = document.querySelector("#lightboxClose");
+const downloadBand = document.querySelector(".download-band");
+const siteShell = document.querySelector(".site-shell");
 
 const contentHeights = {
   "content/cardcounting/rules.html": 1800,
@@ -159,7 +164,8 @@ const contentHeights = {
   "content/app/game.html": 4200,
   "content/app/training.html": 4200,
   "content/app/statistics.html": 4200,
-  "content/app/replay.html": 2400
+  "content/app/replay.html": 2400,
+  "content/app/privacy.html": 1600
 };
 
 let activeSection = "cardcounting";
@@ -287,6 +293,16 @@ function closeImageLightbox() {
   lightboxImage.alt = "";
 }
 
+function reserveFooterSpace() {
+  if (!downloadBand || !siteShell) {
+    return;
+  }
+
+  const footerHeight = Math.ceil(downloadBand.getBoundingClientRect().height);
+  const extraSpace = window.innerWidth <= 820 ? 18 : 32;
+  siteShell.style.paddingBottom = `${footerHeight + extraSpace}px`;
+}
+
 function setActiveContent(sectionKey, itemIndex = 0, shouldUpdateHash = true) {
   const allSections = localizedSections();
   const section = allSections[sectionKey] || allSections.cardcounting;
@@ -350,6 +366,7 @@ tabButtons.forEach((button) => {
 
 contentFrame.addEventListener("load", watchContentFrameSize);
 window.addEventListener("resize", resizeContentFrame);
+window.addEventListener("resize", reserveFooterSpace);
 window.addEventListener("hashchange", applyHashRoute);
 window.addEventListener("message", (event) => {
   if (event.data && event.data.type === "open-image-lightbox") {
@@ -382,6 +399,7 @@ if (languageSelect) {
     activeLanguage = languageSelect.value;
     localStorage.setItem("blackjackLanguage", activeLanguage);
     applyShellLanguage();
+    reserveFooterSpace();
     setActiveContent(activeSection, activeIndex, false);
     try {
       contentFrame.contentWindow.postMessage({ type: "set-language", language: activeLanguage }, "*");
@@ -393,6 +411,9 @@ if (languageSelect) {
 
 applyShellLanguage();
 applyHashRoute();
+reserveFooterSpace();
+setTimeout(reserveFooterSpace, 150);
+setTimeout(reserveFooterSpace, 600);
 
 
 

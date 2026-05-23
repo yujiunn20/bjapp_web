@@ -15,6 +15,7 @@
       "訓練": "Training",
       "統計": "Statistics",
       "回放": "Replay",
+      "隱私權政策": "Privacy Policy",
       "App 模擬統計": "App Simulation Stats",
       "基本策略模擬": "Basic Strategy Simulation",
       "App 訓練範例：RC 怎麼累加": "App Training Example: How RC Adds Up",
@@ -73,6 +74,7 @@
       "訓練": "トレーニング",
       "統計": "統計",
       "回放": "リプレイ",
+      "隱私權政策": "プライバシーポリシー",
       "App 模擬統計": "アプリのシミュレーション統計",
       "基本策略模擬": "基本戦略シミュレーション",
       "App 訓練範例：RC 怎麼累加": "アプリ練習例：RC の加算",
@@ -484,6 +486,58 @@
     "高 TC 常用於提高下注。": "高 TC はベットを上げる判断によく使われます。",
     "高牌密度偏強": "高カード密度がやや強い",
     "高牌密度已經更明顯，可以開始注意下注級距。": "高カード密度がより明確で、ベット段階に注意し始める場面です。"
+  });
+
+  Object.assign(dictionaries.en, {
+    "本頁說明「二十一點算牌訓練器」如何處理使用者資料。這個 app 主要是離線練習、模擬統計與回放工具，不需要註冊帳號，也不以廣告或追蹤為目的收集個人資料。": "This page explains how Blackjack Card Counting Trainer handles user data. The app is mainly an offline practice, simulation statistics, and replay tool. It does not require account registration and does not collect personal data for advertising or tracking.",
+    "資料收集": "Data Collection",
+    "本 app 目前不會主動收集、上傳或出售使用者的個人資料。App 不需要姓名、電子郵件、電話、位置資訊或社群帳號才能使用。": "The app currently does not actively collect, upload, or sell users' personal data. It does not require a name, email address, phone number, location information, or social account to use.",
+    "本機儲存資料": "Data Stored Locally",
+    "為了提供訓練、統計與回放功能，app 可能會在你的裝置本機保存以下資料：": "To provide training, statistics, and replay features, the app may store the following data locally on your device:",
+    "遊戲與訓練設定，例如桌面規則、牌組數、穿透率、bet ramp、速度與顯示偏好。": "Game and training settings, such as table rules, deck count, penetration, bet ramp, speed, and display preferences.",
+    "練習與模擬統計，例如 ROI、EV、SD、session 結果與訓練表現。": "Practice and simulation statistics, such as ROI, EV, SD, session results, and training performance.",
+    "Replay 回放資料，例如牌局流程、下注、玩家動作、結果與錯誤回饋。": "Replay data, such as hand flow, bets, player actions, results, and mistake feedback.",
+    "這些資料主要用於讓你在 app 內檢視自己的練習結果與過去決策。": "This data is mainly used so you can review your practice results and past decisions inside the app.",
+    "第三方服務": "Third-Party Services",
+    "本 app 不使用廣告 SDK，也不以行為追蹤為目的整合分析工具。若你是從 Google Play 下載或更新 app，Google Play 本身可能會依 Google 的政策處理商店、下載、付款或裝置相關資料。": "The app does not use advertising SDKs and does not integrate analytics tools for behavioral tracking. If you download or update the app through Google Play, Google Play itself may process store, download, payment, or device-related data according to Google's policies.",
+    "資料刪除": "Data Deletion",
+    "你可以透過裝置系統的 app 資料清除功能，或直接解除安裝 app，刪除保存在裝置上的本機資料。": "You can delete local data stored on your device by using the system app-data clearing feature or by uninstalling the app.",
+    "未成年人與用途提醒": "Minors and Usage Notice",
+    "本 app 是 blackjack 策略、算牌與機率訓練工具，不提供真錢賭博功能，也不鼓勵賭博。使用者仍應遵守所在地法律與平台規範。": "This app is a blackjack strategy, card counting, and probability training tool. It does not provide real-money gambling features and does not encourage gambling. Users should follow local laws and platform rules.",
+    "第三方資產與授權": "Third-Party Assets and Licenses",
+    "本 app 使用或包含以下第三方資產與授權資訊：": "The app uses or includes the following third-party assets and license notices:",
+    "Playing card face assets：Playing Cards Pack by Kenney，Creative Commons CC0 1.0 Universal。來源：https://kenney.nl/assets/playing-cards-pack。標示來源並非必要，但原作者歡迎 credit。": "Playing card face assets: Playing Cards Pack by Kenney, Creative Commons CC0 1.0 Universal. Source: https://kenney.nl/assets/playing-cards-pack. Attribution is not required, but credit is appreciated.",
+    "Card back asset：使用 ChatGPT / OpenAI image generation 建立的自訂牌背圖。這是為本 app 製作的原始資產，未刻意使用第三方品牌、logo、賭場標誌或商標。": "Card back asset: a custom card back image created with ChatGPT / OpenAI image generation. It is an original asset made for this app, with no third-party brand, logo, casino mark, or trademark intentionally used.",
+    "OpenAI output note：OpenAI 不主張使用者產出內容的著作權；使用者仍需自行確認產出資產不侵害第三方權利。來源：https://help.openai.com/en/articles/5008634。": "OpenAI output note: OpenAI does not claim copyright over output generated for users. Users are responsible for ensuring generated assets do not infringe third-party rights. Source: https://help.openai.com/en/articles/5008634.",
+    "聯絡方式": "Contact",
+    "如果你對隱私權政策、資料處理或授權資訊有疑問，可以聯絡：": "If you have questions about this privacy policy, data handling, or license notices, contact:",
+    "最後更新：2026-05-23": "Last updated: 2026-05-23"
+  });
+
+  Object.assign(dictionaries.ja, {
+    "本頁說明「二十一點算牌訓練器」如何處理使用者資料。這個 app 主要是離線練習、模擬統計與回放工具，不需要註冊帳號，也不以廣告或追蹤為目的收集個人資料。": "このページでは、「ブラックジャック カウントトレーナー」がユーザーデータをどのように扱うかを説明します。このアプリは主にオフライン練習、シミュレーション統計、リプレイのためのツールであり、アカウント登録は不要で、広告や追跡を目的として個人データを収集しません。",
+    "資料收集": "データ収集",
+    "本 app 目前不會主動收集、上傳或出售使用者的個人資料。App 不需要姓名、電子郵件、電話、位置資訊或社群帳號才能使用。": "このアプリは現在、ユーザーの個人データを能動的に収集、アップロード、販売しません。利用にあたり、氏名、メール、電話番号、位置情報、SNS アカウントは不要です。",
+    "本機儲存資料": "端末内に保存されるデータ",
+    "為了提供訓練、統計與回放功能，app 可能會在你的裝置本機保存以下資料：": "練習、統計、リプレイ機能を提供するため、アプリは以下のデータを端末内に保存する場合があります。",
+    "遊戲與訓練設定，例如桌面規則、牌組數、穿透率、bet ramp、速度與顯示偏好。": "ゲームと練習の設定。例：テーブルルール、デッキ数、ペネトレーション、bet ramp、速度、表示設定。",
+    "練習與模擬統計，例如 ROI、EV、SD、session 結果與訓練表現。": "練習とシミュレーション統計。例：ROI、EV、SD、session 結果、練習成績。",
+    "Replay 回放資料，例如牌局流程、下注、玩家動作、結果與錯誤回饋。": "Replay データ。例：ハンドの流れ、ベット、プレイヤーの行動、結果、ミスのフィードバック。",
+    "這些資料主要用於讓你在 app 內檢視自己的練習結果與過去決策。": "これらのデータは主に、アプリ内で練習結果や過去の判断を確認するために使われます。",
+    "第三方服務": "第三者サービス",
+    "本 app 不使用廣告 SDK，也不以行為追蹤為目的整合分析工具。若你是從 Google Play 下載或更新 app，Google Play 本身可能會依 Google 的政策處理商店、下載、付款或裝置相關資料。": "このアプリは広告 SDK を使用せず、行動追跡を目的とした分析ツールも組み込んでいません。Google Play からダウンロードまたは更新する場合、Google Play 自体が Google のポリシーに従ってストア、ダウンロード、支払い、端末関連データを処理する場合があります。",
+    "資料刪除": "データ削除",
+    "你可以透過裝置系統的 app 資料清除功能，或直接解除安裝 app，刪除保存在裝置上的本機資料。": "端末のアプリデータ削除機能、またはアプリのアンインストールによって、端末内に保存されたローカルデータを削除できます。",
+    "未成年人與用途提醒": "未成年者と利用目的について",
+    "本 app 是 blackjack 策略、算牌與機率訓練工具，不提供真錢賭博功能，也不鼓勵賭博。使用者仍應遵守所在地法律與平台規範。": "このアプリは blackjack の戦略、カウント、確率を練習するためのツールです。現金賭博機能は提供せず、賭博を推奨するものでもありません。ユーザーは居住地の法律とプラットフォーム規約を守る必要があります。",
+    "第三方資產與授權": "第三者資産とライセンス",
+    "本 app 使用或包含以下第三方資產與授權資訊：": "このアプリは以下の第三者資産およびライセンス情報を使用または含んでいます。",
+    "Playing card face assets：Playing Cards Pack by Kenney，Creative Commons CC0 1.0 Universal。來源：https://kenney.nl/assets/playing-cards-pack。標示來源並非必要，但原作者歡迎 credit。": "Playing card face assets：Kenney による Playing Cards Pack、Creative Commons CC0 1.0 Universal。出典：https://kenney.nl/assets/playing-cards-pack。表示義務はありませんが、credit は歓迎されています。",
+    "Card back asset：使用 ChatGPT / OpenAI image generation 建立的自訂牌背圖。這是為本 app 製作的原始資產，未刻意使用第三方品牌、logo、賭場標誌或商標。": "Card back asset：ChatGPT / OpenAI image generation で作成したカスタムカード裏面画像。このアプリのために作成されたオリジナル資産であり、第三者ブランド、ロゴ、カジノマーク、商標を意図的に使用していません。",
+    "OpenAI output note：OpenAI 不主張使用者產出內容的著作權；使用者仍需自行確認產出資產不侵害第三方權利。來源：https://help.openai.com/en/articles/5008634。": "OpenAI output note：OpenAI はユーザーが生成した出力の著作権を主張しません。生成資産が第三者の権利を侵害しないことはユーザーが確認する責任があります。出典：https://help.openai.com/en/articles/5008634。",
+    "聯絡方式": "連絡先",
+    "如果你對隱私權政策、資料處理或授權資訊有疑問，可以聯絡：": "プライバシーポリシー、データ処理、ライセンス情報について質問がある場合は、以下までご連絡ください。",
+    "最後更新：2026-05-23": "最終更新：2026-05-23"
   });
 
   function applyTranslations(language) {

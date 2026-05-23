@@ -1,6 +1,6 @@
 # Blackjack Website Template
 
-這是 `yuchunlab.com/blackjack` 的靜態網站模板。
+這是 `blackjack.yuchunlab.com` 的靜態網站模板。
 
 ## 檔案結構
 

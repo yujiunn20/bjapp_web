@@ -4,10 +4,12 @@ body {
   color: #24303c;
   font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.75;
+  overflow-x: hidden;
 }
 
 article {
   max-width: 760px;
+  min-width: 0;
 }
 
 h2 {
@@ -204,11 +206,13 @@ ul {
   background: #fff;
 }
 
-.content-figure img[data-lightbox-image] {
+.content-figure img[data-lightbox-image],
+.app-screenshot-card img[data-lightbox-image] {
   cursor: zoom-in;
 }
 
-.content-figure img[data-lightbox-image]:hover {
+.content-figure img[data-lightbox-image]:hover,
+.app-screenshot-card img[data-lightbox-image]:hover {
   border-color: #43a047;
   box-shadow: 0 10px 24px rgba(36, 48, 60, 0.12);
 }
@@ -220,11 +224,53 @@ ul {
 }
 
 @media (max-width: 720px) {
+  body {
+    padding: 16px 8px 24px;
+    line-height: 1.7;
+  }
+
+  h2 {
+    font-size: 1.45rem;
+  }
+
+  h3 {
+    margin-top: 24px;
+  }
+
   .video-link-card,
   .feature-grid,
   .app-screenshot-grid,
   .content-figure-grid {
     grid-template-columns: 1fr;
+  }
+
+  .video-link-card {
+    width: 100%;
+  }
+
+  .app-screenshot-card {
+    padding: 12px;
+  }
+
+  .app-screenshot-card img {
+    width: min(100%, 190px);
+  }
+
+  .content-figure img {
+    width: 100%;
+  }
+
+  .data-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .data-table th,
+  .data-table td {
+    min-width: 92px;
+    padding: 9px 10px;
   }
 }
 

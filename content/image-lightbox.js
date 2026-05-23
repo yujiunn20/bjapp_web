@@ -13,7 +13,7 @@
     return (caption && caption.textContent.trim()) || image.alt || "";
   }
 
-  document.querySelectorAll(".content-figure img").forEach((image) => {
+  document.querySelectorAll(".content-figure img, .app-screenshot-card img").forEach((image) => {
     image.dataset.lightboxImage = "true";
     image.tabIndex = 0;
     image.setAttribute("role", "button");

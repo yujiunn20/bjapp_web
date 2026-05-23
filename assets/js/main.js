@@ -149,6 +149,8 @@ const lightboxCaption = document.querySelector("#lightboxCaption");
 const lightboxClose = document.querySelector("#lightboxClose");
 const downloadBand = document.querySelector(".download-band");
 const siteShell = document.querySelector(".site-shell");
+const topbar = document.querySelector(".topbar");
+const sidebar = document.querySelector(".sidebar");
 
 const contentHeights = {
   "content/cardcounting/rules.html": 1800,
@@ -299,8 +301,30 @@ function reserveFooterSpace() {
   }
 
   const footerHeight = Math.ceil(downloadBand.getBoundingClientRect().height);
-  const extraSpace = window.innerWidth <= 820 ? 18 : 32;
+  const extraSpace = window.innerWidth <= 820 ? 12 : 32;
   siteShell.style.paddingBottom = `${footerHeight + extraSpace}px`;
+}
+
+function positionMobileSectionNav() {
+  if (!topbar || !sidebar || !siteShell) {
+    return;
+  }
+
+  if (window.innerWidth > 820) {
+    document.documentElement.style.removeProperty("--mobile-nav-top");
+    document.documentElement.style.removeProperty("--mobile-nav-height");
+    siteShell.style.removeProperty("paddingTop");
+    return;
+  }
+
+  const topbarBottom = Math.ceil(topbar.getBoundingClientRect().bottom);
+  document.documentElement.style.setProperty("--mobile-nav-top", `${Math.max(0, topbarBottom)}px`);
+
+  requestAnimationFrame(() => {
+    const navHeight = Math.ceil(sidebar.getBoundingClientRect().height);
+    document.documentElement.style.setProperty("--mobile-nav-height", `${navHeight}px`);
+    siteShell.style.paddingTop = `${navHeight + 16}px`;
+  });
 }
 
 function setActiveContent(sectionKey, itemIndex = 0, shouldUpdateHash = true) {
@@ -367,6 +391,7 @@ tabButtons.forEach((button) => {
 contentFrame.addEventListener("load", watchContentFrameSize);
 window.addEventListener("resize", resizeContentFrame);
 window.addEventListener("resize", reserveFooterSpace);
+window.addEventListener("resize", positionMobileSectionNav);
 window.addEventListener("hashchange", applyHashRoute);
 window.addEventListener("message", (event) => {
   if (event.data && event.data.type === "open-image-lightbox") {
@@ -400,6 +425,7 @@ if (languageSelect) {
     localStorage.setItem("blackjackLanguage", activeLanguage);
     applyShellLanguage();
     reserveFooterSpace();
+    positionMobileSectionNav();
     setActiveContent(activeSection, activeIndex, false);
     try {
       contentFrame.contentWindow.postMessage({ type: "set-language", language: activeLanguage }, "*");
@@ -412,8 +438,11 @@ if (languageSelect) {
 applyShellLanguage();
 applyHashRoute();
 reserveFooterSpace();
+positionMobileSectionNav();
 setTimeout(reserveFooterSpace, 150);
 setTimeout(reserveFooterSpace, 600);
+setTimeout(positionMobileSectionNav, 150);
+setTimeout(positionMobileSectionNav, 600);
 
 
 

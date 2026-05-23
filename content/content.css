@@ -5,11 +5,13 @@ body {
   font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.75;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 article {
   max-width: 760px;
   min-width: 0;
+  width: 100%;
 }
 
 h2 {
@@ -29,6 +31,15 @@ h3 {
 
 p {
   margin: 0 0 14px;
+}
+
+p,
+li,
+a,
+figcaption,
+h2,
+h3 {
+  overflow-wrap: anywhere;
 }
 
 ul {
@@ -225,7 +236,7 @@ ul {
 
 @media (max-width: 720px) {
   body {
-    padding: 16px 8px 24px;
+    padding: 16px 6px 24px;
     line-height: 1.7;
   }
 

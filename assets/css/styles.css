@@ -295,6 +295,72 @@ iframe {
   overflow: hidden;
 }
 
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+  background: rgba(17, 24, 28, 0.78);
+}
+
+.image-lightbox.is-open {
+  display: flex;
+}
+
+.image-lightbox-dialog {
+  position: relative;
+  max-width: min(96vw, 1080px);
+  max-height: min(92vh, 860px);
+}
+
+.image-lightbox img {
+  display: block;
+  max-width: min(96vw, 1080px);
+  max-height: min(92vh, 860px);
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+.image-lightbox-close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(17, 24, 39, 0.22);
+}
+
+.image-lightbox-close:hover {
+  color: var(--green-dark);
+}
+
+.image-lightbox-caption {
+  margin: 10px 0 0;
+  color: #f8faf7;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
 .download-band {
   display: flex;
   align-items: center;

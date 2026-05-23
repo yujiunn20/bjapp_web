@@ -204,6 +204,15 @@ ul {
   background: #fff;
 }
 
+.content-figure img[data-lightbox-image] {
+  cursor: zoom-in;
+}
+
+.content-figure img[data-lightbox-image]:hover {
+  border-color: #43a047;
+  box-shadow: 0 10px 24px rgba(36, 48, 60, 0.12);
+}
+
 .content-figure figcaption {
   margin-top: 8px;
   color: #66727e;

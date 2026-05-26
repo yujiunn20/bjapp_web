@@ -395,9 +395,11 @@
       siteShell.style.removeProperty("paddingTop");
       return;
     }
-    document.documentElement.style.setProperty("--mobile-nav-top", `${Math.ceil(topbar.getBoundingClientRect().bottom)}px`);
+    const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height);
+    document.documentElement.style.setProperty("--mobile-nav-top", `${topbarHeight}px`);
     requestAnimationFrame(() => {
-      siteShell.style.paddingTop = `${Math.ceil(sidebar.getBoundingClientRect().height) + 16}px`;
+      const navHeight = Math.ceil(sidebar.getBoundingClientRect().height);
+      siteShell.style.paddingTop = `${topbarHeight + navHeight + 16}px`;
     });
   }
 

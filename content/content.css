@@ -480,6 +480,14 @@ body.lightbox-open {
 }
 
 @media (max-width: 820px) {
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+  }
+
   .site-shell {
     padding: 18px 0 96px;
   }
@@ -577,7 +585,7 @@ body.lightbox-open {
     top: var(--mobile-nav-top, 136px);
     left: 0;
     right: 0;
-    z-index: 20;
+    z-index: 35;
     margin: 0;
     padding: 8px 10px 9px;
     background: #f7f8f5;

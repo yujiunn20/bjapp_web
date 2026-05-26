@@ -21,6 +21,10 @@
     </div>
 
     <h3 class="simulation-heading">Decision Training</h3>
+    <p>Decision Training 專注在 blackjack 決策本身，包含基本策略表上的一般決策，以及算牌後才會出現的 deviation。上方的 Mode 可以切換 Basic、Hi-Lo 或 Hi-Opt I，讓同一種牌局在不同判斷模式下練習。</p>
+
+    <p>實戰中有些 deviation、Insurance 或特定 pair 情境出現頻率很低，平常自由練習時不一定碰得到，也因此容易忘記。Question Type 可以指定題目類型，例如 Deviation、Pair、Insurance、硬牌、軟牌、加倍或投降，用來集中練習少見情境，或加強自己常犯錯、比較不熟的分類。</p>
+
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
         <img src="../../assets/img/training2.jpg" alt="Decision Training 可調整 Mode、問題種類並回答牌局決策">
@@ -34,6 +38,10 @@
     </div>
 
     <h3 class="simulation-heading">Running Count Drill</h3>
+    <p>Running Count Drill 專注在 Hi-Lo 算牌的基礎能力：看到牌後能不能穩定、快速地累加 Running Count。練習時可以只回答 Running Count，也可以改成計算出現過多少張牌，或同時練習兩者，確認自己不只知道 count，也有掌握牌序長度。</p>
+
+    <p>設定上可以調整出牌速度與總長度，讓練習從短牌序、慢速度開始，再逐步拉長並加快。起始 RC 可以固定為 0，也可以設成隨機值，練習從不同 count 狀態接續計算。牌的顯示方式也能切換成一次一張、一次兩張，或隨機張數的手牌組，讓練習更接近真實牌桌上不同玩家依序拿牌的節奏。作答後，畫面會列出前面出現過的所有牌，方便回頭檢查是哪一段漏算或加錯。</p>
+
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
         <img src="../../assets/img/training4.jpg" alt="Running Count Drill 可調整 Mode、速度、Length、起始 RC 和 Display Mode">
@@ -57,6 +65,10 @@
     </div>
 
     <h3 class="simulation-heading">True Count Drill</h3>
+    <p>True Count Drill 專注在把 Running Count 和剩餘牌數快速換算成 True Count。Running Count 只是目前牌序的累積結果，真正用來判斷下注級距與部分 deviation 的，是依剩餘牌組數修正後的 True Count。</p>
+
+    <p>透過反覆練習不同 RC 和剩餘牌數組合，可以加快心算速度，也能讓使用者更熟悉在實戰中把 count 轉換成可用下注判斷的流程。</p>
+
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
         <img src="../../assets/img/training8.jpg" alt="True Count Drill 給 Running Count 和剩餘牌數讓使用者回答 True Count">
@@ -65,6 +77,10 @@
     </div>
 
     <h3 class="simulation-heading">Hi-Lo Count Drill</h3>
+    <p>前面的 Running Count Drill 和 True Count Drill 分別練習 count 累加與 TC 換算，但和真實牌桌仍有差距。Hi-Lo Count Drill 會更接近實際發牌流程，模擬莊家與多個玩家依序拿牌，讓使用者在一局牌的節奏中追蹤 count。</p>
+
+    <p>練習開始時會給起始 Running Count 和剩餘牌數，接著依設定的人數與發牌速度模擬一局。發牌結束後，使用者需要回答最後的 Running Count 或剩餘牌數，用來確認自己是否能在接近真實牌桌的節奏中穩定追蹤 Hi-Lo count。</p>
+
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
         <img src="../../assets/img/training9.jpg" alt="Hi-Lo Count Drill 模擬真實發牌並回答 Running Count 和剩餘牌數">
@@ -74,7 +90,7 @@
   </article>
   <script src="../layout.js?v=20260526-10"></script>
   <script src="../image-lightbox.js?v=20260526-3"></script>
-  <script src="../translate.js?v=20260526-5"></script>
+  <script src="../translate.js?v=20260526-9"></script>
 </body>
 </html>
 

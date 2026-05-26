@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/overview.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/app/overview</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/game.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/app/game</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/training.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/app/training</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/statistics.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/app/statistics</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/replay.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/app/replay</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/rules.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/rules</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/basic-strategy.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/basic-strategy</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/hilo.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/hilo</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/high-cards.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/high-cards</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/deviations.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/deviations</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/ev-variance.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/ev-variance</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/reality.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/reality</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/hiopt.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/cardcounting/hiopt</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/privacy.html</loc>
+    <loc>https://blackjack.yuchunlab.com/content/app/privacy</loc>
     <lastmod>2026-05-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

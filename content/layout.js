@@ -184,7 +184,7 @@
       canonical.rel = "canonical";
       document.head.append(canonical);
     }
-    canonical.href = `${canonicalBase}${path}`;
+    canonical.href = `${canonicalBase}${path.replace(/\.html$/, "")}`;
   }
 
   function currentPageInfo(localized) {

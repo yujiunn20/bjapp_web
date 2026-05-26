@@ -174,6 +174,10 @@ a {
   font-size: 1.08rem;
 }
 
+.hero-subtitle {
+  font-style: italic;
+}
+
 .hero-card {
   display: flex;
   align-items: center;

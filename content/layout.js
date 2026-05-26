@@ -39,7 +39,7 @@
       languageLabel: "語言",
       heroEyebrow: "Blackjack strategy and card counting",
       heroTitle: "21點算牌學習與訓練工具",
-      heroBody: "從基本規則、基本策略到 Hi-Lo 算牌，用清楚的教學內容搭配 App 截圖，幫助玩家建立可練習、可追蹤的 blackjack 訓練流程。",
+      heroBody: "把 blackjack 的策略學習、算牌練習、實戰牌桌、錯誤回放與模擬統計接成一套完整訓練流程。",
       appName: "二十一點算牌訓練器",
       appTagline: "訓練・統計・回放",
       downloadEyebrow: "Practice with the app",
@@ -53,7 +53,7 @@
       languageLabel: "Language",
       heroEyebrow: "Blackjack strategy and card counting",
       heroTitle: "Blackjack Card Counting and Training Tool",
-      heroBody: "Learn from rules and basic strategy to Hi-Lo counting, with clear lessons and app screenshots that build a practiceable, trackable blackjack training flow.",
+      heroBody: "Connect blackjack strategy learning, card counting practice, live table play, mistake replay, and simulation statistics into one complete training flow.",
       appName: "Blackjack Card Counting Trainer",
       appTagline: "Training・Stats・Replay",
       downloadEyebrow: "Practice with the app",
@@ -97,7 +97,7 @@
       languageLabel: "言語",
       heroEyebrow: "Blackjack strategy and card counting",
       heroTitle: "ブラックジャックのカウント学習と練習ツール",
-      heroBody: "基本ルール、基本戦略、Hi-Lo カウントまで、わかりやすい解説とアプリ画面で練習しやすい学習フローを作ります。",
+      heroBody: "blackjack の戦略学習、カードカウント練習、実戦形式のテーブル、ミスのリプレイ、シミュレーション統計を 1 つの完整なトレーニングフローにつなげます。",
       appName: "ブラックジャック カウントトレーナー",
       appTagline: "練習・統計・リプレイ",
       downloadEyebrow: "Practice with the app",
@@ -285,7 +285,7 @@
         <div class="hero-copy">
           <p class="eyebrow">${t.heroEyebrow}</p>
           <h1>${t.heroTitle}</h1>
-          <p>${t.heroBody}</p>
+          <p class="hero-subtitle">${t.heroBody}</p>
         </div>
         <div class="hero-card" aria-label="App preview">
           <img src="${assetUrl("assets/img/blackjack-icon.png")}" alt="二十一點算牌訓練器 App icon">

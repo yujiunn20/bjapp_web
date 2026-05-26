@@ -141,9 +141,10 @@
   let activeLanguage = localStorage.getItem("blackjackLanguage") || document.documentElement.lang || "zh-Hant";
 
   function pagePath() {
-    const match = window.location.pathname.match(/content\/(?:app|cardcounting)\/[^/]+\.html$/);
+    const match = window.location.pathname.match(/content\/(?:app|cardcounting)\/[^/.]+(?:\.html)?$/);
     if (match) {
-      return match[0].replace(/\\/g, "/");
+      const normalized = match[0].replace(/\\/g, "/");
+      return normalized.endsWith(".html") ? normalized : `${normalized}.html`;
     }
     const hrefMatch = window.location.href.match(/content\/(?:app|cardcounting)\/[^?#]+\.html/);
     return hrefMatch ? hrefMatch[0].replace(/^.*content\//, "content/") : "content/app/overview.html";
@@ -154,6 +155,10 @@
   }
 
   function relativeUrl(path) {
+    if (window.location.protocol !== "file:") {
+      return `/${path.replace(/\.html$/, "")}`;
+    }
+
     const current = pagePath();
     const currentDir = current.includes("/app/") ? "content/app/" : "content/cardcounting/";
     if (path.startsWith(currentDir)) {

@@ -140,6 +140,11 @@
   const playUrl = "https://play.google.com/store/apps/details?id=com.yujiunn.blackjack_mobile";
   let activeLanguage = localStorage.getItem("blackjackLanguage") || document.documentElement.lang || "zh-Hant";
 
+  function isHomePage() {
+    const path = window.location.pathname.replace(/\\/g, "/");
+    return path === "/" || path.endsWith("/index.html") || !path.includes("/content/");
+  }
+
   function pagePath() {
     const match = window.location.pathname.match(/content\/(?:app|cardcounting)\/[^/.]+(?:\.html)?$/);
     if (match) {
@@ -156,7 +161,14 @@
 
   function relativeUrl(path) {
     if (window.location.protocol !== "file:") {
+      if (path === "content/app/overview.html") {
+        return "/";
+      }
       return `/${path.replace(/\.html$/, "")}`;
+    }
+
+    if (isHomePage()) {
+      return path === "content/app/overview.html" ? "index.html" : path;
     }
 
     const current = pagePath();
@@ -165,6 +177,13 @@
       return path.replace(currentDir, "");
     }
     return path.replace("content/", "../");
+  }
+
+  function assetUrl(path) {
+    if (window.location.protocol !== "file:") {
+      return `/${path}`;
+    }
+    return isHomePage() ? path : `../../${path}`;
   }
 
   function setMeta(name, content) {
@@ -184,7 +203,7 @@
       canonical.rel = "canonical";
       document.head.append(canonical);
     }
-    canonical.href = `${canonicalBase}${path.replace(/\.html$/, "")}`;
+    canonical.href = isHomePage() || path === "" ? canonicalBase : `${canonicalBase}${path.replace(/\.html$/, "")}`;
   }
 
   function currentPageInfo(localized) {
@@ -230,14 +249,14 @@
     document.title = pageTitle(path, item.title);
     setMeta("viewport", "width=device-width, initial-scale=1");
     setMeta("description", `${item.title}：二十一點算牌訓練器的 blackjack 教學、App 功能介紹與練習內容。`);
-    setCanonical(path);
+    setCanonical(isHomePage() ? "" : path);
 
     const header = document.createElement("header");
     header.className = "topbar";
     header.innerHTML = `
       <div class="topbar-inner">
         <a class="brand" href="${relativeUrl("content/app/overview.html")}" aria-label="Blackjack Trainer 首頁">
-          <img src="../../assets/img/blackjack-icon.png" alt="二十一點算牌訓練器 App 圖示" class="brand-icon">
+          <img src="${assetUrl("assets/img/blackjack-icon.png")}" alt="二十一點算牌訓練器 App 圖示" class="brand-icon">
           <span>
             <strong>Blackjack</strong>
             <small>${t.brandSubtitle}</small>
@@ -269,7 +288,7 @@
           <p>${t.heroBody}</p>
         </div>
         <div class="hero-card" aria-label="App preview">
-          <img src="../../assets/img/blackjack-icon.png" alt="二十一點算牌訓練器 App icon">
+          <img src="${assetUrl("assets/img/blackjack-icon.png")}" alt="二十一點算牌訓練器 App icon">
           <div>
             <strong>${t.appName}</strong>
             <span>${t.appTagline}</span>
@@ -293,7 +312,7 @@
       </main>
       <section class="download-band" aria-labelledby="downloadTitle">
         <div class="download-copy">
-          <img src="../../assets/img/blackjack-icon.png" alt="二十一點算牌訓練器 App 圖示" class="download-icon">
+          <img src="${assetUrl("assets/img/blackjack-icon.png")}" alt="二十一點算牌訓練器 App 圖示" class="download-icon">
           <div>
             <p class="eyebrow">${t.downloadEyebrow}</p>
             <h2 id="downloadTitle">${t.appName}</h2>

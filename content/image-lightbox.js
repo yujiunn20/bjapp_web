@@ -20,7 +20,7 @@
     image.setAttribute("aria-label", image.alt ? `放大圖片：${image.alt}` : "放大圖片");
 
     function openImage() {
-      window.parent.postMessage({
+      window.postMessage({
         type: "open-image-lightbox",
         src: makeAbsoluteUrl(image.getAttribute("src")),
         alt: image.alt || "",

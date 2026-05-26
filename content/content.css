@@ -486,6 +486,7 @@ body.lightbox-open {
     left: 0;
     right: 0;
     z-index: 40;
+    background: #f7f8f5;
   }
 
   .site-shell {
@@ -589,7 +590,7 @@ body.lightbox-open {
     margin: 0;
     padding: 8px 10px 9px;
     background: #f7f8f5;
-    border-top: 1px solid var(--line);
+    border-top: 0;
     border-bottom: 1px solid var(--line);
     box-shadow: 0 8px 18px rgba(36, 48, 60, 0.08);
     backdrop-filter: blur(12px);
@@ -691,12 +692,38 @@ body.lightbox-open {
   }
 
   .image-lightbox {
-    padding: 18px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 18px 12px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .image-lightbox-dialog {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+    min-height: min-content;
+    padding: 18px 0 24px;
+  }
+
+  .image-lightbox img {
+    max-width: 100%;
+    max-height: 62vh;
+  }
+
+  .image-lightbox-caption {
+    width: min(100%, 680px);
+    margin-top: 10px;
+    padding: 0 8px;
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .image-lightbox-close {
-    top: -12px;
-    right: -8px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
     width: 40px;
     height: 40px;
   }

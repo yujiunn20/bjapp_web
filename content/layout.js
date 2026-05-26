@@ -396,7 +396,7 @@
       return;
     }
     const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height);
-    document.documentElement.style.setProperty("--mobile-nav-top", `${topbarHeight}px`);
+    document.documentElement.style.setProperty("--mobile-nav-top", `${Math.max(0, topbarHeight - 1)}px`);
     requestAnimationFrame(() => {
       const navHeight = Math.ceil(sidebar.getBoundingClientRect().height);
       siteShell.style.paddingTop = `${topbarHeight + navHeight + 16}px`;

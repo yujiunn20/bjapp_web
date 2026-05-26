@@ -196,6 +196,27 @@
     return { path, sectionKey, section, item, index: index >= 0 ? index : 0 };
   }
 
+  function pageTitle(path, fallbackTitle) {
+    const titles = {
+      "content/app/overview.html": "二十一點算牌訓練器 App 概要｜Blackjack Card Counting Trainer",
+      "content/app/game.html": "二十一點 Blackjack 遊戲模式介紹｜算牌訓練器 App",
+      "content/app/training.html": "Blackjack 策略與 Hi-Lo 算牌訓練功能｜二十一點算牌訓練器",
+      "content/app/statistics.html": "Blackjack 統計模擬、EV、ROI 與變異數｜二十一點算牌訓練器",
+      "content/app/replay.html": "Blackjack 牌局回放與錯誤檢討｜二十一點算牌訓練器",
+      "content/app/privacy.html": "二十一點算牌訓練器隱私權政策｜Blackjack Trainer Privacy Policy",
+      "content/cardcounting/rules.html": "21點規則教學｜Blackjack 基本玩法與桌規說明",
+      "content/cardcounting/basic-strategy.html": "21點基本策略教學｜Blackjack 策略表與決策練習",
+      "content/cardcounting/hilo.html": "Hi-Lo 算牌教學｜Blackjack Running Count 與 True Count",
+      "content/cardcounting/bet-ramp.html": "Bet Ramp 下注級距教學｜Blackjack True Count 下注策略",
+      "content/cardcounting/high-cards.html": "高牌原理教學｜Blackjack 算牌為什麼有效",
+      "content/cardcounting/deviations.html": "Blackjack Deviations 教學｜算牌偏離基本策略",
+      "content/cardcounting/ev-variance.html": "Blackjack EV、ROI 與變異數教學｜算牌長期期望值",
+      "content/cardcounting/reality.html": "Blackjack 算牌理想與現實｜桌規、資金與風險限制",
+      "content/cardcounting/hiopt.html": "Hi-Opt I 算牌補充教學｜Blackjack 進階算牌系統"
+    };
+    return titles[path] || `${fallbackTitle}｜二十一點算牌訓練器 Blackjack Trainer`;
+  }
+
   function renderLayout() {
     const article = document.querySelector("article");
     if (!article || document.querySelector(".topbar")) {
@@ -206,7 +227,7 @@
     const { path, sectionKey, section, item } = currentPageInfo(t);
 
     document.documentElement.lang = activeLanguage;
-    document.title = `${item.title}｜二十一點算牌訓練器`;
+    document.title = pageTitle(path, item.title);
     setMeta("viewport", "width=device-width, initial-scale=1");
     setMeta("description", `${item.title}：二十一點算牌訓練器的 blackjack 教學、App 功能介紹與練習內容。`);
     setCanonical(path);
@@ -216,7 +237,7 @@
     header.innerHTML = `
       <div class="topbar-inner">
         <a class="brand" href="${relativeUrl("content/app/overview.html")}" aria-label="Blackjack Trainer 首頁">
-          <img src="../../assets/img/blackjack-icon.png" alt="" class="brand-icon">
+          <img src="../../assets/img/blackjack-icon.png" alt="二十一點算牌訓練器 App 圖示" class="brand-icon">
           <span>
             <strong>Blackjack</strong>
             <small>${t.brandSubtitle}</small>
@@ -272,7 +293,7 @@
       </main>
       <section class="download-band" aria-labelledby="downloadTitle">
         <div class="download-copy">
-          <img src="../../assets/img/blackjack-icon.png" alt="" class="download-icon">
+          <img src="../../assets/img/blackjack-icon.png" alt="二十一點算牌訓練器 App 圖示" class="download-icon">
           <div>
             <p class="eyebrow">${t.downloadEyebrow}</p>
             <h2 id="downloadTitle">${t.appName}</h2>
@@ -320,7 +341,7 @@
     lightbox.innerHTML = `
       <div class="image-lightbox-dialog">
         <button class="image-lightbox-close" id="lightboxClose" type="button" aria-label="關閉圖片">×</button>
-        <img id="lightboxImage" alt="">
+        <img id="lightboxImage" alt="放大的 App 截圖">
         <p class="image-lightbox-caption" id="lightboxCaption" hidden></p>
       </div>`;
 

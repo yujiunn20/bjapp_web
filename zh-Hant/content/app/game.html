@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二十一點 Blackjack 遊戲模式介紹｜算牌訓練器 App</title>
+  <meta name="description" content="二十一點算牌訓練器 Game 模式介紹，說明 blackjack 實戰流程、下注、策略建議、算牌資訊、玩家座位與牌桌設定。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/game">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/game">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/game">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/game">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/game">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>遊戲</h2>
+    <p class="lead">遊戲模式用接近實戰的流程練習 blackjack 決策，並把下注、策略建議、算牌資訊與結果回饋放在同一個畫面中。</p>
+
+    <h3 class="simulation-heading">遊戲流程</h3>
+    <p>遊戲畫面把下注、牌桌、建議、對錯判斷與算牌資訊集中在同一個流程中。使用者可以選擇只靠自己判斷，也可以打開建議與對錯提示，讓 app 在每一步顯示建議動作、判斷結果與原因說明。這不只是背基本策略表，而是用實際手牌理解為什麼某些情況應該 Hit、Stand、Double、Split、Surrender 或買 Insurance。</p>
+
+    <ul>
+      <li>打開建議與對錯判斷後，畫面會顯示建議動作、這次選擇是否正確，以及對應的策略原因，幫助把基本策略和算牌偏離連到真實決策。</li>
+      <li>牌桌上方會依照目前 Mode 顯示 Basic、Hi-Lo 或 Hi-Opt I 相關資訊，包含剩餘牌數、Decks、Running Count、True Count 等數值。</li>
+      <li>牌桌最多可以設定四個玩家位置，也可以選擇自己坐在哪個位置，用比較接近實戰的多人牌桌情境練習。</li>
+      <li>下注區可以手動調整 Bet，也可以點 Use Recommended，讓 app 依照目前算牌系統、True Count 和 Bet Ramp 自動帶入建議下注。</li>
+      <li>右上角的設定按鈕可以調整桌規、牌組數、穿透率、發牌速度、Bet Ramp 和玩家模式，用來建立不同練習情境。</li>
+    </ul>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game1.jpg" alt="遊戲畫面顯示下注、策略建議、剩餘牌數、Running Count 和 True Count">
+        <figcaption>可以自行調整 Bet，或直接使用 Recommended 建議下注；也能開關決策建議與決策對錯提示。畫面同時顯示剩餘牌數、Decks、Running Count 和 True Count。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game2.jpg" alt="遊戲畫面顯示 Recommended 推薦決策與原因說明">
+        <figcaption>Recommended 會顯示建議動作，並提供對應的策略理由，幫助理解為什麼這手牌應該這樣打。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game3.jpg" alt="遊戲畫面顯示玩家決策後的回饋">
+        <figcaption>做出決策後，app 會給出回饋，讓使用者知道這次選擇是否符合目前設定的判斷模式。</figcaption>
+      </figure>
+    </div>
+
+    <p>這個模式的設計重點，是讓使用者在接近實戰的節奏中建立記憶與理解。即時回饋可以幫助確認基本策略是否穩定，原因說明則用來補上「為什麼這樣打」的邏輯。對算牌練習來說，畫面上方的 count 結果可以作為對照：使用者先自己追蹤 Running Count 和 True Count，再立刻和 app 顯示的結果比較，修正漏算或換算錯誤。</p>
+
+    <h3 class="simulation-heading">遊戲設定</h3>
+    <p>設定項目則是用來模擬不同 blackjack 桌況。你可以調整規則、玩家數量、自己的座位、發牌速度、牌組數、穿透率和下注級距，觀察同一套策略在不同條件下的差異，也可以把發牌速度調快，練習在壓力較高的節奏下追蹤 count。</p>
+
+    <ul>
+      <li>Bet Ramp 可以設定不同 True Count threshold 對應幾倍下注。這會影響遊戲畫面中的建議下注，也會影響 Replay 回放時，app 如何判斷這一手的下注是否符合目前規則。</li>
+      <li>發牌速度可以依熟悉度調整。剛開始練習時可以放慢，保留時間計算 Running Count 和 True Count；熟悉後再加快速度，練習在更接近實戰壓力的節奏下追蹤牌序。</li>
+      <li>座位設定除了選擇自己的位置，也可以指定其他玩家位置使用 Basic、Hi-Lo 或 Hi-Opt I 等模式。這些座位主要用來建立多人牌桌的發牌情境，讓練習更接近真實牌桌節奏。</li>
+    </ul>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game4.jpg" alt="遊戲設定可調整判斷模式、牌組數與穿透率">
+        <figcaption>可以調整 Mode，決定 Recommended 與決策對錯要用 Basic、Hi-Lo 或 Hi-Opt I 判斷；也能設定牌組數和穿透率。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game5.jpg" alt="遊戲設定可調整桌面規則與最低賭注">
+        <figcaption>可調整 blackjack 桌面規則與最低賭注，讓練習條件更接近想分析的桌況。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game6.jpg" alt="遊戲設定可調整發牌速度">
+        <figcaption>發牌速度可以自行調整，適合用來練習在不同節奏下追蹤 count。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game7.jpg" alt="遊戲設定可調整 Bet Ramp">
+        <figcaption>Bet Ramp 會影響前面的建議下注，也會影響 Replay 中對 Bet 是否正確的判斷。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game8.jpg" alt="Hi-Opt I 設定畫面">
+        <figcaption>Hi-Opt I 相關設定可用來調整進階算牌模式，包含搭配 A side count 後的判斷方式。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/game9.jpg" alt="遊戲設定可調整玩家數量、自己的座位與玩家模式">
+        <figcaption>可設定賭桌上的 Players 數量、自己的座位，以及各玩家使用的 Mode，例如 Basic、Hi-Lo 或 Hi-Opt I。</figcaption>
+      </figure>
+    </div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

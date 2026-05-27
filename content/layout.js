@@ -138,20 +138,106 @@
 
   const canonicalBase = "https://blackjack.yuchunlab.com/";
   const playUrl = "https://play.google.com/store/apps/details?id=com.yujiunn.blackjack_mobile";
-  let activeLanguage = localStorage.getItem("blackjackLanguage") || document.documentElement.lang || "zh-Hant";
+  const languagePrefixes = { "zh-Hant": "zh-Hant", en: "en", ja: "ja" };
+  let activeLanguage = languageFromUrl() || document.documentElement.lang || localStorage.getItem("blackjackLanguage") || "zh-Hant";
+  let isSwitchingLanguage = false;
+
+  function languageFromUrl() {
+    const path = window.location.pathname.replace(/\\/g, "/");
+    if (path === "/zh-Hant" || path.startsWith("/zh-Hant/") || path.includes("/zh-Hant/")) {
+      return "zh-Hant";
+    }
+    if (path === "/en" || path.startsWith("/en/") || path.includes("/en/")) {
+      return "en";
+    }
+    if (path === "/ja" || path.startsWith("/ja/") || path.includes("/ja/")) {
+      return "ja";
+    }
+    return null;
+  }
+
+  function pathWithoutLanguagePrefix(path) {
+    return path.replace(/^\/?(?:zh-Hant|en|ja)\//, "").replace(/^\/?(?:zh-Hant|en|ja)$/, "");
+  }
+
+  function languagePrefix(language = activeLanguage) {
+    return languagePrefixes[language] || "";
+  }
+
+  function localizedPath(path, language = activeLanguage) {
+    const prefix = languagePrefix(language);
+    if (path === "content/app/overview.html") {
+      return `${prefix}/index.html`;
+    }
+    return `${prefix}/${path}`;
+  }
+
+  function localizedRoute(path, language = activeLanguage, { withExtension = false } = {}) {
+    const prefix = languagePrefix(language);
+    if (path === "content/app/overview.html") {
+      return language === "en" ? "/" : `/${prefix}/`;
+    }
+    const route = withExtension ? path : path.replace(/\.html$/, "");
+    return `/${prefix}/${route}`;
+  }
+
+  function fileDepthPrefix() {
+    let normalized = window.location.pathname.replace(/\\/g, "/");
+    const zhIndex = normalized.lastIndexOf("/zh-Hant/");
+    const enIndex = normalized.lastIndexOf("/en/");
+    const jaIndex = normalized.lastIndexOf("/ja/");
+    const contentIndex = normalized.lastIndexOf("/content/");
+    if (zhIndex >= 0) {
+      normalized = normalized.slice(zhIndex + 1);
+    } else if (enIndex >= 0) {
+      normalized = normalized.slice(enIndex + 1);
+    } else if (jaIndex >= 0) {
+      normalized = normalized.slice(jaIndex + 1);
+    } else if (contentIndex >= 0) {
+      normalized = normalized.slice(contentIndex + 1);
+    } else {
+      normalized = normalized.split("/").pop() || "index.html";
+    }
+    const parts = normalized.split("/").filter(Boolean);
+    const fileParts = parts.length && /\.[a-z0-9]+$/i.test(parts[parts.length - 1]) ? parts.slice(0, -1) : parts;
+    return "../".repeat(fileParts.length);
+  }
+
+  function fileRootUrl() {
+    const href = window.location.href.split("#")[0].split("?")[0];
+    const markers = ["/zh-Hant/", "/en/", "/ja/", "/content/"];
+    let rootHref = href;
+    markers.forEach((marker) => {
+      const index = rootHref.lastIndexOf(marker);
+      if (index >= 0) {
+        rootHref = rootHref.slice(0, index + 1);
+      }
+    });
+    const fileNameIndex = rootHref.lastIndexOf("/");
+    if (fileNameIndex >= 0 && /\.[a-z0-9]+$/i.test(rootHref.slice(fileNameIndex + 1))) {
+      rootHref = rootHref.slice(0, fileNameIndex + 1);
+    }
+    return rootHref.endsWith("/") ? rootHref : `${rootHref}/`;
+  }
+
+  function fileUrl(path) {
+    return new URL(path, fileRootUrl()).href;
+  }
 
   function isHomePage() {
-    const path = window.location.pathname.replace(/\\/g, "/");
+    const path = pathWithoutLanguagePrefix(window.location.pathname.replace(/\\/g, "/"));
     return path === "/" || path.endsWith("/index.html") || !path.includes("/content/");
   }
 
   function pagePath() {
-    const match = window.location.pathname.match(/content\/(?:app|cardcounting)\/[^/.]+(?:\.html)?$/);
+    const cleanPath = pathWithoutLanguagePrefix(window.location.pathname.replace(/\\/g, "/"));
+    const match = cleanPath.match(/content\/(?:app|cardcounting)\/[^/.]+(?:\.html)?$/);
     if (match) {
       const normalized = match[0].replace(/\\/g, "/");
       return normalized.endsWith(".html") ? normalized : `${normalized}.html`;
     }
-    const hrefMatch = window.location.href.match(/content\/(?:app|cardcounting)\/[^?#]+\.html/);
+    const cleanHref = pathWithoutLanguagePrefix(window.location.href.replace(/^.*blackjack\.yuchunlab\.com\//, ""));
+    const hrefMatch = cleanHref.match(/content\/(?:app|cardcounting)\/[^?#]+\.html/);
     return hrefMatch ? hrefMatch[0].replace(/^.*content\//, "content/") : "content/app/overview.html";
   }
 
@@ -161,17 +247,17 @@
 
   function relativeUrl(path) {
     if (window.location.protocol !== "file:") {
-      if (path === "content/app/overview.html") {
-        return "/";
-      }
-      return `/${path.replace(/\.html$/, "")}`;
+      return localizedRoute(path, activeLanguage, { withExtension: true });
     }
 
     if (isHomePage()) {
-      return path === "content/app/overview.html" ? "index.html" : path;
+      return fileUrl(localizedPath(path));
     }
 
     const current = pagePath();
+    if (languagePrefix()) {
+      return fileUrl(localizedPath(path));
+    }
     const currentDir = current.includes("/app/") ? "content/app/" : "content/cardcounting/";
     if (path.startsWith(currentDir)) {
       return path.replace(currentDir, "");
@@ -179,11 +265,34 @@
     return path.replace("content/", "../");
   }
 
+  function relativeUrlForLanguage(path, language) {
+    if (window.location.protocol !== "file:") {
+      return localizedRoute(path, language, { withExtension: true });
+    }
+    const targetPath = localizedPath(path, language);
+    if (isHomePage()) {
+      return fileUrl(targetPath);
+    }
+    return fileUrl(targetPath);
+  }
+
+  function switchLanguage(language) {
+    if (isSwitchingLanguage) {
+      return;
+    }
+    isSwitchingLanguage = true;
+    localStorage.setItem("blackjackLanguage", language);
+    const target = relativeUrlForLanguage(pagePath(), language);
+    window.location.assign(new URL(target, window.location.href).href);
+  }
+
+  window.__setBlackjackLanguage = switchLanguage;
+
   function assetUrl(path) {
     if (window.location.protocol !== "file:") {
       return `/${path}`;
     }
-    return isHomePage() ? path : `../../${path}`;
+    return isHomePage() ? `${fileDepthPrefix()}${path}` : `${fileDepthPrefix()}${path}`;
   }
 
   function setMeta(name, content) {
@@ -203,7 +312,24 @@
       canonical.rel = "canonical";
       document.head.append(canonical);
     }
-    canonical.href = isHomePage() || path === "" ? canonicalBase : `${canonicalBase}${path.replace(/\.html$/, "")}`;
+    canonical.href = `${canonicalBase}${localizedRoute(path).replace(/^\//, "")}`;
+  }
+
+  function setAlternateLinks(path) {
+    const alternates = [
+      { hreflang: "zh-Hant", href: `${canonicalBase}${localizedRoute(path, "zh-Hant").replace(/^\//, "")}` },
+      { hreflang: "en", href: `${canonicalBase}${localizedRoute(path, "en").replace(/^\//, "")}` },
+      { hreflang: "ja", href: `${canonicalBase}${localizedRoute(path, "ja").replace(/^\//, "")}` },
+      { hreflang: "x-default", href: `${canonicalBase}${localizedRoute(path, "en").replace(/^\//, "")}` }
+    ];
+    document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((link) => link.remove());
+    alternates.forEach((alternate) => {
+      const link = document.createElement("link");
+      link.rel = "alternate";
+      link.hreflang = alternate.hreflang;
+      link.href = alternate.href;
+      document.head.append(link);
+    });
   }
 
   function currentPageInfo(localized) {
@@ -217,23 +343,65 @@
 
   function pageTitle(path, fallbackTitle) {
     const titles = {
-      "content/app/overview.html": "二十一點算牌訓練器 App 概要｜Blackjack Card Counting Trainer",
-      "content/app/game.html": "二十一點 Blackjack 遊戲模式介紹｜算牌訓練器 App",
-      "content/app/training.html": "Blackjack 策略與 Hi-Lo 算牌訓練功能｜二十一點算牌訓練器",
-      "content/app/statistics.html": "Blackjack 統計模擬、EV、ROI 與變異數｜二十一點算牌訓練器",
-      "content/app/replay.html": "Blackjack 牌局回放與錯誤檢討｜二十一點算牌訓練器",
-      "content/app/privacy.html": "二十一點算牌訓練器隱私權政策｜Blackjack Trainer Privacy Policy",
-      "content/cardcounting/rules.html": "21點規則教學｜Blackjack 基本玩法與桌規說明",
-      "content/cardcounting/basic-strategy.html": "21點基本策略教學｜Blackjack 策略表與決策練習",
-      "content/cardcounting/hilo.html": "Hi-Lo 算牌教學｜Blackjack Running Count 與 True Count",
-      "content/cardcounting/bet-ramp.html": "Bet Ramp 下注級距教學｜Blackjack True Count 下注策略",
-      "content/cardcounting/high-cards.html": "高牌原理教學｜Blackjack 算牌為什麼有效",
-      "content/cardcounting/deviations.html": "Blackjack Deviations 教學｜算牌偏離基本策略",
-      "content/cardcounting/ev-variance.html": "Blackjack EV、ROI 與變異數教學｜算牌長期期望值",
-      "content/cardcounting/reality.html": "Blackjack 算牌理想與現實｜桌規、資金與風險限制",
-      "content/cardcounting/hiopt.html": "Hi-Opt I 算牌補充教學｜Blackjack 進階算牌系統"
+      "zh-Hant": {
+        "content/app/overview.html": "二十一點算牌訓練器 App 概要｜Blackjack Card Counting Trainer",
+        "content/app/game.html": "二十一點 Blackjack 遊戲模式介紹｜算牌訓練器 App",
+        "content/app/training.html": "Blackjack 策略與 Hi-Lo 算牌訓練功能｜二十一點算牌訓練器",
+        "content/app/statistics.html": "Blackjack 統計模擬、EV、ROI 與變異數｜二十一點算牌訓練器",
+        "content/app/replay.html": "Blackjack 牌局回放與錯誤檢討｜二十一點算牌訓練器",
+        "content/app/privacy.html": "二十一點算牌訓練器隱私權政策｜Blackjack Trainer Privacy Policy",
+        "content/cardcounting/rules.html": "21點規則教學｜Blackjack 基本玩法與桌規說明",
+        "content/cardcounting/basic-strategy.html": "21點基本策略教學｜Blackjack 策略表與決策練習",
+        "content/cardcounting/hilo.html": "Hi-Lo 算牌教學｜Blackjack Running Count 與 True Count",
+        "content/cardcounting/bet-ramp.html": "Bet Ramp 下注級距教學｜Blackjack True Count 下注策略",
+        "content/cardcounting/high-cards.html": "高牌原理教學｜Blackjack 算牌為什麼有效",
+        "content/cardcounting/deviations.html": "Blackjack Deviations 教學｜算牌偏離基本策略",
+        "content/cardcounting/ev-variance.html": "Blackjack EV、ROI 與變異數教學｜算牌長期期望值",
+        "content/cardcounting/reality.html": "Blackjack 算牌理想與現實｜桌規、資金與風險限制",
+        "content/cardcounting/hiopt.html": "Hi-Opt I 算牌補充教學｜Blackjack 進階算牌系統"
+      },
+      en: {
+        "content/app/overview.html": "Blackjack Card Counting Trainer App Overview",
+        "content/app/game.html": "Blackjack Game Mode Guide | Card Counting Trainer App",
+        "content/app/training.html": "Blackjack Strategy and Hi-Lo Counting Training Features",
+        "content/app/statistics.html": "Blackjack Statistics Simulator, EV, ROI, and Variance",
+        "content/app/replay.html": "Blackjack Replay and Mistake Review | Card Counting Trainer",
+        "content/app/privacy.html": "Blackjack Card Counting Trainer Privacy Policy",
+        "content/cardcounting/rules.html": "Blackjack Rules Guide | Basic Gameplay and Table Rules",
+        "content/cardcounting/basic-strategy.html": "Blackjack Basic Strategy Guide | Strategy Charts and Practice",
+        "content/cardcounting/hilo.html": "Hi-Lo Card Counting Guide | Running Count and True Count",
+        "content/cardcounting/bet-ramp.html": "Bet Ramp Guide | Blackjack True Count Betting Strategy",
+        "content/cardcounting/high-cards.html": "High Card Principle | Why Blackjack Card Counting Works",
+        "content/cardcounting/deviations.html": "Blackjack Deviations Guide | Count-Based Strategy Changes",
+        "content/cardcounting/ev-variance.html": "Blackjack EV, ROI, and Variance Guide | Long-Term Counting Results",
+        "content/cardcounting/reality.html": "Blackjack Card Counting Reality | Rules, Bankroll, and Risk Limits",
+        "content/cardcounting/hiopt.html": "Hi-Opt I Card Counting Guide | Advanced Blackjack Counting System"
+      },
+      ja: {
+        "content/app/overview.html": "ブラックジャック カウントトレーナー アプリ概要",
+        "content/app/game.html": "ブラックジャック Game モード紹介 | カウントトレーナー",
+        "content/app/training.html": "ブラックジャック戦略と Hi-Lo カウント練習機能",
+        "content/app/statistics.html": "ブラックジャック統計シミュレーター、EV、ROI、分散",
+        "content/app/replay.html": "ブラックジャック Replay とミス確認 | カウントトレーナー",
+        "content/app/privacy.html": "ブラックジャック カウントトレーナー プライバシーポリシー",
+        "content/cardcounting/rules.html": "ブラックジャック ルール解説 | 基本玩法とテーブルルール",
+        "content/cardcounting/basic-strategy.html": "ブラックジャック基本戦略ガイド | 戦略表と判断練習",
+        "content/cardcounting/hilo.html": "Hi-Lo カウント解説 | Running Count と True Count",
+        "content/cardcounting/bet-ramp.html": "Bet Ramp 解説 | Blackjack True Count ベット戦略",
+        "content/cardcounting/high-cards.html": "高カード原理 | Blackjack カウントが機能する理由",
+        "content/cardcounting/deviations.html": "Blackjack Deviations 解説 | カウントによる基本戦略変更",
+        "content/cardcounting/ev-variance.html": "Blackjack EV、ROI、分散解説 | カウントの長期結果",
+        "content/cardcounting/reality.html": "Blackjack カウントの現実 | ルール、資金、リスク制限",
+        "content/cardcounting/hiopt.html": "Hi-Opt I カウント解説 | 上級 Blackjack カウントシステム"
+      }
     };
-    return titles[path] || `${fallbackTitle}｜二十一點算牌訓練器 Blackjack Trainer`;
+    const languageTitles = titles[activeLanguage] || titles["zh-Hant"];
+    const fallbacks = {
+      "zh-Hant": `${fallbackTitle}｜二十一點算牌訓練器 Blackjack Trainer`,
+      en: `${fallbackTitle} | Blackjack Card Counting Trainer`,
+      ja: `${fallbackTitle} | ブラックジャック カウントトレーナー`
+    };
+    return languageTitles[path] || fallbacks[activeLanguage] || fallbacks["zh-Hant"];
   }
 
   function pageDescription(path, fallbackTitle) {
@@ -312,7 +480,8 @@
     document.title = pageTitle(path, item.title);
     setMeta("viewport", "width=device-width, initial-scale=1");
     setMeta("description", pageDescription(path, item.title));
-    setCanonical(isHomePage() ? "" : path);
+    setCanonical(path);
+    setAlternateLinks(path);
 
     const header = document.createElement("header");
     header.className = "topbar";
@@ -332,7 +501,7 @@
           </nav>
           <label class="language-picker">
             <span>${t.languageLabel}</span>
-            <select id="languageSelect" aria-label="選擇語言">
+            <select id="languageSelect" aria-label="選擇語言" onchange="window.__setBlackjackLanguage && window.__setBlackjackLanguage(this.value)">
               <option value="zh-Hant">中文</option>
               <option value="en">English</option>
               <option value="ja">日本語</option>
@@ -432,10 +601,8 @@
 
     const languageSelect = document.querySelector("#languageSelect");
     languageSelect.value = activeLanguage;
-    languageSelect.addEventListener("change", () => {
-      localStorage.setItem("blackjackLanguage", languageSelect.value);
-      window.location.reload();
-    });
+    languageSelect.addEventListener("change", () => switchLanguage(languageSelect.value));
+    languageSelect.addEventListener("input", () => switchLanguage(languageSelect.value));
 
     reserveFooterSpace();
     positionMobileSectionNav();

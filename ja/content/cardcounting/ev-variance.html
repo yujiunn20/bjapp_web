@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack EV、ROI、分散解説 | カウントの長期結果</title>
+  <meta name="description" content="Blackjack の EV、ROI、分散解説。基本戦略、Hi-Lo、bet ramp、標準偏差、長期シミュレーションの規模感を説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/ev-variance">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>EV・規模感・分散</h2>
+    <p class="lead">ブラックジャックでは優位性は小さく、変動は大きいのが重要な点です。以下の数値は規模感であり、保証ではありません。</p>
+
+    <h3>基本戦略（カウントなし）</h3>
+    <ul>
+      <li>一般的な 6D / H17 / DAS / 3:2 ルールでは、ハウスエッジはおよそ 0.4%-0.7% です。</li>
+      <li>S17 に変えると、通常プレイヤーにとってさらに約 0.1%-0.3% 有利になります。</li>
+      <li>6:5 blackjack は通常かなり不利なのでおすすめしません。</li>
+    </ul>
+    <p>規模感として、1 ハンド 1 unit なら -0.5% は長期的に 200 ハンドで約 1 unit 負ける程度ですが、短期の変動は通常それより大きくなります。</p>
+
+    <h3 class="simulation-heading">基本戦略シミュレーション</h3>
+    <p>以下は基本戦略のみ、カウントなしで約 500,000 ラウンド走らせた結果です。全体 ROI は -0.70%、EV / 100 ラウンドは -7.90、SD / 100 ラウンドは 114.84 です。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/basic-strategy-stats.png" alt="基本戦略のみ、カウントなしの ROI、EV、分散シミュレーション統計">
+      <figcaption>基本戦略（カウントなし）のシミュレーション結果</figcaption>
+    </figure>
+
+    <p>この数値は前の規模感に近く、カウントしない場合 ROI は負で、長期的にはハウスエッジに削られます。ただし SD / 100 は 114.84 あり、短期の勝敗は期待値より大きく動く可能性があります。</p>
+
+    <h3>カウントを加える（Hi-Lo + ランプ）</h3>
+    <ul>
+      <li>ルールが良く、ペネトレーションも悪くなく、TC に応じてベットを調整できる場合、全体の期待値は正になる可能性があります。</li>
+      <li>一般的な規模感は総ベット額の約 +0.3%-+1.5% です。</li>
+      <li>プレイヤーが最も体感しやすいのは小さな優位ではなく、variance とラウンド数です。</li>
+    </ul>
+    <p>実際の範囲は、ルール、ペネトレーション、テーブルリミット、bet ramp に大きく影響されます。</p>
+
+    <h3>分散</h3>
+    <p>ブラックジャックは小さな優位と大きな変動が同時にあるゲームで、短期の勝敗は多くの場合ノイズです。</p>
+    <ul>
+      <li>unit は基本ベット額です。</li>
+      <li>1 ハンドの一般的な変動は約 ±1.1-1.3 units です。</li>
+      <li>edge が +1% だとすると、1 ハンドあたりの期待値は約 +0.01 unit ですが、1 ハンドの変動は約 ±1.2 units です。100 ハンドでは期待値は約 +1 unit しかなく、±12 units 程度の変動は十分普通に起こります。</li>
+    </ul>
+
+    <h3 class="simulation-heading">アプリのシミュレーション統計</h3>
+    <p>以下は Hi-Lo と Bet Ramp 2/4/6/8/12 を使い、500,000 ラウンド走らせた結果です。全体 ROI は +0.08%、EV / 100 ラウンドは +1.66、SD / 100 ラウンドは 315.10 です。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/ev-var-per100.png" alt="Hi-Lo と Bet Ramp 2/4/6/8/12、500,000 ラウンドの EV と分散統計">
+      <figcaption>Hi-Lo + Bet Ramp 2/4/6/8/12、500,000 ラウンドのシミュレーション結果</figcaption>
+    </figure>
+
+    <p>この数値は前述の規模感と対応します。ROI は正ですが +0.08% と小さい長期優位です。100 ラウンドあたりでは EV が +1.66、SD が 315.10 です。TC >= k では ROI が +1.22%、EV / 100 が 83.37 まで上がりますが、SD / 100 も 741.40 まで上がります。つまりカウントは長期期待値を改善しますが、短期は分散に支配されます。</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

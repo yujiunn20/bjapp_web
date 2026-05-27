@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hi-Opt I Card Counting Guide | Advanced Blackjack Counting System</title>
+  <meta name="description" content="Hi-Opt I card counting guide covering card values, ace side count, Playing TC, Betting TC, Insurance TC, and core deviations.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/hiopt">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Extra: Hi-Opt</h2>
+    <p class="lead">Hi-Opt I is a more advanced system than Hi-Lo. In this project, Hi-Opt I uses a playing count, ace side count, and adjusted betting / insurance true counts.</p>
+
+    <p>The point of Hi-Opt I is not just swapping the Hi-Lo card values. It separates the count used for playing decisions from the count used for betting and insurance. Playing decisions use the Playing TC from the raw Hi-Opt I running count, while betting and insurance also adjust for the ace deficit so the value of aces for blackjack and betting is reflected.</p>
+
+    <h3>Hi-Opt I Card Values</h3>
+    <table class="data-table">
+      <thead><tr><th>Card</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>3-6</td><td>+1</td></tr>
+        <tr><td>2、7、8、9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K</td><td>-1</td></tr>
+        <tr><td>A</td><td>0, tracked separately with ace side count</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Count Metrics</h3>
+    <p>In the app's Hi-Opt I mode, the screen and strategy logic use the metrics below. The easiest pair to confuse is Playing TC and Betting TC: the former is used for playing decisions such as hit, stand, double, split, and surrender; the latter is used for bet sizing.</p>
+    <table class="data-table">
+      <thead><tr><th>Metric</th><th>Meaning</th><th>Formula / Note</th></tr></thead>
+      <tbody>
+        <tr><td>Running Count</td><td>Ace-neutral main count</td><td>A = 0</td></tr>
+        <tr><td>Playing TC</td><td>Used for playing decisions</td><td>RC / decksRemaining</td></tr>
+        <tr><td>Ace Seen</td><td>Track aces seen separately</td><td>Side count</td></tr>
+        <tr><td>Ace Deficit</td><td>How many fewer aces have appeared than expected</td><td>usedCards / 13 - aceSeen</td></tr>
+        <tr><td>Adjusted RC</td><td>RC adjusted by ace deficit and k</td><td>RC + k × Ace Deficit</td></tr>
+        <tr><td>Betting TC</td><td>Used for betting</td><td>Adjusted RC / decksRemaining</td></tr>
+        <tr><td>Insurance TC</td><td>Used for insurance</td><td>Currently same as betting TC</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">These tables follow the current project's Hi-Opt I core index spec, not a universal full-index set. The ace adjustment parameter in Game Settings is the k in the formula, and it affects Adjusted RC, Betting TC, and Insurance TC.</div>
+
+    <h3>Core Deviations</h3>
+    <p>The app's core index spec includes insurance, surrender, hard hands, 10,10 splits, and some doubles. Compared with Hi-Lo, Hi-Opt I is more precise, but it also adds an ace side count and true-count adjustments, so actual results depend on Side A estimation, the betting threshold k, and the use case.</p>
+
+    <h3>Insurance</h3>
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>Dealer A</td><td>No Insurance</td><td>Take insurance when Insurance TC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>A</td><td>Surrender at Playing TC &gt;= +1 for H17; Playing TC &gt;= +2 for S17</td></tr>
+        <tr><td>15</td><td>9</td><td>Surrender when Playing TC &gt;= +2</td></tr>
+        <tr><td>14</td><td>10</td><td>Surrender when Playing TC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>Stand when surrender is unavailable and Playing TC &gt;= 0</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>Stand when surrender is unavailable and Playing TC &gt;= +4</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>Stand when Playing TC &gt;= +5</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>Stand when Playing TC &gt;= -1</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>Stand when Playing TC &gt;= -2</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>Stand when Playing TC &gt;= +3</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>Stand when Playing TC &gt;= +2</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>Hit when Playing TC &lt; 0</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>Hit when Playing TC &lt; -2</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>Hit when Playing TC &lt; -1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pair Split Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Pair</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>10,10</td><td>5</td><td>Stand</td><td>Split when Playing TC &gt;= +5</td></tr>
+        <tr><td>10,10</td><td>6</td><td>Stand</td><td>Split when Playing TC &gt;= +5</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>Double when Playing TC &gt;= 0</td></tr>
+        <tr><td>10</td><td>10</td><td>Double when Playing TC &gt;= +4</td></tr>
+        <tr><td>10</td><td>A</td><td>Double when Playing TC &gt;= +4</td></tr>
+        <tr><td>9</td><td>2</td><td>Double when Playing TC &gt;= +1</td></tr>
+        <tr><td>9</td><td>7</td><td>Double when Playing TC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="simulation-heading">App Simulation Stats</h3>
+    <p>Below is a 100,000-round comparison of Hi-Lo and Hi-Opt I. In this result, Hi-Opt I has higher EV, but also higher SD / 100 rounds; overall, the gap is not as large as it may seem.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/hilo-vs-hiopt.png" alt="100,000-round simulation comparison of Hi-Lo and Hi-Opt I">
+      <figcaption>Hi-Lo vs Hi-Opt I, 100,000-round simulation result</figcaption>
+    </figure>
+
+    <p>Interpret this kind of comparison with some flexibility. Hi-Opt I is not just a direct card-value swap against Hi-Lo, because it uses an ace side count and adjusts betting / insurance true count based on different k values. A single simulation can show direction, but it should not be used alone to decide which system is absolutely better.</p>
+
+    <div class="note">Hi-Opt I requires more discipline and tracking ability than Hi-Lo. It is better to stabilize basic strategy and Hi-Lo before moving to Hi-Opt I.</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

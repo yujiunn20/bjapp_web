@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack 牌局回放與錯誤檢討｜二十一點算牌訓練器</title>
+  <meta name="description" content="Blackjack Replay 回放功能介紹，說明如何檢查牌局紀錄、下注錯誤、動作錯誤、保險錯誤、Timeline 與決策細節。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/replay">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/replay">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/replay">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/replay">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/replay">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>回放</h2>
+    <p class="lead">Replay 讓使用者回看過去的 game 紀錄，從整體統計、錯誤篩選，到每一步決策細節都能重新檢查。</p>
+
+    <h3 class="simulation-heading">遊玩紀錄與篩選</h3>
+    <p>遊玩紀錄主要保存前面 Game 模式的 Play 紀錄，最多保留最近 1000 筆資料。Replay 首頁上方會依照目前保存的紀錄整理統計，例如總下注、淨利、ROI、局數、手牌數、決策次數、Win / Loss 結果、決策正確率、不同 Mode（Basic、Hi-Lo、Hi-Opt I）的使用數量，以及下注、動作或 insurance 相關錯誤。</p>
+
+    <p>下方會列出過去紀錄的簡單總結卡片，點進卡片後可以查看該局的詳細回放。卡片列表也可以用 All、Mistakes、Bet Mistakes、Action Mistakes 和 Insurance Mistakes 篩選，讓使用者快速找出有錯誤的紀錄，或只檢查下注、動作、保險其中一類問題。</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay1.jpg" alt="Replay 頁面顯示 game 遊玩紀錄統計與錯誤篩選">
+        <figcaption>Replay 首頁會統計目前的 game 遊玩紀錄，並可用 All、Mistakes、Bet Mistakes、Action Mistakes、Insurance Mistakes 篩選。往下滑可以看到過去 round 的紀錄，並點進去查看細節。</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">詳細回放</h3>
+    <p>點進單筆紀錄後，詳細回放頁最上方會先顯示 Summary，整理這一局的基本結果與整體狀態。接著下方會列出 Mistakes 說明，把這局中出現的下注、動作或 insurance 錯誤集中呈現，方便快速看出問題類型。</p>
+
+    <p>Timeline 則用來逐步檢查牌局流程。使用者可以點選不同時間點，上方的 Table Snapshot 會顯示當下牌桌狀況，下方的 Selected Event 會顯示該事件的詳細內容，包含該次決策、結果與相關判斷資訊。這個設計的重點，是讓玩家透過回放找出自己常犯的錯誤，再回到遊戲或訓練模式中修正。</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay2.jpg" alt="Replay 詳細頁顯示 Summary 與錯誤說明">
+        <figcaption>詳細回放頁會顯示 Summary，並整理這一局出現過的錯誤，方便快速了解問題集中在哪些決策上。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay3.jpg" alt="Replay Timeline 顯示過去決策過程與 Table Snapshot">
+        <figcaption>Timeline 可以逐步查看先前的決策過程，上方的 Table Snapshot 會呈現當下牌桌狀態。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay4.jpg" alt="Replay Selected Event 顯示 Timeline 當下決策詳細內容">
+        <figcaption>Selected Event 會顯示 Timeline 當下事件的詳細內容，包含該次決策、結果與相關判斷資訊。</figcaption>
+      </figure>
+    </div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

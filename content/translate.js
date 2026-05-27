@@ -808,7 +808,7 @@
   }
 
   const parentLanguage = readParentLanguage();
-  const savedLanguage = localStorage.getItem("blackjackLanguage") || parentLanguage || document.documentElement.lang;
+  const savedLanguage = parentLanguage || document.documentElement.lang || localStorage.getItem("blackjackLanguage");
   applyTranslations(savedLanguage);
   observeLanguageChanges();
 

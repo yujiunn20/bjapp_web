@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack Strategy and Hi-Lo Counting Training Features</title>
+  <meta name="description" content="Blackjack training guide covering basic strategy, deviations, Running Count, True Count, and realistic Hi-Lo dealing drills.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/app/training">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/training">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/training">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/training">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/training">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Training</h2>
+    <p class="lead">Training mode separates the core blackjack skills: decisions, Running Count, True Count conversion, and Hi-Lo counting in a realistic dealing flow.</p>
+
+    <h3 class="simulation-heading">Training Overview</h3>
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training1.jpg" alt="Training home showing Decision Training, Running Count Drill, True Count Drill, and Hi-Lo Count Drill">
+        <figcaption>Current modes include decision training, RC drills, True Count calculation drills, and Hi-Lo count drills with realistic dealing.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">Decision Training</h3>
+    <p>Decision Training focuses on blackjack decisions themselves, including ordinary basic-strategy decisions and deviations that only appear after counting. The Mode control at the top can switch between Basic, Hi-Lo, and Hi-Opt I, so the same type of hand can be practiced under different evaluation modes.</p>
+
+    <p>In real play, some deviations, Insurance spots, or specific pair situations appear very rarely. Free practice may not surface them often, which makes them easy to forget. Question Type lets you choose categories such as Deviation, Pair, Insurance, hard hands, soft hands, doubles, or surrender, so you can focus on rare situations or strengthen categories where you often make mistakes.</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training2.jpg" alt="Decision Training can adjust mode and question type, then answer hand decisions">
+        <figcaption>Use the top controls to adjust Mode and question type. The question and answer buttons below train correct decisions hand by hand.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training3.jpg" alt="Decision Training provides category-specific practice">
+        <figcaption>You can practice specific categories such as hard hands, soft hands, pairs, doubles, surrender, insurance, or deviations.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">Running Count Drill</h3>
+    <p>Running Count Drill focuses on the core Hi-Lo counting skill: whether you can add the Running Count steadily and quickly as cards appear. You can answer only the Running Count, switch to counting how many cards appeared, or practice both at the same time to confirm that you understand not only the count but also the length of the card sequence.</p>
+
+    <p>The settings let you adjust card speed and total length, so you can start with short sequences at a slow speed, then gradually make them longer and faster. Starting RC can be fixed at 0 or randomized, which trains continuation from different count states. Card display can be one card at a time, two cards at a time, or random-sized hand groups, making the rhythm closer to a real table where different players receive cards in sequence. After answering, the screen lists all cards that appeared, making it easier to review where a card was missed or added incorrectly.</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training4.jpg" alt="Running Count Drill can adjust mode, speed, length, starting RC, and display mode">
+        <figcaption>Adjust Mode, card speed, Length, starting RC, and Display Mode. The display area shows cards according to the settings to train count speed and consistency.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training5.jpg" alt="Running Count Drill can ask for Running Count, card count, or both">
+        <figcaption>Choose to answer Running Count, Card Count, or both. Card Count checks whether you also tracked the number of cards shown.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training6.jpg" alt="Running Count Drill answer screen">
+        <figcaption>The answer screen lets users enter the final count, making it useful for quick mental math and accumulation practice.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training7.jpg" alt="Running Count Drill result screen">
+        <figcaption>After answering, results are shown so you can check where the calculation or tracking went wrong.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">True Count Drill</h3>
+    <p>True Count Drill focuses on quickly converting Running Count and remaining cards into True Count. Running Count is only the accumulated result of the current card sequence; the number actually used for bet sizing and some deviations is the True Count after adjusting for remaining decks.</p>
+
+    <p>By repeatedly practicing different RC and remaining-card combinations, users can speed up mental calculation and become more comfortable converting count into practical betting decisions during play.</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training8.jpg" alt="True Count Drill gives Running Count and cards remaining for the user to answer True Count">
+        <figcaption>True Count drills provide Running Count and remaining cards so users can practice converting RC into practical TC decisions.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">Hi-Lo Count Drill</h3>
+    <p>The earlier Running Count Drill and True Count Drill separately practice count accumulation and TC conversion, but they still differ from a real table. Hi-Lo Count Drill is closer to actual dealing: it simulates the dealer and multiple players receiving cards in sequence, so users track the count through the rhythm of a full round.</p>
+
+    <p>At the start of practice, the app gives a starting Running Count and remaining card count, then simulates one round based on the selected number of players and deal speed. After dealing ends, users answer the final Running Count or remaining cards, checking whether they can keep a stable Hi-Lo count in a rhythm closer to a real table.</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/training9.jpg" alt="Hi-Lo Count Drill simulates realistic dealing and asks for Running Count and cards remaining">
+        <figcaption>Hi-Lo Count Drill simulates realistic dealing. You can adjust player count and deal speed, then answer Running Count and remaining cards.</figcaption>
+      </figure>
+    </div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

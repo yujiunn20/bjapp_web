@@ -1,92 +1,452 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://blackjack.yuchunlab.com/</loc>
-    <lastmod>2026-05-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/game</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/app/game</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/game"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/training</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/app/game</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/game"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/statistics</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/ja/content/app/game</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/game"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/game"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/replay</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/en/content/app/training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/training"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/rules</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/app/training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/training"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/app/training</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/training"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/training"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/app/statistics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/statistics"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/app/statistics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/statistics"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/app/statistics</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/statistics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/statistics"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/app/replay</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/replay"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/app/replay</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/replay"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/app/replay</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/replay"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/replay"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/rules"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/basic-strategy</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/rules"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/hilo</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/rules</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/rules"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/rules"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/basic-strategy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/basic-strategy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/basic-strategy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/hilo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hilo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/high-cards</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/bet-ramp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/deviations</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/ev-variance</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/reality</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/high-cards</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/high-cards</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/high-cards"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/deviations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/deviations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/deviations</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/deviations"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/ev-variance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/reality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/reality"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/cardcounting/hiopt</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/reality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/reality"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackjack.yuchunlab.com/content/app/privacy</loc>
-    <lastmod>2026-05-26</lastmod>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/reality</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/reality"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/reality"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hiopt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/cardcounting/hiopt</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hiopt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/app/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/privacy"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/app/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/privacy"/>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/app/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/privacy"/>
+    <lastmod>2026-05-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack EV、ROI 與變異數教學｜算牌長期期望值</title>
+  <meta name="description" content="Blackjack EV、ROI 與變異數教學，說明基本策略、Hi-Lo 算牌、bet ramp、標準差與長期模擬結果的量級。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/ev-variance">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>EV・量級・變異數</h2>
+    <p class="lead">Blackjack 的重點是：優勢通常很小，但波動很大。以下數字只是量級直覺，不是保證。</p>
+
+    <h3>基本策略（不算牌）</h3>
+    <ul>
+      <li>常見 6D / H17 / DAS / 3:2 桌規下，莊家優勢大約是 0.4%-0.7%。</li>
+      <li>如果改成 S17，通常對玩家會再好約 0.1%-0.3%。</li>
+      <li>6:5 blackjack 通常很差，不建議。</li>
+    </ul>
+    <p>量級直覺：若每手下 1 unit，-0.5% 大約等於長期每 200 手輸 1 unit，但短期波動通常遠大於這個數字。</p>
+
+    <h3 class="simulation-heading">基本策略模擬</h3>
+    <p>以下結果使用基本策略、不算牌，共跑約 500000 局。整體 ROI 是 -0.70%，EV / 100 局是 -7.90，SD / 100 局是 114.84。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/basic-strategy-stats.png" alt="基本策略不算牌的 ROI、EV 與變異數模擬統計">
+      <figcaption>基本策略（不算牌）模擬結果</figcaption>
+    </figure>
+
+    <p>這組數字和前面的量級直覺接近：不算牌時 ROI 落在負值，長期會慢慢被莊家優勢吃掉；但每 100 局的 SD 仍有 114.84，表示短期輸贏可能遠大於期望值本身。</p>
+
+    <h3>加入算牌（Hi-Lo + ramp）</h3>
+    <ul>
+      <li>桌規好、穿透率不差，而且依照 TC 調整下注時，總體期望值有機會變成正值。</li>
+      <li>常見量級大約是總下注額的 +0.3%-+1.5%。</li>
+      <li>玩家最有感的通常不是那一點點優勢，而是 variance 加上局數。</li>
+    </ul>
+    <p>實際範圍會強烈受到桌規、穿透率、桌限與 bet ramp 影響。</p>
+
+    <h3>變異數</h3>
+    <p>Blackjack 是小優勢配上大波動的遊戲，短期輸贏很多時候都只是雜訊。</p>
+    <ul>
+      <li>unit 就是你的基本下注金額。</li>
+      <li>單手常見波動大約是 ±1.1-1.3 units。</li>
+      <li>假設 edge 是 +1%，每手期望值約 +0.01 unit，但單手波動約 ±1.2 units。打 100 手時，期望值只有約 +1 unit，可是出現 ±12 units 的波動仍然完全正常。</li>
+    </ul>
+
+    <h3 class="simulation-heading">App 模擬統計</h3>
+    <p>以下結果使用 Hi-Lo，搭配 Bet Ramp 2/4/6/8/12，共跑 500000 局。整體 ROI 是 +0.08%，EV / 100 局是 +1.66，SD / 100 局是 315.10。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/ev-var-per100.png" alt="Hi-Lo 搭配 Bet Ramp 2/4/6/8/12 跑 500000 局的 EV 與變異數統計">
+      <figcaption>Hi-Lo + Bet Ramp 2/4/6/8/12，500000 局模擬結果</figcaption>
+    </figure>
+
+    <p>這組數字可以對照前面的量級觀念：ROI 是正的，但只有 +0.08%，仍然是很小的長期優勢。換成每 100 局來看，EV 是 +1.66，但 SD 是 315.10；TC &gt;= k 時 ROI 提高到 +1.22%、EV / 100 局提高到 83.37，不過 SD / 100 局也提高到 741.40。也就是說，算牌能改善長期期望值，但短期仍會被變異數主導。</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

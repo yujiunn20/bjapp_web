@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack Statistics Simulator, EV, ROI, and Variance</title>
+  <meta name="description" content="Blackjack statistics simulator guide for Round Stats, Session Stats, EV, ROI, SD, TC thresholds, bet ramps, and strategy comparison.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/app/statistics">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/statistics">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/statistics">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/statistics">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/statistics">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Statistics</h2>
+    <p class="lead">Statistics use large simulations to quantify long-term blackjack results, helping compare EV, ROI, variance, and risk across rules, strategies, seats, and session settings.</p>
+
+    <p>These statistics are for understanding the relationship between strategy, rules, bet ramps, and variance. They do not guarantee that real play will produce the same results. Blackjack edges are usually small, while short-term swings are large; even if a simulation shows better EV or ROI for certain settings, real outcomes are still affected by variance, table rules, penetration, table limits, bankroll, and execution consistency. These numbers are for learning and comparison, not a promise of stable profit.</p>
+
+    <h3 class="simulation-heading">Round Stats</h3>
+    <p>The core idea of Round Stats is to set the table rules and strategy first, then let the computer simulate many rounds under those conditions. Strategies can be Basic, Hi-Lo, or Hi-Opt I, with different Bet Ramps, and you can decide whether surrender, insurance, and related decisions follow strategy or deviations. The simulation can run up to 500,000 rounds, then compare long-term performance across settings.</p>
+
+    <p>Blackjack has very high variance. Even after many simulated rounds, the result will not perfectly match theoretical probability. From another angle, that is closer to real play: real results do not land exactly on EV every stretch, and swings are part of the game. Running the same settings multiple times helps reveal the gap between short-term outcomes and long-term expectation.</p>
+
+    <p>In addition to round count, Round Stats can set the TC threshold k. Counting becomes positive EV mainly because higher True Count zones are favorable. After setting k, results are split into TC below k and TC greater than or equal to k, making it easier to compare high-TC zones against the rest.</p>
+
+    <p>Round Stats can also set the number of players at the table and the strategy used by each player. This allows comparison under the same rules, table, and shoe sequence, such as different Bet Ramps, surrender versus no surrender, or Basic versus Hi-Lo. Results include net profit, ROI, EV / 100 rounds, and SD / 100 rounds, plus details such as surrender, insurance, split counts, and win/loss rates to show what each strategy actually encounters.</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats1.jpg" alt="Round Stats can simulate up to 500,000 rounds and analyze results by TC threshold">
+        <figcaption>Round Stats can simulate up to 500,000 rounds with custom strategy, rules, and Bet Ramp. TC threshold splits TC ranges to compare high-card zones with other zones.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats2.jpg" alt="Round Stats settings can adjust game rules">
+        <figcaption>Settings adjust table rules, similar to Game settings, to define the game conditions for analysis.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats3.jpg" alt="Round Stats can adjust seats and compare player strategies">
+        <figcaption>Adjust seat count and compare different seats or strategies under the same game conditions, such as long-term results from different Bet Ramps.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats4.jpg" alt="Round Stats showing result statistics">
+        <figcaption>After simulation, overall stats make it easy to compare each seat's net profit, ROI, EV / 100 rounds, and SD / 100 rounds.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats5.jpg" alt="Round Stats showing result statistics詳細內容">
+        <figcaption>Detailed stats break results down further so users can inspect performance differences across ranges or conditions.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">Session Stats</h3>
+    <p>Session Stats simulates results in a way that is closer to real play. In practice, players rarely play tens or hundreds of thousands of rounds in one continuous run, and bankroll limits, stop loss, or stop win rules may matter. This mode therefore splits the simulation into separate Plays. Each Play can set a maximum number of rounds, stop loss, and stop win, while using the same strategy setup such as Hi-Lo, Bet Ramp, rules, and other decision settings.</p>
+
+    <p>Stop loss and stop win are checked by whether the current Play's cumulative result has passed the configured threshold. Because high-TC situations can involve larger bets, the Final Net after a hand may go well beyond the stop loss or stop win value. That is closer to real play than forcing the result to stop exactly at the threshold.</p>
+
+    <p>After setting how many Plays to run, Session Stats summarizes the final result of each Play. Results include the average and median Final Net, win/loss ratio, stop loss and stop win hit rates, and the average Hands and Rounds per Play. The screen also includes a simple distribution chart so users can quickly see the profit/loss spread at the end of each Play.</p>
+
+    <p>A summary for each Play is also kept below, including Final Net, Rounds, Hands, and End Reason. This design is mainly meant to support stop loss, stop win, and bankroll-management decisions, making it more realistic than only looking at large Round Stats. Blackjack still has high variance, so one simulation can differ clearly from theoretical EV. Running the same strategy several times helps check whether the result distribution is stable.</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats6.jpg" alt="Session Stats can set stop loss, stop win, max rounds, and simulate multiple sessions">
+        <figcaption>Session Stats observes results session by session. You can set stop loss, stop win, and max rounds per session, then simulate many sessions with custom rules and strategies.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats7.jpg" alt="Session Stats can adjust session count, max rounds, stop loss, and stop win">
+        <figcaption>Adjust session count, max rounds per session, stop loss, and stop win to test result distributions under different bankroll-management settings.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats8.jpg" alt="Session Stats showing result statistics and session profit-loss distribution">
+        <figcaption>The results page shows overall stats and a profit/loss distribution chart, helping explain variance across many sessions with the same strategy.</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats9.jpg" alt="Session Stats showing a short summary for each session">
+        <figcaption>Each session keeps a short summary so you can compare single-session outcomes with long-term statistics.</figcaption>
+      </figure>
+    </div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>High Card Principle | Why Blackjack Card Counting Works</title>
+  <meta name="description" content="Blackjack high-card principle guide explaining how 10s, aces, and high-card density affect blackjack, doubles, insurance, bust rate, and player edge.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/high-cards">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>High Card Principle</h2>
+    <p class="lead">When the high-card ratio rises, the player gains structural advantages in blackjack, doubles, insurance, and dealer bust rate.</p>
+
+    <ul>
+      <li>Blackjack pays 3:2, so more 10s and aces increase the player's chance of getting blackjack.</li>
+      <li>Doubles on 9, 10, and 11 benefit from hitting high cards, and doubling amplifies the edge.</li>
+      <li>The dealer must hit 12-16, and more high cards increase the chance of drawing a 10 and busting.</li>
+      <li>Insurance is essentially a bet on whether the next card is a 10-value card, so it only becomes positive EV when 10 density is high enough.</li>
+    </ul>
+
+    <p>This is why systems like Hi-Lo count low cards as +1 and high cards as -1: after low cards are removed, the remaining shoe has a higher high-card density, which is better for the player.</p>
+
+    <h3 class="simulation-heading">App Simulation Stats</h3>
+    <p>The result below comes from an app simulation using Hi-Lo with a bet ramp, grouping true count, bet sizing, EV, and volatility for comparison.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/high-card-stats.png" alt="High-card statistics simulation result using Hi-Lo with a bet ramp">
+      <figcaption>Hi-Lo + Bet Ramp simulation result</figcaption>
+    </figure>
+
+    <h3>Hi-Lo + Bet Ramp simulation result</h3>
+    <p>This simulation uses Hi-Lo counting with a bet ramp, runs 100,000 rounds, and sets the threshold at k = 2. When the true count reaches the higher range, TC >= 2, the overall expected value is clearly higher than the TC < 2 range.</p>
+
+    <p>This shows that when the proportion of high cards rises, the player's edge becomes more concentrated. The point of a bet ramp is to raise bets in those higher-TC spots where the deck is more favorable. In other words, using a counting edge is not only about knowing the deck has improved; it is about increasing bet size when TC is high.</p>
+
+    <p>However, high-TC zones have higher EV and also much higher standard deviation. More high cards are favorable, but short-term swings are more intense, so bankroll and risk control still matter.</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高牌原理教學｜Blackjack 算牌為什麼有效</title>
+  <meta name="description" content="Blackjack 高牌原理教學，說明 10、A 與高牌密度如何影響 blackjack、double、insurance、莊家爆牌率與玩家優勢。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/high-cards">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/high-cards">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>高牌原理</h2>
+    <p class="lead">高牌比例上升時，玩家在 blackjack、double、insurance 與莊家爆牌率上會得到幾個結構性優勢。</p>
+
+    <ul>
+      <li>Blackjack 賠率是 3:2，所以 10 和 A 越多，玩家拿到 blackjack 的機率越高。</li>
+      <li>9、10、11 的 double 更容易打中高牌，而加倍會放大優勢。</li>
+      <li>莊家在 12-16 必須補牌，高牌越多，補到 10 而爆牌的機率越高。</li>
+      <li>Insurance 本質上是在押下一張是不是 10，只有 10 密度夠高時才可能變成正期望值。</li>
+    </ul>
+
+    <p>這也是為什麼 Hi-Lo 這類系統會把低牌視為 +1、高牌視為 -1：低牌被發掉後，剩餘牌堆的高牌密度相對上升，對玩家更有利。</p>
+
+    <h3 class="simulation-heading">App 模擬統計</h3>
+    <p>以下結果由 app 以 Hi-Lo 搭配 Bet Ramp 模擬，將 true count、下注級距、EV 和波動分組比較。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/high-card-stats.png" alt="Hi-Lo 搭配 Bet Ramp 的高牌統計模擬結果">
+      <figcaption>Hi-Lo + Bet Ramp 的模擬結果</figcaption>
+    </figure>
+
+    <h3>Hi-Lo + Bet Ramp 的模擬結果</h3>
+    <p>這組模擬使用 Hi-Lo 算牌並搭配 Bet Ramp，共跑 100000 局，並把門檻設定為 k = 2。結果可以看到，當 true count 進入較高區間，也就是 TC &gt;= 2 時，整體期望值明顯高於 TC &lt; 2 的區間。</p>
+
+    <p>這說明高牌比例上升時，玩家的優勢會更集中地出現；而 Bet Ramp 的核心，就是在這些高牌較多、優勢較好的時候提高下注。換句話說，想要真正利用算牌優勢，關鍵不只是知道牌堆變好，而是要在高 TC 時用下注級距把優勢放大。</p>
+
+    <p>不過，高 TC 區間雖然 EV 較高，標準差也明顯更大。這代表高牌多的時候雖然更有利，但短期波動也會更劇烈，所以資金管理和風險控制仍然很重要。</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

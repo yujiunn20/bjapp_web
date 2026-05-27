@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bet Ramp 解説 | Blackjack True Count ベット戦略</title>
+  <meta name="description" content="Bet ramp の解説。blackjack の True Count をベットサイズに変換し、bankroll、分散、リスク制限と合わせて理解します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>ベットランプ</h2>
+    <p class="lead">カウントの実用的価値は、TC が高いときにベットを増やすことにあります。Bet ramp は true count をベット額に変換するルールです。</p>
+
+    <table class="data-table">
+      <thead><tr><th>TC</th><th>ベット単位</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>≤ 0</td><td>1</td><td>通常は優位なし</td></tr>
+        <tr><td>+1</td><td>2</td><td>わずかな優位が出始める</td></tr>
+        <tr><td>+2</td><td>4</td><td>優位がより明確</td></tr>
+        <tr><td>+3</td><td>6</td><td>高カード密度がやや強い</td></tr>
+        <tr><td>≥ +4</td><td>8</td><td>優位は強いが、変動も大きい</td></tr>
+      </tbody>
+    </table>
+
+    <p>これは教学用の例です。実際のベットサイズは bankroll、テーブルリミット、ルール、シューのペネトレーション、リスク許容度に大きく左右されます。</p>
+
+    <h3 class="simulation-heading">アプリのシミュレーション統計</h3>
+    <p>以下は Hi-Lo で異なる Bet Ramp を使い、200,000 ラウンドを走らせた結果です。ベット段階を上げたときの EV と変動を比較しています。</p>
+
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/bet-ramp-seat-1.png" alt="Seat 1 が Bet Ramp 2/4/6/8/12 を使ったシミュレーション結果">
+        <figcaption>Seat 1：Bet Ramp 2/4/6/8/12</figcaption>
+      </figure>
+
+      <figure class="content-figure">
+        <img src="../../../assets/img/bet-ramp-seat-2.png" alt="Seat 2 が Bet Ramp 4/8/12/16/20 を使ったシミュレーション結果">
+        <figcaption>Seat 2：Bet Ramp 4/8/12/16/20</figcaption>
+      </figure>
+    </div>
+
+    <p>Bet Ramp が大きい Seat 2 は全体の期待値が高く、EV / 100 ラウンドも明確に上がっています。ただし SD / 100 ラウンドも大きくなり、ベットで優位を拡大する一方で短期変動も増えることが分かります。</p>
+
+    <h3>Kelly の直感</h3>
+    <p>Kelly の核心はベットサイズと edge / variance の関係です。優位が大きいほど多く賭けられますが、変動が大きい場合は保守的にする必要があります。</p>
+
+    <div class="note">最初は bet ramp の考え方を理解し、例の段階を固定公式として扱わないでください。</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

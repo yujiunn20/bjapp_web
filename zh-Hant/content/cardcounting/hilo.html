@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hi-Lo 算牌教學｜Blackjack Running Count 與 True Count</title>
+  <meta name="description" content="Hi-Lo 算牌教學，說明 blackjack 牌值、Running Count、True Count 換算、剩餘牌副數估算與下注判斷。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/hilo">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Hi-Lo 算牌</h2>
+    <p class="lead">算牌不是記住每一張牌，而是估計剩餘牌堆中高牌的密度。最主要的用途有兩個：調整下注大小，以及套用 deviation。</p>
+
+    <h3>Hi-Lo 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>2-6</td><td>+1</td></tr>
+        <tr><td>7-9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K、A</td><td>-1</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="simulation-heading">App 訓練範例：RC 怎麼累加</h3>
+    <p>Running Count 從 0 開始，每看到一張牌就依 Hi-Lo 牌值更新。下面這組牌中，2-6 算 +1，7-9 算 0，10、J、Q、K、A 算 -1；一路累加後，最後 RC 變成 +2。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/hilo-rc-training.png" alt="App training 顯示 Hi-Lo Running Count 從 0 累加到 +2 的範例">
+      <figcaption>App training：Hi-Lo RC 累加範例</figcaption>
+    </figure>
+
+    <h3>RC / TC</h3>
+    <p>Running Count（RC）會隨著每張已曝光的牌更新。True Count（TC）= RC / 剩餘牌副數。TC 的作用是把不同牌鞋深度下的優勢強度標準化。</p>
+
+    <h3>TC 計算例子</h3>
+    <p>實際估算時，可以先看牌鞋剩幾張牌，再換算成剩餘副數。因為 1 副牌是 52 張，所以 TC 大約等於 RC 除以「剩餘張數 / 52」。</p>
+
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>RC</th><th>剩幾張牌</th><th>換算副數</th><th>TC</th><th>解讀</th></tr></thead>
+      <tbody>
+        <tr><td>牌鞋前段</td><td>+5</td><td>286 張</td><td>5.5 副</td><td>+0.9</td><td>優勢剛開始出現，訊號還不強。</td></tr>
+        <tr><td>牌鞋中段</td><td>+7</td><td>168 張</td><td>3.2 副</td><td>+2.2</td><td>高牌密度已經更明顯，可以開始注意下注級距。</td></tr>
+        <tr><td>牌鞋後段</td><td>+8</td><td>94 張</td><td>1.8 副</td><td>+4.4</td><td>剩餘牌少且 RC 偏高，下注訊號更強，但波動也會變大。</td></tr>
+      </tbody>
+    </table>
+
+    <h3>算牌訊號怎麼用？</h3>
+    <ul>
+      <li>TC 越高，代表剩餘牌堆高牌密度越高。</li>
+      <li>高 TC 常用於提高下注。</li>
+      <li>部分牌局在 TC 達到門檻時，會從基本策略改成 deviation。</li>
+    </ul>
+
+    <div class="note">算牌通常不違法，但賭場仍可能拒絕服務。這個網站與 App 主要用於學習機率與策略，不是鼓勵賭博。</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack EV, ROI, and Variance Guide | Long-Term Counting Results</title>
+  <meta name="description" content="Blackjack EV, ROI, and variance guide explaining basic strategy, Hi-Lo counting, bet ramps, standard deviation, and long-run simulation scale.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ev-variance">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/ev-variance">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>EV, Scale, and Variance</h2>
+    <p class="lead">The key point in blackjack is that the edge is usually small while variance is large. These numbers are scale intuition, not guarantees.</p>
+
+    <h3>Basic Strategy (No Counting)</h3>
+    <ul>
+      <li>With common 6D / H17 / DAS / 3:2 rules, the house edge is roughly 0.4%-0.7%.</li>
+      <li>With S17, the game is usually about 0.1%-0.3% better for the player.</li>
+      <li>6:5 blackjack is usually poor and not recommended.</li>
+    </ul>
+    <p>Scale intuition: with a 1-unit bet each hand, -0.5% is about losing 1 unit per 200 hands in the long run, but short-term swings are usually much larger.</p>
+
+    <h3 class="simulation-heading">Basic Strategy Simulation</h3>
+    <p>The result below uses basic strategy without counting over about 500,000 rounds. Overall ROI is -0.70%, EV / 100 rounds is -7.90, and SD / 100 rounds is 114.84.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/basic-strategy-stats.png" alt="Basic strategy simulation statistics for ROI, EV, and variance without counting">
+      <figcaption>Basic strategy simulation result, without counting</figcaption>
+    </figure>
+
+    <p>These numbers match the earlier scale intuition: without counting, ROI is negative and the house edge slowly takes over in the long run. But SD / 100 rounds is still 114.84, so short-term results can be much larger than the expectation itself.</p>
+
+    <h3>Adding Card Counting (Hi-Lo + Ramp)</h3>
+    <ul>
+      <li>With good rules, decent penetration, and TC-based bet adjustment, the overall expectation can become positive.</li>
+      <li>A common scale is roughly +0.3% to +1.5% of total amount bet.</li>
+      <li>What players feel most is usually not the small edge itself, but variance combined with the number of rounds.</li>
+    </ul>
+    <p>The actual range is heavily affected by rules, penetration, table limits, and bet ramp.</p>
+
+    <h3>Variance</h3>
+    <p>Blackjack is a game of small edges and large swings; short-term results are often just noise.</p>
+    <ul>
+      <li>A unit is your base bet size.</li>
+      <li>A common single-hand swing is around +/-1.1 to 1.3 units.</li>
+      <li>If the edge is +1%, the expectation is about +0.01 unit per hand, but single-hand volatility is about +/-1.2 units. Over 100 hands, the expectation is only about +1 unit, while a +/-12 unit swing is still completely normal.</li>
+    </ul>
+
+    <h3 class="simulation-heading">App Simulation Stats</h3>
+    <p>The result below uses Hi-Lo with Bet Ramp 2/4/6/8/12 over 500,000 rounds. Overall ROI is +0.08%, EV / 100 rounds is +1.66, and SD / 100 rounds is 315.10.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/ev-var-per100.png" alt="Hi-Lo with Bet Ramp 2/4/6/8/12 over 500,000 rounds, EV and variance statistics">
+      <figcaption>Hi-Lo + Bet Ramp 2/4/6/8/12, 500,000-round simulation result</figcaption>
+    </figure>
+
+    <p>These numbers match the scale idea above: ROI is positive, but only +0.08%, still a small long-term edge. Per 100 rounds, EV is +1.66 while SD is 315.10. When TC >= k, ROI rises to +1.22% and EV / 100 rounds rises to 83.37, but SD / 100 also rises to 741.40. Counting improves long-term expectation, but short-term results are still dominated by variance.</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

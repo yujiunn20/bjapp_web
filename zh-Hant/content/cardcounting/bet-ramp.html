@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bet Ramp 下注級距教學｜Blackjack True Count 下注策略</title>
+  <meta name="description" content="Bet Ramp 下注級距教學，說明如何把 blackjack True Count 轉成下注大小，並理解 bet ramp、風險與資金限制。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Bet Ramp</h2>
+    <p class="lead">算牌最實際的價值，通常來自在 TC 高的時候加大下注。Bet ramp 就是把 true count 轉換成下注大小的規則。</p>
+
+    <table class="data-table">
+      <thead><tr><th>TC</th><th>下注單位</th><th>意義</th></tr></thead>
+      <tbody>
+        <tr><td>≤ 0</td><td>1</td><td>通常沒有優勢</td></tr>
+        <tr><td>+1</td><td>2</td><td>開始有些微優勢</td></tr>
+        <tr><td>+2</td><td>4</td><td>優勢更明顯</td></tr>
+        <tr><td>+3</td><td>6</td><td>高牌密度偏強</td></tr>
+        <tr><td>≥ +4</td><td>8</td><td>優勢強，但波動仍大</td></tr>
+      </tbody>
+    </table>
+
+    <p>這只是教學示意。實際下注大小會強烈受到 bankroll、桌限、桌規、牌靴穿透率與風險承受度影響。</p>
+
+    <h3 class="simulation-heading">App 模擬統計</h3>
+    <p>以下結果使用 Hi-Lo，並以不同 Bet Ramp 跑 200000 局，比較下注級距提高後的 EV 與波動變化。</p>
+
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/bet-ramp-seat-1.png" alt="Seat 1 使用 Bet Ramp 2/4/6/8/12 的模擬結果">
+        <figcaption>Seat 1：Bet Ramp 2/4/6/8/12</figcaption>
+      </figure>
+
+      <figure class="content-figure">
+        <img src="../../../assets/img/bet-ramp-seat-2.png" alt="Seat 2 使用 Bet Ramp 4/8/12/16/20 的模擬結果">
+        <figcaption>Seat 2：Bet Ramp 4/8/12/16/20</figcaption>
+      </figure>
+    </div>
+
+    <p>可以看到，Bet Ramp 較大的 Seat 2 整體期望值較高，EV / 100 局也明顯提高；但同時 SD / 100 局也變大，代表下注放大優勢的同時，短期波動也會跟著增加。</p>
+
+    <h3>Kelly 直覺</h3>
+    <p>Kelly 的核心是下注大小和 edge / variance 的關係。優勢越大可以下得更多，但波動大時仍然需要保守。</p>
+
+    <div class="note">初學時先理解 bet ramp 的概念，不要把範例級距直接當成固定公式。</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

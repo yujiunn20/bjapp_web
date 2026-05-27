@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ブラックジャック Replay とミス確認 | カウントトレーナー</title>
+  <meta name="description" content="Blackjack Replay 機能の説明。プレイ記録、ベットミス、アクションミス、インシュランスミス、Timeline、判断詳細を確認できます。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/app/replay">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/replay">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/replay">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/replay">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/replay">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>リプレイ</h2>
+    <p class="lead">Replay では過去のゲーム記録を確認でき、全体統計、ミスの絞り込み、各判断の詳細まで見直せます。</p>
+
+    <h3 class="simulation-heading">プレイ履歴とフィルター</h3>
+    <p>プレイ履歴は主に Game モードの Play 記録を保存し、最新 1,000 件まで保持します。Replay のトップ上部では、保存された記録をもとに総ベット、純利益、ROI、ラウンド数、ハンド数、アクション数、Win / Loss 結果、判断正答率、使用された Mode（Basic、Hi-Lo、Hi-Opt I）の数、ベット・アクション・insurance 関連のミスを集計します。</p>
+
+    <p>下部には過去記録の簡単な概要カードが並び、カードを開くとそのラウンドの詳細リプレイを確認できます。カード一覧は All、Mistakes、Bet Mistakes、Action Mistakes、Insurance Mistakes で絞り込めるため、ミスのある記録をすばやく探したり、ベット、アクション、保険のどれか一種類だけを確認したりできます。</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay1.jpg" alt="Replay ページにゲーム記録統計とミスフィルターが表示されます">
+        <figcaption>Replay のトップではゲーム履歴を集計し、All、Mistakes、Bet Mistakes、Action Mistakes、Insurance Mistakes で絞り込めます。下にスクロールして過去ラウンドの詳細を開けます。</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">詳細リプレイ</h3>
+    <p>個別の記録を開くと、詳細リプレイの最上部にまず Summary が表示され、そのラウンドの基本結果と全体状態が整理されます。その下には Mistakes の説明があり、そのラウンドで発生したベット、アクション、insurance のミスをまとめて表示するため、問題の種類をすばやく把握できます。</p>
+
+    <p>Timeline はハンドの流れを段階的に確認するためのものです。ユーザーが異なる時点を選ぶと、上部の Table Snapshot にその時点のテーブル状態が表示され、下部の Selected Event にはそのイベントの詳細、判断、結果、関連する評価情報が表示されます。この設計の目的は、リプレイを通して繰り返し起こるミスを見つけ、Game や Training モードに戻って修正できるようにすることです。</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay2.jpg" alt="Replay 詳細ページに Summary とミス説明が表示されます">
+        <figcaption>詳細リプレイでは Summary とその局のミスが整理され、どの判断に問題があったか確認しやすくなります。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay3.jpg" alt="Replay Timeline に過去の判断過程と Table Snapshot が表示されます">
+        <figcaption>Timeline では判断過程を段階的に確認でき、上部の Table Snapshot にはその時点のテーブル状態が表示されます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/replay4.jpg" alt="Replay Selected Event に Timeline 上の判断詳細が表示されます">
+        <figcaption>Selected Event は Timeline の現在イベントの詳細を表示し、その判断、結果、関連情報を確認できます。</figcaption>
+      </figure>
+    </div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack Deviations Guide | Count-Based Strategy Changes</title>
+  <meta name="description" content="Blackjack deviations guide covering Hi-Lo Illustrious 18, Fab 4, insurance, surrender, and common TC thresholds for changing basic strategy.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/deviations">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Deviations</h2>
+    <p class="lead">Deviations are changes from basic strategy when TC reaches a specific threshold. The Illustrious 18 are among the most valuable Hi-Lo index plays.</p>
+
+    <h3>Implementation Assumptions</h3>
+    <p>The app uses the TC shown on screen. A deviation applies only when TC reaches the table threshold; otherwise it falls back to basic strategy.</p>
+
+    <h3>Illustrious 18</h3>
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>Threshold</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>Insurance</td><td>TC >= +3</td><td>Take Insurance</td></tr>
+        <tr><td>16 vs 10</td><td>TC >= 0</td><td>Stand if surrender is unavailable</td></tr>
+        <tr><td>15 vs 10</td><td>TC >= +4</td><td>Stand if surrender is unavailable</td></tr>
+        <tr><td>10 vs 10</td><td>TC >= +4</td><td>Double</td></tr>
+        <tr><td>16 vs 9</td><td>TC >= +5</td><td>Stand</td></tr>
+        <tr><td>13 vs 2</td><td>TC >= -1</td><td>Stand</td></tr>
+        <tr><td>13 vs 3</td><td>TC >= -2</td><td>Stand</td></tr>
+        <tr><td>12 vs 2</td><td>TC >= +3</td><td>Stand</td></tr>
+        <tr><td>12 vs 3</td><td>TC >= +2</td><td>Stand</td></tr>
+        <tr><td>11 vs A</td><td>TC >= +1</td><td>Double</td></tr>
+        <tr><td>10 vs A</td><td>TC >= +4</td><td>Double</td></tr>
+        <tr><td>9 vs 2</td><td>TC >= +1</td><td>Double</td></tr>
+        <tr><td>9 vs 7</td><td>TC >= +3</td><td>Double</td></tr>
+        <tr><td>10,10 vs 5</td><td>TC >= +5</td><td>Split</td></tr>
+        <tr><td>10,10 vs 6</td><td>TC >= +4</td><td>Split</td></tr>
+        <tr><td>12 vs 4</td><td>TC < 0</td><td>Hit</td></tr>
+        <tr><td>12 vs 5</td><td>TC < -2</td><td>Hit</td></tr>
+        <tr><td>12 vs 6</td><td>TC < -1</td><td>Hit</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Fab 4</h3>
+    <p>Fab 4 refers to four important late-surrender index plays in Hi-Lo.</p>
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>Threshold</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15 vs 10</td><td>Basic Strategy R</td><td>Surrender</td></tr>
+        <tr><td>15 vs A</td><td>H17 +1 / S17 +2</td><td>Surrender</td></tr>
+        <tr><td>15 vs 9</td><td>TC >= +2</td><td>Surrender</td></tr>
+        <tr><td>14 vs 10</td><td>TC >= +3</td><td>Surrender</td></tr>
+      </tbody>
+    </table>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

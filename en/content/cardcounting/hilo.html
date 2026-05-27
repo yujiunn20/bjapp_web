@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hi-Lo Card Counting Guide | Running Count and True Count</title>
+  <meta name="description" content="Hi-Lo card counting guide explaining card values, Running Count, True Count conversion, decks remaining, and betting decisions.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/hilo">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Hi-Lo Counting</h2>
+    <p class="lead">Card counting is not memorizing every card. It estimates the density of high cards remaining. The two main uses are adjusting bet size and applying deviations.</p>
+
+    <h3>Hi-Lo Card Values</h3>
+    <table class="data-table">
+      <thead><tr><th>Card</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>2-6</td><td>+1</td></tr>
+        <tr><td>7-9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K、A</td><td>-1</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="simulation-heading">App Training Example: How RC Adds Up</h3>
+    <p>Running Count starts at 0 and updates with each exposed card based on Hi-Lo values. In this example, 2-6 count as +1, 7-9 count as 0, and 10, J, Q, K, A count as -1. After adding them up, the final RC is +2.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/hilo-rc-training.png" alt="App training example showing Hi-Lo Running Count adding from 0 to +2">
+      <figcaption>App training: Hi-Lo RC accumulation example</figcaption>
+    </figure>
+
+    <h3>RC / TC</h3>
+    <p>Running Count (RC) updates with every exposed card. True Count (TC) = RC / decks remaining. TC standardizes edge strength across different shoe depths.</p>
+
+    <h3>TC Calculation Examples</h3>
+    <p>In practice, first estimate how many cards remain, then convert that to decks remaining. Since one deck has 52 cards, TC is roughly RC divided by (cards remaining / 52).</p>
+
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>RC</th><th>Cards Left</th><th>Decks Converted</th><th>TC</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td>Early Shoe</td><td>+5</td><td>286 cards</td><td>5.5 decks</td><td>+0.9</td><td>The edge is just starting to appear; the signal is still weak.</td></tr>
+        <tr><td>Middle Shoe</td><td>+7</td><td>168 cards</td><td>3.2 decks</td><td>+2.2</td><td>High-card density is more noticeable, so bet levels deserve attention.</td></tr>
+        <tr><td>Late Shoe</td><td>+8</td><td>94 cards</td><td>1.8 decks</td><td>+4.4</td><td>With fewer cards left and a high RC, the betting signal is stronger, but variance also increases.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>How to Use Counting Signals</h3>
+    <ul>
+      <li>Higher TC means the remaining shoe has a higher density of high cards.</li>
+      <li>High TC is commonly used to raise bets.</li>
+      <li>Some hands switch from basic strategy to a deviation when TC reaches the threshold.</li>
+    </ul>
+
+    <div class="note">Card counting is usually not illegal, but casinos may still refuse service. This site and app are for learning probability and strategy, not for encouraging gambling.</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

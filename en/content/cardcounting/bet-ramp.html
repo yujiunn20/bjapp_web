@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bet Ramp Guide | Blackjack True Count Betting Strategy</title>
+  <meta name="description" content="Bet ramp guide explaining how to convert blackjack True Count into bet sizing while considering bankroll, variance, and risk limits.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/bet-ramp">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/bet-ramp">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Bet Ramp</h2>
+    <p class="lead">The practical value of counting usually comes from betting more when TC is high. A bet ramp is the rule that converts true count into bet size.</p>
+
+    <table class="data-table">
+      <thead><tr><th>TC</th><th>Bet Units</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td>≤ 0</td><td>1</td><td>Usually no edge</td></tr>
+        <tr><td>+1</td><td>2</td><td>A small edge begins</td></tr>
+        <tr><td>+2</td><td>4</td><td>The edge is clearer</td></tr>
+        <tr><td>+3</td><td>6</td><td>High-card density is strong</td></tr>
+        <tr><td>≥ +4</td><td>8</td><td>Strong edge, but still high variance</td></tr>
+      </tbody>
+    </table>
+
+    <p>This is only a teaching example. Real bet sizing is strongly affected by bankroll, table limits, rules, shoe penetration, and risk tolerance.</p>
+
+    <h3 class="simulation-heading">App Simulation Stats</h3>
+    <p>The result below uses Hi-Lo and different Bet Ramps over 200,000 rounds to compare how larger betting levels change EV and variance.</p>
+
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/bet-ramp-seat-1.png" alt="Seat 1 simulation result using Bet Ramp 2/4/6/8/12">
+        <figcaption>Seat 1：Bet Ramp 2/4/6/8/12</figcaption>
+      </figure>
+
+      <figure class="content-figure">
+        <img src="../../../assets/img/bet-ramp-seat-2.png" alt="Seat 2 simulation result using Bet Ramp 4/8/12/16/20">
+        <figcaption>Seat 2：Bet Ramp 4/8/12/16/20</figcaption>
+      </figure>
+    </div>
+
+    <p>Seat 2, with the larger Bet Ramp, has higher overall expectation and clearly higher EV / 100 rounds. But SD / 100 rounds also rises, meaning larger bets amplify the edge and short-term swings at the same time.</p>
+
+    <h3>Kelly Intuition</h3>
+    <p>Kelly is about the relationship between bet size, edge, and variance. A larger edge allows larger bets, but high variance still requires caution.</p>
+
+    <div class="note">Beginners should first understand the idea of a bet ramp, not treat the example levels as a fixed formula.</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

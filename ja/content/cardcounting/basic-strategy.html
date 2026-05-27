@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ブラックジャック基本戦略ガイド | 戦略表と判断練習</title>
+  <meta name="description" content="ブラックジャック基本戦略の解説。hard hand、soft hand、pair、double、surrender の判断を、カウント deviation の前提として整理します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/basic-strategy">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/basic-strategy">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/basic-strategy">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/basic-strategy">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/basic-strategy">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>基本戦略</h2>
+    <p class="lead">Basic Strategy は count-based deviation を使う前の基礎行動表です。hard totals、soft totals、pairs、そして有効時の surrender ルールを含みます。</p>
+
+    <h3>アクション記号</h3>
+    <ul>
+      <li>H = Hit、もう 1 枚引く。</li>
+      <li>S = Stand。</li>
+      <li>D = Double、ベットを倍にして 1 枚だけ引く。</li>
+      <li>P = Split。</li>
+      <li>R = Surrender。H / R は可能なら surrender、できなければ hit。</li>
+    </ul>
+
+    <h3>基本戦略 - ハードハンド</h3>
+    <div class="table-wrap">
+      <table class="data-table strategy-table">
+        <thead><tr><th>手札</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+        <tbody>
+          <tr><td>17+</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
+          <tr><td>16</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H / R</td><td>H / R</td><td>H / R</td></tr>
+          <tr><td>15</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td><td>H / R</td><td>H</td></tr>
+          <tr><td>13-14</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>12</td><td>H</td><td>H</td><td>S</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>11</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td></tr>
+          <tr><td>10</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td></tr>
+          <tr><td>9</td><td>H</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>8 以下</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>基本戦略 - ソフトハンド</h3>
+    <div class="table-wrap">
+      <table class="data-table strategy-table">
+        <thead><tr><th>手札</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+        <tbody>
+          <tr><td>A,8+</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
+          <tr><td>A,7</td><td>S</td><td>D</td><td>D</td><td>D</td><td>D</td><td>S</td><td>S</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>A,6</td><td>H</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>A,4-A,5</td><td>H</td><td>H</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>A,2-A,3</td><td>H</td><td>H</td><td>H</td><td>D</td><td>D</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>基本戦略 - ペア</h3>
+    <div class="table-wrap">
+      <table class="data-table strategy-table">
+        <thead><tr><th>手札</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>A</th></tr></thead>
+        <tbody>
+          <tr><td>A,A</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td></tr>
+          <tr><td>10,10</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td></tr>
+          <tr><td>9,9</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>S</td><td>P</td><td>P</td><td>S</td><td>S</td></tr>
+          <tr><td>8,8</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td></tr>
+          <tr><td>7,7</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>6,6</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>5,5</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>D</td><td>H</td><td>H</td></tr>
+          <tr><td>4,4</td><td>H</td><td>H</td><td>H</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+          <tr><td>2,2 / 3,3</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td>H</td><td>H</td><td>H</td><td>H</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>H17 補足</h3>
+    <p>H17 はディーラーが soft 17 でヒットするルールです。通常プレイヤーに不利で、soft hand の境界判断に差が出ます。</p>
+    <p class="note">現在の surrender ルールは hard 16 vs 9-10-A、および hard 15 vs 10 です。2 枚カード、ハードハンド、ペアでない手札の場合だけ surrender を確認します。</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

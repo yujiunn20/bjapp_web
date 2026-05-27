@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ブラックジャック統計シミュレーター、EV、ROI、分散</title>
+  <meta name="description" content="Blackjack 統計シミュレーターの説明。Round Stats、Session Stats、EV、ROI、SD、TC threshold、bet ramp、戦略比較を扱います。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/app/statistics">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/statistics">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/statistics">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/statistics">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/statistics">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>統計</h2>
+    <p class="lead">統計機能は大量シミュレーションで長期結果を数値化し、ルール、戦略、座席、セッション設定ごとの EV、ROI、変動、リスクを比較できます。</p>
+
+    <p>ここでの統計は、戦略、ルール、ベット段階、分散の関係を理解するためのものであり、実際のプレイで同じ結果になることを保証するものではありません。Blackjack の優位は通常小さく、短期の変動は大きいです。シミュレーションで特定設定の EV や ROI が良く見えても、実際の結果は牌の変動、ルール、ペネトレーション、テーブルリミット、資金、実行の安定性に影響されます。これらの数値は学習と比較のためのもので、安定利益の約束として読むべきではありません。</p>
+
+    <h3 class="simulation-heading">ラウンド統計</h3>
+    <p>Round Stats の基本は、まずテーブルルールと戦略を設定し、その条件に従ってコンピューターが大量のラウンドをシミュレーションすることです。戦略は Basic、Hi-Lo、Hi-Opt I から選べ、異なる Bet Ramp も組み合わせられます。surrender や insurance などを戦略や deviation に従って判断するかも設定できます。最大 500,000 ラウンドまで実行でき、完了後に統計結果で長期成績を比較します。</p>
+
+    <p>Blackjack は分散が大きいゲームなので、多くのラウンドを走らせても結果が理論確率と完全に一致するわけではありません。ただし別の見方をすると、これは実戦にも近い状態です。実際のプレイでは、すべての区間が EV 通りになるわけではなく、大きな変動が起こります。同じ設定を何度か走らせることで、短期結果と長期期待値の距離を確認できます。</p>
+
+    <p>ラウンド数に加えて、Round Stats では TC threshold の k 値も設定できます。カウントが正の EV になり得る主な理由は、True Count が高い有利な区間にあります。k 値を設定すると、結果は TC が k 未満の区間と k 以上の区間に分けられ、高 TC 区間とそれ以外を比較しやすくなります。</p>
+
+    <p>Round Stats では、テーブルのプレイヤー数と各プレイヤーの戦略も設定できます。同じルール、同じテーブル、同じカード列の条件で、異なる戦略を比較できます。たとえば異なる Bet Ramp、surrender の有無、Basic と Hi-Lo の差などです。結果には純利益、ROI、EV / 100 ラウンド、SD / 100 ラウンドに加えて、surrender、insurance、split の回数、勝敗率などの詳細も表示され、各戦略が実際にどのような状況に遭遇するか理解しやすくなります。</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats1.jpg" alt="Round Stats は最大 500,000 ラウンドをシミュレーションし、TC threshold で結果を分析できます">
+        <figcaption>Round Stats は最大 500,000 ラウンドをシミュレーションでき、戦略、ルール、Bet Ramp を調整できます。TC threshold で TC 区間を分け、高カード区間との差を見られます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats2.jpg" alt="Round Stats 設定でゲームルールを調整できます">
+        <figcaption>Settings では Game 設定と同じ考え方でテーブルルールを調整し、分析するゲーム条件を作れます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats3.jpg" alt="Round Stats は座席数を調整し、異なる座席戦略を比較できます">
+        <figcaption>座席数を調整し、同じ条件で異なる座席や戦略、たとえば異なる Bet Ramp の長期結果を比較できます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats4.jpg" alt="Round Stats の結果統計">
+        <figcaption>シミュレーション後、各座席の純利益、ROI、EV / 100 ラウンド、SD / 100 ラウンドを比較しやすい統計が表示されます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats5.jpg" alt="Round Stats の結果統計詳細內容">
+        <figcaption>詳細統計では結果をさらに分解し、区間や条件ごとの違いを確認できます。</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="simulation-heading">セッション統計</h3>
+    <p>Session Stats は、実際のプレイにより近い形で結果をシミュレーションする統計です。現実には、何万、何十万ラウンドを一度に連続して打つことは少なく、資金不足、損切り、利確の制限もあります。そのため、このモードではシミュレーションを 1 つ 1 つの Play に分けます。各 Play では最大ラウンド数、損切り額、利確額を設定し、Hi-Lo、Bet Ramp、ルール、その他の判断条件など同じ戦略設定を使えます。</p>
+
+    <p>損切りと利確の判定は、現在の Play の累積損益が設定値を超えたかどうかで行います。高 TC では大きなベットになることがあるため、1 ハンド終了後の Final Net が損切りや利確のしきい値を大きく超える場合があります。これは、しきい値で正確に止めるよりも実戦に近い動きです。</p>
+
+    <p>実行する Play 数を設定すると、Session Stats は各 Play の最終結果を集計します。結果には Final Net の平均値と中央値、勝敗比率、損切り・利確に到達した比率、1 Play あたりの平均 Hands と Rounds が含まれます。画面には簡単な分布図もあり、Play 終了時の損益分布をすばやく確認できます。</p>
+
+    <p>下部には各 Play の簡単な概要も残ります。内容は Final Net、Rounds、Hands、End Reason です。この設計は主に損切り、利確、資金管理の判断を助けるためのもので、大量の Round Stats だけを見るよりも現実に近い形です。ただし blackjack は分散が大きいため、1 回のシミュレーションは理論 EV と大きく違うことがあります。同じ戦略を何度か走らせ、結果分布が安定しているか確認するのが有用です。</p>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats6.jpg" alt="Session Stats は損切り、利確、最大ラウンド数を設定し、複数 session をシミュレーションできます">
+        <figcaption>Session Stats はセッションごとの結果を見るための機能です。損切り、利確、最大ラウンド数を設定し、複数セッションをシミュレーションできます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats7.jpg" alt="Session Stats は session 数、最大ラウンド数、損切り、利確を調整できます">
+        <figcaption>session 数、各 session の最大ラウンド数、損切り、利確を調整し、資金管理設定ごとの結果分布をテストできます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats8.jpg" alt="Session Stats に結果統計と session 損益分布が表示されます">
+        <figcaption>結果ページには全体統計と各 session の損益分布図が表示され、同じ戦略でも複数 session で起こる変動を理解できます。</figcaption>
+      </figure>
+
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/stats9.jpg" alt="Session Stats に各 session の概要が表示されます">
+        <figcaption>各 session には簡単な概要が残り、単発結果と長期統計の違いを見直せます。</figcaption>
+      </figure>
+    </div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

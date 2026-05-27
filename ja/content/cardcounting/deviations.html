@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack Deviations 解説 | カウントによる基本戦略変更</title>
+  <meta name="description" content="Blackjack deviations 解説。Hi-Lo Illustrious 18、Fab 4、insurance、surrender、基本戦略を変える TC しきい値を整理します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/deviations">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/deviations">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>ディビエーション</h2>
+    <p class="lead">Deviations は TC が特定のしきい値に達したとき、基本戦略から別のアクションに変えるものです。Illustrious 18 は Hi-Lo で特に価値の高い index play です。</p>
+
+    <h3>実装上の前提</h3>
+    <p>アプリでは画面に表示される TC を基準にします。TC が表のしきい値に達した場合だけ deviation を使い、それ以外は基本戦略に戻ります。</p>
+
+    <h3>Illustrious 18</h3>
+    <table class="data-table">
+      <thead><tr><th>状況</th><th>しきい値</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>インシュランス</td><td>TC >= +3</td><td>インシュランスを買う</td></tr>
+        <tr><td>16 vs 10</td><td>TC >= 0</td><td>サレンダーしない場合は Stand</td></tr>
+        <tr><td>15 vs 10</td><td>TC >= +4</td><td>サレンダーしない場合は Stand</td></tr>
+        <tr><td>10 vs 10</td><td>TC >= +4</td><td>Double</td></tr>
+        <tr><td>16 vs 9</td><td>TC >= +5</td><td>Stand</td></tr>
+        <tr><td>13 vs 2</td><td>TC >= -1</td><td>Stand</td></tr>
+        <tr><td>13 vs 3</td><td>TC >= -2</td><td>Stand</td></tr>
+        <tr><td>12 vs 2</td><td>TC >= +3</td><td>Stand</td></tr>
+        <tr><td>12 vs 3</td><td>TC >= +2</td><td>Stand</td></tr>
+        <tr><td>11 vs A</td><td>TC >= +1</td><td>Double</td></tr>
+        <tr><td>10 vs A</td><td>TC >= +4</td><td>Double</td></tr>
+        <tr><td>9 vs 2</td><td>TC >= +1</td><td>Double</td></tr>
+        <tr><td>9 vs 7</td><td>TC >= +3</td><td>Double</td></tr>
+        <tr><td>10,10 vs 5</td><td>TC >= +5</td><td>Split</td></tr>
+        <tr><td>10,10 vs 6</td><td>TC >= +4</td><td>Split</td></tr>
+        <tr><td>12 vs 4</td><td>TC < 0</td><td>Hit</td></tr>
+        <tr><td>12 vs 5</td><td>TC < -2</td><td>Hit</td></tr>
+        <tr><td>12 vs 6</td><td>TC < -1</td><td>Hit</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Fab 4</h3>
+    <p>Fab 4 は Hi-Lo における重要な late surrender index play の 4 つです。</p>
+    <table class="data-table">
+      <thead><tr><th>状況</th><th>しきい値</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15 vs 10</td><td>基本戦略 R</td><td>サレンダー</td></tr>
+        <tr><td>15 vs A</td><td>H17 +1 / S17 +2</td><td>サレンダー</td></tr>
+        <tr><td>15 vs 9</td><td>TC >= +2</td><td>サレンダー</td></tr>
+        <tr><td>14 vs 10</td><td>TC >= +3</td><td>サレンダー</td></tr>
+      </tbody>
+    </table>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

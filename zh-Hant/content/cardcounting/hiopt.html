@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hi-Opt I 算牌補充教學｜Blackjack 進階算牌系統</title>
+  <meta name="description" content="Hi-Opt I 算牌教學，說明牌值、ace side count、Playing TC、Betting TC、Insurance TC 與核心 deviations。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hiopt">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/hiopt">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>補充：Hi-Opt</h2>
+    <p class="lead">Hi-Opt I 是比 Hi-Lo 更進階的系統。這個專案中的 Hi-Opt I 使用 playing count、ace side count，以及修正過的 betting / insurance true count。</p>
+
+    <p>Hi-Opt I 的重點不是只把 Hi-Lo 的牌值換掉，而是把「遊戲決策」和「下注 / 保險」使用的 count 拆開處理。Playing decision 使用原始 Hi-Opt I running count 換算出的 Playing TC；下注與保險則另外把 A 的缺口納入修正，讓 A 對 blackjack 與下注價值的影響被反映進去。</p>
+
+    <h3>Hi-Opt I 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>3-6</td><td>+1</td></tr>
+        <tr><td>2、7、8、9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K</td><td>-1</td></tr>
+        <tr><td>A</td><td>0，另外用 ace side count 追蹤</td></tr>
+      </tbody>
+    </table>
+
+    <h3>計數指標</h3>
+    <p>在 app 的 Hi-Opt I 模式中，畫面與策略判斷會用到下列幾個指標。最容易混淆的是 Playing TC 和 Betting TC：前者用於 hit、stand、double、split、surrender 等 playing decision；後者用於下注大小。</p>
+    <table class="data-table">
+      <thead><tr><th>指標</th><th>意義</th><th>公式 / 補充</th></tr></thead>
+      <tbody>
+        <tr><td>Running Count</td><td>Ace-neutral 主計數</td><td>A = 0</td></tr>
+        <tr><td>Playing TC</td><td>用於 playing decision</td><td>RC / decksRemaining</td></tr>
+        <tr><td>Ace Seen</td><td>另外追蹤已出現的 A</td><td>Side count</td></tr>
+        <tr><td>Ace Deficit</td><td>已出現的 A 比理論預期少多少</td><td>usedCards / 13 - aceSeen</td></tr>
+        <tr><td>Adjusted RC</td><td>用 ace deficit 與 k 修正後的 RC</td><td>RC + k × Ace Deficit</td></tr>
+        <tr><td>Betting TC</td><td>用於下注</td><td>Adjusted RC / decksRemaining</td></tr>
+        <tr><td>Insurance TC</td><td>用於保險</td><td>目前與 betting TC 相同</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">這些表格依目前專案採用的 Hi-Opt I 核心 index spec 整理，不是通用的完整 full-index 表。Game Settings 裡的 ace adjustment 參數就是公式中的 k，會影響 Adjusted RC、Betting TC 與 Insurance TC。</div>
+
+    <h3>核心 Deviations</h3>
+    <p>目前 App 的核心 index spec 包含 insurance、surrender、hard hand、10,10 分牌，以及部分 double。和 Hi-Lo 相比，Hi-Opt I 的概念更精細，但也多了 ace side count 與 true count 修正，因此實際結果會受到 Side A 的估算方式、下注門檻 k 值與使用情境影響。</p>
+
+    <h3>保險</h3>
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>莊家 A</td><td>不保險</td><td>Insurance TC &gt;= +3 時保險</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>A</td><td>H17 時 Playing TC &gt;= +1 投降；S17 時 Playing TC &gt;= +2 投降</td></tr>
+        <tr><td>15</td><td>9</td><td>Playing TC &gt;= +2 時投降</td></tr>
+        <tr><td>14</td><td>10</td><td>Playing TC &gt;= +3 時投降</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>未投降且 Playing TC &gt;= 0 時 Stand</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>未投降且 Playing TC &gt;= +4 時 Stand</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>Playing TC &gt;= +5 時 Stand</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>Playing TC &gt;= -1 時 Stand</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>Playing TC &gt;= -2 時 Stand</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>Playing TC &gt;= +3 時 Stand</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>Playing TC &gt;= +2 時 Stand</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>Playing TC &lt; 0 時 Hit</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>Playing TC &lt; -2 時 Hit</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>Playing TC &lt; -1 時 Hit</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pair Split Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Pair</th><th>莊家</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>10,10</td><td>5</td><td>Stand</td><td>Playing TC &gt;= +5 時 Split</td></tr>
+        <tr><td>10,10</td><td>6</td><td>Stand</td><td>Playing TC &gt;= +5 時 Split</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>Playing TC &gt;= 0 時 Double</td></tr>
+        <tr><td>10</td><td>10</td><td>Playing TC &gt;= +4 時 Double</td></tr>
+        <tr><td>10</td><td>A</td><td>Playing TC &gt;= +4 時 Double</td></tr>
+        <tr><td>9</td><td>2</td><td>Playing TC &gt;= +1 時 Double</td></tr>
+        <tr><td>9</td><td>7</td><td>Playing TC &gt;= +3 時 Double</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="simulation-heading">App 模擬統計</h3>
+    <p>以下是 Hi-Lo 與 Hi-Opt I 各跑 100000 局的比較。這組結果中 Hi-Opt I 的 EV 較高，但 SD / 100 局也較大；從整體來看，兩者差距沒有想像中明顯。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/hilo-vs-hiopt.png" alt="Hi-Lo 與 Hi-Opt I 跑 100000 局的模擬比較">
+      <figcaption>Hi-Lo vs Hi-Opt I，100000 局模擬結果</figcaption>
+    </figure>
+
+    <p>解讀這類比較時要保留一點彈性。Hi-Opt I 不是單純換一組牌值就能直接和 Hi-Lo 對照，因為它會搭配 A 的 side count，並依不同 k 值修正 betting / insurance true count。換句話說，單次模擬可以提供方向，但不適合只靠一張總表就判定哪個系統絕對比較好。</p>
+
+    <div class="note">Hi-Opt I 比 Hi-Lo 更吃紀律與追蹤能力，建議先把基本策略與 Hi-Lo 練穩，再進階到 Hi-Opt I。</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

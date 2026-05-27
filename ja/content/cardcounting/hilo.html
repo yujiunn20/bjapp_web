@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hi-Lo カウント解説 | Running Count と True Count</title>
+  <meta name="description" content="Hi-Lo カウント解説。カード値、Running Count、True Count 換算、残りデッキ数、ベット判断を説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/hilo">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/hilo">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h2>Hi-Lo カウント</h2>
+    <p class="lead">カードカウントは全カードを覚えることではなく、残りデッキの高カード密度を推定することです。主な用途はベット調整とディビエーションです。</p>
+
+    <h3>Hi-Lo のカード値</h3>
+    <table class="data-table">
+      <thead><tr><th>カード</th><th>カウント</th></tr></thead>
+      <tbody>
+        <tr><td>2-6</td><td>+1</td></tr>
+        <tr><td>7-9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K、A</td><td>-1</td></tr>
+      </tbody>
+    </table>
+
+    <h3 class="simulation-heading">アプリ練習例：RC の加算</h3>
+    <p>Running Count は 0 から始まり、カードが出るたびに Hi-Lo の値で更新します。下の例では 2-6 が +1、7-9 が 0、10、J、Q、K、A が -1 です。順に足していくと、最後の RC は +2 になります。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/hilo-rc-training.png" alt="アプリ練習で Hi-Lo Running Count が 0 から +2 まで加算される例">
+      <figcaption>アプリ練習：Hi-Lo RC の累積例</figcaption>
+    </figure>
+
+    <h3>RC / TC</h3>
+    <p>Running Count（RC）は公開されたカードごとに更新されます。True Count（TC）= RC / 残りデッキ数です。TC はシューの深さが違っても優位の強さを比較できるよう標準化します。</p>
+
+    <h3>TC 計算例</h3>
+    <p>実際に見積もるときは、まずシューに残っているカード枚数を見て、それを残りデッキ数に換算します。1 デッキは 52 枚なので、TC はおおよそ RC を「残り枚数 / 52」で割った値です。</p>
+
+    <table class="data-table">
+      <thead><tr><th>状況</th><th>RC</th><th>残りカード数</th><th>換算デッキ数</th><th>TC</th><th>読み方</th></tr></thead>
+      <tbody>
+        <tr><td>シュー前半</td><td>+5</td><td>286 枚</td><td>5.5 デッキ</td><td>+0.9</td><td>優位が出始めた段階で、シグナルはまだ強くありません。</td></tr>
+        <tr><td>シュー中盤</td><td>+7</td><td>168 枚</td><td>3.2 デッキ</td><td>+2.2</td><td>高カード密度がより明確で、ベット段階に注意し始める場面です。</td></tr>
+        <tr><td>シュー後半</td><td>+8</td><td>94 枚</td><td>1.8 デッキ</td><td>+4.4</td><td>残りカードが少なく RC が高い場合、ベットシグナルは強くなりますが、変動も大きくなります。</td></tr>
+      </tbody>
+    </table>
+
+    <h3>カウントのサインの使い方</h3>
+    <ul>
+      <li>TC が高いほど、残りカードに高カードが多いことを意味します。</li>
+      <li>高 TC はベットを上げる判断によく使われます。</li>
+      <li>一部の手は TC がしきい値に達したとき、基本戦略から deviation に変わります。</li>
+    </ul>
+
+    <div class="note">カードカウントは通常違法ではありませんが、カジノがサービスを拒否する可能性はあります。このサイトとアプリは確率と戦略の学習用であり、賭博を推奨するものではありません。</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-12"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-5"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

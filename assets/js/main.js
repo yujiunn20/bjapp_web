@@ -161,7 +161,7 @@ const contentHeights = {
   "content/cardcounting/deviations.html": 2400,
   "content/cardcounting/ev-variance.html": 3000,
   "content/cardcounting/reality.html": 900,
-  "content/cardcounting/hiopt.html": 1700,
+  "content/cardcounting/hiopt.html": 5200,
   "content/app/overview.html": 1200,
   "content/app/game.html": 4200,
   "content/app/training.html": 4200,

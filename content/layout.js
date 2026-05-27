@@ -236,6 +236,69 @@
     return titles[path] || `${fallbackTitle}｜二十一點算牌訓練器 Blackjack Trainer`;
   }
 
+  function pageDescription(path, fallbackTitle) {
+    const descriptions = {
+      "zh-Hant": {
+        "content/app/overview.html": "二十一點算牌訓練器 App 概要，介紹 blackjack 基本策略、Hi-Lo、Hi-Opt I、訓練、統計、回放與模擬功能。",
+        "content/app/game.html": "二十一點算牌訓練器 Game 模式介紹，說明 blackjack 實戰流程、下注、策略建議、算牌資訊、玩家座位與牌桌設定。",
+        "content/app/training.html": "Blackjack 訓練功能介紹，包含基本策略、deviation、Running Count、True Count 與接近實戰發牌流程的 Hi-Lo 練習。",
+        "content/app/statistics.html": "Blackjack 統計模擬功能介紹，說明 Round Stats、Session Stats、EV、ROI、SD、TC threshold、bet ramp 與策略比較。",
+        "content/app/replay.html": "Blackjack Replay 回放功能介紹，說明如何檢查牌局紀錄、下注錯誤、動作錯誤、保險錯誤、Timeline 與決策細節。",
+        "content/app/privacy.html": "二十一點算牌訓練器隱私權政策，說明 App 的本機資料、訓練紀錄、統計資料、Replay 回放資料與第三方資產授權。",
+        "content/cardcounting/rules.html": "21點規則教學，說明 blackjack 牌面點數、莊家規則、blackjack 賠率、加倍、分牌、投降與常見桌規差異。",
+        "content/cardcounting/basic-strategy.html": "21點基本策略教學，整理 blackjack 硬牌、軟牌、對子、加倍與投降決策，作為算牌 deviations 前的基礎策略表。",
+        "content/cardcounting/hilo.html": "Hi-Lo 算牌教學，說明 blackjack 牌值、Running Count、True Count 換算、剩餘牌副數估算與下注判斷。",
+        "content/cardcounting/bet-ramp.html": "Bet Ramp 下注級距教學，說明如何把 blackjack True Count 轉成下注大小，並理解 bet ramp、風險與資金限制。",
+        "content/cardcounting/high-cards.html": "Blackjack 高牌原理教學，說明 10、A 與高牌密度如何影響 blackjack、double、insurance、莊家爆牌率與玩家優勢。",
+        "content/cardcounting/deviations.html": "Blackjack deviations 教學，整理 Hi-Lo Illustrious 18、Fab 4、保險、投降與常見 TC 門檻，說明何時偏離基本策略。",
+        "content/cardcounting/ev-variance.html": "Blackjack EV、ROI 與變異數教學，說明基本策略、Hi-Lo 算牌、bet ramp、標準差與長期模擬結果的量級。",
+        "content/cardcounting/reality.html": "Blackjack 算牌現實限制說明，整理桌規、穿透率、桌限、資金、速度、心理壓力與賭場拒絕服務等實戰風險。",
+        "content/cardcounting/hiopt.html": "Hi-Opt I 算牌教學，說明牌值、ace side count、Playing TC、Betting TC、Insurance TC 與核心 deviations。"
+      },
+      en: {
+        "content/app/overview.html": "Blackjack Card Counting Trainer overview covering basic strategy, Hi-Lo, Hi-Opt I, practice modes, simulations, statistics, and replay review.",
+        "content/app/game.html": "Blackjack Game mode guide for betting, table flow, strategy recommendations, count information, player seats, deck count, and table settings.",
+        "content/app/training.html": "Blackjack training guide covering basic strategy, deviations, Running Count, True Count, and realistic Hi-Lo dealing drills.",
+        "content/app/statistics.html": "Blackjack statistics simulator guide for Round Stats, Session Stats, EV, ROI, SD, TC thresholds, bet ramps, and strategy comparison.",
+        "content/app/replay.html": "Blackjack Replay guide for reviewing game records, betting mistakes, action mistakes, insurance mistakes, timeline events, and decision details.",
+        "content/app/privacy.html": "Privacy policy for Blackjack Card Counting Trainer, including local data, training records, simulation stats, replay data, and third-party assets.",
+        "content/cardcounting/rules.html": "Blackjack rules guide covering card values, dealer rules, blackjack payout, double, split, surrender, and common table rule differences.",
+        "content/cardcounting/basic-strategy.html": "Blackjack basic strategy guide for hard hands, soft hands, pairs, doubles, and surrender decisions before using counting deviations.",
+        "content/cardcounting/hilo.html": "Hi-Lo card counting guide explaining card values, Running Count, True Count conversion, decks remaining, and betting decisions.",
+        "content/cardcounting/bet-ramp.html": "Bet ramp guide explaining how to convert blackjack True Count into bet sizing while considering bankroll, variance, and risk limits.",
+        "content/cardcounting/high-cards.html": "Blackjack high-card principle guide explaining how 10s, aces, and high-card density affect blackjack, doubles, insurance, bust rate, and player edge.",
+        "content/cardcounting/deviations.html": "Blackjack deviations guide covering Hi-Lo Illustrious 18, Fab 4, insurance, surrender, and common TC thresholds for changing basic strategy.",
+        "content/cardcounting/ev-variance.html": "Blackjack EV, ROI, and variance guide explaining basic strategy, Hi-Lo counting, bet ramps, standard deviation, and long-run simulation scale.",
+        "content/cardcounting/reality.html": "Blackjack card counting reality guide covering table rules, penetration, table limits, bankroll, speed, psychological pressure, and casino restrictions.",
+        "content/cardcounting/hiopt.html": "Hi-Opt I card counting guide covering card values, ace side count, Playing TC, Betting TC, Insurance TC, and core deviations."
+      },
+      ja: {
+        "content/app/overview.html": "ブラックジャック カウントトレーナーの概要。基本戦略、Hi-Lo、Hi-Opt I、練習、統計、リプレイ、シミュレーション機能を紹介します。",
+        "content/app/game.html": "Blackjack Game モードの説明。ベット、テーブル進行、戦略提案、カウント情報、プレイヤー席、デッキ数、テーブル設定を扱います。",
+        "content/app/training.html": "Blackjack トレーニング機能の説明。基本戦略、deviation、Running Count、True Count、実戦に近い Hi-Lo 発牌練習を扱います。",
+        "content/app/statistics.html": "Blackjack 統計シミュレーターの説明。Round Stats、Session Stats、EV、ROI、SD、TC threshold、bet ramp、戦略比較を扱います。",
+        "content/app/replay.html": "Blackjack Replay 機能の説明。プレイ記録、ベットミス、アクションミス、インシュランスミス、Timeline、判断詳細を確認できます。",
+        "content/app/privacy.html": "ブラックジャック カウントトレーナーのプライバシーポリシー。ローカルデータ、練習記録、統計、Replay データ、第三者資産について説明します。",
+        "content/cardcounting/rules.html": "ブラックジャックのルール解説。カード点数、ディーラールール、blackjack 配当、double、split、surrender、テーブルルール差を説明します。",
+        "content/cardcounting/basic-strategy.html": "ブラックジャック基本戦略の解説。hard hand、soft hand、pair、double、surrender の判断を、カウント deviation の前提として整理します。",
+        "content/cardcounting/hilo.html": "Hi-Lo カウント解説。カード値、Running Count、True Count 換算、残りデッキ数、ベット判断を説明します。",
+        "content/cardcounting/bet-ramp.html": "Bet ramp の解説。blackjack の True Count をベットサイズに変換し、bankroll、分散、リスク制限と合わせて理解します。",
+        "content/cardcounting/high-cards.html": "ブラックジャックの高カード原理。10、A、高カード密度が blackjack、double、insurance、バースト率、プレイヤー優位に与える影響を説明します。",
+        "content/cardcounting/deviations.html": "Blackjack deviations 解説。Hi-Lo Illustrious 18、Fab 4、insurance、surrender、基本戦略を変える TC しきい値を整理します。",
+        "content/cardcounting/ev-variance.html": "Blackjack の EV、ROI、分散解説。基本戦略、Hi-Lo、bet ramp、標準偏差、長期シミュレーションの規模感を説明します。",
+        "content/cardcounting/reality.html": "Blackjack カウントの現実面。テーブルルール、ペネトレーション、テーブルリミット、資金、速度、心理的負荷、カジノ側の制限を整理します。",
+        "content/cardcounting/hiopt.html": "Hi-Opt I カウント解説。カード値、ace side count、Playing TC、Betting TC、Insurance TC、主要 deviations を説明します。"
+      }
+    };
+    const languageDescriptions = descriptions[activeLanguage] || descriptions["zh-Hant"];
+    const fallbacks = {
+      "zh-Hant": `${fallbackTitle}：二十一點算牌訓練器的 blackjack 教學、App 功能介紹與練習內容。`,
+      en: `${fallbackTitle}: blackjack strategy lessons, card counting practice, app features, simulations, and replay review.`,
+      ja: `${fallbackTitle}: blackjack の戦略学習、カードカウント練習、アプリ機能、シミュレーション、リプレイ確認。`
+    };
+    return languageDescriptions[path] || fallbacks[activeLanguage] || fallbacks["zh-Hant"];
+  }
+
   function renderLayout() {
     const article = document.querySelector("article");
     if (!article || document.querySelector(".topbar")) {
@@ -248,7 +311,7 @@
     document.documentElement.lang = activeLanguage;
     document.title = pageTitle(path, item.title);
     setMeta("viewport", "width=device-width, initial-scale=1");
-    setMeta("description", `${item.title}：二十一點算牌訓練器的 blackjack 教學、App 功能介紹與練習內容。`);
+    setMeta("description", pageDescription(path, item.title));
     setCanonical(isHomePage() ? "" : path);
 
     const header = document.createElement("header");

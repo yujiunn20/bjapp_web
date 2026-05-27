@@ -578,7 +578,7 @@
     });
 
     const contentPanel = shell.querySelector(".content-panel");
-    article.querySelector("h2")?.remove();
+    article.querySelector("h1, h2")?.remove();
     article.classList.add("article-content");
     contentPanel.append(article);
 

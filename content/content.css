@@ -943,6 +943,30 @@ ul {
   color: #3d4a55;
 }
 
+.related-links {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid #dce4dc;
+}
+
+.related-links h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.related-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.related-links a {
+  font-weight: 700;
+}
+
 .app-screenshot-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

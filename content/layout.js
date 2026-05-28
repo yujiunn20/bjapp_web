@@ -279,6 +279,49 @@
     return fileUrl(targetPath);
   }
 
+  function fileUrlForCleanRoute(route) {
+    const normalizedRoute = route.replace(/^https?:\/\/blackjack\.yuchunlab\.com/i, "").split("#")[0].split("?")[0];
+    const languageMatch = normalizedRoute.match(/^\/(zh-Hant|en|ja)(?:\/(.*))?$/);
+    if (languageMatch) {
+      const language = languageMatch[1];
+      const routePath = languageMatch[2] || "";
+      if (!routePath) {
+        return fileUrl(localizedPath("content/app/overview.html", language));
+      }
+      const filePath = routePath.endsWith(".html") ? routePath : `${routePath}.html`;
+      return fileUrl(localizedPath(filePath, language));
+    }
+    if (normalizedRoute === "/" || normalizedRoute === "") {
+      return fileUrl("index.html");
+    }
+    const routePath = normalizedRoute.replace(/^\//, "");
+    if (!routePath.startsWith("content/")) {
+      return null;
+    }
+    const filePath = routePath.endsWith(".html") ? routePath : `${routePath}.html`;
+    return fileUrl(filePath);
+  }
+
+  function handleLocalInternalLink(event) {
+    if (window.location.protocol !== "file:" || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+      return;
+    }
+    const link = event.target.closest("a[href]");
+    if (!link) {
+      return;
+    }
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      return;
+    }
+    const target = fileUrlForCleanRoute(href);
+    if (!target) {
+      return;
+    }
+    event.preventDefault();
+    window.location.assign(target);
+  }
+
   function switchLanguage(language) {
     if (isSwitchingLanguage) {
       return;
@@ -683,6 +726,7 @@
   }
 
   document.addEventListener("click", (event) => {
+    handleLocalInternalLink(event);
     if (event.target.matches("#imageLightbox, #lightboxClose")) {
       closeImageLightbox();
     }

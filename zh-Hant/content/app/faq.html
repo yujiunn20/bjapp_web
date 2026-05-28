@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack 算牌訓練器 FAQ｜二十一點 App 常見問題</title>
+  <meta name="description" content="二十一點算牌訓練器 FAQ，說明 app 定位、訓練順序、Decision Training、RC/TC Drill、Bet Ramp、Replay、統計模擬與算牌風險。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/faq">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/faq">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/faq">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/faq">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/faq">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h1>常見問題</h1>
+    <p class="lead">這些問題整理 app 的定位、訓練流程、算牌功能、Replay、統計模擬與風險限制，幫助使用者更快理解這個工具適合怎麼用。</p>
+
+    <h3 class="simulation-heading">這個 app 和一般 blackjack 遊戲有什麼不同？</h3>
+    <p>這個 app 不是以休閒遊戲為主，而是用來練習 blackjack 決策、算牌流程、下注判斷和錯誤檢討。除了基本的牌桌遊玩之外，app 也包含 Decision Training、Running Count / True Count 練習、Replay 回放和統計模擬，重點是把策略、算牌、回放與長期結果接成一套訓練流程。</p>
+
+    <h3 class="simulation-heading">這個 app 適合完全新手嗎？</h3>
+    <p>可以，但完全新手建議先從網站上的 blackjack 規則和基本策略開始，再進入 app 的 Decision Training。這個 app 功能比較完整，不是只做最簡化的新手教學；如果只想隨便玩 blackjack，可能一般遊戲 app 會更簡單。這個 app 比較適合想認真理解策略、算牌和長期結果的人。</p>
+
+    <h3 class="simulation-heading">我應該照什麼順序使用這個 app？</h3>
+    <p>建議先用 Decision Training 練基本策略和常見決策，再用 Running Count Drill、True Count Drill 練算牌基礎。熟悉後可以進入 Hi-Lo Count Drill 和 Game 模式，最後用 Replay 檢查錯誤，並用 Round Stats / Session Stats 理解長期結果。概要頁上方的「學習路線」也整理了完整順序。</p>
+
+    <h3 class="simulation-heading">Decision Training 可以練什麼？</h3>
+    <p>Decision Training 主要用來練 blackjack 決策，包括基本策略、硬牌、軟牌、對子、加倍、投降、保險，以及算牌後才會出現的 deviation。使用者也可以選擇不同 Question Type，集中練習自己比較弱或實戰中較少遇到的題型。</p>
+
+    <h3 class="simulation-heading">Running Count Drill、True Count Drill 和 Hi-Lo Count Drill 有什麼差別？</h3>
+    <p>Running Count Drill 專注在看到牌後快速累加 Hi-Lo Running Count。True Count Drill 則練習把 Running Count 和剩餘牌數換算成 True Count。Hi-Lo Count Drill 更接近真實牌桌，會模擬莊家和多個玩家發牌，讓使用者在一局牌的節奏中追蹤 count。</p>
+
+    <h3 class="simulation-heading">這個 app 支援哪些算牌系統？</h3>
+    <p>目前 app 主要支援 Basic、Hi-Lo 和 Hi-Opt I。Basic 用來練基本策略；Hi-Lo 是最常見、實用性高的算牌系統；Hi-Opt I 則是更進階的系統，搭配 ace side count 和不同 true count 判斷，用來測試更細的策略差異。</p>
+
+    <h3 class="simulation-heading">Bet Ramp 是什麼？App 會怎麼使用 Bet Ramp？</h3>
+    <p>Bet Ramp 是把 True Count 轉換成下注大小的規則。當 True Count 較高時，代表牌堆對玩家可能更有利，Bet Ramp 會決定在不同 TC threshold 下應該下注幾倍。app 會用 Bet Ramp 產生建議下注，也會在 Replay 中檢查下注是否符合目前設定。</p>
+
+    <h3 class="simulation-heading">Replay 可以幫我檢查哪些錯誤？</h3>
+    <p>Replay 可以回看過去的 game 紀錄，包含 Summary、Mistakes、Timeline、Table Snapshot 和 Selected Event。它可以幫助使用者檢查下注錯誤、動作錯誤、insurance 錯誤，以及當時牌桌和判斷資訊。目標不是只看輸贏，而是找出自己常犯的錯誤。</p>
+
+    <h3 class="simulation-heading">Round Stats 和 Session Stats 有什麼不同？</h3>
+    <p>Round Stats 偏向大量模擬單局結果，用來比較不同規則、策略、Bet Ramp 或 TC threshold 下的長期 EV、ROI 和變異數。Session Stats 則把模擬拆成一個一個 Play，可以設定每場最多局數、停損、停利，較接近真實遊玩時會遇到的 session 結果分布。</p>
+
+    <h3 class="simulation-heading">模擬結果是不是代表實際玩也會得到一樣結果？</h3>
+    <p>不是。Blackjack 的變異數很大，即使某個策略在模擬中有較好的 EV 或 ROI，實際結果仍可能因短期波動、桌規、穿透率、桌限、資金、執行穩定度等因素而不同。統計結果適合用來理解和比較，不應被當成實際獲利保證。</p>
+
+    <h3 class="simulation-heading">算牌是不是保證可以贏？</h3>
+    <p>不是。算牌只能在特定規則、牌靴穿透率、下注級距和執行穩定度都合適時，改善長期期望值。即使長期 EV 變好，短期輸贏仍然可能被變異數主導。實戰中還有資金、心理壓力、桌速、桌限和被賭場注意等問題。</p>
+
+    <h3 class="simulation-heading">這個 app 是否鼓勵賭博？</h3>
+    <p>不是。這個 app 和網站主要是用來學習 blackjack 機率、策略、算牌概念和訓練反應，不提供真錢賭博功能，也不把算牌包裝成穩賺方法。使用者仍應遵守所在地法律和平台規範，並理解 blackjack 本身具有風險和高度波動。</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-14"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

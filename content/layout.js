@@ -26,6 +26,7 @@
         { title: "訓練", path: "content/app/training.html" },
         { title: "統計", path: "content/app/statistics.html" },
         { title: "回放", path: "content/app/replay.html" },
+        { title: "常見問題", path: "content/app/faq.html" },
         { title: "隱私權政策", path: "content/app/privacy.html" }
       ]
     }
@@ -85,6 +86,7 @@
             { title: "Training", path: "content/app/training.html" },
             { title: "Statistics", path: "content/app/statistics.html" },
             { title: "Replay", path: "content/app/replay.html" },
+            { title: "FAQ", path: "content/app/faq.html" },
             { title: "Privacy Policy", path: "content/app/privacy.html" }
           ]
         }
@@ -129,6 +131,7 @@
             { title: "トレーニング", path: "content/app/training.html" },
             { title: "統計", path: "content/app/statistics.html" },
             { title: "リプレイ", path: "content/app/replay.html" },
+            { title: "よくある質問", path: "content/app/faq.html" },
             { title: "プライバシーポリシー", path: "content/app/privacy.html" }
           ]
         }
@@ -349,6 +352,7 @@
         "content/app/training.html": "Blackjack 策略與 Hi-Lo 算牌訓練功能｜二十一點算牌訓練器",
         "content/app/statistics.html": "Blackjack 統計模擬、EV、ROI 與變異數｜二十一點算牌訓練器",
         "content/app/replay.html": "Blackjack 牌局回放與錯誤檢討｜二十一點算牌訓練器",
+        "content/app/faq.html": "Blackjack 算牌訓練器 FAQ｜二十一點 App 常見問題",
         "content/app/privacy.html": "二十一點算牌訓練器隱私權政策｜Blackjack Trainer Privacy Policy",
         "content/cardcounting/rules.html": "21點規則教學｜Blackjack 基本玩法與桌規說明",
         "content/cardcounting/basic-strategy.html": "21點基本策略教學｜Blackjack 策略表與決策練習",
@@ -366,6 +370,7 @@
         "content/app/training.html": "Blackjack Strategy and Hi-Lo Counting Training Features",
         "content/app/statistics.html": "Blackjack Statistics Simulator, EV, ROI, and Variance",
         "content/app/replay.html": "Blackjack Replay and Mistake Review | Card Counting Trainer",
+        "content/app/faq.html": "Blackjack Card Counting Trainer FAQ",
         "content/app/privacy.html": "Blackjack Card Counting Trainer Privacy Policy",
         "content/cardcounting/rules.html": "Blackjack Rules Guide | Basic Gameplay and Table Rules",
         "content/cardcounting/basic-strategy.html": "Blackjack Basic Strategy Guide | Strategy Charts and Practice",
@@ -383,6 +388,7 @@
         "content/app/training.html": "ブラックジャック戦略と Hi-Lo カウント練習機能",
         "content/app/statistics.html": "ブラックジャック統計シミュレーター、EV、ROI、分散",
         "content/app/replay.html": "ブラックジャック Replay とミス確認 | カウントトレーナー",
+        "content/app/faq.html": "ブラックジャック カウントトレーナー FAQ",
         "content/app/privacy.html": "ブラックジャック カウントトレーナー プライバシーポリシー",
         "content/cardcounting/rules.html": "ブラックジャック ルール解説 | 基本玩法とテーブルルール",
         "content/cardcounting/basic-strategy.html": "ブラックジャック基本戦略ガイド | 戦略表と判断練習",
@@ -412,6 +418,7 @@
         "content/app/training.html": "Blackjack 訓練功能介紹，包含基本策略、deviation、Running Count、True Count 與接近實戰發牌流程的 Hi-Lo 練習。",
         "content/app/statistics.html": "Blackjack 統計模擬功能介紹，說明 Round Stats、Session Stats、EV、ROI、SD、TC threshold、bet ramp 與策略比較。",
         "content/app/replay.html": "Blackjack Replay 回放功能介紹，說明如何檢查牌局紀錄、下注錯誤、動作錯誤、保險錯誤、Timeline 與決策細節。",
+        "content/app/faq.html": "二十一點算牌訓練器 FAQ，說明 app 定位、訓練順序、Decision Training、RC/TC Drill、Bet Ramp、Replay、統計模擬與算牌風險。",
         "content/app/privacy.html": "二十一點算牌訓練器隱私權政策，說明 App 的本機資料、訓練紀錄、統計資料、Replay 回放資料與第三方資產授權。",
         "content/cardcounting/rules.html": "21點規則教學，說明 blackjack 牌面點數、莊家規則、blackjack 賠率、加倍、分牌、投降與常見桌規差異。",
         "content/cardcounting/basic-strategy.html": "21點基本策略教學，整理 blackjack 硬牌、軟牌、對子、加倍與投降決策，作為算牌 deviations 前的基礎策略表。",
@@ -429,6 +436,7 @@
         "content/app/training.html": "Blackjack training guide covering basic strategy, deviations, Running Count, True Count, and realistic Hi-Lo dealing drills.",
         "content/app/statistics.html": "Blackjack statistics simulator guide for Round Stats, Session Stats, EV, ROI, SD, TC thresholds, bet ramps, and strategy comparison.",
         "content/app/replay.html": "Blackjack Replay guide for reviewing game records, betting mistakes, action mistakes, insurance mistakes, timeline events, and decision details.",
+        "content/app/faq.html": "FAQ for Blackjack Card Counting Trainer, covering app positioning, training order, Decision Training, RC/TC drills, Bet Ramp, Replay, simulations, and counting risks.",
         "content/app/privacy.html": "Privacy policy for Blackjack Card Counting Trainer, including local data, training records, simulation stats, replay data, and third-party assets.",
         "content/cardcounting/rules.html": "Blackjack rules guide covering card values, dealer rules, blackjack payout, double, split, surrender, and common table rule differences.",
         "content/cardcounting/basic-strategy.html": "Blackjack basic strategy guide for hard hands, soft hands, pairs, doubles, and surrender decisions before using counting deviations.",
@@ -446,6 +454,7 @@
         "content/app/training.html": "Blackjack トレーニング機能の説明。基本戦略、deviation、Running Count、True Count、実戦に近い Hi-Lo 発牌練習を扱います。",
         "content/app/statistics.html": "Blackjack 統計シミュレーターの説明。Round Stats、Session Stats、EV、ROI、SD、TC threshold、bet ramp、戦略比較を扱います。",
         "content/app/replay.html": "Blackjack Replay 機能の説明。プレイ記録、ベットミス、アクションミス、インシュランスミス、Timeline、判断詳細を確認できます。",
+        "content/app/faq.html": "ブラックジャック カウントトレーナー FAQ。アプリの位置づけ、練習順序、Decision Training、RC/TC Drill、Bet Ramp、Replay、統計シミュレーション、カウントのリスクを説明します。",
         "content/app/privacy.html": "ブラックジャック カウントトレーナーのプライバシーポリシー。ローカルデータ、練習記録、統計、Replay データ、第三者資産について説明します。",
         "content/cardcounting/rules.html": "ブラックジャックのルール解説。カード点数、ディーラールール、blackjack 配当、double、split、surrender、テーブルルール差を説明します。",
         "content/cardcounting/basic-strategy.html": "ブラックジャック基本戦略の解説。hard hand、soft hand、pair、double、surrender の判断を、カウント deviation の前提として整理します。",

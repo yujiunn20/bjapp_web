@@ -740,6 +740,64 @@
     "最後更新：2026-05-23": "最終更新：2026-05-23"
   });
 
+  Object.assign(dictionaries.en, {
+    "常見問題": "FAQ",
+    "這些問題整理 app 的定位、訓練流程、算牌功能、Replay、統計模擬與風險限制，幫助使用者更快理解這個工具適合怎麼用。": "These questions summarize the app's positioning, training flow, counting features, Replay, simulations, and risk limits, helping users understand how this tool is meant to be used.",
+    "這個 app 和一般 blackjack 遊戲有什麼不同？": "How is this app different from a regular blackjack game?",
+    "這個 app 不是以休閒遊戲為主，而是用來練習 blackjack 決策、算牌流程、下注判斷和錯誤檢討。除了基本的牌桌遊玩之外，app 也包含 Decision Training、Running Count / True Count 練習、Replay 回放和統計模擬，重點是把策略、算牌、回放與長期結果接成一套訓練流程。": "This app is not mainly a casual game. It is designed to practice blackjack decisions, card counting flow, betting decisions, and mistake review. In addition to table play, it includes Decision Training, Running Count / True Count drills, Replay review, and simulation statistics. The point is to connect strategy, counting, replay, and long-term results into one training flow.",
+    "這個 app 適合完全新手嗎？": "Is this app suitable for complete beginners?",
+    "可以，但完全新手建議先從網站上的 blackjack 規則和基本策略開始，再進入 app 的 Decision Training。這個 app 功能比較完整，不是只做最簡化的新手教學；如果只想隨便玩 blackjack，可能一般遊戲 app 會更簡單。這個 app 比較適合想認真理解策略、算牌和長期結果的人。": "Yes, but complete beginners should start with the blackjack rules and basic strategy pages on the website, then move into Decision Training in the app. This app is more complete than a simplified beginner tutorial. If you only want to casually play blackjack, a regular game app may be simpler. This app is better for people who want to seriously understand strategy, counting, and long-term results.",
+    "我應該照什麼順序使用這個 app？": "What order should I use the app in?",
+    "建議先用 Decision Training 練基本策略和常見決策，再用 Running Count Drill、True Count Drill 練算牌基礎。熟悉後可以進入 Hi-Lo Count Drill 和 Game 模式，最後用 Replay 檢查錯誤，並用 Round Stats / Session Stats 理解長期結果。概要頁上方的「學習路線」也整理了完整順序。": "A practical order is to start with Decision Training for basic strategy and common decisions, then use Running Count Drill and True Count Drill for counting fundamentals. After that, move into Hi-Lo Count Drill and Game mode. Finally, use Replay to inspect mistakes, and Round Stats / Session Stats to understand long-term results. The Learning Path on the overview page also summarizes the full order.",
+    "Decision Training 可以練什麼？": "What can Decision Training practice?",
+    "Decision Training 主要用來練 blackjack 決策，包括基本策略、硬牌、軟牌、對子、加倍、投降、保險，以及算牌後才會出現的 deviation。使用者也可以選擇不同 Question Type，集中練習自己比較弱或實戰中較少遇到的題型。": "Decision Training focuses on blackjack decisions, including basic strategy, hard hands, soft hands, pairs, doubles, surrender, insurance, and counting deviations. Users can also choose different Question Types to focus on weaker categories or situations that appear less often in real play.",
+    "Running Count Drill、True Count Drill 和 Hi-Lo Count Drill 有什麼差別？": "What is the difference between Running Count Drill, True Count Drill, and Hi-Lo Count Drill?",
+    "Running Count Drill 專注在看到牌後快速累加 Hi-Lo Running Count。True Count Drill 則練習把 Running Count 和剩餘牌數換算成 True Count。Hi-Lo Count Drill 更接近真實牌桌，會模擬莊家和多個玩家發牌，讓使用者在一局牌的節奏中追蹤 count。": "Running Count Drill focuses on quickly adding the Hi-Lo Running Count after seeing cards. True Count Drill practices converting Running Count and remaining cards into True Count. Hi-Lo Count Drill is closer to a real table, simulating dealer and multi-player dealing so users track count through the rhythm of a round.",
+    "這個 app 支援哪些算牌系統？": "Which counting systems does this app support?",
+    "目前 app 主要支援 Basic、Hi-Lo 和 Hi-Opt I。Basic 用來練基本策略；Hi-Lo 是最常見、實用性高的算牌系統；Hi-Opt I 則是更進階的系統，搭配 ace side count 和不同 true count 判斷，用來測試更細的策略差異。": "The app currently focuses on Basic, Hi-Lo, and Hi-Opt I. Basic is used for basic strategy practice. Hi-Lo is the most common and practical counting system. Hi-Opt I is a more advanced system that uses ace side count and different true count judgments to test finer strategy differences.",
+    "Bet Ramp 是什麼？App 會怎麼使用 Bet Ramp？": "What is Bet Ramp, and how does the app use it?",
+    "Bet Ramp 是把 True Count 轉換成下注大小的規則。當 True Count 較高時，代表牌堆對玩家可能更有利，Bet Ramp 會決定在不同 TC threshold 下應該下注幾倍。app 會用 Bet Ramp 產生建議下注，也會在 Replay 中檢查下注是否符合目前設定。": "Bet Ramp is the rule that converts True Count into bet size. When True Count is higher, the remaining shoe may be more favorable to the player, and the Bet Ramp decides how many units to bet at different TC thresholds. The app uses Bet Ramp to generate recommended bets and to check bet correctness in Replay.",
+    "Replay 可以幫我檢查哪些錯誤？": "What mistakes can Replay help me check?",
+    "Replay 可以回看過去的 game 紀錄，包含 Summary、Mistakes、Timeline、Table Snapshot 和 Selected Event。它可以幫助使用者檢查下注錯誤、動作錯誤、insurance 錯誤，以及當時牌桌和判斷資訊。目標不是只看輸贏，而是找出自己常犯的錯誤。": "Replay can review previous game records, including Summary, Mistakes, Timeline, Table Snapshot, and Selected Event. It helps users inspect betting mistakes, action mistakes, insurance mistakes, and the table state and evaluation information at the time. The goal is not just to look at win/loss results, but to find repeated mistakes.",
+    "Round Stats 和 Session Stats 有什麼不同？": "What is the difference between Round Stats and Session Stats?",
+    "Round Stats 偏向大量模擬單局結果，用來比較不同規則、策略、Bet Ramp 或 TC threshold 下的長期 EV、ROI 和變異數。Session Stats 則把模擬拆成一個一個 Play，可以設定每場最多局數、停損、停利，較接近真實遊玩時會遇到的 session 結果分布。": "Round Stats focuses on large simulations of round results, comparing long-term EV, ROI, and variance under different rules, strategies, Bet Ramps, or TC thresholds. Session Stats splits simulation into individual Plays, with max rounds, stop loss, and stop win settings, making it closer to the session result distribution players may experience in real play.",
+    "模擬結果是不是代表實際玩也會得到一樣結果？": "Do simulation results mean real play will get the same result?",
+    "不是。Blackjack 的變異數很大，即使某個策略在模擬中有較好的 EV 或 ROI，實際結果仍可能因短期波動、桌規、穿透率、桌限、資金、執行穩定度等因素而不同。統計結果適合用來理解和比較，不應被當成實際獲利保證。": "No. Blackjack has high variance. Even if a strategy has better EV or ROI in simulation, real outcomes can still differ because of short-term swings, table rules, penetration, table limits, bankroll, and execution consistency. Statistics are useful for understanding and comparison, not as a guarantee of real profit.",
+    "算牌是不是保證可以贏？": "Does card counting guarantee winning?",
+    "不是。算牌只能在特定規則、牌靴穿透率、下注級距和執行穩定度都合適時，改善長期期望值。即使長期 EV 變好，短期輸贏仍然可能被變異數主導。實戰中還有資金、心理壓力、桌速、桌限和被賭場注意等問題。": "No. Card counting can only improve long-term expectation when rules, shoe penetration, bet spread, and execution consistency are suitable. Even if long-term EV improves, short-term results can still be dominated by variance. Real play also involves bankroll, mental pressure, table speed, table limits, and casino attention.",
+    "這個 app 是否鼓勵賭博？": "Does this app encourage gambling?",
+    "不是。這個 app 和網站主要是用來學習 blackjack 機率、策略、算牌概念和訓練反應，不提供真錢賭博功能，也不把算牌包裝成穩賺方法。使用者仍應遵守所在地法律和平台規範，並理解 blackjack 本身具有風險和高度波動。": "No. This app and website are mainly for learning blackjack probability, strategy, card counting concepts, and reaction training. They do not provide real-money gambling features and do not present counting as a guaranteed way to profit. Users should follow local laws and platform rules, and understand that blackjack involves risk and high variance."
+  });
+
+  Object.assign(dictionaries.ja, {
+    "常見問題": "よくある質問",
+    "這些問題整理 app 的定位、訓練流程、算牌功能、Replay、統計模擬與風險限制，幫助使用者更快理解這個工具適合怎麼用。": "これらの質問は、アプリの位置づけ、練習フロー、カウント機能、Replay、統計シミュレーション、リスク上の制限を整理し、このツールをどう使うべきか理解しやすくするためのものです。",
+    "這個 app 和一般 blackjack 遊戲有什麼不同？": "このアプリは一般的な blackjack ゲームと何が違いますか？",
+    "這個 app 不是以休閒遊戲為主，而是用來練習 blackjack 決策、算牌流程、下注判斷和錯誤檢討。除了基本的牌桌遊玩之外，app 也包含 Decision Training、Running Count / True Count 練習、Replay 回放和統計模擬，重點是把策略、算牌、回放與長期結果接成一套訓練流程。": "このアプリはカジュアルゲームを主目的にしたものではなく、blackjack の判断、カードカウントの流れ、ベット判断、ミスの見直しを練習するためのものです。通常のテーブルプレイに加えて、Decision Training、Running Count / True Count 練習、Replay、統計シミュレーションを含み、戦略、カウント、リプレイ、長期結果を 1 つの練習フローにつなげることを重視しています。",
+    "這個 app 適合完全新手嗎？": "完全な初心者にも向いていますか？",
+    "可以，但完全新手建議先從網站上的 blackjack 規則和基本策略開始，再進入 app 的 Decision Training。這個 app 功能比較完整，不是只做最簡化的新手教學；如果只想隨便玩 blackjack，可能一般遊戲 app 會更簡單。這個 app 比較適合想認真理解策略、算牌和長期結果的人。": "使えますが、完全な初心者はまずウェブサイトの blackjack ルールと基本戦略から始め、その後アプリの Decision Training に進むのがおすすめです。このアプリは機能が多く、最小限の初心者向けチュートリアルだけを目的にしたものではありません。気軽に blackjack を遊びたいだけなら、一般的なゲームアプリの方が簡単です。このアプリは、戦略、カウント、長期結果を真剣に理解したい人に向いています。",
+    "我應該照什麼順序使用這個 app？": "どの順番でこのアプリを使えばいいですか？",
+    "建議先用 Decision Training 練基本策略和常見決策，再用 Running Count Drill、True Count Drill 練算牌基礎。熟悉後可以進入 Hi-Lo Count Drill 和 Game 模式，最後用 Replay 檢查錯誤，並用 Round Stats / Session Stats 理解長期結果。概要頁上方的「學習路線」也整理了完整順序。": "まず Decision Training で基本戦略とよくある判断を練習し、次に Running Count Drill と True Count Drill でカウントの基礎を鍛えるのがおすすめです。慣れてきたら Hi-Lo Count Drill と Game モードに進み、最後に Replay でミスを確認し、Round Stats / Session Stats で長期結果を理解します。概要ページの「学習ルート」でも全体の順番を整理しています。",
+    "Decision Training 可以練什麼？": "Decision Training では何を練習できますか？",
+    "Decision Training 主要用來練 blackjack 決策，包括基本策略、硬牌、軟牌、對子、加倍、投降、保險，以及算牌後才會出現的 deviation。使用者也可以選擇不同 Question Type，集中練習自己比較弱或實戰中較少遇到的題型。": "Decision Training は主に blackjack の判断を練習する機能です。基本戦略、ハードハンド、ソフトハンド、ペア、ダブル、サレンダー、インシュランス、カウント後に出てくる deviation を扱います。Question Type を選び、自分が苦手な分類や実戦であまり出ない題型を集中して練習することもできます。",
+    "Running Count Drill、True Count Drill 和 Hi-Lo Count Drill 有什麼差別？": "Running Count Drill、True Count Drill、Hi-Lo Count Drill の違いは何ですか？",
+    "Running Count Drill 專注在看到牌後快速累加 Hi-Lo Running Count。True Count Drill 則練習把 Running Count 和剩餘牌數換算成 True Count。Hi-Lo Count Drill 更接近真實牌桌，會模擬莊家和多個玩家發牌，讓使用者在一局牌的節奏中追蹤 count。": "Running Count Drill は、カードを見たあと Hi-Lo の Running Count を素早く加算する練習です。True Count Drill は Running Count と残りカード数から True Count を換算する練習です。Hi-Lo Count Drill はより実際のテーブルに近く、ディーラーと複数プレイヤーへの配牌を再現し、1 ラウンドのリズムの中で count を追跡します。",
+    "這個 app 支援哪些算牌系統？": "このアプリはどのカウントシステムに対応していますか？",
+    "目前 app 主要支援 Basic、Hi-Lo 和 Hi-Opt I。Basic 用來練基本策略；Hi-Lo 是最常見、實用性高的算牌系統；Hi-Opt I 則是更進階的系統，搭配 ace side count 和不同 true count 判斷，用來測試更細的策略差異。": "現在のアプリは主に Basic、Hi-Lo、Hi-Opt I に対応しています。Basic は基本戦略の練習用、Hi-Lo は最も一般的で実用性の高いカウントシステム、Hi-Opt I はより高度なシステムで、ace side count と異なる true count 判断を組み合わせて、より細かい戦略差を確認するために使います。",
+    "Bet Ramp 是什麼？App 會怎麼使用 Bet Ramp？": "Bet Ramp とは何ですか？アプリではどう使いますか？",
+    "Bet Ramp 是把 True Count 轉換成下注大小的規則。當 True Count 較高時，代表牌堆對玩家可能更有利，Bet Ramp 會決定在不同 TC threshold 下應該下注幾倍。app 會用 Bet Ramp 產生建議下注，也會在 Replay 中檢查下注是否符合目前設定。": "Bet Ramp は True Count をベットサイズに変換するルールです。True Count が高いと、残りのシューがプレイヤーに有利な可能性が高くなります。Bet Ramp は、異なる TC threshold で何倍のベットを使うかを決めます。アプリは Bet Ramp を使って推奨ベットを出し、Replay でもベットが現在の設定に合っていたか確認します。",
+    "Replay 可以幫我檢查哪些錯誤？": "Replay ではどんなミスを確認できますか？",
+    "Replay 可以回看過去的 game 紀錄，包含 Summary、Mistakes、Timeline、Table Snapshot 和 Selected Event。它可以幫助使用者檢查下注錯誤、動作錯誤、insurance 錯誤，以及當時牌桌和判斷資訊。目標不是只看輸贏，而是找出自己常犯的錯誤。": "Replay では過去の game 記録を見直せます。Summary、Mistakes、Timeline、Table Snapshot、Selected Event が含まれます。ベットミス、アクションミス、insurance ミス、その時点のテーブル状態や判断情報を確認できます。目的は勝敗だけを見ることではなく、自分が繰り返し起こすミスを見つけることです。",
+    "Round Stats 和 Session Stats 有什麼不同？": "Round Stats と Session Stats の違いは何ですか？",
+    "Round Stats 偏向大量模擬單局結果，用來比較不同規則、策略、Bet Ramp 或 TC threshold 下的長期 EV、ROI 和變異數。Session Stats 則把模擬拆成一個一個 Play，可以設定每場最多局數、停損、停利，較接近真實遊玩時會遇到的 session 結果分布。": "Round Stats は大量のラウンド結果をシミュレーションし、異なるルール、戦略、Bet Ramp、TC threshold での長期 EV、ROI、分散を比較する機能です。Session Stats はシミュレーションを 1 つ 1 つの Play に分け、最大ラウンド数、損切り、利確を設定できます。実際のプレイで起こる session 結果分布により近い形です。",
+    "模擬結果是不是代表實際玩也會得到一樣結果？": "シミュレーション結果は実際のプレイでも同じ結果になるという意味ですか？",
+    "不是。Blackjack 的變異數很大，即使某個策略在模擬中有較好的 EV 或 ROI，實際結果仍可能因短期波動、桌規、穿透率、桌限、資金、執行穩定度等因素而不同。統計結果適合用來理解和比較，不應被當成實際獲利保證。": "いいえ。Blackjack は分散が大きいゲームです。ある戦略がシミュレーション上で良い EV や ROI を示しても、実際の結果は短期変動、ルール、ペネトレーション、テーブルリミット、資金、実行の安定性によって変わります。統計結果は理解と比較のためのもので、実際の利益を保証するものではありません。",
+    "算牌是不是保證可以贏？": "カードカウントは勝ちを保証しますか？",
+    "不是。算牌只能在特定規則、牌靴穿透率、下注級距和執行穩定度都合適時，改善長期期望值。即使長期 EV 變好，短期輸贏仍然可能被變異數主導。實戰中還有資金、心理壓力、桌速、桌限和被賭場注意等問題。": "いいえ。カードカウントは、ルール、シューのペネトレーション、ベットスプレッド、実行の安定性が適切な場合に、長期期待値を改善できるだけです。長期 EV が良くなっても、短期結果は分散に支配されることがあります。実戦では資金、心理的負荷、テーブル速度、テーブルリミット、カジノ側に注意されるリスクもあります。",
+    "這個 app 是否鼓勵賭博？": "このアプリはギャンブルを推奨していますか？",
+    "不是。這個 app 和網站主要是用來學習 blackjack 機率、策略、算牌概念和訓練反應，不提供真錢賭博功能，也不把算牌包裝成穩賺方法。使用者仍應遵守所在地法律和平台規範，並理解 blackjack 本身具有風險和高度波動。": "いいえ。このアプリとウェブサイトは主に blackjack の確率、戦略、カードカウント概念、反応練習を学ぶためのものです。現金賭博機能は提供せず、カウントを確実に稼げる方法として見せるものでもありません。ユーザーは所在地の法律とプラットフォーム規約を守り、blackjack 自体にリスクと大きな変動があることを理解する必要があります。"
+  });
+
   function applyTranslations(language) {
     const dict = dictionaries[language];
     document.documentElement.lang = language || "zh-Hant";

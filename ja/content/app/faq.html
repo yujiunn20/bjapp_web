@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ブラックジャック・カウントトレーナー FAQ | アプリのよくある質問</title>
+  <meta name="description" content="ブラックジャック・カウントトレーナーのFAQ。アプリの目的、練習順序、Decision Training、RC/TC Drill、Bet Ramp、Replay、統計シミュレーション、カウントのリスクを説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/app/faq">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/faq">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/faq">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/faq">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/faq">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260526-10">
+</head>
+<body>
+  <article>
+    <h1>よくある質問</h1>
+    <p class="lead">ここでは、アプリの目的、練習の流れ、カウント練習、Replay、統計シミュレーション、実戦上の制限を整理し、このトレーナーをどう使うべきかを説明します。</p>
+
+    <h3 class="simulation-heading">このアプリは一般的な blackjack ゲームと何が違いますか？</h3>
+    <p>このアプリはカジュアルなゲームを主目的にしたものではありません。blackjack の判断、カウントの流れ、ベット判断、ミスの見直しを練習するためのツールです。通常のテーブルプレイに加えて、Decision Training、Running Count / True Count 練習、Replay、統計シミュレーションを備え、戦略、カウント、復習、長期結果をひとつの練習フローにつなげることを重視しています。</p>
+
+    <h3 class="simulation-heading">完全な初心者にも向いていますか？</h3>
+    <p>使えます。ただし完全な初心者は、まずサイト内の blackjack ルールと基本戦略を読んでから Decision Training に進むのがおすすめです。このアプリは機能をかなり揃えているため、初心者向けに極端に単純化したチュートリアルだけではありません。気軽に blackjack を遊びたいだけなら、一般的なゲームアプリのほうが簡単に感じるかもしれません。このアプリは、戦略、カウント、長期結果を本気で理解したい人に向いています。</p>
+
+    <h3 class="simulation-heading">どの順番で使うのがおすすめですか？</h3>
+    <p>まず Decision Training で基本戦略とよく出る判断を練習し、その後 Running Count Drill と True Count Drill でカウントの基礎を固めるのがおすすめです。慣れてきたら Hi-Lo Count Drill と Game モードに進み、最後に Replay でミスを確認し、Round Stats / Session Stats で長期結果を理解します。Overview ページの「学習ルート」にも全体の順序を整理しています。</p>
+
+    <h3 class="simulation-heading">Decision Training では何を練習できますか？</h3>
+    <p>Decision Training は blackjack の判断に集中するモードです。基本戦略、ハードハンド、ソフトハンド、ペア、ダブル、サレンダー、インシュランス、カウント後に出る deviation を練習できます。Question Type を選ぶことで、苦手な分野や通常プレイでは出にくい状況を集中して練習できます。</p>
+
+    <h3 class="simulation-heading">Running Count Drill、True Count Drill、Hi-Lo Count Drill の違いは何ですか？</h3>
+    <p>Running Count Drill は、表示されたカードを見て Hi-Lo の Running Count を素早く足し引きする練習です。True Count Drill は、Running Count と残りデッキ数から True Count に変換する練習です。Hi-Lo Count Drill はより実戦に近く、ディーラーと複数プレイヤーへの配牌をシミュレートし、1 ラウンドの流れの中で count を追跡します。</p>
+
+    <h3 class="simulation-heading">どのカウントシステムに対応していますか？</h3>
+    <p>現在は Basic、Hi-Lo、Hi-Opt I に対応しています。Basic は基本戦略の練習用です。Hi-Lo はもっとも一般的で実用性の高いカウントシステムです。Hi-Opt I はより進んだシステムで、ace side count や異なる true count 判断と組み合わせて、より細かい戦略差を確認できます。</p>
+
+    <h3 class="simulation-heading">Bet Ramp とは何ですか？ アプリではどう使われますか？</h3>
+    <p>Bet Ramp は True Count をベット額に変換するルールです。True Count が高いほど、デッキがプレイヤーに有利である可能性が高くなり、Bet Ramp は各 TC threshold で何単位ベットするかを決めます。アプリは Bet Ramp を使って推奨ベットを表示し、Replay でもそのハンドのベットが現在の設定に合っていたかを確認します。</p>
+
+    <h3 class="simulation-heading">Replay ではどんなミスを確認できますか？</h3>
+    <p>Replay では過去の game 記録を見直せます。Summary、Mistakes、Timeline、Table Snapshot、Selected Event を確認でき、ベットミス、アクションミス、インシュランスミス、その時点のテーブル状況や判断情報をチェックできます。目的は勝敗だけを見ることではなく、繰り返しているミスを見つけることです。</p>
+
+    <h3 class="simulation-heading">Round Stats と Session Stats の違いは何ですか？</h3>
+    <p>Round Stats は大量の単局シミュレーションに近く、ルール、戦略、Bet Ramp、TC threshold の違いによる長期 EV、ROI、分散を比較するのに向いています。Session Stats はプレイを複数の session に分け、最大ラウンド数、ストップロス、利確ラインを設定できるため、実際の session 結果の分布に近い見方ができます。</p>
+
+    <h3 class="simulation-heading">シミュレーション結果は実際のプレイ結果と同じになりますか？</h3>
+    <p>いいえ。Blackjack は分散が大きいゲームです。ある戦略がシミュレーション上で良い EV や ROI を示しても、実際の結果は短期変動、ルール、ペネトレーション、テーブルリミット、資金、実行精度などによって変わります。統計結果は理解と比較のために使うもので、実際の利益を保証するものではありません。</p>
+
+    <h3 class="simulation-heading">カウントすれば必ず勝てますか？</h3>
+    <p>いいえ。カウントは、ルール、ペネトレーション、ベットスプレッド、実行精度が適切な場合に、長期期待値を改善できる可能性があるだけです。長期 EV が良くなっても、短期結果は分散に大きく左右されます。実戦では資金、心理的プレッシャー、ゲーム速度、テーブルリミット、カジノ側の注意なども問題になります。</p>
+
+    <h3 class="simulation-heading">このアプリはギャンブルを勧めるものですか？</h3>
+    <p>いいえ。このアプリとサイトは、blackjack の確率、戦略、カウント概念、反応練習を学ぶためのものです。リアルマネーのギャンブル機能はなく、カウントを確実に稼げる方法として扱っていません。利用者は所在地の法律やプラットフォーム規約を守り、blackjack にはリスクと大きな変動があることを理解する必要があります。</p>
+  </article>
+  <script src="../../../content/layout.js?v=20260527-14"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

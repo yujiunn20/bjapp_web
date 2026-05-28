@@ -37,6 +37,24 @@
     <p>算牌需要的不只是會算，而是要有足夠的本金 / 資金池（bankroll）承受波動。下注級距越大，長期 EV 可能提高，但短期波動也會變大。如果資金池太小，即使策略本身是正 EV，也可能在長期優勢發揮前就先承受不了虧損。</p>
     <p>停損停利可以改變一次遊玩的結果分布，也比較接近真實玩家的體感，但它不會把負 EV 變成正 EV，也不會消除變異數。這也是為什麼除了看 Round Stats，還需要看 Session Stats。</p>
 
+    <h3 class="simulation-heading">App 模擬統計：停損 100 vs 停損 200</h3>
+    <p>下面兩組 Session Stats 都使用 Hi-Lo、Bet Ramp 2/4/6/8/10、Base Bet 10、Max Round 300，並各跑 1000 個 Play。差別在於停損設定：一組停損 100，另一組停損 200。</p>
+
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/100StopLossSession.png" alt="Hi-Lo Bet Ramp 2/4/6/8/10 Base Bet 10 停損 100 的 Session Stats 結果">
+        <figcaption>停損 100：平均 Round 數較少，Stop Loss 比率較高。</figcaption>
+      </figure>
+
+      <figure class="content-figure">
+        <img src="../../../assets/img/200StopLossSession.png" alt="Hi-Lo Bet Ramp 2/4/6/8/10 Base Bet 10 停損 200 的 Session Stats 結果">
+        <figcaption>停損 200：平均 Round 數較多，較有機會撐過短期波動。</figcaption>
+      </figure>
+    </div>
+
+    <p>結果可以看到，停損 100 的平均 Round 數較少，約 113 局，相比停損 200 的約 177 局更早結束；Stop Loss 比率也較高，約 82.1% 對 64.6%。Mean Final 也從停損 100 的 -11.44，變成停損 200 的 +4.36。</p>
+    <p>這組比較不是在說停損越大就一定比較好，而是說明資金池的重要性。如果本金太小，常常還沒等到高 True Count，或才幾局就遇到連續虧損而無法繼續，算牌的長期優勢就沒有足夠時間發揮。</p>
+
     <h3>算牌常常不是一個人的短期故事</h3>
     <p>很多人對算牌的印象來自電影，好像幾個晚上就能賺很多錢。但真實情況通常更接近：大量手數、團隊分工、足夠資金池、嚴格紀律和盡量減少錯誤。</p>
     <p>團隊算牌的優勢在於可以同時觀察更多牌桌、累積更多局數，也能把資金池集中使用，降低單一玩家短期波動的壓力。電影把這些過程濃縮成短時間的劇情，所以看起來像是快速致富；但真正重要的其實是大量重複、穩定執行和少犯錯。</p>

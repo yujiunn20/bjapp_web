@@ -37,6 +37,24 @@
     <p>Counting requires more than knowing the math. It requires enough bankroll, meaning the capital pool reserved for play, to absorb variance. A larger Bet Ramp may improve long-term EV, but it also increases short-term swings. If the bankroll is too small, even a positive-EV strategy can fail before the long-term edge has time to appear.</p>
     <p>Stop loss and take profit rules can change the distribution of one session and may feel closer to real play, but they do not turn negative EV into positive EV and they do not remove variance. This is why Session Stats are useful in addition to Round Stats.</p>
 
+    <h3 class="simulation-heading">App Simulation: Stop Loss 100 vs Stop Loss 200</h3>
+    <p>The two Session Stats examples below use Hi-Lo, Bet Ramp 2/4/6/8/10, Base Bet 10, Max Round 300, and 1000 Plays. The only comparison here is the stop loss setting: one uses stop loss 100, and the other uses stop loss 200.</p>
+
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/100StopLossSession.png" alt="Session Stats result for Hi-Lo Bet Ramp 2/4/6/8/10 Base Bet 10 with stop loss 100">
+        <figcaption>Stop loss 100: fewer average rounds and a higher Stop Loss rate.</figcaption>
+      </figure>
+
+      <figure class="content-figure">
+        <img src="../../../assets/img/200StopLossSession.png" alt="Session Stats result for Hi-Lo Bet Ramp 2/4/6/8/10 Base Bet 10 with stop loss 200">
+        <figcaption>Stop loss 200: more average rounds and more room to survive short-term variance.</figcaption>
+      </figure>
+    </div>
+
+    <p>The stop loss 100 run ends earlier, with about 113 average rounds compared with about 177 rounds for stop loss 200. Its Stop Loss rate is also higher, about 82.1% versus 64.6%. Mean Final changes from -11.44 with stop loss 100 to +4.36 with stop loss 200.</p>
+    <p>This comparison does not mean a larger stop loss is automatically better. It shows why bankroll matters. If the capital pool is too small, a player may run out before reaching favorable high True Count situations, or lose early after only a few rounds, leaving the long-term counting edge without enough time to appear.</p>
+
     <h3>Counting Is Often Not a Short Solo Story</h3>
     <p>Many people learn about card counting from movies, where it can look like a few nights of play lead to a large profit. In reality, successful counting is usually closer to a large number of hands, team coordination, a sufficient bankroll, strict discipline, and fewer mistakes.</p>
     <p>Team counting can observe more tables, generate more rounds, and use a shared bankroll to reduce the pressure of short-term swings on one player. Movies compress this process into a short story, so it looks like fast money. The important part is usually repeated volume, stable execution, and error control.</p>

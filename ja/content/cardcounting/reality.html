@@ -37,6 +37,24 @@
     <p>カウントに必要なのは計算力だけではありません。分散に耐えるための十分な本金 / 資金プール（bankroll）が必要です。Bet Ramp を大きくすると長期 EV は上がる可能性がありますが、短期の振れ幅も大きくなります。資金プールが小さすぎると、戦略自体が positive EV でも、長期優位が出る前に資金的に耐えられなくなることがあります。</p>
     <p>ストップロスや利確ラインは 1 回のプレイ結果の分布を変え、実際のプレイヤー感覚に近づけます。しかし negative EV を positive EV に変えるものではなく、分散を消すものでもありません。だから Round Stats だけでなく Session Stats も見る意味があります。</p>
 
+    <h3 class="simulation-heading">アプリのシミュレーション：Stop Loss 100 vs Stop Loss 200</h3>
+    <p>下の 2 つの Session Stats は、どちらも Hi-Lo、Bet Ramp 2/4/6/8/10、Base Bet 10、Max Round 300、1000 Plays で実行しています。違いは stop loss の設定で、一方は 100、もう一方は 200 です。</p>
+
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/100StopLossSession.png" alt="Hi-Lo Bet Ramp 2/4/6/8/10 Base Bet 10 Stop Loss 100 の Session Stats 結果">
+        <figcaption>Stop Loss 100：平均 Round 数が少なく、Stop Loss 率が高くなっています。</figcaption>
+      </figure>
+
+      <figure class="content-figure">
+        <img src="../../../assets/img/200StopLossSession.png" alt="Hi-Lo Bet Ramp 2/4/6/8/10 Base Bet 10 Stop Loss 200 の Session Stats 結果">
+        <figcaption>Stop Loss 200：平均 Round 数が多く、短期変動に耐える余地が増えます。</figcaption>
+      </figure>
+    </div>
+
+    <p>Stop Loss 100 では平均 Round 数が約 113 で、Stop Loss 200 の約 177 より早く終了しています。Stop Loss 率も 82.1% と高く、Stop Loss 200 の 64.6% より大きくなっています。Mean Final も Stop Loss 100 の -11.44 から、Stop Loss 200 では +4.36 に変わっています。</p>
+    <p>これは stop loss を大きくすれば必ず良いという意味ではありません。資金プールの重要性を示す例です。資金が小さすぎると、高い True Count の場面に入る前、または数ラウンドで連続して負けた時点で続けられなくなり、カウントの長期的な優位が発揮される時間が足りなくなります。</p>
+
     <h3>カウントは一人の短期ストーリーとは限らない</h3>
     <p>映画の影響で、数晩で大きく稼ぐような印象を持つ人もいます。しかし現実は、多数のハンド、チーム分担、十分な資金プール、厳格な規律、そしてミスを減らすことに近いです。</p>
     <p>チームカウントでは、複数のテーブルを同時に観察でき、ラウンド数を増やせます。また、資金プールを共有することで、1 人の短期変動の負担を下げられます。映画はこの過程を短い物語に圧縮するため、早く稼げるように見えます。本当に重要なのは、大量の反復、安定した実行、ミスの少なさです。</p>

@@ -22,7 +22,7 @@
     <h3 class="simulation-heading">Round Stats</h3>
     <p>The core idea of Round Stats is to set the table rules and strategy first, then let the computer simulate many rounds under those conditions. Strategies can be Basic, Hi-Lo, or Hi-Opt I, with different Bet Ramps, and you can decide whether surrender, insurance, and related decisions follow strategy or deviations. The simulation can run up to 500,000 rounds, then compare long-term performance across settings.</p>
 
-    <p>Blackjack has very high variance. Even after many simulated rounds, the result will not perfectly match theoretical probability. From another angle, that is closer to real play: real results do not land exactly on EV every stretch, and swings are part of the game. Running the same settings multiple times helps reveal the gap between short-term outcomes and long-term expectation.</p>
+    <p>Blackjack results can still swing noticeably, especially when a counting strategy uses a bet ramp. Even after many simulated rounds, the result will not perfectly match theoretical probability. From another angle, that is closer to real play: real results do not land exactly on EV every stretch, and swings are part of the game. Running the same settings multiple times helps reveal the gap between short-term outcomes and long-term expectation.</p>
 
     <p>In addition to round count, Round Stats can set the TC threshold k. Counting becomes positive EV mainly because higher True Count zones are favorable. After setting k, results are split into TC below k and TC greater than or equal to k, making it easier to compare high-TC zones against the rest.</p>
 
@@ -62,7 +62,7 @@
 
     <p>After setting how many Plays to run, Session Stats summarizes the final result of each Play. Results include the average and median Final Net, win/loss ratio, stop loss and stop win hit rates, and the average Hands and Rounds per Play. The screen also includes a simple distribution chart so users can quickly see the profit/loss spread at the end of each Play.</p>
 
-    <p>A summary for each Play is also kept below, including Final Net, Rounds, Hands, and End Reason. This design is mainly meant to support stop loss, stop win, and bankroll-management decisions, making it more realistic than only looking at large Round Stats. Blackjack still has high variance, so one simulation can differ clearly from theoretical EV. Running the same strategy several times helps check whether the result distribution is stable.</p>
+    <p>A summary for each Play is also kept below, including Final Net, Rounds, Hands, and End Reason. This design is mainly meant to support stop loss, stop win, and bankroll-management decisions, making it more realistic than only looking at large Round Stats. Counting simulations can still differ clearly from theoretical EV because short-term swings remain meaningful, especially with larger bet spreads. Running the same strategy several times helps check whether the result distribution is stable.</p>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">

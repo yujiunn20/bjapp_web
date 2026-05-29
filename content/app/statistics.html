@@ -22,7 +22,7 @@
     <h3 class="simulation-heading">Round Stats</h3>
     <p>Round Stats 的核心概念，是先設定桌面規則與策略，再讓電腦依照這些條件大量模擬牌局。策略可以選 Basic、Hi-Lo 或 Hi-Opt I，也可以搭配不同 Bet Ramp，並決定是否依照策略或 deviation 來處理 surrender、insurance 等決策。模擬局數最多可以設定到 500000 局，完成後再用統計結果比較不同設定的長期表現。</p>
 
-    <p>Blackjack 是變異數很大的遊戲，即使跑很多局，結果仍然不會完全等於理論機率。不過從另一個角度看，這也比較接近真實狀況：真實遊戲不是每一段結果都剛好等於 EV，而是會有明顯波動。你可以多跑幾次同樣設定，觀察每次結果之間的差異，理解短期結果和長期期望值之間的距離。</p>
+    <p>Blackjack 的結果仍然會有明顯短期波動，尤其是算牌策略搭配 bet ramp 時。即使跑很多局，結果仍然不會完全等於理論機率。不過從另一個角度看，這也比較接近真實狀況：真實遊戲不是每一段結果都剛好等於 EV，而是會有明顯波動。你可以多跑幾次同樣設定，觀察每次結果之間的差異，理解短期結果和長期期望值之間的距離。</p>
 
     <p>除了模擬局數之外，Round Stats 也可以設定 TC threshold 的 k 值。算牌能變成正 EV，主要來自 True Count 較高時的有利區間；設定 k 值後，結果會拆成 TC 小於 k 和 TC 大於等於 k 的統計，方便比較高 TC 區間和其他區間的差異。</p>
 
@@ -62,7 +62,7 @@
 
     <p>設定要跑多少個 Play 後，Session Stats 會統計每個 Play 的最後結果。結果包含 Final Net 的平均值與中位數、輸贏比例、達到停損或停利的比例，以及平均每個 Play 玩了多少 Hands 和 Rounds。畫面也會提供簡單分布圖，讓使用者快速看出 Play 結束時的盈虧分布。</p>
 
-    <p>下方也會保留每個 Play 的簡單總結，包含 Final Net、Rounds、Hands 和 End Reason。這個設計主要是用來輔助停損停利與資金管理決策，比單純看大量 Round Stats 更接近現實。不過 blackjack 本身變異數很大，單次模擬仍然可能和理論 EV 有明顯差距，因此同一套策略建議多跑幾次，觀察結果分布是否穩定。</p>
+    <p>下方也會保留每個 Play 的簡單總結，包含 Final Net、Rounds、Hands 和 End Reason。這個設計主要是用來輔助停損停利與資金管理決策，比單純看大量 Round Stats 更接近現實。算牌模擬仍然可能和理論 EV 有明顯差距，因為短期波動仍然重要，尤其在 bet spread 較大時更明顯。因此同一套策略建議多跑幾次，觀察結果分布是否穩定。</p>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">

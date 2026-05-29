@@ -56,6 +56,23 @@
         <tr><td>14 vs 10</td><td>TC >= +3</td><td>Surrender</td></tr>
       </tbody>
     </table>
+
+    <h3>Insurance EV and Variance</h3>
+    <p>Insurance is essentially a bet that the dealer's hole card is a 10-value card. Because it pays 2:1, insurance is worth taking only when the remaining shoe has enough 10-value cards to pass the break-even point. This is why Hi-Lo commonly uses TC >= +3 as the insurance index.</p>
+    <p>Over the long run, the main value of taking insurance correctly is increasing EV: at high TC, this side bet can move from negative expectation in normal situations to positive expectation for the player.</p>
+    <p>Insurance also affects variance. It can offset the main-bet loss when the dealer has blackjack, especially because high TC often comes with larger bets, so it can make the result distribution smoother and reduce the downside impact of a large bet running into dealer blackjack. However, insurance is still an additional side bet, so the more precise interpretation is: correct insurance mainly improves EV, while it may smooth variance in some high-risk situations, rather than guaranteeing lower variance under every statistical view.</p>
+    <p>The simulation below uses Hi-Lo with a 4/8/12/16/20 Bet Ramp over 500000 runs. The threshold TC >= k uses k = 3 to examine performance in the TC >= 3 range.</p>
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/insurance.png" alt="Seat 1 500000-run simulation using Hi-Lo, Bet Ramp 4/8/12/16/20, with insurance">
+        <figcaption>Seat 1: with insurance</figcaption>
+      </figure>
+      <figure class="content-figure">
+        <img src="../../../assets/img/noinsurance.png" alt="Seat 2 500000-run simulation using Hi-Lo, Bet Ramp 4/8/12/16/20, without insurance">
+        <figcaption>Seat 2: without insurance</figcaption>
+      </figure>
+    </div>
+    <p>From the charts above, Seat 1 with insurance has positive net profit; in this simulation, the ROI from insurance is 4.17%. Compared with Seat 2, Seat 1 has higher EV / 100 (35.16 vs. 23.32) and slightly lower SD / 100 (593.12 vs. 595.6), though the SD difference is small. This matches the idea above: correct insurance mainly improves EV, while it may slightly smooth the volatility of high-TC, large-bet situations when the dealer has blackjack.</p>
     <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
       <h3>Related Reading</h3>
       <ul>
@@ -68,7 +85,7 @@
   </article>
   <script src="../../../content/layout.js?v=20260528-1"></script>
   <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
-  <script src="../../../content/translate.js?v=20260527-6"></script>
+  <script src="../../../content/translate.js?v=20260529-1"></script>
 </body>
 </html>
 

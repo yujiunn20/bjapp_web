@@ -56,6 +56,23 @@
         <tr><td>14 vs 10</td><td>TC >= +3</td><td>投降</td></tr>
       </tbody>
     </table>
+
+    <h3>Insurance 的 EV 與波動</h3>
+    <p>Insurance 本質上是在押莊家的底牌是不是 10 點牌。因為賠率是 2:1，只有當剩餘牌堆中 10 點牌比例高到超過損益平衡點時，insurance 才值得買。這也是為什麼 Hi-Lo 常用 TC >= +3 作為買保險門檻。</p>
+    <p>長期來看，正確買 insurance 的主要價值是增加 EV：在高 TC 時，這個邊注可能從一般情況下的負期望值，變成有利於玩家的正期望值。</p>
+    <p>Insurance 對波動也有影響。它可以在莊家 blackjack 時抵消主注損失，特別是高 TC 時常伴隨較大的下注，因此有機會讓結果分布更平滑、減少大注遇到莊家 blackjack 的下檔衝擊。不過 insurance 本身仍是額外邊注，所以比較精確的理解是：正確使用 insurance 主要是提高 EV，同時可能讓部分高風險情境的波動更平滑，而不是保證每一種統計口徑下的 variance 都下降。</p>
+    <p>下面這組模擬使用 Hi-Lo，Bet Ramp 為 4/8/12/16/20，共跑 500000 次。Threshold 的 TC >= k 採用 k = 3，用來觀察 TC >= 3 區間的表現。</p>
+    <div class="content-figure-grid">
+      <figure class="content-figure">
+        <img src="../../../assets/img/insurance.png" alt="Seat 1 使用 Hi-Lo、Bet Ramp 4/8/12/16/20 並買 insurance 的 500000 次模擬結果">
+        <figcaption>Seat 1：有買 insurance</figcaption>
+      </figure>
+      <figure class="content-figure">
+        <img src="../../../assets/img/noinsurance.png" alt="Seat 2 使用 Hi-Lo、Bet Ramp 4/8/12/16/20 但不買 insurance 的 500000 次模擬結果">
+        <figcaption>Seat 2：沒有買 insurance</figcaption>
+      </figure>
+    </div>
+    <p>從上圖可以看到，Seat 1 有買保險的淨利是正的；在這次模擬中，買保險的 ROI 是 4.17%。和 Seat 2 比較，Seat 1 的 EV / 100 較高（35.16 vs. 23.32），SD / 100 也較小（593.12 vs. 595.6），不過 SD 的差別不大。這組結果符合前面的概念：正確使用 insurance 主要能提高 EV，同時可能讓高 TC、大注遇到莊家 blackjack 的波動稍微更平滑。</p>
     <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
       <h3>相關閱讀</h3>
       <ul>
@@ -68,7 +85,7 @@
   </article>
   <script src="../../../content/layout.js?v=20260528-1"></script>
   <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
-  <script src="../../../content/translate.js?v=20260527-6"></script>
+  <script src="../../../content/translate.js?v=20260529-1"></script>
 </body>
 </html>
 

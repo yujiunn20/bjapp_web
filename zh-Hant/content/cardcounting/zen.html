@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zen Count 算牌補充教學｜Blackjack 多級平衡算牌系統</title>
+  <meta name="description" content="Zen Count 算牌教學，說明多級牌值、平衡系統、True Count 換算與核心 deviations。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/zen">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/zen">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/zen">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/zen">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/zen">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>補充：Zen Count</h1>
+    <p class="lead">Zen Count 是一套平衡的多級算牌系統，使用 -2、-1、+1、+2 四種牌值。與 Hi-Lo 相比，Zen 把 A 獨立計為 -1，讓 A 的消耗直接反映在 RC 中，同時對 4–6 等最有利的低牌給予更強的 +2 信號。</p>
+
+    <p>Hi-Lo 把 A 和 10 都計為 -1，兩者的離場對 RC 影響相同，但實際上 A 對 blackjack 的貢獻遠大於普通 10。Zen 把 A 和 10 拆開——A 計 -1，10/J/Q/K 計 -2——讓牌堆中 A 的剩餘量能從 RC 中讀出部分資訊，省去 Hi-Opt I 那樣額外追蹤 ace side count 的步驟，在精度與複雜度之間取得平衡。</p>
+
+    <h3>Zen Count 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>4–6</td><td>+2</td></tr>
+        <tr><td>2、3、7</td><td>+1</td></tr>
+        <tr><td>8、9</td><td>0</td></tr>
+        <tr><td>A</td><td>-1</td></tr>
+        <tr><td>10、J、Q、K</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>True Count 換算</h3>
+    <p>Zen Count 是平衡系統（一副牌算完 RC = 0），使用和 Hi-Lo 相同的換算方式：TC = RC / 剩餘牌組數。因為牌值幅度從 -2 到 +2，RC 的波動比 Hi-Lo 大，TC 也會相應放大。</p>
+
+    <h3>保險</h3>
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>莊家 A</td><td>不保險</td><td>TC &gt;= +1 時保險</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>A</td><td>H17：TC &gt;= +1 投降；S17：TC &gt;= 0 投降</td></tr>
+        <tr><td>16</td><td>10</td><td>TC &gt;= 0 投降</td></tr>
+        <tr><td>16</td><td>9</td><td>TC &gt;= +1 投降</td></tr>
+        <tr><td>15</td><td>10</td><td>TC &gt;= +2 投降</td></tr>
+        <tr><td>15</td><td>A</td><td>H17：TC &gt;= +4 投降；S17：TC &gt;= +3 投降</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>未投降且 TC &gt;= 0 時 Stand</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>未投降且 TC &gt;= +2 時 Stand</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>未投降且 TC &gt;= +2 時 Stand</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>TC &gt;= 0 時 Stand</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>TC &gt;= -1 時 Stand</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>TC &gt;= +2 時 Stand</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>TC &gt;= +1 時 Stand</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>TC &gt;= 0 時 Stand（TC &lt; 0 時 Hit）</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>TC &gt;= -2 時 Stand（TC &lt; -2 時 Hit）</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>TC &gt;= -1 時 Stand（TC &lt; -1 時 Hit）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>H17：TC &gt;= +1 時 Double；S17：TC &gt;= 0 時 Double</td></tr>
+        <tr><td>10</td><td>10</td><td>TC &gt;= +2 時 Double</td></tr>
+        <tr><td>10</td><td>A</td><td>H17：TC &gt;= +2 時 Double；S17：TC &gt;= +1 時 Double</td></tr>
+        <tr><td>9</td><td>2</td><td>TC &gt;= +1 時 Double</td></tr>
+        <tr><td>9</td><td>7</td><td>TC &gt;= +4 時 Double</td></tr>
+        <tr><td>8</td><td>5</td><td>TC &gt;= +5 時 Double</td></tr>
+        <tr><td>8</td><td>6</td><td>TC &gt;= +3 時 Double</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">Zen Count 的 16 vs 9 和 16 vs A surrender deviations 比 Hi-Lo 多，因為 Zen 的 A 計 -1 而非 -2，讓牌堆中 A 偏多時 TC 相對偏高，可以更早識別危險的莊家組合。同一張表不能直接套用 Hi-Lo 的 deviation index。</div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/zh-Hant/content/cardcounting/hilo">Hi-Lo 算牌</a></li>
+        <li><a href="/zh-Hant/content/cardcounting/hiopt">補充：Hi-Opt</a></li>
+        <li><a href="/zh-Hant/content/app/training">訓練模式</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

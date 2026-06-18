@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red 7 算牌補充教學｜Blackjack 不平衡算牌系統</title>
+  <meta name="description" content="Red 7 算牌教學，說明紅 7 牌值的特殊處理、不平衡系統特性、IRC、保險與核心 deviations。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/content/cardcounting/red7">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/red7">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/red7">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/red7">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/red7">
+  <link rel="stylesheet" href="../content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>補充：Red 7</h1>
+    <p class="lead">Red 7 是一套不平衡算牌系統，設計上介於 Hi-Lo 和 KO 之間。它把紅色的 7（♥ 和 ♦）計為 +1、黑色的 7（♠ 和 ♣）計為 0，以這個「半個 7」的不平衡製造出省略 True Count 換算的效果。</p>
+
+    <p>一般的平衡系統（如 Hi-Lo）需要把 Running Count 除以剩餘牌組數才能得到 True Count。Red 7 透過只計算紅色 7，讓每副牌多出 +2 的淨計數（因為每副 4 張 7 中，只有紅色 2 張算 +1），造成適度不平衡，使得 RC 本身就能反映牌堆深度的資訊，可直接用於判斷。</p>
+
+    <h3>Red 7 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>2–6</td><td>+1</td></tr>
+        <tr><td>紅 7（♥、♦）</td><td>+1</td></tr>
+        <tr><td>黑 7（♠、♣）</td><td>0</td></tr>
+        <tr><td>8、9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K、A</td><td>-1</td></tr>
+      </tbody>
+    </table>
+
+    <p>和 Hi-Lo 相比，Red 7 的差異只在 7 的處理：Hi-Lo 的 7 全部是 0，Red 7 把其中的紅色 7 計為 +1。這讓 Red 7 只需要額外辨識花色，就能在 Hi-Lo 的基礎上使用不同的判斷門檻。</p>
+
+    <h3>IRC（Initial Running Count）</h3>
+    <p>由於 Red 7 不平衡，每副牌多出 +2 的計數，6 副牌時總體多出 +12。為了讓 RC 門檻在不同牌組數下具備一致的意義，通常會設 IRC = -2 × 牌組數，6 副牌時 IRC = -12，讓牌堆接近一半（正常優勢反轉點）時 RC 落在 0 附近。App 的 Red 7 訓練模式支援設定起始 RC。</p>
+
+    <div class="note">Red 7 在省略 True Count 換算的同時，比 KO 更接近 Hi-Lo 的判斷精度，因為它的不平衡量較小（每副 +2 vs KO 每副 +4）。代價是需要識別 7 的花色，增加了一點追蹤負擔。</div>
+
+    <h3>保險</h3>
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>莊家 A</td><td>不保險</td><td>RC &gt;= +2 時保險</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>A</td><td>RC &gt;= +3 投降（H17、S17 相同）</td></tr>
+        <tr><td>15</td><td>10</td><td>RC &gt;= 0 投降</td></tr>
+        <tr><td>14</td><td>10</td><td>RC &gt;= +3 投降</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>未投降且 RC &gt;= 0 時 Stand</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>未投降且 RC &gt;= +4 時 Stand</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>未投降且 RC &gt;= +4 時 Stand</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>RC &gt;= 0 時 Stand</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>RC &gt;= -1 時 Stand</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>RC &gt;= +3 時 Stand</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>RC &gt;= +2 時 Stand</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>RC &lt; 0 時 Hit</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>RC &lt; -2 時 Hit</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>RC &lt; -1 時 Hit</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>RC &gt;= +1 時 Double</td></tr>
+        <tr><td>10</td><td>10</td><td>RC &gt;= +4 時 Double</td></tr>
+        <tr><td>10</td><td>A</td><td>RC &gt;= +4 時 Double</td></tr>
+        <tr><td>9</td><td>2</td><td>RC &gt;= +1 時 Double</td></tr>
+        <tr><td>9</td><td>7</td><td>RC &gt;= +3 時 Double</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pair Split Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Pair</th><th>莊家</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>10,10</td><td>5</td><td>Stand</td><td>RC &gt;= +5 時 Split</td></tr>
+        <tr><td>10,10</td><td>6</td><td>Stand</td><td>RC &gt;= +4 時 Split</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">這些 deviations 依目前 app 採用的 Red 7 index spec 整理，直接使用 RC 做門檻，不需換算 TC。IRC 的設定會影響 RC 的起始值，進而影響 deviation 觸發時機，建議在 app 設定中依實際牌組數調整。</div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/content/cardcounting/hilo">Hi-Lo 算牌</a></li>
+        <li><a href="/content/cardcounting/ko">補充：KO</a></li>
+        <li><a href="/content/app/training">訓練模式</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../layout.js?v=20260528-1"></script>
+  <script src="../image-lightbox.js?v=20260526-3"></script>
+  <script src="../translate.js?v=20260527-6"></script>
+</body>
+</html>

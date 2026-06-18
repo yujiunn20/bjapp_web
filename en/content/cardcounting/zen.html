@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zen Count Guide | Multi-Level Balanced Blackjack Counting System</title>
+  <meta name="description" content="Zen Count guide covering multi-level card values, balanced system, True Count conversion, and core deviations.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/zen">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/zen">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/zen">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/zen">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/zen">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>Extra: Zen Count</h1>
+    <p class="lead">Zen Count is a balanced multi-level card counting system using four values: -2, -1, +1, and +2. Compared to Hi-Lo, Zen separately counts A as -1, letting ace depletion reflect directly in the RC, while giving the most favorable low cards (4–6) a stronger +2 signal.</p>
+
+    <p>Hi-Lo counts both A and 10 as -1, treating their removal equally, but aces contribute far more to blackjack value than regular 10s. Zen separates them — A counts as -1, while 10/J/Q/K count as -2 — allowing the remaining ace count to be partially read from the RC. This avoids the separate ace side count needed in Hi-Opt I, balancing accuracy and complexity.</p>
+
+    <h3>Zen Count Card Values</h3>
+    <table class="data-table">
+      <thead><tr><th>Card</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>4–6</td><td>+2</td></tr>
+        <tr><td>2, 3, 7</td><td>+1</td></tr>
+        <tr><td>8, 9</td><td>0</td></tr>
+        <tr><td>A</td><td>-1</td></tr>
+        <tr><td>10, J, Q, K</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>True Count Conversion</h3>
+    <p>Zen Count is a balanced system (RC returns to 0 after a full deck), using the same conversion as Hi-Lo: TC = RC / remaining decks. Because the count range extends from -2 to +2, RC fluctuates more than Hi-Lo, and TC values are proportionally larger.</p>
+
+    <h3>Insurance</h3>
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>Dealer A</td><td>No Insurance</td><td>Take insurance when TC &gt;= +1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>A</td><td>H17: surrender when TC &gt;= +1; S17: surrender when TC &gt;= 0</td></tr>
+        <tr><td>16</td><td>10</td><td>Surrender when TC &gt;= 0</td></tr>
+        <tr><td>16</td><td>9</td><td>Surrender when TC &gt;= +1</td></tr>
+        <tr><td>15</td><td>10</td><td>Surrender when TC &gt;= +2</td></tr>
+        <tr><td>15</td><td>A</td><td>H17: surrender when TC &gt;= +4; S17: surrender when TC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and TC &gt;= 0</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>Stand when surrender unavailable and TC &gt;= +2</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and TC &gt;= +2</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>Stand when TC &gt;= 0</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>Stand when TC &gt;= -1</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>Stand when TC &gt;= +2</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>Stand when TC &gt;= +1</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>Stand when TC &gt;= 0; Hit when TC &lt; 0</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>Stand when TC &gt;= -2; Hit when TC &lt; -2</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>Stand when TC &gt;= -1; Hit when TC &lt; -1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>H17: Double when TC &gt;= +1; S17: Double when TC &gt;= 0</td></tr>
+        <tr><td>10</td><td>10</td><td>Double when TC &gt;= +2</td></tr>
+        <tr><td>10</td><td>A</td><td>H17: Double when TC &gt;= +2; S17: Double when TC &gt;= +1</td></tr>
+        <tr><td>9</td><td>2</td><td>Double when TC &gt;= +1</td></tr>
+        <tr><td>9</td><td>7</td><td>Double when TC &gt;= +4</td></tr>
+        <tr><td>8</td><td>5</td><td>Double when TC &gt;= +5</td></tr>
+        <tr><td>8</td><td>6</td><td>Double when TC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">Zen Count has more surrender deviations for 16 vs 9 and 16 vs A than Hi-Lo, because Zen counts A as -1 rather than -2. When aces are relatively abundant in the remaining deck, TC runs higher, allowing earlier recognition of dangerous dealer upcard combinations. Hi-Lo deviation indexes cannot be applied directly to Zen Count.</div>
+
+    <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/en/content/cardcounting/hilo">Hi-Lo Card Counting</a></li>
+        <li><a href="/en/content/cardcounting/hiopt">Extra: Hi-Opt</a></li>
+        <li><a href="/en/content/app/training">Training Mode</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omega II カウント解説 | 上級 Blackjack カウントシステム</title>
+  <meta name="description" content="Omega II カウント解説。多レベルカード値、ace side count、Playing TC、Betting TC、主要 deviations を説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/omega-ii">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>補足：Omega II</h1>
+    <p class="lead">Omega II は -2、-1、0、+1、+2 の 5 種類のカード値を使う平衡マルチレベルカウントシステムです。A はメインカウントでは 0 とし、ace side count で別途追跡することで、ベットとインシュランスの判断をより精確にします。構造は Hi-Opt I に似ていますが、カード値の割り当てが異なります。</p>
+
+    <p>Omega II の設計目標は低カード（特に 4–6）に最も強いシグナル（+2）を与えつつ、高カードをより細かく区別することです。10/J/Q/K は -2、9 は -1、A は 0 として別途追跡します。これによりメインカウントが 10 点カードの密度をより正確に反映し、A の情報を side count で補完してベットとインシュランス判断を完結させます。</p>
+
+    <h3>Omega II カード値</h3>
+    <table class="data-table">
+      <thead><tr><th>カード</th><th>カウント</th></tr></thead>
+      <tbody>
+        <tr><td>4–6</td><td>+2</td></tr>
+        <tr><td>2、3、7</td><td>+1</td></tr>
+        <tr><td>8、A</td><td>0（A は別途 side count で追跡）</td></tr>
+        <tr><td>9</td><td>-1</td></tr>
+        <tr><td>10、J、Q、K</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Ace Side Count と Ace Adjustment</h3>
+    <p>Hi-Opt I と同様に、Omega II のメインカウント（RC）では A を 0 とし、ace side count で見た A を別途追跡します。Ace side count によってアプリは ace deficit（実際に出た A が理論予想より少ない枚数）を計算し、以下の式でベットとインシュランス用の true count を修正します：</p>
+
+    <table class="data-table">
+      <thead><tr><th>指標</th><th>意味</th><th>計算式 / 補足</th></tr></thead>
+      <tbody>
+        <tr><td>Running Count</td><td>Ace-neutral メインカウント</td><td>A = 0</td></tr>
+        <tr><td>True Count</td><td>プレイ判断用</td><td>RC / 残りデッキ数</td></tr>
+        <tr><td>Ace Seen</td><td>見た A の枚数</td><td>Side count</td></tr>
+        <tr><td>Ace Deficit</td><td>理論より少ない A の枚数</td><td>usedCards / 13 - aceSeen</td></tr>
+        <tr><td>Adjusted RC</td><td>ace deficit と k で修正した RC</td><td>RC + k × Ace Deficit</td></tr>
+        <tr><td>Betting TC</td><td>ベット判断用</td><td>Adjusted RC / 残りデッキ数</td></tr>
+        <tr><td>Insurance TC</td><td>インシュランス判断用</td><td>Betting TC と同じ</td></tr>
+      </tbody>
+    </table>
+
+    <p>式中の k はアプリ設定の ace adjustment パラメータで、デフォルトは 2 です。k を上げると ace deficit が Betting TC に与える影響が大きくなり、下げると小さくなります。</p>
+
+    <div class="note">アプリでは ace side count のオン/オフを切り替えられます。オフ時はメインカウントの True Count をすべての判断に使用し、オン時はベットとインシュランスを修正済み Betting TC に切り替えます。このスイッチは Hi-Opt I と同じ設計で、Game Settings で調整できます。</div>
+
+    <h3>インシュランス</h3>
+    <table class="data-table">
+      <thead><tr><th>状況</th><th>基本戦略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>ディーラー A</td><td>インシュランスなし</td><td>Betting TC（または TC）&gt;= +2 でインシュランス</td></tr>
+      </tbody>
+    </table>
+
+    <h3>サレンダー Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>プレイヤー手札</th><th>ディーラー</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>A</td><td>H17：TC &gt;= +1 でサレンダー；S17：TC &gt;= 0 でサレンダー</td></tr>
+        <tr><td>16</td><td>10</td><td>TC &gt;= 0 でサレンダー</td></tr>
+        <tr><td>16</td><td>9</td><td>TC &gt;= +1 でサレンダー</td></tr>
+        <tr><td>15</td><td>10</td><td>TC &gt;= +3 でサレンダー</td></tr>
+        <tr><td>15</td><td>A</td><td>H17：TC &gt;= +5 でサレンダー；S17：TC &gt;= +4 でサレンダー</td></tr>
+      </tbody>
+    </table>
+
+    <h3>ハードハンド Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>プレイヤー手札</th><th>ディーラー</th><th>基本戦略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>サレンダー不可かつ TC &gt;= 0 でスタンド</td></tr>
+        <tr><td>16</td><td>9</td><td>ヒット</td><td>サレンダー不可かつ TC &gt;= +2 でスタンド</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>サレンダー不可かつ TC &gt;= +3 でスタンド</td></tr>
+        <tr><td>13</td><td>2</td><td>スタンド</td><td>TC &lt; 0 でヒット</td></tr>
+        <tr><td>13</td><td>3</td><td>スタンド</td><td>TC &lt; -1 でヒット</td></tr>
+        <tr><td>12</td><td>2</td><td>ヒット</td><td>TC &gt;= +3 でスタンド</td></tr>
+        <tr><td>12</td><td>3</td><td>ヒット</td><td>TC &gt;= +2 でスタンド</td></tr>
+        <tr><td>12</td><td>4</td><td>スタンド</td><td>TC &gt;= 0 でスタンド（TC &lt; 0 でヒット）</td></tr>
+        <tr><td>12</td><td>5</td><td>スタンド</td><td>TC &lt; -2 でヒット</td></tr>
+        <tr><td>12</td><td>6</td><td>スタンド</td><td>TC &lt; -1 でヒット</td></tr>
+      </tbody>
+    </table>
+
+    <h3>ダブル Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>プレイヤー手札</th><th>ディーラー</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>H17：TC &gt;= +1 でダブル；S17：TC &gt;= 0 でダブル</td></tr>
+        <tr><td>10</td><td>10</td><td>TC &gt;= +3 でダブル</td></tr>
+        <tr><td>10</td><td>A</td><td>H17：TC &gt;= +3 でダブル；S17：TC &gt;= +2 でダブル</td></tr>
+        <tr><td>9</td><td>2</td><td>TC &gt;= +1 でダブル</td></tr>
+        <tr><td>9</td><td>7</td><td>TC &gt;= +4 でダブル</td></tr>
+        <tr><td>8</td><td>5</td><td>TC &gt;= +6 でダブル</td></tr>
+        <tr><td>8</td><td>6</td><td>TC &gt;= +4 でダブル</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">Omega II のプレイ判断にはメインカウントから換算した True Count を使用し、ace adjustment の Betting TC は使いません。Ace Side Count はベットとインシュランスの 2 つの判断のみに影響します。ace side count を有効にした場合の k のデフォルトは 2 で、Game Settings で調整できます。</div>
+
+    <nav class="related-links" aria-label="関連コンテンツ" data-seo-related="true">
+      <h3>関連コンテンツ</h3>
+      <ul>
+        <li><a href="/ja/content/cardcounting/hiopt">補足：Hi-Opt</a></li>
+        <li><a href="/ja/content/cardcounting/deviations">ディビエーション</a></li>
+        <li><a href="/ja/content/app/training">トレーニング</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

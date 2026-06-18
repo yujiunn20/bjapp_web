@@ -13,7 +13,12 @@
         { title: "Deviations", path: "content/cardcounting/deviations.html" },
         { title: "EV・量級・變異數", path: "content/cardcounting/ev-variance.html" },
         { title: "理想與現實", path: "content/cardcounting/reality.html" },
-        { title: "補充：Hi-Opt", path: "content/cardcounting/hiopt.html" }
+        { title: "補充：Hi-Opt", path: "content/cardcounting/hiopt.html" },
+        { title: "補充：KO", path: "content/cardcounting/ko.html" },
+        { title: "補充：Red 7", path: "content/cardcounting/red7.html" },
+        { title: "補充：FELT", path: "content/cardcounting/felt.html" },
+        { title: "補充：Zen Count", path: "content/cardcounting/zen.html" },
+        { title: "補充：Omega II", path: "content/cardcounting/omega-ii.html" }
       ]
     },
     app: {
@@ -27,6 +32,7 @@
         { title: "統計", path: "content/app/statistics.html" },
         { title: "回放", path: "content/app/replay.html" },
         { title: "常見問題", path: "content/app/faq.html" },
+        { title: "策略", path: "content/app/strategy.html" },
         { title: "隱私權政策", path: "content/app/privacy.html" }
       ]
     }
@@ -73,7 +79,12 @@
             { title: "Deviations", path: "content/cardcounting/deviations.html" },
             { title: "EV, Scale, and Variance", path: "content/cardcounting/ev-variance.html" },
             { title: "Theory and Reality", path: "content/cardcounting/reality.html" },
-            { title: "Extra: Hi-Opt", path: "content/cardcounting/hiopt.html" }
+            { title: "Extra: Hi-Opt", path: "content/cardcounting/hiopt.html" },
+            { title: "Extra: KO", path: "content/cardcounting/ko.html" },
+            { title: "Extra: Red 7", path: "content/cardcounting/red7.html" },
+            { title: "Extra: FELT", path: "content/cardcounting/felt.html" },
+            { title: "Extra: Zen Count", path: "content/cardcounting/zen.html" },
+            { title: "Extra: Omega II", path: "content/cardcounting/omega-ii.html" }
           ]
         },
         app: {
@@ -87,6 +98,7 @@
             { title: "Statistics", path: "content/app/statistics.html" },
             { title: "Replay", path: "content/app/replay.html" },
             { title: "FAQ", path: "content/app/faq.html" },
+            { title: "Strategy", path: "content/app/strategy.html" },
             { title: "Privacy Policy", path: "content/app/privacy.html" }
           ]
         }
@@ -118,7 +130,12 @@
             { title: "ディビエーション", path: "content/cardcounting/deviations.html" },
             { title: "EV・規模感・分散", path: "content/cardcounting/ev-variance.html" },
             { title: "理想と現実", path: "content/cardcounting/reality.html" },
-            { title: "補足：Hi-Opt", path: "content/cardcounting/hiopt.html" }
+            { title: "補足：Hi-Opt", path: "content/cardcounting/hiopt.html" },
+            { title: "補足：KO", path: "content/cardcounting/ko.html" },
+            { title: "補足：Red 7", path: "content/cardcounting/red7.html" },
+            { title: "補足：FELT", path: "content/cardcounting/felt.html" },
+            { title: "補足：Zen Count", path: "content/cardcounting/zen.html" },
+            { title: "補足：Omega II", path: "content/cardcounting/omega-ii.html" }
           ]
         },
         app: {
@@ -132,6 +149,7 @@
             { title: "統計", path: "content/app/statistics.html" },
             { title: "リプレイ", path: "content/app/replay.html" },
             { title: "よくある質問", path: "content/app/faq.html" },
+            { title: "戦略", path: "content/app/strategy.html" },
             { title: "プライバシーポリシー", path: "content/app/privacy.html" }
           ]
         }
@@ -405,7 +423,13 @@
         "content/cardcounting/deviations.html": "Blackjack Deviations 教學｜算牌偏離基本策略",
         "content/cardcounting/ev-variance.html": "Blackjack EV、ROI 與變異數教學｜算牌長期期望值",
         "content/cardcounting/reality.html": "Blackjack 算牌理想與現實｜桌規、資金與風險限制",
-        "content/cardcounting/hiopt.html": "Hi-Opt I 算牌補充教學｜Blackjack 進階算牌系統"
+        "content/cardcounting/hiopt.html": "Hi-Opt I 算牌補充教學｜Blackjack 進階算牌系統",
+        "content/cardcounting/ko.html": "KO 算牌補充教學｜Blackjack 不平衡算牌系統",
+        "content/cardcounting/red7.html": "Red 7 算牌補充教學｜Blackjack 不平衡算牌系統",
+        "content/cardcounting/felt.html": "FELT 算牌補充教學｜Blackjack 多級平衡算牌系統",
+        "content/cardcounting/zen.html": "Zen Count 算牌補充教學｜Blackjack 多級平衡算牌系統",
+        "content/cardcounting/omega-ii.html": "Omega II 算牌補充教學｜Blackjack 進階算牌系統",
+        "content/app/strategy.html": "Blackjack 策略自訂功能介紹｜二十一點算牌訓練器"
       },
       en: {
         "content/app/overview.html": "Blackjack Card Counting Trainer App Overview",
@@ -423,7 +447,13 @@
         "content/cardcounting/deviations.html": "Blackjack Deviations Guide | Count-Based Strategy Changes",
         "content/cardcounting/ev-variance.html": "Blackjack EV, ROI, and Variance Guide | Long-Term Counting Results",
         "content/cardcounting/reality.html": "Blackjack Card Counting Reality | Rules, Bankroll, and Risk Limits",
-        "content/cardcounting/hiopt.html": "Hi-Opt I Card Counting Guide | Advanced Blackjack Counting System"
+        "content/cardcounting/hiopt.html": "Hi-Opt I Card Counting Guide | Advanced Blackjack Counting System",
+        "content/cardcounting/ko.html": "KO Card Counting Guide | Unbalanced Blackjack Counting System",
+        "content/cardcounting/red7.html": "Red 7 Card Counting Guide | Unbalanced Blackjack Counting System",
+        "content/cardcounting/felt.html": "FELT Card Counting Guide | Multi-Level Balanced Counting System",
+        "content/cardcounting/zen.html": "Zen Count Guide | Multi-Level Balanced Blackjack Counting System",
+        "content/cardcounting/omega-ii.html": "Omega II Card Counting Guide | Advanced Blackjack Counting System",
+        "content/app/strategy.html": "Blackjack Strategy Profile Customization | Card Counting Trainer App"
       },
       ja: {
         "content/app/overview.html": "ブラックジャック カウントトレーナー アプリ概要",
@@ -441,7 +471,13 @@
         "content/cardcounting/deviations.html": "Blackjack Deviations 解説 | カウントによる基本戦略変更",
         "content/cardcounting/ev-variance.html": "Blackjack EV、ROI、分散解説 | カウントの長期結果",
         "content/cardcounting/reality.html": "Blackjack カウントの現実 | ルール、資金、リスク制限",
-        "content/cardcounting/hiopt.html": "Hi-Opt I カウント解説 | 上級 Blackjack カウントシステム"
+        "content/cardcounting/hiopt.html": "Hi-Opt I カウント解説 | 上級 Blackjack カウントシステム",
+        "content/cardcounting/ko.html": "KO カウント解説 | 不平衡 Blackjack カウントシステム",
+        "content/cardcounting/red7.html": "Red 7 カウント解説 | 不平衡 Blackjack カウントシステム",
+        "content/cardcounting/felt.html": "FELT カウント解説 | 多レベル平衡 Blackjack カウントシステム",
+        "content/cardcounting/zen.html": "Zen Count 解説 | 多レベル平衡 Blackjack カウントシステム",
+        "content/cardcounting/omega-ii.html": "Omega II カウント解説 | 上級 Blackjack カウントシステム",
+        "content/app/strategy.html": "Blackjack 戦略カスタマイズ機能 | カウントトレーナー"
       }
     };
     const languageTitles = titles[activeLanguage] || titles["zh-Hant"];
@@ -471,7 +507,13 @@
         "content/cardcounting/deviations.html": "Blackjack deviations 教學，整理 Hi-Lo Illustrious 18、Fab 4、保險、投降與常見 TC 門檻，說明何時偏離基本策略。",
         "content/cardcounting/ev-variance.html": "Blackjack EV、ROI 與變異數教學，說明基本策略、Hi-Lo 算牌、bet ramp、標準差與長期模擬結果的量級。",
         "content/cardcounting/reality.html": "Blackjack 算牌現實限制說明，整理桌規、穿透率、桌限、資金、速度、心理壓力與賭場拒絕服務等實戰風險。",
-        "content/cardcounting/hiopt.html": "Hi-Opt I 算牌教學，說明牌值、ace side count、Playing TC、Betting TC、Insurance TC 與核心 deviations。"
+        "content/cardcounting/hiopt.html": "Hi-Opt I 算牌教學，說明牌值、ace side count、Playing TC、Betting TC、Insurance TC 與核心 deviations。",
+        "content/cardcounting/ko.html": "KO 算牌教學，說明牌值、不平衡系統、IRC 概念、Running Count 與核心 deviations。",
+        "content/cardcounting/red7.html": "Red 7 算牌教學，說明紅 7 與黑 7 的牌值差異、不平衡系統、IRC 概念與 RC-based deviations。",
+        "content/cardcounting/felt.html": "FELT 算牌教學，說明多級牌值、平衡系統、True Count 換算與核心 deviations。",
+        "content/cardcounting/zen.html": "Zen Count 算牌教學，說明多級牌值、平衡系統、True Count 換算與核心 deviations。",
+        "content/cardcounting/omega-ii.html": "Omega II 算牌教學，說明多級牌值、ace side count、Playing TC、Betting TC 與核心 deviations。",
+        "content/app/strategy.html": "Blackjack 策略自訂功能介紹，說明 Strategy Profile 的建立、編輯、Deviation 規則自訂與套用方式。"
       },
       en: {
         "content/app/overview.html": "Blackjack Card Counting Trainer overview covering basic strategy, Hi-Lo, Hi-Opt I, practice modes, simulations, statistics, and replay review.",
@@ -489,7 +531,13 @@
         "content/cardcounting/deviations.html": "Blackjack deviations guide covering Hi-Lo Illustrious 18, Fab 4, insurance, surrender, and common TC thresholds for changing basic strategy.",
         "content/cardcounting/ev-variance.html": "Blackjack EV, ROI, and variance guide explaining basic strategy, Hi-Lo counting, bet ramps, standard deviation, and long-run simulation scale.",
         "content/cardcounting/reality.html": "Blackjack card counting reality guide covering table rules, penetration, table limits, bankroll, speed, psychological pressure, and casino restrictions.",
-        "content/cardcounting/hiopt.html": "Hi-Opt I card counting guide covering card values, ace side count, Playing TC, Betting TC, Insurance TC, and core deviations."
+        "content/cardcounting/hiopt.html": "Hi-Opt I card counting guide covering card values, ace side count, Playing TC, Betting TC, Insurance TC, and core deviations.",
+        "content/cardcounting/ko.html": "KO card counting guide covering card values, unbalanced system, IRC concept, Running Count, and core deviations.",
+        "content/cardcounting/red7.html": "Red 7 card counting guide covering red/black 7 values, unbalanced system, IRC concept, and RC-based deviations.",
+        "content/cardcounting/felt.html": "FELT card counting guide covering multi-level card values, balanced system, True Count conversion, and core deviations.",
+        "content/cardcounting/zen.html": "Zen Count guide covering multi-level card values, balanced system, True Count conversion, and core deviations.",
+        "content/cardcounting/omega-ii.html": "Omega II card counting guide covering multi-level values, ace side count, Playing TC, Betting TC, and core deviations.",
+        "content/app/strategy.html": "Blackjack Strategy Profile customization guide for creating, editing, and applying custom deviation rule sets per counting system."
       },
       ja: {
         "content/app/overview.html": "ブラックジャック カウントトレーナーの概要。基本戦略、Hi-Lo、Hi-Opt I、練習、統計、リプレイ、シミュレーション機能を紹介します。",
@@ -507,7 +555,13 @@
         "content/cardcounting/deviations.html": "Blackjack deviations 解説。Hi-Lo Illustrious 18、Fab 4、insurance、surrender、基本戦略を変える TC しきい値を整理します。",
         "content/cardcounting/ev-variance.html": "Blackjack の EV、ROI、分散解説。基本戦略、Hi-Lo、bet ramp、標準偏差、長期シミュレーションの規模感を説明します。",
         "content/cardcounting/reality.html": "Blackjack カウントの現実面。テーブルルール、ペネトレーション、テーブルリミット、資金、速度、心理的負荷、カジノ側の制限を整理します。",
-        "content/cardcounting/hiopt.html": "Hi-Opt I カウント解説。カード値、ace side count、Playing TC、Betting TC、Insurance TC、主要 deviations を説明します。"
+        "content/cardcounting/hiopt.html": "Hi-Opt I カウント解説。カード値、ace side count、Playing TC、Betting TC、Insurance TC、主要 deviations を説明します。",
+        "content/cardcounting/ko.html": "KO カウント解説。カード値、不平衡システム、IRC 概念、Running Count、主要 deviations を説明します。",
+        "content/cardcounting/red7.html": "Red 7 カウント解説。赤/黒 7 の値、不平衡システム、IRC 概念、RC-based deviations を説明します。",
+        "content/cardcounting/felt.html": "FELT カウント解説。多レベルカード値、平衡システム、True Count 換算、主要 deviations を説明します。",
+        "content/cardcounting/zen.html": "Zen Count 解説。多レベルカード値、平衡システム、True Count 換算、主要 deviations を説明します。",
+        "content/cardcounting/omega-ii.html": "Omega II カウント解説。多レベルカード値、ace side count、Playing TC、Betting TC、主要 deviations を説明します。",
+        "content/app/strategy.html": "Blackjack 戦略カスタマイズ機能の説明。Strategy Profile の作成、編集、deviation ルール設定と適用方法を説明します。"
       }
     };
     const languageDescriptions = descriptions[activeLanguage] || descriptions["zh-Hant"];

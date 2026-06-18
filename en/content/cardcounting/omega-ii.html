@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omega II Card Counting Guide | Advanced Blackjack Counting System</title>
+  <meta name="description" content="Omega II card counting guide covering multi-level values, ace side count, Playing TC, Betting TC, and core deviations.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/omega-ii">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>Extra: Omega II</h1>
+    <p class="lead">Omega II is a balanced multi-level card counting system using five values: -2, -1, 0, +1, and +2. Aces count as 0 in the main count and are tracked separately with an ace side count for more precise betting and insurance decisions — a structure similar to Hi-Opt I but with different card value assignments.</p>
+
+    <p>Omega II is designed to give the strongest signal (+2) to low cards — especially 4–6 — while providing finer high-card distinctions: 10/J/Q/K count as -2, 9 counts as -1, and A is zeroed out and tracked separately. This lets the main count more accurately reflect the density of 10-value cards, while ace information is supplemented via side count for complete betting and insurance decisions.</p>
+
+    <h3>Omega II Card Values</h3>
+    <table class="data-table">
+      <thead><tr><th>Card</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>4–6</td><td>+2</td></tr>
+        <tr><td>2, 3, 7</td><td>+1</td></tr>
+        <tr><td>8, A</td><td>0 (A tracked separately with ace side count)</td></tr>
+        <tr><td>9</td><td>-1</td></tr>
+        <tr><td>10, J, Q, K</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Ace Side Count and Ace Adjustment</h3>
+    <p>Similar to Hi-Opt I, Omega II's main count (RC) treats A as 0 and separately tracks aces seen with an ace side count. The side count lets the app calculate the ace deficit — how many fewer aces have appeared than expected — and uses the following formula to adjust the true count for betting and insurance:</p>
+
+    <table class="data-table">
+      <thead><tr><th>Metric</th><th>Meaning</th><th>Formula / Note</th></tr></thead>
+      <tbody>
+        <tr><td>Running Count</td><td>Ace-neutral main count</td><td>A = 0</td></tr>
+        <tr><td>True Count</td><td>Used for playing decisions</td><td>RC / decksRemaining</td></tr>
+        <tr><td>Ace Seen</td><td>Number of aces seen</td><td>Side count</td></tr>
+        <tr><td>Ace Deficit</td><td>How many fewer aces than expected</td><td>usedCards / 13 - aceSeen</td></tr>
+        <tr><td>Adjusted RC</td><td>RC adjusted by ace deficit and k</td><td>RC + k × Ace Deficit</td></tr>
+        <tr><td>Betting TC</td><td>Used for betting decisions</td><td>Adjusted RC / decksRemaining</td></tr>
+        <tr><td>Insurance TC</td><td>Used for insurance decisions</td><td>Same as Betting TC</td></tr>
+      </tbody>
+    </table>
+
+    <p>The k in the formula is the ace adjustment parameter in app settings, with a default value of 2. Increasing k amplifies the ace deficit's effect on Betting TC; decreasing it reduces the effect.</p>
+
+    <div class="note">The app allows toggling ace side count on or off. When off, the main True Count is used for all decisions. When on, betting and insurance switch to the adjusted Betting TC. This toggle works the same as Hi-Opt I and can be adjusted in Game Settings.</div>
+
+    <h3>Insurance</h3>
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>Dealer A</td><td>No Insurance</td><td>Take insurance when Betting TC (or TC) &gt;= +2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>A</td><td>H17: surrender when TC &gt;= +1; S17: surrender when TC &gt;= 0</td></tr>
+        <tr><td>16</td><td>10</td><td>Surrender when TC &gt;= 0</td></tr>
+        <tr><td>16</td><td>9</td><td>Surrender when TC &gt;= +1</td></tr>
+        <tr><td>15</td><td>10</td><td>Surrender when TC &gt;= +3</td></tr>
+        <tr><td>15</td><td>A</td><td>H17: surrender when TC &gt;= +5; S17: surrender when TC &gt;= +4</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and TC &gt;= 0</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>Stand when surrender unavailable and TC &gt;= +2</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and TC &gt;= +3</td></tr>
+        <tr><td>13</td><td>2</td><td>Stand</td><td>Hit when TC &lt; 0</td></tr>
+        <tr><td>13</td><td>3</td><td>Stand</td><td>Hit when TC &lt; -1</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>Stand when TC &gt;= +3</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>Stand when TC &gt;= +2</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>Stand when TC &gt;= 0; Hit when TC &lt; 0</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>Hit when TC &lt; -2</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>Hit when TC &lt; -1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>H17: Double when TC &gt;= +1; S17: Double when TC &gt;= 0</td></tr>
+        <tr><td>10</td><td>10</td><td>Double when TC &gt;= +3</td></tr>
+        <tr><td>10</td><td>A</td><td>H17: Double when TC &gt;= +3; S17: Double when TC &gt;= +2</td></tr>
+        <tr><td>9</td><td>2</td><td>Double when TC &gt;= +1</td></tr>
+        <tr><td>9</td><td>7</td><td>Double when TC &gt;= +4</td></tr>
+        <tr><td>8</td><td>5</td><td>Double when TC &gt;= +6</td></tr>
+        <tr><td>8</td><td>6</td><td>Double when TC &gt;= +4</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">Omega II's playing decisions use the True Count from the main count, not the ace-adjusted Betting TC. The ace side count only affects betting and insurance decisions. When ace side count is enabled, the default k is 2 and can be adjusted in Game Settings.</div>
+
+    <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/en/content/cardcounting/hiopt">Extra: Hi-Opt</a></li>
+        <li><a href="/en/content/cardcounting/deviations">Deviations</a></li>
+        <li><a href="/en/content/app/training">Training Mode</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

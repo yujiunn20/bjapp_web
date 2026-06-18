@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack 戦略カスタマイズ機能 | カウントトレーナー</title>
+  <meta name="description" content="Blackjack 戦略カスタマイズ機能の説明。Strategy Profile の作成、編集、deviation ルール設定と適用方法を説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/app/strategy">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/strategy">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/strategy">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/strategy">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/strategy">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>戦略</h1>
+    <p class="lead">戦略機能では、各カウントシステムに対して deviation ルールセットをカスタマイズできます。プリセットの index spec に限らず、システムのプリセットをコピーして個々のルールを修正し、異なる index しきい値が判断に与える影響をテストできます。</p>
+
+    <h3>戦略ページとシステム選択</h3>
+    <p>戦略ページ上部でカウントシステムを切り替えられます：Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II と H17 / S17 フィルター。各システムはディーラールールごとにプリセット戦略を持ち、ロックされた「Preset」カードとして表示されます。</p>
+
+    <p>プリセット戦略はアプリのゲームとトレーニングモードにプリロードされた index spec に対応しており、完全な deviation ルールテーブルを確認できますが編集はできません。ルールを変更するにはカスタム戦略を作成する必要があります。</p>
+
+    <h3>カスタム戦略の作成</h3>
+    <p>右下の「戦略を追加」をタップして名前を入力すると、現在選択しているシステムと H17/S17 設定のプリセット戦略をベースに新しい編集可能な戦略がコピーされます。作成後すぐに編集に入ることも、後から変更することもできます。</p>
+
+    <p>カスタム戦略カードの右側に削除ボタンがあり、不要になった戦略を削除できます。プリセット戦略は削除できません。</p>
+
+    <h3>戦略ルールの確認と編集</h3>
+    <p>戦略を開くと、Hard / Soft / Pair タブ別のルールテーブルが表示されます。列がディーラーのアップカード（2–A）、行がプレイヤーのハンド合計に対応し、各セルに現在のアクション（ヒット、スタンド、ダブル、スプリット、サレンダー）が表示されます。カスタム戦略では、デフォルトの基本戦略と異なるセルが色付きで表示されるため、変更した状況を一目で確認できます。</p>
+
+    <p>セルをタップするとルール編集画面が開き、以下を設定できます：</p>
+    <ul>
+      <li><strong>手札タイプ</strong>：Hard、Soft、Pair、Insurance</li>
+      <li><strong>ディーラーアップカード</strong>：2–10 または A</li>
+      <li><strong>プレイヤーハンド合計</strong>（Insurance は不要）</li>
+      <li><strong>TC / RC しきい値</strong>：このルールを発動させるカウント条件</li>
+      <li><strong>比較方向</strong>：&gt;= または &lt;</li>
+      <li><strong>上書きアクション</strong>：条件が満たされたときに実行するアクション</li>
+      <li><strong>メモ</strong>（任意）：このルールの出典や理由を記録</li>
+    </ul>
+
+    <div class="note">KO システムのしきい値は Running Count（RC）単位で、他のシステム（Hi-Lo、FELT、Zen、Hi-Opt I、Omega II 等）は True Count（TC）単位です。編集画面では現在の戦略のシステムに合わせてフィールドラベルが自動的に切り替わります。</div>
+
+    <h3>カスタム戦略をゲームに適用</h3>
+    <p>カスタム戦略を作成したら、Settings の「Advisor mode」セクションでドロップダウンから戦略名を選択します。ゲームと Decision Training がカスタムルールに基づいてアドバイスを提供します。「Default」を選択するとシステム内蔵のプリセット index spec に戻ります。</p>
+
+    <h3>使用シナリオ</h3>
+    <div class="feature-grid">
+      <section class="feature-item">
+        <h4>異なる Index のテスト</h4>
+        <p>deviation のしきい値を上下させて、Game モードと Decision Training での発動頻度の変化を観察します。</p>
+      </section>
+      <section class="feature-item">
+        <h4>簡略版 Spec</h4>
+        <p>プリセットから低頻度または覚えにくい deviation を数個削除して、現在の記憶容量に合った簡略版を作成し、段階的に復元します。</p>
+      </section>
+      <section class="feature-item">
+        <h4>異なる資料との比較</h4>
+        <p>書籍や他のツールで異なる index 値を見つけた場合、プリセットをコピーして 1 つずつ対照しながら変更し、アプリで差異を検証します。</p>
+      </section>
+    </div>
+
+    <nav class="related-links" aria-label="関連コンテンツ" data-seo-related="true">
+      <h3>関連コンテンツ</h3>
+      <ul>
+        <li><a href="/ja/content/app/game">ゲーム</a></li>
+        <li><a href="/ja/content/app/training">トレーニング</a></li>
+        <li><a href="/ja/content/cardcounting/deviations">ディビエーション</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

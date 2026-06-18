@@ -12,7 +12,12 @@ const sections = {
       { title: "Deviations", path: "content/cardcounting/deviations.html" },
       { title: "EV・量級・變異數", path: "content/cardcounting/ev-variance.html" },
       { title: "理想與現實", path: "content/cardcounting/reality.html" },
-      { title: "補充：Hi-Opt", path: "content/cardcounting/hiopt.html" }
+      { title: "補充：Hi-Opt", path: "content/cardcounting/hiopt.html" },
+      { title: "補充：KO", path: "content/cardcounting/ko.html" },
+      { title: "補充：Red 7", path: "content/cardcounting/red7.html" },
+      { title: "補充：FELT", path: "content/cardcounting/felt.html" },
+      { title: "補充：Zen Count", path: "content/cardcounting/zen.html" },
+      { title: "補充：Omega II", path: "content/cardcounting/omega-ii.html" }
     ]
   },
   app: {
@@ -22,6 +27,7 @@ const sections = {
     items: [
       { title: "概要", path: "content/app/overview.html" },
       { title: "遊戲", path: "content/app/game.html" },
+      { title: "策略", path: "content/app/strategy.html" },
       { title: "訓練", path: "content/app/training.html" },
       { title: "統計", path: "content/app/statistics.html" },
       { title: "回放", path: "content/app/replay.html" },
@@ -38,7 +44,7 @@ const translations = {
     languageLabel: "語言",
     heroEyebrow: "Blackjack strategy and card counting",
     heroTitle: "21點算牌學習與訓練工具",
-    heroBody: "從基本規則、基本策略到 Hi-Lo 算牌，用清楚的教學內容搭配 App 截圖，幫助玩家建立可練習、可追蹤的 blackjack 訓練流程。",
+    heroBody: "從基本規則、基本策略到多種算牌系統，用清楚的教學內容搭配 App 截圖，幫助玩家建立可練習、可追蹤的 blackjack 訓練流程。",
     appName: "二十一點算牌訓練器",
     appTagline: "訓練・統計・回放",
     downloadEyebrow: "Practice with the app",
@@ -52,7 +58,7 @@ const translations = {
     languageLabel: "Language",
     heroEyebrow: "Blackjack strategy and card counting",
     heroTitle: "Blackjack Card Counting and Training Tool",
-    heroBody: "Learn from rules and basic strategy to Hi-Lo counting, with clear lessons and app screenshots that build a practiceable, trackable blackjack training flow.",
+    heroBody: "Learn from rules and basic strategy to multiple card counting systems, with clear lessons and app screenshots that build a practiceable, trackable blackjack training flow.",
     appName: "Blackjack Card Counting Trainer",
     appTagline: "Training・Stats・Replay",
     downloadEyebrow: "Practice with the app",
@@ -71,7 +77,12 @@ const translations = {
           { title: "Deviations", path: "content/cardcounting/deviations.html" },
           { title: "EV, Scale, and Variance", path: "content/cardcounting/ev-variance.html" },
           { title: "Theory and Reality", path: "content/cardcounting/reality.html" },
-          { title: "Extra: Hi-Opt", path: "content/cardcounting/hiopt.html" }
+          { title: "Extra: Hi-Opt", path: "content/cardcounting/hiopt.html" },
+          { title: "Extra: KO", path: "content/cardcounting/ko.html" },
+          { title: "Extra: Red 7", path: "content/cardcounting/red7.html" },
+          { title: "Extra: FELT", path: "content/cardcounting/felt.html" },
+          { title: "Extra: Zen Count", path: "content/cardcounting/zen.html" },
+          { title: "Extra: Omega II", path: "content/cardcounting/omega-ii.html" }
         ]
       },
       app: {
@@ -81,6 +92,7 @@ const translations = {
         items: [
           { title: "Overview", path: "content/app/overview.html" },
           { title: "Game", path: "content/app/game.html" },
+          { title: "Strategy", path: "content/app/strategy.html" },
           { title: "Training", path: "content/app/training.html" },
           { title: "Statistics", path: "content/app/statistics.html" },
           { title: "Replay", path: "content/app/replay.html" },
@@ -115,7 +127,12 @@ const translations = {
           { title: "ディビエーション", path: "content/cardcounting/deviations.html" },
           { title: "EV・規模感・分散", path: "content/cardcounting/ev-variance.html" },
           { title: "理想と現実", path: "content/cardcounting/reality.html" },
-          { title: "補足：Hi-Opt", path: "content/cardcounting/hiopt.html" }
+          { title: "補足：Hi-Opt", path: "content/cardcounting/hiopt.html" },
+          { title: "補足：KO", path: "content/cardcounting/ko.html" },
+          { title: "補足：Red 7", path: "content/cardcounting/red7.html" },
+          { title: "補足：FELT", path: "content/cardcounting/felt.html" },
+          { title: "補足：Zen Count", path: "content/cardcounting/zen.html" },
+          { title: "補足：Omega II", path: "content/cardcounting/omega-ii.html" }
         ]
       },
       app: {
@@ -125,6 +142,7 @@ const translations = {
         items: [
           { title: "概要", path: "content/app/overview.html" },
           { title: "ゲーム", path: "content/app/game.html" },
+          { title: "ストラテジー", path: "content/app/strategy.html" },
           { title: "トレーニング", path: "content/app/training.html" },
           { title: "統計", path: "content/app/statistics.html" },
           { title: "リプレイ", path: "content/app/replay.html" },
@@ -162,8 +180,14 @@ const contentHeights = {
   "content/cardcounting/ev-variance.html": 3000,
   "content/cardcounting/reality.html": 900,
   "content/cardcounting/hiopt.html": 5200,
+  "content/cardcounting/ko.html": 2800,
+  "content/cardcounting/red7.html": 2800,
+  "content/cardcounting/felt.html": 2800,
+  "content/cardcounting/zen.html": 2800,
+  "content/cardcounting/omega-ii.html": 3200,
   "content/app/overview.html": 1200,
   "content/app/game.html": 4200,
+  "content/app/strategy.html": 2800,
   "content/app/training.html": 4200,
   "content/app/statistics.html": 4200,
   "content/app/replay.html": 2400,

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KO Card Counting Guide | Unbalanced Blackjack Counting System</title>
+  <meta name="description" content="KO card counting guide covering card values, unbalanced system, IRC concept, Running Count, and core deviations.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ko">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/ko">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/ko">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/ko">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/ko">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>Extra: KO</h1>
+    <p class="lead">KO (Knock-Out) is an unbalanced card counting system. Its main advantage is that it does not require converting to True Count — you use the Running Count directly for betting and deviations, making it simpler to execute at the table than Hi-Lo.</p>
+
+    <p>Hi-Lo is a balanced system: one full deck counted from start to finish brings RC back to 0, so you must divide RC by the remaining decks to get True Count. KO counts 7 as +1 instead of 0, which adds a net +4 per deck, so the RC does not return to zero after a full deck. This imbalance means the RC itself carries information about deck penetration, eliminating the need for division and allowing direct RC-based decisions.</p>
+
+    <h3>KO Card Values</h3>
+    <table class="data-table">
+      <thead><tr><th>Card</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>2–7</td><td>+1</td></tr>
+        <tr><td>8, 9</td><td>0</td></tr>
+        <tr><td>10, J, Q, K, A</td><td>-1</td></tr>
+      </tbody>
+    </table>
+
+    <p>Compared to Hi-Lo, the only difference in KO is that 7 changes from 0 to +1. All other card values are identical.</p>
+
+    <h3>IRC (Initial Running Count)</h3>
+    <p>Because KO is unbalanced, RC ends at +4 per deck rather than 0. To make RC thresholds consistent across different deck counts, a starting IRC is used. IRC = -4 × number of decks, so for a 6-deck shoe IRC = -24. This shifts the starting RC negative to offset the imbalance.</p>
+
+    <p>The KO training mode in the app supports setting a starting RC so you can practice with the correct IRC for any deck count.</p>
+
+    <div class="note">KO eliminates the True Count conversion step, making it easier to execute at the table. The trade-off is that some decision accuracy is lost compared to Hi-Lo's TC adjustment, particularly when the deck is very deep or very shallow.</div>
+
+    <h3>Insurance</h3>
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>Dealer A</td><td>No Insurance</td><td>Take insurance when RC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>A</td><td>H17: surrender when RC &gt;= +1; S17: surrender when RC &gt;= +2</td></tr>
+        <tr><td>15</td><td>9</td><td>Surrender when RC &gt;= +2</td></tr>
+        <tr><td>14</td><td>10</td><td>Surrender when RC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and RC &gt;= 0</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and RC &gt;= +4</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>Stand when surrender unavailable and RC &gt;= +5</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>Stand when RC &gt;= -1</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>Stand when RC &gt;= -2</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>Stand when RC &gt;= +3</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>Stand when RC &gt;= +2</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>Hit when RC &lt; 0</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>Hit when RC &lt; -2</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>Hit when RC &lt; -1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>Double when RC &gt;= +1</td></tr>
+        <tr><td>10</td><td>10</td><td>Double when RC &gt;= +4</td></tr>
+        <tr><td>10</td><td>A</td><td>Double when RC &gt;= +4</td></tr>
+        <tr><td>10</td><td>8</td><td>Double when RC &gt;= +4</td></tr>
+        <tr><td>9</td><td>2</td><td>Double when RC &gt;= +1</td></tr>
+        <tr><td>9</td><td>7</td><td>Double when RC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pair Split Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Pair</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>10,10</td><td>5</td><td>Stand</td><td>Split when RC &gt;= +5</td></tr>
+        <tr><td>10,10</td><td>6</td><td>Stand</td><td>Split when RC &gt;= +4</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">These deviations follow the KO index spec used in this app. KO uses Running Count for all decisions without converting to True Count, so thresholds are listed as RC values. When IRC differs, the meaning of RC thresholds shifts accordingly, but the app's training and game modes handle the starting value based on deck count.</div>
+
+    <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/en/content/cardcounting/hilo">Hi-Lo Card Counting</a></li>
+        <li><a href="/en/content/cardcounting/deviations">Deviations</a></li>
+        <li><a href="/en/content/app/training">Training Mode</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

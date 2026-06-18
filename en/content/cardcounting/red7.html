@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Red 7 Card Counting Guide | Unbalanced Blackjack Counting System</title>
+  <meta name="description" content="Red 7 card counting guide covering red/black 7 values, unbalanced system, IRC concept, and RC-based deviations.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/cardcounting/red7">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/red7">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/red7">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/red7">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/red7">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>Extra: Red 7</h1>
+    <p class="lead">Red 7 is an unbalanced card counting system that sits between Hi-Lo and KO in design. It counts red 7s (♥ and ♦) as +1 and black 7s (♠ and ♣) as 0, using this "half-7" imbalance to eliminate the need for a True Count conversion.</p>
+
+    <p>Balanced systems like Hi-Lo require dividing Running Count by remaining decks to get True Count. Red 7 counts only red 7s, adding a net +2 per deck (since 2 of the 4 sevens per deck count as +1), creating a moderate imbalance that lets the RC itself reflect deck depth for direct decision-making.</p>
+
+    <h3>Red 7 Card Values</h3>
+    <table class="data-table">
+      <thead><tr><th>Card</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>2–6</td><td>+1</td></tr>
+        <tr><td>Red 7 (♥, ♦)</td><td>+1</td></tr>
+        <tr><td>Black 7 (♠, ♣)</td><td>0</td></tr>
+        <tr><td>8, 9</td><td>0</td></tr>
+        <tr><td>10, J, Q, K, A</td><td>-1</td></tr>
+      </tbody>
+    </table>
+
+    <p>Compared to Hi-Lo, Red 7 differs only in how 7s are handled: Hi-Lo counts all 7s as 0, while Red 7 counts red 7s as +1. This requires only identifying the suit of 7s to apply different decision thresholds on top of a Hi-Lo foundation.</p>
+
+    <h3>IRC (Initial Running Count)</h3>
+    <p>Because Red 7 is unbalanced with +2 extra per deck, a 6-deck shoe has +12 total extra. To give RC thresholds consistent meaning across deck counts, IRC = -2 × number of decks is used, giving IRC = -12 for 6 decks. This places RC near 0 when the shoe is roughly half dealt — the typical advantage pivot point. The app's Red 7 training mode supports setting a starting RC.</p>
+
+    <div class="note">Red 7 achieves closer decision accuracy to Hi-Lo than KO while still skipping True Count conversion, because it uses a smaller imbalance (+2 per deck vs KO's +4). The trade-off is needing to track 7 suit colors, adding a small tracking burden.</div>
+
+    <h3>Insurance</h3>
+    <table class="data-table">
+      <thead><tr><th>Situation</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>Dealer A</td><td>No Insurance</td><td>Take insurance when RC &gt;= +2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>A</td><td>Surrender when RC &gt;= +3 (same for H17 and S17)</td></tr>
+        <tr><td>15</td><td>10</td><td>Surrender when RC &gt;= 0</td></tr>
+        <tr><td>14</td><td>10</td><td>Surrender when RC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and RC &gt;= 0</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>Stand when surrender unavailable and RC &gt;= +4</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>Stand when surrender unavailable and RC &gt;= +4</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>Stand when RC &gt;= 0</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>Stand when RC &gt;= -1</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>Stand when RC &gt;= +3</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>Stand when RC &gt;= +2</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>Hit when RC &lt; 0</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>Hit when RC &lt; -2</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>Hit when RC &lt; -1</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Player Hand</th><th>Dealer</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>Double when RC &gt;= +1</td></tr>
+        <tr><td>10</td><td>10</td><td>Double when RC &gt;= +4</td></tr>
+        <tr><td>10</td><td>A</td><td>Double when RC &gt;= +4</td></tr>
+        <tr><td>9</td><td>2</td><td>Double when RC &gt;= +1</td></tr>
+        <tr><td>9</td><td>7</td><td>Double when RC &gt;= +3</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Pair Split Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>Pair</th><th>Dealer</th><th>Basic Strategy</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>10,10</td><td>5</td><td>Stand</td><td>Split when RC &gt;= +5</td></tr>
+        <tr><td>10,10</td><td>6</td><td>Stand</td><td>Split when RC &gt;= +4</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">These deviations follow the Red 7 index spec used in this app, using RC thresholds directly without TC conversion. IRC affects the RC starting value and therefore when deviations trigger; adjust it in the app settings based on your actual deck count.</div>
+
+    <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/en/content/cardcounting/hilo">Hi-Lo Card Counting</a></li>
+        <li><a href="/en/content/cardcounting/ko">Extra: KO</a></li>
+        <li><a href="/en/content/app/training">Training Mode</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

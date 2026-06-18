@@ -22,7 +22,7 @@
 
     <ul>
       <li>打開建議與對錯判斷後，畫面會顯示建議動作、這次選擇是否正確，以及對應的策略原因，幫助把基本策略和算牌偏離連到真實決策。</li>
-      <li>牌桌上方會依照目前 Mode 顯示 Basic、Hi-Lo 或 Hi-Opt I 相關資訊，包含剩餘牌數、Decks、Running Count、True Count 等數值。</li>
+      <li>牌桌上方會依照目前 Mode 顯示對應算牌系統的資訊，包含剩餘牌數、Decks、Running Count，以及適用 TC 換算的系統另顯示 True Count。</li>
       <li>牌桌最多可以設定四個玩家位置，也可以選擇自己坐在哪個位置，用比較接近實戰的多人牌桌情境練習。</li>
       <li>下注區可以手動調整 Bet，也可以點 Use Recommended，讓 app 依照目前算牌系統、True Count 和 Bet Ramp 自動帶入建議下注。</li>
       <li>右上角的設定按鈕可以調整桌規、牌組數、穿透率、發牌速度、Bet Ramp 和玩家模式，用來建立不同練習情境。</li>
@@ -53,13 +53,13 @@
     <ul>
       <li>Bet Ramp 可以設定不同 True Count threshold 對應幾倍下注。這會影響遊戲畫面中的建議下注，也會影響 Replay 回放時，app 如何判斷這一手的下注是否符合目前規則。</li>
       <li>發牌速度可以依熟悉度調整。剛開始練習時可以放慢，保留時間計算 Running Count 和 True Count；熟悉後再加快速度，練習在更接近實戰壓力的節奏下追蹤牌序。</li>
-      <li>座位設定除了選擇自己的位置，也可以指定其他玩家位置使用 Basic、Hi-Lo 或 Hi-Opt I 等模式。這些座位主要用來建立多人牌桌的發牌情境，讓練習更接近真實牌桌節奏。</li>
+      <li>座位設定除了選擇自己的位置，也可以指定其他玩家位置使用任一算牌系統模式。這些座位主要用來建立多人牌桌的發牌情境，讓練習更接近真實牌桌節奏。</li>
     </ul>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
         <img src="../../assets/img/game4.jpg" alt="遊戲設定可調整判斷模式、牌組數與穿透率">
-        <figcaption>可以調整 Mode，決定 Recommended 與決策對錯要用 Basic、Hi-Lo 或 Hi-Opt I 判斷；也能設定牌組數和穿透率。</figcaption>
+        <figcaption>可以調整 Mode，選擇 Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I 或 Omega II，決定 Recommended 與決策對錯使用的判斷系統；也能設定牌組數和穿透率。</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">
@@ -79,18 +79,19 @@
 
       <figure class="app-screenshot-card">
         <img src="../../assets/img/game8.jpg" alt="Hi-Opt I 設定畫面">
-        <figcaption>Hi-Opt I 相關設定可用來調整進階算牌模式，包含搭配 A side count 後的判斷方式。</figcaption>
+        <figcaption>Hi-Opt I 與 Omega II 相關設定，包含是否啟用 Ace side count 及 ace adjustment 參數，可在此調整搭配 side count 後的 Betting TC 計算方式。</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">
         <img src="../../assets/img/game9.jpg" alt="遊戲設定可調整玩家數量、自己的座位與玩家模式">
-        <figcaption>可設定賭桌上的 Players 數量、自己的座位，以及各玩家使用的 Mode，例如 Basic、Hi-Lo 或 Hi-Opt I。</figcaption>
+        <figcaption>可設定賭桌上的 Players 數量、自己的座位，以及各玩家使用的 Mode（Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II）。</figcaption>
       </figure>
     </div>
     <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
       <h3>相關閱讀</h3>
       <ul>
       <li><a href="/content/app/training">訓練模式</a></li>
+      <li><a href="/content/app/strategy">策略自訂</a></li>
       <li><a href="/content/cardcounting/bet-ramp">Bet Ramp</a></li>
       <li><a href="/content/app/replay">Replay 回放</a></li>
       <li><a href="/content/cardcounting/rules">21點規則</a></li>

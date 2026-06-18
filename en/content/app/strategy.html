@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack Strategy Profile Customization | Card Counting Trainer App</title>
+  <meta name="description" content="Blackjack Strategy Profile customization guide for creating, editing, and applying custom deviation rule sets per counting system.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/app/strategy">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/strategy">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/strategy">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/strategy">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/strategy">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>Strategy</h1>
+    <p class="lead">The Strategy feature lets you create custom deviation rule sets for each counting system, rather than being limited to the built-in index spec. You can start from the system preset, copy it, and modify individual rules to test how different index thresholds affect decisions.</p>
+
+    <h3>Strategy Page and System Selection</h3>
+    <p>At the top of the Strategy page, you can switch between counting systems: Basic, Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, Omega II, plus an H17 / S17 filter. Each system has a preset strategy for each dealer rule, displayed as a locked "Preset" card.</p>
+
+    <p>The preset strategies correspond to the index spec preloaded in the app's game and training modes. You can tap into them to view the complete deviation rule table, but cannot edit them. To modify rules, you need to create a custom strategy first.</p>
+
+    <h3>Creating a Custom Strategy</h3>
+    <p>Tap the "Add Strategy" button in the lower right, enter a name, and the app copies the preset for the currently selected system and H17/S17 setting into a new editable strategy. You can enter edit mode immediately or return to it later.</p>
+
+    <p>Custom strategy cards have a delete button on the right to remove strategies you no longer need. Preset strategies cannot be deleted.</p>
+
+    <h3>Viewing and Editing Strategy Rules</h3>
+    <p>Opening a strategy shows a rule table tabbed by Hard / Soft / Pair, with columns for dealer upcard (2–A) and rows for player hand total. Each cell shows the current action (Hit, Stand, Double, Split, Surrender). For custom strategies, cells that differ from the default basic strategy are color-coded, making it easy to see which situations have been modified.</p>
+
+    <p>Tapping a cell opens the rule editor, where you can configure:</p>
+    <ul>
+      <li><strong>Hand type</strong>: Hard, Soft, Pair, or Insurance</li>
+      <li><strong>Dealer upcard</strong>: 2–10 or A</li>
+      <li><strong>Player hand total</strong> (not required for Insurance)</li>
+      <li><strong>TC / RC threshold</strong>: the count condition that triggers this rule</li>
+      <li><strong>Comparison direction</strong>: &gt;= or &lt;</li>
+      <li><strong>Override action</strong>: the action to take when the condition is met</li>
+      <li><strong>Note</strong> (optional): record the source or reason for this rule</li>
+    </ul>
+
+    <div class="note">KO system thresholds use Running Count (RC), while other systems (Hi-Lo, FELT, Zen, Hi-Opt I, Omega II, etc.) use True Count (TC). The editor automatically shows the appropriate field label based on the system of the current strategy.</div>
+
+    <h3>Applying a Custom Strategy to the Game</h3>
+    <p>After creating a custom strategy, go to the "Advisor mode" section in Settings and select your strategy name from the dropdown. The game and Decision Training will then use your custom rules for recommendations. Selecting "Default" reverts to the system's built-in index spec.</p>
+
+    <h3>Use Cases</h3>
+    <div class="feature-grid">
+      <section class="feature-item">
+        <h4>Test Different Indexes</h4>
+        <p>Raise or lower a deviation threshold and observe how often it triggers in Game mode and Decision Training.</p>
+      </section>
+      <section class="feature-item">
+        <h4>Simplified Spec</h4>
+        <p>Remove a few low-frequency or hard-to-remember deviations from the preset to build a simplified version suited to your current memory capacity, then gradually restore them.</p>
+      </section>
+      <section class="feature-item">
+        <h4>Compare Different Sources</h4>
+        <p>If you find different index values in a book or another tool, copy the preset and adjust entries one by one, then use the app to verify the differences.</p>
+      </section>
+    </div>
+
+    <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/en/content/app/game">Game Mode</a></li>
+        <li><a href="/en/content/app/training">Training Mode</a></li>
+        <li><a href="/en/content/cardcounting/deviations">Deviations</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

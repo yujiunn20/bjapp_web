@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>策略自訂功能｜二十一點算牌訓練器</title>
+  <meta name="description" content="二十一點算牌訓練器策略功能介紹，說明如何建立自訂策略、修改 deviation index、切換 H17/S17，以及各系統預設策略的使用方式。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/content/app/strategy">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/strategy">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/strategy">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/strategy">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/app/strategy">
+  <link rel="stylesheet" href="../content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>策略</h1>
+    <p class="lead">策略功能讓使用者針對每個算牌系統建立自訂的 deviation 規則集，而不受限於預設的 index spec。你可以從系統預設出發，複製一份後修改個別規則，測試不同 index 門檻對決策的影響。</p>
+
+    <h3>策略頁面與系統選擇</h3>
+    <p>進入策略頁面後，頂部可切換算牌系統：Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II，以及 H17 / S17 篩選器。每個系統在不同莊家規則下各有一份預設策略，顯示為上鎖的「Preset」卡片。</p>
+
+    <p>預設策略對應 App 遊戲與訓練模式預載的 index spec，可以直接點進去查看完整的 deviation 規則表，但無法編輯。若想修改規則，需要先建立一份自訂策略。</p>
+
+    <h3>建立自訂策略</h3>
+    <p>點右下角的「新增策略」，輸入名稱後，App 會以目前選取系統和 H17/S17 設定的預設策略為基礎複製一份新的可編輯策略。建立後可以直接進入編輯，也可以之後再修改。</p>
+
+    <p>自訂策略卡片右側有刪除按鈕，可移除不再使用的策略，預設策略無法刪除。</p>
+
+    <h3>查看與編輯策略規則</h3>
+    <p>點進一份策略後，會看到按 Hard / Soft / Pair 分頁的策略表格，表格欄對應莊家明牌（2–A），列對應玩家手牌點數。每個格子顯示目前的動作（Hit、Stand、Double、Split、Surrender）。對於自訂策略，偏離預設基本策略的格子會以顏色標記，方便一眼看出哪些情境被修改過。</p>
+
+    <p>點格子可以開啟規則編輯介面，設定以下項目：</p>
+    <ul>
+      <li><strong>手牌類型</strong>：Hard、Soft、Pair、Insurance</li>
+      <li><strong>莊家明牌</strong>：2–10 或 A</li>
+      <li><strong>玩家手牌點數</strong>（Insurance 不需填）</li>
+      <li><strong>TC / RC 門檻</strong>：觸發此規則的 count 條件</li>
+      <li><strong>比較方向</strong>：&gt;= 或 &lt;</li>
+      <li><strong>覆蓋動作</strong>：符合條件時執行的動作</li>
+      <li><strong>備註</strong>（選填）：記錄這條規則的來源或理由</li>
+    </ul>
+
+    <div class="note">KO 系統的門檻以 Running Count（RC）為單位，其他系統（Hi-Lo、FELT、Zen、Hi-Opt I、Omega II 等）以 True Count（TC）為單位。編輯介面會依目前策略的系統自動顯示對應的欄位標籤。</div>
+
+    <h3>套用自訂策略到遊戲</h3>
+    <p>建立自訂策略後，到 Settings 的「Advisor mode」區塊，在下拉選單中選取對應的策略名稱，遊戲與 Decision Training 就會依照自訂規則給出建議。如果選「Default」，則使用系統內建的預設 index spec。</p>
+
+    <h3>使用情境</h3>
+    <div class="feature-grid">
+      <section class="feature-item">
+        <h4>測試不同 Index</h4>
+        <p>把某條 deviation 的門檻調高或調低，觀察在 Game 模式和 Decision Training 中觸發頻率的變化。</p>
+      </section>
+      <section class="feature-item">
+        <h4>簡化版 Spec</h4>
+        <p>從預設策略移除幾條低頻或難記的 deviation，建立一套適合自己目前記憶容量的簡化版，再逐步恢復。</p>
+      </section>
+      <section class="feature-item">
+        <h4>對照不同資料來源</h4>
+        <p>如果你在其他書籍或工具中看到不同的 index 值，可以複製預設後逐條對照修改，用 App 驗證差異。</p>
+      </section>
+    </div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/content/app/game">遊戲模式</a></li>
+        <li><a href="/content/app/training">訓練模式</a></li>
+        <li><a href="/content/cardcounting/deviations">Deviations</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../layout.js?v=20260528-1"></script>
+  <script src="../image-lightbox.js?v=20260526-3"></script>
+  <script src="../translate.js?v=20260527-6"></script>
+</body>
+</html>

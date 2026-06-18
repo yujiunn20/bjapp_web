@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FELT 算牌補充教學｜Blackjack 多級平衡算牌系統</title>
+  <meta name="description" content="FELT 算牌教學，說明多級牌值（+1/+2/−2）、True Count 換算、保險門檻與核心 deviations。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/content/cardcounting/felt">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/felt">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/felt">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/felt">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/felt">
+  <link rel="stylesheet" href="../content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>補充：FELT</h1>
+    <p class="lead">FELT 是一套平衡的多級算牌系統，使用 +1、+2 和 -2 三種牌值，讓 5 張核心牌（3–6）的計數強度比 Hi-Lo 更高，同時維持平衡結構，可換算 True Count 做精確下注判斷。</p>
+
+    <p>Hi-Lo 把所有低牌（2–6）都計為 +1，高牌（10–A）都計為 -1，是最常見的入門系統。FELT 在這個基礎上把 3–6 升到 +2，讓最有利的低牌提供更強的信號，同時把 10 和 A 降到 -2，維持整體平衡。代價是追蹤難度比 Hi-Lo 高一些，需要在快速發牌時同時處理不同計數強度的牌。</p>
+
+    <h3>FELT 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>3–6</td><td>+2</td></tr>
+        <tr><td>2、7</td><td>+1</td></tr>
+        <tr><td>8、9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K、A</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>True Count 換算</h3>
+    <p>FELT 是平衡系統（一副牌算完 RC = 0），因此需要換算 True Count。TC = RC / 剩餘牌組數。換算方式和 Hi-Lo 相同，但因為牌值幅度更大（-2 到 +2），相同牌面組合下 RC 和 TC 的絕對值都會比 Hi-Lo 大。</p>
+
+    <div class="note">FELT 的 TC 門檻數字和 Hi-Lo 不直接對應，不能把 Hi-Lo 的 deviation index 套用到 FELT 上。App 裡兩個系統各有獨立的 index spec。</div>
+
+    <h3>保險</h3>
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>莊家 A</td><td>不保險</td><td>TC &gt;= +6 時保險</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>10</td><td>TC &gt;= 0 投降</td></tr>
+        <tr><td>15</td><td>A</td><td>TC &gt;= +2 投降</td></tr>
+        <tr><td>15</td><td>9</td><td>TC &gt;= +2 投降</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>未投降且 TC &gt;= 0 時 Stand</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>未投降且 TC &gt;= +4 時 Stand</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>未投降且 TC &gt;= +4 時 Stand</td></tr>
+        <tr><td>16</td><td>A</td><td>Hit</td><td>未投降且 TC &gt;= +4 時 Stand</td></tr>
+        <tr><td>13</td><td>2</td><td>Hit</td><td>TC &gt;= -1 時 Stand</td></tr>
+        <tr><td>13</td><td>3</td><td>Hit</td><td>TC &gt;= -2 時 Stand</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>TC &gt;= +3 時 Stand</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>TC &gt;= +2 時 Stand</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>TC &gt;= 0 時 Stand（TC &lt; 0 時 Hit）</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>TC &gt;= -1 時 Stand（TC &lt; -1 時 Hit）</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>TC &gt;= -1 時 Stand（TC &lt; -1 時 Hit）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>TC &gt;= +1 時 Double</td></tr>
+        <tr><td>10</td><td>10</td><td>TC &gt;= +5 時 Double</td></tr>
+        <tr><td>10</td><td>A</td><td>TC &gt;= +7 時 Double</td></tr>
+        <tr><td>9</td><td>2</td><td>TC &gt;= +1 時 Double</td></tr>
+        <tr><td>9</td><td>7</td><td>TC &gt;= +3 時 Double</td></tr>
+        <tr><td>8</td><td>5</td><td>TC &gt;= +4 時 Double</td></tr>
+        <tr><td>8</td><td>6</td><td>TC &gt;= +2 時 Double</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">FELT 的 deviation 數量比 Hi-Lo 多，包含 8 vs 5、8 vs 6 等 Hi-Lo 沒有的雙倍情境。因為牌值幅度較大，TC 在高計數時移動更快，這些邊界情境比 Hi-Lo 更容易觸發。</div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/content/cardcounting/hilo">Hi-Lo 算牌</a></li>
+        <li><a href="/content/cardcounting/deviations">Deviations</a></li>
+        <li><a href="/content/app/training">訓練模式</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../layout.js?v=20260528-1"></script>
+  <script src="../image-lightbox.js?v=20260526-3"></script>
+  <script src="../translate.js?v=20260527-6"></script>
+</body>
+</html>

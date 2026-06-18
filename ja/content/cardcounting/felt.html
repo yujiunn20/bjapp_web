@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FELT カウント解説 | 多レベル平衡 Blackjack カウントシステム</title>
+  <meta name="description" content="FELT カウント解説。多レベルカード値、平衡システム、True Count 換算、主要 deviations を説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/felt">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/felt">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/felt">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/felt">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/felt">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>補足：FELT</h1>
+    <p class="lead">FELT は +1、+2、-2 の 3 種類のカード値を使う平衡マルチレベルカウントシステムです。コアとなる 5 枚の低カード（3–6）のカウント強度を Hi-Lo より高めながら、平衡構造を維持して True Count 換算による精密なベット判断が可能です。</p>
+
+    <p>Hi-Lo はすべての低カード（2–6）を +1、高カード（10–A）を -1 としますが、FELT では 3–6 を +2 に引き上げて最も有利な低カードのシグナルを強化し、10 と A を -2 に下げて全体の平衡を維持します。代わりにトラッキングの難易度が Hi-Lo より上がり、発牌スピードの中で異なるカウント強度を扱う必要があります。</p>
+
+    <h3>FELT カード値</h3>
+    <table class="data-table">
+      <thead><tr><th>カード</th><th>カウント</th></tr></thead>
+      <tbody>
+        <tr><td>3–6</td><td>+2</td></tr>
+        <tr><td>2、7</td><td>+1</td></tr>
+        <tr><td>8、9</td><td>0</td></tr>
+        <tr><td>10、J、Q、K、A</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>True Count 換算</h3>
+    <p>FELT は平衡システム（1 デッキ分で RC が 0 に戻る）のため True Count 換算が必要です。TC = RC / 残りデッキ数。換算方法は Hi-Lo と同じですが、カウント幅が広い（-2 から +2）ため、同じ配牌組み合わせでも RC と TC の絶対値は Hi-Lo より大きくなります。</p>
+
+    <div class="note">FELT の TC しきい値は Hi-Lo の deviation index に直接対応しません。2 つのシステムはアプリ内でそれぞれ独立した index spec を持っています。</div>
+
+    <h3>インシュランス</h3>
+    <table class="data-table">
+      <thead><tr><th>状況</th><th>基本戦略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>ディーラー A</td><td>インシュランスなし</td><td>TC &gt;= +6 でインシュランス</td></tr>
+      </tbody>
+    </table>
+
+    <h3>サレンダー Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>プレイヤー手札</th><th>ディーラー</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>15</td><td>10</td><td>TC &gt;= 0 でサレンダー</td></tr>
+        <tr><td>15</td><td>A</td><td>TC &gt;= +2 でサレンダー</td></tr>
+        <tr><td>15</td><td>9</td><td>TC &gt;= +2 でサレンダー</td></tr>
+      </tbody>
+    </table>
+
+    <h3>ハードハンド Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>プレイヤー手札</th><th>ディーラー</th><th>基本戦略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>サレンダー不可かつ TC &gt;= 0 でスタンド</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>サレンダー不可かつ TC &gt;= +4 でスタンド</td></tr>
+        <tr><td>16</td><td>9</td><td>ヒット</td><td>サレンダー不可かつ TC &gt;= +4 でスタンド</td></tr>
+        <tr><td>16</td><td>A</td><td>ヒット</td><td>サレンダー不可かつ TC &gt;= +4 でスタンド</td></tr>
+        <tr><td>13</td><td>2</td><td>ヒット</td><td>TC &gt;= -1 でスタンド</td></tr>
+        <tr><td>13</td><td>3</td><td>ヒット</td><td>TC &gt;= -2 でスタンド</td></tr>
+        <tr><td>12</td><td>2</td><td>ヒット</td><td>TC &gt;= +3 でスタンド</td></tr>
+        <tr><td>12</td><td>3</td><td>ヒット</td><td>TC &gt;= +2 でスタンド</td></tr>
+        <tr><td>12</td><td>4</td><td>スタンド</td><td>TC &gt;= 0 でスタンド（TC &lt; 0 でヒット）</td></tr>
+        <tr><td>12</td><td>5</td><td>スタンド</td><td>TC &gt;= -1 でスタンド（TC &lt; -1 でヒット）</td></tr>
+        <tr><td>12</td><td>6</td><td>スタンド</td><td>TC &gt;= -1 でスタンド（TC &lt; -1 でヒット）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>ダブル Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>プレイヤー手札</th><th>ディーラー</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>TC &gt;= +1 でダブル</td></tr>
+        <tr><td>10</td><td>10</td><td>TC &gt;= +5 でダブル</td></tr>
+        <tr><td>10</td><td>A</td><td>TC &gt;= +7 でダブル</td></tr>
+        <tr><td>9</td><td>2</td><td>TC &gt;= +1 でダブル</td></tr>
+        <tr><td>9</td><td>7</td><td>TC &gt;= +3 でダブル</td></tr>
+        <tr><td>8</td><td>5</td><td>TC &gt;= +4 でダブル</td></tr>
+        <tr><td>8</td><td>6</td><td>TC &gt;= +2 でダブル</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">FELT は Hi-Lo より deviation が多く、8 vs 5、8 vs 6 など Hi-Lo にないダブルケースを含みます。カウント幅が広いため高カウント時に TC の動きが速く、これらのボーダーケースが Hi-Lo より頻繁に発動します。</div>
+
+    <nav class="related-links" aria-label="関連コンテンツ" data-seo-related="true">
+      <h3>関連コンテンツ</h3>
+      <ul>
+        <li><a href="/ja/content/cardcounting/hilo">Hi-Lo カウント</a></li>
+        <li><a href="/ja/content/cardcounting/deviations">ディビエーション</a></li>
+        <li><a href="/ja/content/app/training">トレーニング</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

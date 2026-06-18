@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blackjack 策略與 Hi-Lo 算牌訓練功能｜二十一點算牌訓練器</title>
-  <meta name="description" content="Blackjack 訓練功能介紹，包含基本策略、deviation、Running Count、True Count 與接近實戰發牌流程的 Hi-Lo 練習。">
+  <title>Blackjack 策略與多種算牌系統訓練功能｜二十一點算牌訓練器</title>
+  <meta name="description" content="Blackjack 訓練功能介紹，包含基本策略、deviation、Running Count、True Count，以及 Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 七套算牌系統的接近實戰發牌練習。">
   <link rel="canonical" href="https://blackjack.yuchunlab.com/content/app/training">
   <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/training">
   <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/training">
@@ -15,18 +15,18 @@
 <body>
   <article>
     <h1>訓練</h1>
-    <p class="lead">訓練模式把 blackjack 的幾個核心能力拆開練習：決策、Running Count、True Count 換算，以及接近真實發牌流程的 Hi-Lo 算牌。</p>
+    <p class="lead">訓練模式把 blackjack 的幾個核心能力拆開練習：決策、Running Count、True Count 換算，以及接近真實發牌流程的算牌練習。目前支援 Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 七套算牌系統，每套各有獨立的訓練選單。</p>
 
     <h3 class="simulation-heading">訓練總覽</h3>
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
         <img src="../../assets/img/training1.jpg" alt="訓練首頁顯示 Decision Training、Running Count Drill、True Count Drill 和 Hi-Lo Count Drill">
-        <figcaption>目前包含決策訓練、RC 練習、True Count 計算練習，以及模擬真實發牌的 Hi-Lo 算牌練習。</figcaption>
+        <figcaption>訓練首頁包含 Decision Training，以及 Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 七個系統的獨立訓練入口，每個系統各有 RC 練習、Count Drill，部分系統另有 True Count Drill。</figcaption>
       </figure>
     </div>
 
     <h3 class="simulation-heading">Decision Training</h3>
-    <p>Decision Training 專注在 blackjack 決策本身，包含基本策略表上的一般決策，以及算牌後才會出現的 deviation。上方的 Mode 可以切換 Basic、Hi-Lo 或 Hi-Opt I，讓同一種牌局在不同判斷模式下練習。</p>
+    <p>Decision Training 專注在 blackjack 決策本身，包含基本策略表上的一般決策，以及算牌後才會出現的 deviation。上方的 Mode 可以切換 Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I 或 Omega II，讓同一種牌局在不同判斷模式下練習，也可以搭配自訂策略使用。</p>
 
     <p>實戰中有些 deviation、Insurance 或特定 pair 情境出現頻率很低，平常自由練習時不一定碰得到，也因此容易忘記。Question Type 可以指定題目類型，例如 Deviation、Pair、Insurance、硬牌、軟牌、加倍或投降，用來集中練習少見情境，或加強自己常犯錯、比較不熟的分類。</p>
 
@@ -43,7 +43,7 @@
     </div>
 
     <h3 class="simulation-heading">Running Count Drill</h3>
-    <p>Running Count Drill 專注在 Hi-Lo 算牌的基礎能力：看到牌後能不能穩定、快速地累加 Running Count。練習時可以只回答 Running Count，也可以改成計算出現過多少張牌，或同時練習兩者，確認自己不只知道 count，也有掌握牌序長度。</p>
+    <p>Running Count Drill 專注在算牌的基礎能力：看到牌後能不能穩定、快速地累加 Running Count。七個算牌系統各有獨立的 RC Drill，牌值邏輯依系統不同，但練習介面和設定方式相同。練習時可以只回答 Running Count，也可以改成計算出現過多少張牌，或同時練習兩者，確認自己不只知道 count，也有掌握牌序長度。</p>
 
     <p>設定上可以調整出牌速度與總長度，讓練習從短牌序、慢速度開始，再逐步拉長並加快。起始 RC 可以固定為 0，也可以設成隨機值，練習從不同 count 狀態接續計算。牌的顯示方式也能切換成一次一張、一次兩張，或隨機張數的手牌組，讓練習更接近真實牌桌上不同玩家依序拿牌的節奏。作答後，畫面會列出前面出現過的所有牌，方便回頭檢查是哪一段漏算或加錯。</p>
 
@@ -72,7 +72,7 @@
     <h3 class="simulation-heading">True Count Drill</h3>
     <p>True Count Drill 專注在把 Running Count 和剩餘牌數快速換算成 True Count。Running Count 只是目前牌序的累積結果，真正用來判斷下注級距與部分 deviation 的，是依剩餘牌組數修正後的 True Count。</p>
 
-    <p>透過反覆練習不同 RC 和剩餘牌數組合，可以加快心算速度，也能讓使用者更熟悉在實戰中把 count 轉換成可用下注判斷的流程。</p>
+    <p>透過反覆練習不同 RC 和剩餘牌數組合，可以加快心算速度，也能讓使用者更熟悉在實戰中把 count 轉換成可用下注判斷的流程。True Count Drill 適用於平衡系統：Hi-Lo、FELT、Zen、Hi-Opt I、Omega II。KO 和 Red 7 是不平衡系統，直接用 Running Count 做判斷，因此沒有 True Count Drill。</p>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
@@ -81,24 +81,53 @@
       </figure>
     </div>
 
-    <h3 class="simulation-heading">Hi-Lo Count Drill</h3>
-    <p>前面的 Running Count Drill 和 True Count Drill 分別練習 count 累加與 TC 換算，但和真實牌桌仍有差距。Hi-Lo Count Drill 會更接近實際發牌流程，模擬莊家與多個玩家依序拿牌，讓使用者在一局牌的節奏中追蹤 count。</p>
+    <h3 class="simulation-heading">Count Drill（模擬發牌）</h3>
+    <p>前面的 Running Count Drill 和 True Count Drill 分別練習 count 累加與 TC 換算，但和真實牌桌仍有差距。Count Drill 會更接近實際發牌流程，模擬莊家與多個玩家依序拿牌，讓使用者在一局牌的節奏中追蹤 count。每套算牌系統各有獨立的 Count Drill，使用對應的牌值邏輯。</p>
 
-    <p>練習開始時會給起始 Running Count 和剩餘牌數，接著依設定的人數與發牌速度模擬一局。發牌結束後，使用者需要回答最後的 Running Count 或剩餘牌數，用來確認自己是否能在接近真實牌桌的節奏中穩定追蹤 Hi-Lo count。</p>
+    <p>練習開始時會給起始 Running Count 和剩餘牌數，接著依設定的人數與發牌速度模擬一局。發牌結束後，使用者需要回答最後的 Running Count 或剩餘牌數，用來確認自己是否能在接近真實牌桌的節奏中穩定追蹤 count。</p>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
-        <img src="../../assets/img/training9.jpg" alt="Hi-Lo Count Drill 模擬真實發牌並回答 Running Count 和剩餘牌數">
-        <figcaption>Hi-Lo Count Drill 會模擬真實發牌流程，可調整 Players 數量、發牌速度，並練習回答 Running Count 與剩餘牌數。</figcaption>
+        <img src="../../assets/img/training9.jpg" alt="Count Drill 模擬真實發牌並回答 Running Count 和剩餘牌數">
+        <figcaption>Count Drill 會模擬真實發牌流程，可調整 Players 數量、發牌速度，並練習回答 Running Count 與剩餘牌數。</figcaption>
       </figure>
     </div>
+
+    <h3 class="simulation-heading">各算牌系統訓練選單</h3>
+    <p>訓練首頁除了 Decision Training 外，列出七套算牌系統的獨立入口，各系統的訓練項目如下：</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>系統</th>
+          <th>RC Drill</th>
+          <th>Count Drill</th>
+          <th>TC Drill</th>
+          <th>備註</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Hi-Lo</td><td>✓</td><td>✓</td><td>✓</td><td>平衡系統</td></tr>
+        <tr><td>KO</td><td>✓</td><td>✓</td><td>—</td><td>不平衡，直接用 RC</td></tr>
+        <tr><td>Red 7</td><td>✓</td><td>✓</td><td>—</td><td>不平衡，直接用 RC</td></tr>
+        <tr><td>FELT</td><td>✓</td><td>✓</td><td>✓</td><td>Level 2 平衡系統</td></tr>
+        <tr><td>Zen</td><td>✓</td><td>✓</td><td>✓</td><td>Level 2 平衡系統</td></tr>
+        <tr><td>Hi-Opt I</td><td>✓</td><td>✓</td><td>✓</td><td>Ace side count 可選</td></tr>
+        <tr><td>Omega II</td><td>✓</td><td>✓</td><td>✓</td><td>Ace side count 可選</td></tr>
+      </tbody>
+    </table>
+
+    <p>每套系統的 RC Drill 和 Count Drill 介面與設定選項相同（速度、長度、起始 RC、顯示模式），差異只在牌值邏輯。從 Hi-Lo 切換到其他系統時，直接在訓練首頁選對應的入口即可。</p>
+
     <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
       <h3>相關閱讀</h3>
       <ul>
-      <li><a href="/content/cardcounting/basic-strategy">基本策略</a></li>
-      <li><a href="/content/cardcounting/hilo">Hi-Lo 算牌</a></li>
-      <li><a href="/content/cardcounting/deviations">Deviations</a></li>
-      <li><a href="/content/app/game">遊戲模式</a></li>
+        <li><a href="/content/cardcounting/basic-strategy">基本策略</a></li>
+        <li><a href="/content/cardcounting/hilo">Hi-Lo 算牌</a></li>
+        <li><a href="/content/cardcounting/ko">補充：KO</a></li>
+        <li><a href="/content/cardcounting/deviations">Deviations</a></li>
+        <li><a href="/content/app/strategy">策略自訂</a></li>
+        <li><a href="/content/app/game">遊戲模式</a></li>
       </ul>
     </nav>
 

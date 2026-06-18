@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Omega II 算牌補充教學｜Blackjack 多級算牌系統與 Ace Side Count</title>
+  <meta name="description" content="Omega II 算牌教學，說明多級牌值、ace side count、Playing TC、Betting TC 與核心 deviations。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/cardcounting/omega-ii">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/cardcounting/omega-ii">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-1">
+</head>
+<body>
+  <article>
+    <h1>補充：Omega II</h1>
+    <p class="lead">Omega II 是一套平衡的多級算牌系統，使用 -2、-1、0、+1、+2 五種牌值。A 在主計數中歸零，另外以 ace side count 追蹤，讓下注與保險決策更精確——結構和 Hi-Opt I 類似，但牌值分配不同。</p>
+
+    <p>Omega II 的設計目標是讓低牌（尤其是 4–6）提供最強的信號（+2），同時讓高牌有更細緻的區分：10/J/Q/K 計 -2，9 計 -1，而 A 歸零並另外側追蹤。這讓主計數能更準確反映 10 值牌的濃度，而 A 的資訊則透過 side count 補充，讓下注和保險決策更完整。</p>
+
+    <h3>Omega II 牌值</h3>
+    <table class="data-table">
+      <thead><tr><th>牌</th><th>計數</th></tr></thead>
+      <tbody>
+        <tr><td>4–6</td><td>+2</td></tr>
+        <tr><td>2、3、7</td><td>+1</td></tr>
+        <tr><td>8、A</td><td>0（A 另外 side count 追蹤）</td></tr>
+        <tr><td>9</td><td>-1</td></tr>
+        <tr><td>10、J、Q、K</td><td>-2</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Ace Side Count 與 Ace Adjustment</h3>
+    <p>和 Hi-Opt I 的做法類似，Omega II 的主計數（RC）把 A 歸零，另外用 ace side count 追蹤已出現的 A。Ace side count 讓 app 能計算出 ace deficit（實際出現的 A 比理論預期少多少），並用以下公式修正下注和保險用的 true count：</p>
+
+    <table class="data-table">
+      <thead><tr><th>指標</th><th>意義</th><th>公式 / 補充</th></tr></thead>
+      <tbody>
+        <tr><td>Running Count</td><td>Ace-neutral 主計數</td><td>A = 0</td></tr>
+        <tr><td>True Count</td><td>Playing decision 用</td><td>RC / decksRemaining</td></tr>
+        <tr><td>Ace Seen</td><td>已出現的 A 數量</td><td>Side count</td></tr>
+        <tr><td>Ace Deficit</td><td>A 比理論預期少多少</td><td>usedCards / 13 - aceSeen</td></tr>
+        <tr><td>Adjusted RC</td><td>加入 ace deficit 修正後的 RC</td><td>RC + k × Ace Deficit</td></tr>
+        <tr><td>Betting TC</td><td>下注判斷用</td><td>Adjusted RC / decksRemaining</td></tr>
+        <tr><td>Insurance TC</td><td>保險判斷用</td><td>與 Betting TC 相同</td></tr>
+      </tbody>
+    </table>
+
+    <p>公式中的 k 是 app 設定裡的 ace adjustment 參數，預設值為 2。調高 k 會讓 ace deficit 對 Betting TC 的影響增大，調低則減弱。</p>
+
+    <div class="note">App 可以選擇是否啟用 ace side count。關閉時主計數的 True Count 直接用於所有決策；開啟後保險與下注改用修正過的 Betting TC。這個開關和 Hi-Opt I 的設計相同，可以在 Game Settings 中調整。</div>
+
+    <h3>保險</h3>
+    <table class="data-table">
+      <thead><tr><th>情境</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>莊家 A</td><td>不保險</td><td>Betting TC（或 TC）&gt;= +2 時保險</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Surrender Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>A</td><td>H17：TC &gt;= +1 投降；S17：TC &gt;= 0 投降</td></tr>
+        <tr><td>16</td><td>10</td><td>TC &gt;= 0 投降</td></tr>
+        <tr><td>16</td><td>9</td><td>TC &gt;= +1 投降</td></tr>
+        <tr><td>15</td><td>10</td><td>TC &gt;= +3 投降</td></tr>
+        <tr><td>15</td><td>A</td><td>H17：TC &gt;= +5 投降；S17：TC &gt;= +4 投降</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Hard Hand Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>基本策略</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>16</td><td>10</td><td>H / R</td><td>未投降且 TC &gt;= 0 時 Stand</td></tr>
+        <tr><td>16</td><td>9</td><td>Hit</td><td>未投降且 TC &gt;= +2 時 Stand</td></tr>
+        <tr><td>15</td><td>10</td><td>H / R</td><td>未投降且 TC &gt;= +3 時 Stand</td></tr>
+        <tr><td>13</td><td>2</td><td>Stand</td><td>TC &lt; 0 時 Hit</td></tr>
+        <tr><td>13</td><td>3</td><td>Stand</td><td>TC &lt; -1 時 Hit</td></tr>
+        <tr><td>12</td><td>2</td><td>Hit</td><td>TC &gt;= +3 時 Stand</td></tr>
+        <tr><td>12</td><td>3</td><td>Hit</td><td>TC &gt;= +2 時 Stand</td></tr>
+        <tr><td>12</td><td>4</td><td>Stand</td><td>TC &gt;= 0 時 Stand（TC &lt; 0 時 Hit）</td></tr>
+        <tr><td>12</td><td>5</td><td>Stand</td><td>TC &lt; -2 時 Hit</td></tr>
+        <tr><td>12</td><td>6</td><td>Stand</td><td>TC &lt; -1 時 Hit</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Double Deviations</h3>
+    <table class="data-table">
+      <thead><tr><th>玩家手牌</th><th>莊家</th><th>Deviation</th></tr></thead>
+      <tbody>
+        <tr><td>11</td><td>A</td><td>H17：TC &gt;= +1 時 Double；S17：TC &gt;= 0 時 Double</td></tr>
+        <tr><td>10</td><td>10</td><td>TC &gt;= +3 時 Double</td></tr>
+        <tr><td>10</td><td>A</td><td>H17：TC &gt;= +3 時 Double；S17：TC &gt;= +2 時 Double</td></tr>
+        <tr><td>9</td><td>2</td><td>TC &gt;= +1 時 Double</td></tr>
+        <tr><td>9</td><td>7</td><td>TC &gt;= +4 時 Double</td></tr>
+        <tr><td>8</td><td>5</td><td>TC &gt;= +6 時 Double</td></tr>
+        <tr><td>8</td><td>6</td><td>TC &gt;= +4 時 Double</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note">Omega II 的 playing decisions 使用主計數換算的 True Count，而非加入 ace adjustment 的 Betting TC。Ace Side Count 只影響下注與保險兩個決策。啟用 ace side count 時的 k 值預設為 2，可在 app Game Settings 中調整。</div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/zh-Hant/content/cardcounting/hiopt">補充：Hi-Opt</a></li>
+        <li><a href="/zh-Hant/content/cardcounting/deviations">Deviations</a></li>
+        <li><a href="/zh-Hant/content/app/training">訓練模式</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

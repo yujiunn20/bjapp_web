@@ -31,8 +31,8 @@
         { title: "訓練", path: "content/app/training.html" },
         { title: "統計", path: "content/app/statistics.html" },
         { title: "回放", path: "content/app/replay.html" },
-        { title: "常見問題", path: "content/app/faq.html" },
         { title: "策略", path: "content/app/strategy.html" },
+        { title: "常見問題", path: "content/app/faq.html" },
         { title: "隱私權政策", path: "content/app/privacy.html" }
       ]
     }
@@ -97,8 +97,8 @@
             { title: "Training", path: "content/app/training.html" },
             { title: "Statistics", path: "content/app/statistics.html" },
             { title: "Replay", path: "content/app/replay.html" },
-            { title: "FAQ", path: "content/app/faq.html" },
             { title: "Strategy", path: "content/app/strategy.html" },
+            { title: "FAQ", path: "content/app/faq.html" },
             { title: "Privacy Policy", path: "content/app/privacy.html" }
           ]
         }
@@ -148,8 +148,8 @@
             { title: "トレーニング", path: "content/app/training.html" },
             { title: "統計", path: "content/app/statistics.html" },
             { title: "リプレイ", path: "content/app/replay.html" },
-            { title: "よくある質問", path: "content/app/faq.html" },
             { title: "戦略", path: "content/app/strategy.html" },
+            { title: "よくある質問", path: "content/app/faq.html" },
             { title: "プライバシーポリシー", path: "content/app/privacy.html" }
           ]
         }

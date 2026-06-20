@@ -453,6 +453,45 @@ body.lightbox-open {
   line-height: 1.1;
 }
 
+.ms-badge {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 184px;
+  min-height: 58px;
+  padding: 8px 16px 8px 12px;
+  border-radius: 7px;
+  background: #111827;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(17, 24, 39, 0.22);
+}
+
+.ms-badge svg {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.ms-badge span,
+.ms-badge em,
+.ms-badge strong {
+  display: block;
+}
+
+.ms-badge em {
+  font-size: 0.66rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.ms-badge strong {
+  font-size: 1.25rem;
+  line-height: 1.1;
+}
+
 .download-meta {
   grid-column: 1 / -1;
   display: grid;
@@ -673,7 +712,8 @@ body.lightbox-open {
     text-overflow: ellipsis;
   }
 
-  .play-badge {
+  .play-badge,
+  .ms-badge {
     min-width: 132px;
     min-height: 42px;
     padding: 6px 10px 6px 8px;
@@ -685,11 +725,18 @@ body.lightbox-open {
     height: 26px;
   }
 
-  .play-badge em {
+  .ms-badge svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .play-badge em,
+  .ms-badge em {
     font-size: 0.54rem;
   }
 
-  .play-badge strong {
+  .play-badge strong,
+  .ms-badge strong {
     font-size: 0.95rem;
   }
 
@@ -757,7 +804,8 @@ body.lightbox-open {
     max-width: 36vw;
   }
 
-  .play-badge {
+  .play-badge,
+  .ms-badge {
     min-width: 116px;
   }
 

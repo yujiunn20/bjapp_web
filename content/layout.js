@@ -204,6 +204,7 @@
 
   const canonicalBase = "https://blackjack.yuchunlab.com/";
   const playUrl = "https://play.google.com/store/apps/details?id=com.yujiunn.blackjack_mobile";
+  const msStoreUrl = "https://apps.microsoft.com/detail/9NG595NFHPZK";
   const languagePrefixes = { "zh-Hant": "zh-Hant", en: "en", ja: "ja" };
   let activeLanguage = languageFromUrl() || document.documentElement.lang || localStorage.getItem("blackjackLanguage") || "zh-Hant";
   let isSwitchingLanguage = false;
@@ -715,7 +716,7 @@
           <p class="hero-subtitle">${t.heroBody}</p>
         </div>
         <div class="hero-card" aria-label="App preview">
-          <img src="${assetUrl("assets/img/blackjack-icon.png")}" alt="二十一點算牌訓練器 App icon">
+          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc-icon.png" : "assets/img/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App icon" : "二十一點算牌訓練器 App icon"}">
           <div>
             <strong>${t.appName}</strong>
             <span>${t.appTagline}</span>
@@ -739,13 +740,23 @@
       </main>
       <section class="download-band" aria-labelledby="downloadTitle">
         <div class="download-copy">
-          <img src="${assetUrl("assets/img/blackjack-icon.png")}" alt="二十一點算牌訓練器 App 圖示" class="download-icon">
+          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc-icon.png" : "assets/img/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : "二十一點算牌訓練器 App 圖示"}" class="download-icon">
           <div>
             <p class="eyebrow">${t.downloadEyebrow}</p>
             <h2 id="downloadTitle">${t.appName}</h2>
             <p>${t.downloadBody}</p>
           </div>
         </div>
+        ${sectionKey === "pc" ? `
+        <a class="ms-badge" href="${msStoreUrl}" target="_blank" rel="noopener" aria-label="前往 Microsoft Store 下載 Blackjack Card Counting Trainer PC 版">
+          <svg viewBox="0 0 21 21" aria-hidden="true" width="21" height="21">
+            <rect x="0" y="0" width="10" height="10" fill="#f25022"/>
+            <rect x="11" y="0" width="10" height="10" fill="#7fba00"/>
+            <rect x="0" y="11" width="10" height="10" fill="#00a4ef"/>
+            <rect x="11" y="11" width="10" height="10" fill="#ffb900"/>
+          </svg>
+          <span><em>GET IT FROM</em><strong>Microsoft Store</strong></span>
+        </a>` : `
         <a class="play-badge" href="${playUrl}" target="_blank" rel="noopener" aria-label="前往 Google Play 下載二十一點算牌訓練器">
           <svg viewBox="0 0 32 36" aria-hidden="true">
             <path fill="#00c3ff" d="M2.2 1.1 19.7 18 2.2 34.9A3 3 0 0 1 1 32.5v-29A3 3 0 0 1 2.2 1.1z"/>
@@ -754,7 +765,7 @@
             <path fill="#ff4b55" d="m24.6 13.3 5.2 3a2 2 0 0 1 0 3.4l-5.2 3-4.9-4.7 4.9-4.7z"/>
           </svg>
           <span><em>GET IT ON</em><strong>Google Play</strong></span>
-        </a>
+        </a>`}
         <div class="download-meta">
           <span>© 2026 CHANG YU-CHUN</span>
           <a href="mailto:yj.apps.devs@gmail.com"><strong>Support</strong> yj.apps.devs@gmail.com</a>

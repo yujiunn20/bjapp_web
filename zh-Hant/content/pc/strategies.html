@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC 版策略自訂功能介紹｜Blackjack 算牌訓練器 Windows</title>
+  <meta name="description" content="PC 版 Strategies 策略自訂說明，介紹八套算牌系統的 Deviation 規則集設定，修改 Index 門檻並套用至遊戲與訓練。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/pc/strategies">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/strategies">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/strategies">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/strategies">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/strategies">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>策略自訂</h1>
+    <p class="lead">Strategies 頁面讓使用者針對八套算牌系統建立自訂的 Deviation 規則集，可調整每條規則的 Index 門檻（True Count 觸發點），設定完成後套用至 Play 遊戲模式與 Training 訓練模式中的決策判斷。</p>
+
+    <h3>Strategy Profiles</h3>
+    <p>app 提供八套 Strategy Profile，對應八套判斷標準：</p>
+    <ul>
+      <li>Basic（基本策略，無算牌）</li>
+      <li>Hi-Lo</li>
+      <li>Hi-Opt I（PRO 限定）</li>
+      <li>KO</li>
+      <li>Red 7</li>
+      <li>FELT</li>
+      <li>Zen</li>
+      <li>Omega II</li>
+    </ul>
+    <p>每套 Profile 各自儲存一組 Deviation 規則，可以分別設定，互不干擾。</p>
+
+    <h3>Deviation 規則集設定</h3>
+    <p>在各 Profile 下，可對每條 Deviation 規則進行以下設定：</p>
+    <ul>
+      <li><strong>啟用 / 停用</strong>：選擇是否在 Play 與 Training 中納入這條規則的判斷。</li>
+      <li><strong>Index 修改</strong>：調整觸發這條 Deviation 的 True Count 門檻。例如將 Insurance 的門檻從 +3 改為 +2，或調整 16 vs 10 的 Stand 門檻。</li>
+    </ul>
+    <p>設定完成後，點擊套用，之後在 Play 模式開啟決策建議、或在 Training 的 Decision Training 選擇對應系統時，就會依照自訂的規則判斷。</p>
+
+    <h3>套用範圍</h3>
+    <ul>
+      <li><strong>Play 模式</strong>：當 Mode 設定為對應的算牌系統時，建議下注與對錯回饋依照自訂的 Index 門檻判斷。</li>
+      <li><strong>Decision Training</strong>：在 Deviation 題型中，依照自訂規則出題與判分。</li>
+    </ul>
+
+    <div class="note">Hi-Opt I 的 Strategy Profile 設定（包含 Ace side count 調整）為 PRO 版限定功能。其他七套系統的規則集設定 FREE 版均可使用。</div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/content/pc/training">訓練模式</a></li>
+        <li><a href="/content/pc/play">遊戲模式</a></li>
+        <li><a href="/content/cardcounting/deviations">Deviations 說明</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

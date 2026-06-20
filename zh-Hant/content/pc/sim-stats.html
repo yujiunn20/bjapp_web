@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC 版模擬與統計功能｜Blackjack 算牌訓練器 Windows</title>
+  <meta name="description" content="PC 版 Sim 與 Stats 功能說明，介紹 Python Monte Carlo 模擬設定與長期統計結果比較。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/pc/sim-stats">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/sim-stats">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-stats">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-stats">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/sim-stats">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>模擬統計</h1>
+    <p class="lead">PC 版的 Sim 與 Stats 功能由 Python 後端執行 Monte Carlo 模擬，可設定局數、桌面規則、算牌系統與 Bet Ramp，生成長期結果數據，用來比較不同策略和規則下的 EV、ROI 與波動。</p>
+
+    <h3>Sim（模擬）</h3>
+    <p>Sim 頁面用來設定並執行模擬。Python 模擬引擎在後端執行，可進行大量局數計算。</p>
+    <ul>
+      <li><strong>局數設定</strong>：設定要模擬的局數。</li>
+      <li><strong>桌面規則</strong>：設定 H17 / S17、牌組數、穿透率、Double 規則等，模擬不同桌況。</li>
+      <li><strong>算牌系統</strong>：選擇 Basic、Hi-Lo 或其他算牌系統進行模擬。</li>
+      <li><strong>Bet Ramp</strong>：設定 True Count 門檻與對應倍率，觀察下注策略對長期結果的影響。</li>
+    </ul>
+    <p>模擬完成後，結果會儲存為統計數據供 Stats 頁面查看。</p>
+
+    <h3>Stats（統計）</h3>
+    <p>Stats 頁面用來查看模擬結果，比較不同設定下的長期表現。</p>
+    <ul>
+      <li><strong>淨利與 ROI</strong>：查看策略在模擬局數下的整體獲利結果。</li>
+      <li><strong>EV 與波動</strong>：理解期望值和標準差，評估策略的穩定性。</li>
+      <li><strong>多組比較</strong>：可以對多組不同策略設定執行模擬，再用 Stats 比較各組結果之間的差異。</li>
+    </ul>
+
+    <div class="note">統計結果是用來理解策略、規則、Bet Ramp 與變異數之間的關係，不是保證真實遊玩會得到相同結果。Blackjack 的優勢通常很小，短期波動很大，同一組設定建議多執行幾次以觀察結果分布的穩定性。</div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/content/pc/play">遊戲模式</a></li>
+        <li><a href="/content/cardcounting/ev-variance">EV・量級・變異數</a></li>
+        <li><a href="/content/cardcounting/bet-ramp">Bet Ramp 說明</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

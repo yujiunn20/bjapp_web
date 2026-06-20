@@ -35,6 +35,20 @@
         { title: "常見問題", path: "content/app/faq.html" },
         { title: "隱私權政策", path: "content/app/privacy.html" }
       ]
+    },
+    pc: {
+      label: "PC 版",
+      eyebrow: "PC App (Windows)",
+      subtitle: "Windows 桌機訓練平台",
+      items: [
+        { title: "概要", path: "content/pc/overview.html" },
+        { title: "遊戲", path: "content/pc/play.html" },
+        { title: "訓練", path: "content/pc/training.html" },
+        { title: "模擬統計", path: "content/pc/sim-stats.html" },
+        { title: "回放", path: "content/pc/replay.html" },
+        { title: "策略自訂", path: "content/pc/strategies.html" },
+        { title: "隱私權政策", path: "content/pc/privacy.html" }
+      ]
     }
   };
 
@@ -43,6 +57,7 @@
       brandSubtitle: "21點算牌訓練",
       tabCardCounting: "算牌學習",
       tabApp: "App 介紹",
+      tabPC: "PC 版",
       languageLabel: "語言",
       heroEyebrow: "Blackjack strategy and card counting",
       heroTitle: "21點算牌學習與訓練工具",
@@ -57,6 +72,7 @@
       brandSubtitle: "Blackjack counting trainer",
       tabCardCounting: "Card Counting",
       tabApp: "App",
+      tabPC: "PC App",
       languageLabel: "Language",
       heroEyebrow: "Blackjack strategy and card counting",
       heroTitle: "Blackjack Card Counting and Training Tool",
@@ -101,6 +117,20 @@
             { title: "FAQ", path: "content/app/faq.html" },
             { title: "Privacy Policy", path: "content/app/privacy.html" }
           ]
+        },
+        pc: {
+          label: "PC App",
+          eyebrow: "PC App (Windows)",
+          subtitle: "Windows training platform",
+          items: [
+            { title: "Overview", path: "content/pc/overview.html" },
+            { title: "Play", path: "content/pc/play.html" },
+            { title: "Training", path: "content/pc/training.html" },
+            { title: "Sim & Stats", path: "content/pc/sim-stats.html" },
+            { title: "Replay", path: "content/pc/replay.html" },
+            { title: "Strategies", path: "content/pc/strategies.html" },
+            { title: "Privacy Policy", path: "content/pc/privacy.html" }
+          ]
         }
       }
     },
@@ -108,6 +138,7 @@
       brandSubtitle: "ブラックジャック カウント練習",
       tabCardCounting: "カウント学習",
       tabApp: "アプリ紹介",
+      tabPC: "PC アプリ",
       languageLabel: "言語",
       heroEyebrow: "Blackjack strategy and card counting",
       heroTitle: "ブラックジャックのカウント学習と練習ツール",
@@ -151,6 +182,20 @@
             { title: "戦略", path: "content/app/strategy.html" },
             { title: "よくある質問", path: "content/app/faq.html" },
             { title: "プライバシーポリシー", path: "content/app/privacy.html" }
+          ]
+        },
+        pc: {
+          label: "PC アプリ",
+          eyebrow: "PC App (Windows)",
+          subtitle: "Windows トレーニングプラットフォーム",
+          items: [
+            { title: "概要", path: "content/pc/overview.html" },
+            { title: "プレイ", path: "content/pc/play.html" },
+            { title: "トレーニング", path: "content/pc/training.html" },
+            { title: "シミュ・統計", path: "content/pc/sim-stats.html" },
+            { title: "リプレイ", path: "content/pc/replay.html" },
+            { title: "戦略カスタム", path: "content/pc/strategies.html" },
+            { title: "プライバシーポリシー", path: "content/pc/privacy.html" }
           ]
         }
       }
@@ -252,17 +297,18 @@
 
   function pagePath() {
     const cleanPath = pathWithoutLanguagePrefix(window.location.pathname.replace(/\\/g, "/"));
-    const match = cleanPath.match(/content\/(?:app|cardcounting)\/[^/.]+(?:\.html)?$/);
+    const match = cleanPath.match(/content\/(?:app|cardcounting|pc)\/[^/.]+(?:\.html)?$/);
     if (match) {
       const normalized = match[0].replace(/\\/g, "/");
       return normalized.endsWith(".html") ? normalized : `${normalized}.html`;
     }
     const cleanHref = pathWithoutLanguagePrefix(window.location.href.replace(/^.*blackjack\.yuchunlab\.com\//, ""));
-    const hrefMatch = cleanHref.match(/content\/(?:app|cardcounting)\/[^?#]+\.html/);
+    const hrefMatch = cleanHref.match(/content\/(?:app|cardcounting|pc)\/[^?#]+\.html/);
     return hrefMatch ? hrefMatch[0].replace(/^.*content\//, "content/") : "content/app/overview.html";
   }
 
   function sectionForPath(path) {
+    if (path.includes("/pc/")) return "pc";
     return path.includes("/app/") ? "app" : "cardcounting";
   }
 
@@ -429,7 +475,14 @@
         "content/cardcounting/felt.html": "FELT 算牌補充教學｜Blackjack 多級平衡算牌系統",
         "content/cardcounting/zen.html": "Zen Count 算牌補充教學｜Blackjack 多級平衡算牌系統",
         "content/cardcounting/omega-ii.html": "Omega II 算牌補充教學｜Blackjack 進階算牌系統",
-        "content/app/strategy.html": "Blackjack 策略自訂功能介紹｜二十一點算牌訓練器"
+        "content/app/strategy.html": "Blackjack 策略自訂功能介紹｜二十一點算牌訓練器",
+        "content/pc/overview.html": "Blackjack 算牌訓練器 PC 版（Windows）概要｜二十一點算牌訓練器",
+        "content/pc/play.html": "PC 版遊戲模式介紹｜Blackjack 算牌訓練器 Windows",
+        "content/pc/training.html": "PC 版訓練模式介紹｜Blackjack 算牌訓練器 Windows",
+        "content/pc/sim-stats.html": "PC 版模擬與統計功能｜Blackjack 算牌訓練器 Windows",
+        "content/pc/replay.html": "PC 版回放功能介紹｜Blackjack 算牌訓練器 Windows",
+        "content/pc/strategies.html": "PC 版策略自訂功能｜Blackjack 算牌訓練器 Windows",
+        "content/pc/privacy.html": "PC 版隱私權政策｜Blackjack 算牌訓練器 Windows"
       },
       en: {
         "content/app/overview.html": "Blackjack Card Counting Trainer App Overview",
@@ -453,7 +506,14 @@
         "content/cardcounting/felt.html": "FELT Card Counting Guide | Multi-Level Balanced Counting System",
         "content/cardcounting/zen.html": "Zen Count Guide | Multi-Level Balanced Blackjack Counting System",
         "content/cardcounting/omega-ii.html": "Omega II Card Counting Guide | Advanced Blackjack Counting System",
-        "content/app/strategy.html": "Blackjack Strategy Profile Customization | Card Counting Trainer App"
+        "content/app/strategy.html": "Blackjack Strategy Profile Customization | Card Counting Trainer App",
+        "content/pc/overview.html": "Blackjack Card Counting Trainer PC App (Windows) Overview",
+        "content/pc/play.html": "PC App Play Mode Guide | Blackjack Card Counting Trainer Windows",
+        "content/pc/training.html": "PC App Training Modes Guide | Blackjack Card Counting Trainer Windows",
+        "content/pc/sim-stats.html": "PC App Simulation and Statistics | Blackjack Card Counting Trainer Windows",
+        "content/pc/replay.html": "PC App Replay Guide | Blackjack Card Counting Trainer Windows",
+        "content/pc/strategies.html": "PC App Strategy Customization | Blackjack Card Counting Trainer Windows",
+        "content/pc/privacy.html": "PC App Privacy Policy | Blackjack Card Counting Trainer Windows"
       },
       ja: {
         "content/app/overview.html": "ブラックジャック カウントトレーナー アプリ概要",
@@ -477,7 +537,14 @@
         "content/cardcounting/felt.html": "FELT カウント解説 | 多レベル平衡 Blackjack カウントシステム",
         "content/cardcounting/zen.html": "Zen Count 解説 | 多レベル平衡 Blackjack カウントシステム",
         "content/cardcounting/omega-ii.html": "Omega II カウント解説 | 上級 Blackjack カウントシステム",
-        "content/app/strategy.html": "Blackjack 戦略カスタマイズ機能 | カウントトレーナー"
+        "content/app/strategy.html": "Blackjack 戦略カスタマイズ機能 | カウントトレーナー",
+        "content/pc/overview.html": "ブラックジャック カウントトレーナー PC アプリ（Windows）概要",
+        "content/pc/play.html": "PC アプリ ゲームモード紹介 | ブラックジャック カウントトレーナー",
+        "content/pc/training.html": "PC アプリ トレーニングモード紹介 | ブラックジャック カウントトレーナー",
+        "content/pc/sim-stats.html": "PC アプリ シミュレーションと統計 | ブラックジャック カウントトレーナー",
+        "content/pc/replay.html": "PC アプリ リプレイ機能 | ブラックジャック カウントトレーナー",
+        "content/pc/strategies.html": "PC アプリ 戦略カスタマイズ | ブラックジャック カウントトレーナー",
+        "content/pc/privacy.html": "PC アプリ プライバシーポリシー | ブラックジャック カウントトレーナー"
       }
     };
     const languageTitles = titles[activeLanguage] || titles["zh-Hant"];
@@ -513,7 +580,14 @@
         "content/cardcounting/felt.html": "FELT 算牌教學，說明多級牌值、平衡系統、True Count 換算與核心 deviations。",
         "content/cardcounting/zen.html": "Zen Count 算牌教學，說明多級牌值、平衡系統、True Count 換算與核心 deviations。",
         "content/cardcounting/omega-ii.html": "Omega II 算牌教學，說明多級牌值、ace side count、Playing TC、Betting TC 與核心 deviations。",
-        "content/app/strategy.html": "Blackjack 策略自訂功能介紹，說明 Strategy Profile 的建立、編輯、Deviation 規則自訂與套用方式。"
+        "content/app/strategy.html": "Blackjack 策略自訂功能介紹，說明 Strategy Profile 的建立、編輯、Deviation 規則自訂與套用方式。",
+        "content/pc/overview.html": "Blackjack Card Counting Trainer PC 版（Windows）概要，介紹 Play、Training、模擬統計、Replay 回放、Strategies 自訂功能，支援 Hi-Lo 等七套算牌系統。",
+        "content/pc/play.html": "PC 版 Play 模式說明，介紹算牌 HUD、Bet Ramp、決策建議、多人席位與桌規設定。",
+        "content/pc/training.html": "PC 版 Training 模式說明，介紹 Decision Training、Running Count Drill、True Count Drill 與七套系統的 Count Drill。",
+        "content/pc/sim-stats.html": "PC 版 Sim 與 Stats 功能說明，介紹 Python Monte Carlo 模擬設定與長期統計結果比較。",
+        "content/pc/replay.html": "PC 版 Replay 回放功能說明，介紹遊玩紀錄、錯誤篩選與 Timeline 逐手查看。",
+        "content/pc/strategies.html": "PC 版 Strategies 策略自訂功能說明，介紹八套系統的 Deviation 規則集建立與 Index 門檻修改。",
+        "content/pc/privacy.html": "PC 版隱私權政策，說明 app 不收集個人資料、所有資料本機儲存，以及不含真實賭博功能。"
       },
       en: {
         "content/app/overview.html": "Blackjack Card Counting Trainer overview covering basic strategy, Hi-Lo, Hi-Opt I, practice modes, simulations, statistics, and replay review.",
@@ -537,7 +611,14 @@
         "content/cardcounting/felt.html": "FELT card counting guide covering multi-level card values, balanced system, True Count conversion, and core deviations.",
         "content/cardcounting/zen.html": "Zen Count guide covering multi-level card values, balanced system, True Count conversion, and core deviations.",
         "content/cardcounting/omega-ii.html": "Omega II card counting guide covering multi-level values, ace side count, Playing TC, Betting TC, and core deviations.",
-        "content/app/strategy.html": "Blackjack Strategy Profile customization guide for creating, editing, and applying custom deviation rule sets per counting system."
+        "content/app/strategy.html": "Blackjack Strategy Profile customization guide for creating, editing, and applying custom deviation rule sets per counting system.",
+        "content/pc/overview.html": "Blackjack Card Counting Trainer PC app overview for Windows, covering Play, Training, Sim, Stats, Replay, and Strategies across seven counting systems.",
+        "content/pc/play.html": "PC app Play mode guide covering count HUD, Bet Ramp, strategy recommendations, multi-player seats, and table rule settings.",
+        "content/pc/training.html": "PC app Training modes guide covering Decision Training, Running Count Drill, True Count Drill, and Count Drill across seven counting systems.",
+        "content/pc/sim-stats.html": "PC app Sim and Stats guide covering Python Monte Carlo simulation setup and long-term performance statistics.",
+        "content/pc/replay.html": "PC app Replay guide covering game session records, mistake filtering, and Timeline step-by-step hand review.",
+        "content/pc/strategies.html": "PC app Strategies guide covering custom deviation rule sets for eight counting systems, index threshold editing, and PRO features.",
+        "content/pc/privacy.html": "Privacy policy for Blackjack Card Counting Trainer PC app — no personal data collected, all data stored locally, no real-money gambling."
       },
       ja: {
         "content/app/overview.html": "ブラックジャック カウントトレーナーの概要。基本戦略、Hi-Lo、Hi-Opt I、練習、統計、リプレイ、シミュレーション機能を紹介します。",
@@ -561,7 +642,14 @@
         "content/cardcounting/felt.html": "FELT カウント解説。多レベルカード値、平衡システム、True Count 換算、主要 deviations を説明します。",
         "content/cardcounting/zen.html": "Zen Count 解説。多レベルカード値、平衡システム、True Count 換算、主要 deviations を説明します。",
         "content/cardcounting/omega-ii.html": "Omega II カウント解説。多レベルカード値、ace side count、Playing TC、Betting TC、主要 deviations を説明します。",
-        "content/app/strategy.html": "Blackjack 戦略カスタマイズ機能の説明。Strategy Profile の作成、編集、deviation ルール設定と適用方法を説明します。"
+        "content/app/strategy.html": "Blackjack 戦略カスタマイズ機能の説明。Strategy Profile の作成、編集、deviation ルール設定と適用方法を説明します。",
+        "content/pc/overview.html": "ブラックジャック カウントトレーナー PC アプリ（Windows）の概要。Play、Training、シミュレーション統計、Replay、戦略カスタマイズを 7 つのカウントシステムで説明します。",
+        "content/pc/play.html": "PC アプリの Play モード説明。カウント HUD、Bet Ramp、戦略推奨、複数プレイヤー席、テーブルルール設定を扱います。",
+        "content/pc/training.html": "PC アプリの Training モード説明。Decision Training、Running Count Drill、True Count Drill、7 システムの Count Drill を扱います。",
+        "content/pc/sim-stats.html": "PC アプリの Sim と Stats 説明。Python Monte Carlo シミュレーション設定と長期統計比較を扱います。",
+        "content/pc/replay.html": "PC アプリの Replay 機能説明。プレイ記録、ミスの絞り込み、Timeline の手順確認を扱います。",
+        "content/pc/strategies.html": "PC アプリの Strategies 機能説明。8 システムの deviation ルールセット作成、Index しきい値編集、PRO 機能を扱います。",
+        "content/pc/privacy.html": "PC アプリのプライバシーポリシー。個人情報を収集せず、すべてのデータはローカルに保存され、実際の賭博機能はないことを説明します。"
       }
     };
     const languageDescriptions = descriptions[activeLanguage] || descriptions["zh-Hant"];
@@ -604,6 +692,7 @@
           <nav class="section-tabs" aria-label="主要分類">
             <a class="tab-button ${sectionKey === "cardcounting" ? "is-active" : ""}" href="${relativeUrl("content/cardcounting/rules.html")}">${t.tabCardCounting}</a>
             <a class="tab-button ${sectionKey === "app" ? "is-active" : ""}" href="${relativeUrl("content/app/overview.html")}">${t.tabApp}</a>
+            <a class="tab-button ${sectionKey === "pc" ? "is-active" : ""}" href="${relativeUrl("content/pc/overview.html")}">${t.tabPC}</a>
           </nav>
           <label class="language-picker">
             <span>${t.languageLabel}</span>

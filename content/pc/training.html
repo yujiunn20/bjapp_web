@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC 版訓練模式介紹｜Blackjack 算牌訓練器 Windows</title>
+  <meta name="description" content="PC 版 Training 模式說明，介紹 Decision Training、Running Count Drill、True Count Drill 與七套系統的 Count Drill。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/content/pc/training">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/training">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/training">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/training">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/training">
+  <link rel="stylesheet" href="../content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>訓練</h1>
+    <p class="lead">Training 模式把練習拆成四種獨立模式，分別針對決策正確率、Running Count 累加速度、True Count 換算，以及模擬真實發牌節奏的完整算牌追蹤。七套算牌系統均可在 Count Drill 中切換。</p>
+
+    <h3>Decision Training</h3>
+    <p>專注在 blackjack 的決策本身，包含基本策略與算牌 Deviation。</p>
+    <ul>
+      <li><strong>Mode 切換</strong>：可選 Basic、Hi-Lo 或 Hi-Opt I，讓同一個牌局在不同判斷標準下練習。</li>
+      <li><strong>Question Type 分類</strong>：可指定練習類型，包含硬牌（Hard Totals）、軟牌（Soft Totals）、對子（Pairs）、加倍（Doubles）、投降（Surrender）、保險（Insurance）、Deviation，或混合出題。</li>
+      <li><strong>即時回饋</strong>：每次選擇後立刻顯示是否正確，以及策略原因說明。</li>
+    </ul>
+    <p>Deviation 類別會針對算牌才會出現的偏離決策重點出題，方便集中練習不常碰到的少見情境。</p>
+
+    <h3>Running Count Drill</h3>
+    <p>練習依序看牌時的 Hi-Lo 累加速度。</p>
+    <ul>
+      <li>可設定發牌速度與牌序長度，從短牌序慢速開始，逐步加長加快。</li>
+      <li>起始 RC 可固定為 0 或設成隨機值，練習從不同 count 狀態接續計算。</li>
+      <li>Display Mode 可切換一次一張、一次兩張或隨機張數手牌組，模擬真實牌桌節奏。</li>
+      <li>作答後顯示前面出現過的所有牌，方便回頭檢查漏算位置。</li>
+    </ul>
+
+    <h3>True Count Drill</h3>
+    <p>練習把 Running Count 和剩餘牌數換算成 True Count。</p>
+    <ul>
+      <li>題目給出 RC 與剩餘牌數，練習心算 True Count 的速度與準確度。</li>
+      <li>反覆練習不同 RC / 剩餘牌組合，可加快心算速度，並熟悉在實戰中快速做出下注判斷。</li>
+    </ul>
+
+    <h3>Count Drill</h3>
+    <p>最接近真實牌桌的算牌練習。模擬莊家與多人玩家依序發牌，在完整牌局節奏中追蹤算牌。</p>
+    <ul>
+      <li>練習開始時給出起始 RC 與剩餘牌數，接著依設定人數與速度模擬一局牌。</li>
+      <li>發牌結束後回答最後的 RC 或剩餘牌數，確認是否能在接近實戰的節奏中穩定追蹤 count。</li>
+      <li>可調整玩家數量與發牌速度。</li>
+      <li>支援七套算牌系統：Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II，每套均有獨立的訓練入口。</li>
+    </ul>
+
+    <div class="note">建議的練習順序：先用 Decision Training 穩定基本策略與 Deviation，再用 RC Drill 練累加速度，接著用 TC Drill 練換算，最後用 Count Drill 在整局節奏中整合這些能力。</div>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/content/pc/play">遊戲模式</a></li>
+        <li><a href="/content/pc/strategies">策略自訂</a></li>
+        <li><a href="/content/cardcounting/hilo">Hi-Lo 算牌說明</a></li>
+        <li><a href="/content/cardcounting/deviations">Deviations 說明</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../layout.js?v=20260528-1"></script>
+  <script src="../image-lightbox.js?v=20260526-3"></script>
+  <script src="../translate.js?v=20260527-6"></script>
+</body>
+</html>

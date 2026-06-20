@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC アプリ シミュ・統計ガイド | ブラックジャック カウントトレーナー Windows</title>
+  <meta name="description" content="PC アプリ Sim & Stats ガイド。Python Monte Carlo シミュレーションの設定と長期統計比較を紹介。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-stats">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/sim-stats">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-stats">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-stats">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/sim-stats">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>シミュ・統計</h1>
+    <p class="lead">Sim &amp; Stats は Python バックエンドで Monte Carlo シミュレーションを実行します。手数・テーブルルール・カウントシステム・Bet Ramp を設定し、異なる戦略やルールセット間の EV・ROI・分散を比較する長期データを生成できます。</p>
+
+    <h3>Sim（シミュレーション）</h3>
+    <p>Sim ページではシミュレーションの設定と実行を行います。Python エンジンがバックグラウンドで動作し、大量の手数を計算できます。</p>
+    <ul>
+      <li><strong>手数設定</strong>：シミュレートする手数を指定。</li>
+      <li><strong>テーブルルール</strong>：H17 / S17・デッキ数・ペネトレーション・Double ルールなどを設定し、さまざまなテーブル条件を再現。</li>
+      <li><strong>カウントシステム</strong>：Basic・Hi-Lo などのシステムを選択してシミュレート。</li>
+      <li><strong>Bet Ramp</strong>：True Count しきい値と倍率を設定し、ベット戦略が長期結果に与える影響を観察。</li>
+    </ul>
+    <p>シミュレーション完了後、結果は統計データとして保存され、Stats ページで確認できます。</p>
+
+    <h3>Stats（統計）</h3>
+    <p>Stats ページではシミュレーション結果を確認し、設定間の長期パフォーマンスを比較します。</p>
+    <ul>
+      <li><strong>純利益と ROI</strong>：シミュレーション手数における戦略の総合的な収益結果を確認。</li>
+      <li><strong>EV と分散</strong>：期待値と標準偏差を把握し、戦略の安定性を評価。</li>
+      <li><strong>複数設定の比較</strong>：異なる設定で複数のシミュレーションを実行し、Stats で結果を並べて比較。</li>
+    </ul>
+
+    <div class="note">シミュレーション結果は、戦略・ルール・Bet Ramp・分散の関係を理解するためのものであり、実際のプレイで同じ結果が保証されるわけではありません。ブラックジャックのエッジは小さく短期分散は大きいため、同じ設定で複数回実行して結果分布の安定性を確認することをお勧めします。</div>
+
+    <nav class="related-links" aria-label="関連ページ" data-seo-related="true">
+      <h3>関連ページ</h3>
+      <ul>
+        <li><a href="/ja/content/pc/play">プレイモード</a></li>
+        <li><a href="/ja/content/cardcounting/ev-variance">EV・分散</a></li>
+        <li><a href="/ja/content/cardcounting/bet-ramp">Bet Ramp</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

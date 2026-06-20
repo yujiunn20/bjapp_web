@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC アプリ 戦略カスタムガイド | ブラックジャック カウントトレーナー Windows</title>
+  <meta name="description" content="PC アプリ Strategies ガイド。8 種のカウントシステムに対して Deviation ルールセットをカスタマイズし、Index しきい値を変更してゲームとトレーニングに適用する方法を紹介。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/pc/strategies">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/strategies">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/strategies">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/strategies">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/strategies">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>戦略カスタム</h1>
+    <p class="lead">Strategies ページでは、8 種のカウントシステムに対してカスタム Deviation ルールセットを作成できます。各ルールの Index しきい値（True Count トリガー）を調整し、Play モードと Training モードの判断に適用します。</p>
+
+    <h3>Strategy Profiles</h3>
+    <p>アプリは 8 種の Strategy Profile を提供しており、それぞれ異なる判断基準に対応しています：</p>
+    <ul>
+      <li>Basic（カウントなし）</li>
+      <li>Hi-Lo</li>
+      <li>Hi-Opt I（PRO 限定）</li>
+      <li>KO</li>
+      <li>Red 7</li>
+      <li>FELT</li>
+      <li>Zen</li>
+      <li>Omega II</li>
+    </ul>
+    <p>各 Profile はそれぞれ独立した Deviation ルールセットを保持しており、互いに干渉しません。</p>
+
+    <h3>Deviation ルールのカスタマイズ</h3>
+    <p>各 Profile 内で、それぞれの Deviation ルールに対して以下を設定できます：</p>
+    <ul>
+      <li><strong>有効 / 無効</strong>：Play と Training の判断にそのルールを含めるかどうかを選択。</li>
+      <li><strong>Index 変更</strong>：Deviation をトリガーする True Count しきい値を調整。例えば Insurance のしきい値を +3 から +2 に変更したり、16 vs 10 の Stand しきい値を調整したりできます。</li>
+    </ul>
+    <p>設定を保存すると、Play モードの判断提案や Decision Training の Deviation 問題で、カスタマイズしたルールセットが使用されます。</p>
+
+    <h3>適用範囲</h3>
+    <ul>
+      <li><strong>Play モード</strong>：Mode が対応するカウントシステムに設定されているとき、ベット推奨と正誤フィードバックがカスタム Index しきい値を使用。</li>
+      <li><strong>Decision Training</strong>：Deviation 問題のカテゴリで、カスタムルールに基づいて出題・採点。</li>
+    </ul>
+
+    <div class="note">Hi-Opt I の Strategy Profile カスタマイズ（Ace サイドカウントのオプションを含む）は PRO 版限定機能です。他の 7 種のシステムのルールセットカスタマイズは FREE 版でも使用できます。</div>
+
+    <nav class="related-links" aria-label="関連ページ" data-seo-related="true">
+      <h3>関連ページ</h3>
+      <ul>
+        <li><a href="/ja/content/pc/training">トレーニングモード</a></li>
+        <li><a href="/ja/content/pc/play">プレイモード</a></li>
+        <li><a href="/ja/content/cardcounting/deviations">Deviations</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

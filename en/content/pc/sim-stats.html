@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC App Sim & Stats Guide | Blackjack Card Counting Trainer Windows</title>
+  <meta name="description" content="PC App Sim &amp; Stats guide covering Python Monte Carlo simulation setup and long-term statistics comparison.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/pc/sim-stats">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/sim-stats">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-stats">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-stats">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/sim-stats">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>Sim &amp; Stats</h1>
+    <p class="lead">Sim &amp; Stats runs Monte Carlo simulations via a Python backend. Configure hand count, table rules, counting system, and Bet Ramp to generate long-term data comparing EV, ROI, and variance across strategies and rule sets.</p>
+
+    <h3>Sim</h3>
+    <p>The Sim page is where you configure and launch simulations. The Python engine runs in the background and can handle large hand counts.</p>
+    <ul>
+      <li><strong>Hand Count</strong>: Set how many hands to simulate.</li>
+      <li><strong>Table Rules</strong>: Configure H17 / S17, deck count, penetration, Double rules, and more to model different table conditions.</li>
+      <li><strong>Counting System</strong>: Choose Basic, Hi-Lo, or another system for the simulation.</li>
+      <li><strong>Bet Ramp</strong>: Set True Count thresholds and multipliers to observe how betting strategy affects long-term outcomes.</li>
+    </ul>
+    <p>Results are saved as statistics and viewable in Stats after the simulation completes.</p>
+
+    <h3>Stats</h3>
+    <p>The Stats page displays simulation results for comparing long-term performance across configurations.</p>
+    <ul>
+      <li><strong>Net Profit &amp; ROI</strong>: See overall profitability of a strategy across the simulated hand count.</li>
+      <li><strong>EV &amp; Variance</strong>: Understand expected value and standard deviation to evaluate strategy stability.</li>
+      <li><strong>Multi-Run Comparison</strong>: Run multiple simulations with different settings and compare them side by side in Stats.</li>
+    </ul>
+
+    <div class="note">Simulation results show how strategies, rules, Bet Ramp, and variance interact — they do not guarantee the same outcome in live play. Blackjack edges are small and short-term variance is large; running the same configuration multiple times helps evaluate the stability of the result distribution.</div>
+
+    <nav class="related-links" aria-label="Related" data-seo-related="true">
+      <h3>Related</h3>
+      <ul>
+        <li><a href="/en/content/pc/play">Play Mode</a></li>
+        <li><a href="/en/content/cardcounting/ev-variance">EV &amp; Variance</a></li>
+        <li><a href="/en/content/cardcounting/bet-ramp">Bet Ramp</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

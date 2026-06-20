@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC アプリ リプレイガイド | ブラックジャック カウントトレーナー Windows</title>
+  <meta name="description" content="PC アプリ Replay ガイド。セッション統計・ミスフィルター（ベット／アクション／Insurance）・Timeline によるハンド単位の振り返りを紹介。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/pc/replay">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/replay">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/replay">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/replay">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/replay">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260528-2">
+</head>
+<body>
+  <article>
+    <h1>リプレイ</h1>
+    <p class="lead">Replay は保存された Game セッションの記録を振り返ります。全体統計・ミスフィルター・ハンドごとの Timeline を提供し、繰り返し起きるミスを特定して Play や Training で修正することを目的としています。</p>
+
+    <h3>セッション統計</h3>
+    <p>Replay ホーム画面では保存された Game 記録の統計をまとめて表示します：</p>
+    <ul>
+      <li>総ベット・純利益・ROI</li>
+      <li>セッション数・ハンド数・判断数</li>
+      <li>Win / Loss 結果</li>
+      <li>判断正解率</li>
+      <li>Mode 別（Basic・Hi-Lo・Hi-Opt I）の使用回数</li>
+      <li>ベットミス・アクションミス・Insurance ミスの件数</li>
+    </ul>
+
+    <h3>ミスフィルター</h3>
+    <p>記録リストを以下のカテゴリで絞り込み、問題のあるセッションを素早く特定できます：</p>
+    <ul>
+      <li><strong>All</strong>：すべての記録を表示。</li>
+      <li><strong>Mistakes</strong>：任意の種類のミスがあるもの。</li>
+      <li><strong>Bet Mistakes</strong>：ベットが Bet Ramp 設定と一致しなかったセッション。</li>
+      <li><strong>Action Mistakes</strong>：判断が戦略と一致しなかったセッション。</li>
+      <li><strong>Insurance Mistakes</strong>：Insurance の判断が間違っていたセッション。</li>
+    </ul>
+
+    <h3>Timeline ハンド振り返り</h3>
+    <p>記録を開くと詳細な Replay 画面に入ります：</p>
+    <ul>
+      <li><strong>Summary</strong>：セッションの基本的な結果と全体の状態サマリー。</li>
+      <li><strong>Mistakes</strong>：そのセッションのベット・アクション・Insurance ミスをまとめて表示。</li>
+      <li><strong>Timeline</strong>：セッションをハンドごとに確認。タイムラインのポイントを選ぶと、上部の Table Snapshot にその時点のテーブル状況、下部の Selected Event にそのイベントの判断・結果・判定詳細が表示されます。</li>
+    </ul>
+    <p>Timeline はセッション全体の流れからミスのパターンを見つけ出し、Play や Training で集中的に修正するための設計です。</p>
+
+    <nav class="related-links" aria-label="関連ページ" data-seo-related="true">
+      <h3>関連ページ</h3>
+      <ul>
+        <li><a href="/ja/content/pc/play">プレイモード</a></li>
+        <li><a href="/ja/content/pc/training">トレーニングモード</a></li>
+        <li><a href="/ja/content/pc/strategies">戦略カスタム</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260528-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

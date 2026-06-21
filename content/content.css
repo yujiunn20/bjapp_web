@@ -1204,3 +1204,142 @@ ul {
   z-index: 2;
   background: #edf5eb;
 }
+
+/* ─── PC App Dark Theme ─────────────────────────────────── */
+body.pc-section {
+  --bg: #141416;
+  --surface: #1e1e21;
+  --surface-soft: #252528;
+  --text: #e6e0d0;
+  --muted: #8a8070;
+  --line: #2e2a22;
+  --green: #c07820;
+  --green-dark: #d49828;
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.65);
+  color: var(--text);
+}
+
+/* topbar */
+body.pc-section .topbar {
+  background: rgba(18, 18, 20, 0.94);
+}
+
+/* layout surfaces */
+body.pc-section .hero-card,
+body.pc-section .download-band,
+body.pc-section .image-lightbox-close,
+body.pc-section .language-picker select {
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+body.pc-section .image-lightbox img {
+  background: var(--surface-soft);
+}
+
+body.pc-section .side-link:hover,
+body.pc-section .side-link.is-active {
+  background: rgba(30, 30, 33, 0.9);
+}
+
+/* article: accent text */
+body.pc-section .simulation-heading,
+body.pc-section .video-fallback a,
+body.pc-section .video-link-card strong,
+body.pc-section .feature-item h4 {
+  color: var(--green-dark);
+}
+
+/* article: note box */
+body.pc-section .note {
+  border-left-color: var(--green);
+  background: rgba(192, 120, 32, 0.12);
+}
+
+/* article: placeholder */
+body.pc-section .placeholder {
+  border-color: var(--line);
+  color: var(--muted);
+  background: var(--surface);
+}
+
+/* article: borders */
+body.pc-section .video-embed,
+body.pc-section .video-link-card,
+body.pc-section .feature-item,
+body.pc-section .app-screenshot-card,
+body.pc-section .related-links,
+body.pc-section .content-figure img {
+  border-color: var(--line);
+}
+
+/* article: card backgrounds */
+body.pc-section .video-link-card,
+body.pc-section .feature-item,
+body.pc-section .app-screenshot-card {
+  background: var(--surface);
+}
+
+/* article: muted text */
+body.pc-section .video-link-card em,
+body.pc-section .app-screenshot-card figcaption,
+body.pc-section .content-figure figcaption,
+body.pc-section .lead {
+  color: var(--muted);
+}
+
+body.pc-section .feature-item p {
+  color: var(--text);
+}
+
+/* article: images */
+body.pc-section .app-screenshot-card img,
+body.pc-section .content-figure img {
+  background: var(--surface-soft);
+}
+
+body.pc-section .content-figure img[data-lightbox-image]:hover,
+body.pc-section .app-screenshot-card img[data-lightbox-image]:hover {
+  border-color: var(--green);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* article: tables */
+body.pc-section .data-table th,
+body.pc-section .data-table td {
+  border-color: var(--line);
+}
+
+body.pc-section .data-table th {
+  background: var(--surface-soft);
+  color: var(--green-dark);
+}
+
+body.pc-section .data-table tr:nth-child(even) td {
+  background: rgba(30, 30, 33, 0.5);
+}
+
+body.pc-section .strategy-table th:first-child,
+body.pc-section .strategy-table td:first-child {
+  background: var(--surface);
+}
+
+body.pc-section .strategy-table th:first-child {
+  background: var(--surface-soft);
+}
+
+/* mobile overrides */
+@media (max-width: 820px) {
+  body.pc-section .topbar {
+    background: var(--bg);
+  }
+
+  body.pc-section .sidebar {
+    background: var(--bg);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+  }
+
+  body.pc-section .side-link {
+    background: var(--surface);
+  }
+}

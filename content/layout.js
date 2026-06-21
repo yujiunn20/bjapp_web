@@ -671,6 +671,8 @@
     const t = translations[activeLanguage] || translations["zh-Hant"];
     const { path, sectionKey, section, item } = currentPageInfo(t);
 
+    if (sectionKey === "pc") document.body.classList.add("pc-section");
+
     document.documentElement.lang = activeLanguage;
     document.title = pageTitle(path, item.title);
     setMeta("viewport", "width=device-width, initial-scale=1");

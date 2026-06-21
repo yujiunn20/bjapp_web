@@ -678,12 +678,23 @@
     setCanonical(path);
     setAlternateLinks(path);
 
+    const pageIconUrl = assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : "assets/img/app/blackjack-icon.png");
+    const existingFavicon = document.querySelector('link[rel="icon"]');
+    if (existingFavicon) {
+      existingFavicon.href = pageIconUrl;
+    } else {
+      const faviconLink = document.createElement("link");
+      faviconLink.rel = "icon";
+      faviconLink.href = pageIconUrl;
+      document.head.appendChild(faviconLink);
+    }
+
     const header = document.createElement("header");
     header.className = "topbar";
     header.innerHTML = `
       <div class="topbar-inner">
-        <a class="brand" href="${relativeUrl("content/app/overview.html")}" aria-label="Blackjack Trainer 首頁">
-          <img src="${assetUrl("assets/img/blackjack-icon.png")}" alt="二十一點算牌訓練器 App 圖示" class="brand-icon">
+        <a class="brand" href="${relativeUrl(sectionKey === "pc" ? "content/pc/overview.html" : "content/app/overview.html")}" aria-label="Blackjack Trainer 首頁">
+          <img src="${pageIconUrl}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : "二十一點算牌訓練器 App 圖示"}" class="brand-icon">
           <span>
             <strong>Blackjack</strong>
             <small>${t.brandSubtitle}</small>
@@ -716,7 +727,7 @@
           <p class="hero-subtitle">${t.heroBody}</p>
         </div>
         <div class="hero-card" aria-label="App preview">
-          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc-icon.png" : "assets/img/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App icon" : "二十一點算牌訓練器 App icon"}">
+          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : "assets/img/app/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App icon" : "二十一點算牌訓練器 App icon"}">
           <div>
             <strong>${t.appName}</strong>
             <span>${t.appTagline}</span>
@@ -740,7 +751,7 @@
       </main>
       <section class="download-band" aria-labelledby="downloadTitle">
         <div class="download-copy">
-          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc-icon.png" : "assets/img/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : "二十一點算牌訓練器 App 圖示"}" class="download-icon">
+          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : "assets/img/app/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : "二十一點算牌訓練器 App 圖示"}" class="download-icon">
           <div>
             <p class="eyebrow">${t.downloadEyebrow}</p>
             <h2 id="downloadTitle">${t.appName}</h2>

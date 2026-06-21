@@ -7,7 +7,7 @@
 - `index.html`：主頁面、上方分類、左側選單、Google Play 導流區。
 - `assets/css/styles.css`：整體視覺樣式。
 - `assets/js/main.js`：切換「算牌學習 / App 介紹」與左側選單。
-- `assets/img/blackjack-icon.png`：App icon。
+- `assets/img/app/blackjack-icon.png`：App icon。
 - `content/cardcounting/*.html`：算牌教學內容。
 - `content/app/*.html`：App 功能介紹內容。
 

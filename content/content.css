@@ -485,6 +485,11 @@ body.lightbox-open {
   gap: 16px;
 }
 
+.download-copy > div {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
 .download-copy p:last-child {
   margin: 7px 0 0;
   color: var(--muted);
@@ -873,6 +878,11 @@ body.lightbox-open {
     gap: 10px;
   }
 
+  .download-copy > div {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
   .download-icon {
     width: 34px;
     height: 34px;
@@ -930,6 +940,7 @@ body.lightbox-open {
   }
 
   .download-copy h2 {
+    width: 100%;
     max-width: none;
     white-space: normal;
     overflow: visible;
@@ -1035,6 +1046,7 @@ body.lightbox-open {
   }
 
   .download-copy h2 {
+    width: 100%;
     max-width: none;
   }
 

@@ -233,17 +233,11 @@
 
   function localizedPath(path, language = activeLanguage) {
     const prefix = languagePrefix(language);
-    if (path === "content/app/overview.html") {
-      return `${prefix}/index.html`;
-    }
     return `${prefix}/${path}`;
   }
 
   function localizedRoute(path, language = activeLanguage, { withExtension = false } = {}) {
     const prefix = languagePrefix(language);
-    if (path === "content/app/overview.html") {
-      return language === "en" ? "/" : `/${prefix}/`;
-    }
     const route = withExtension ? path : path.replace(/\.html$/, "");
     return `/${prefix}/${route}`;
   }
@@ -351,7 +345,7 @@
       const language = languageMatch[1];
       const routePath = languageMatch[2] || "";
       if (!routePath) {
-        return fileUrl(localizedPath("content/app/overview.html", language));
+        return fileUrl(localizedPath("content/cardcounting/rules.html", language));
       }
       const filePath = routePath.endsWith(".html") ? routePath : `${routePath}.html`;
       return fileUrl(localizedPath(filePath, language));
@@ -701,7 +695,7 @@
     header.className = "topbar";
     header.innerHTML = `
       <div class="topbar-inner">
-        <a class="brand" href="${relativeUrl(sectionKey === "pc" ? "content/pc/overview.html" : "content/app/overview.html")}" aria-label="Blackjack Trainer 首頁">
+        <a class="brand" href="${relativeUrl("content/cardcounting/rules.html")}" aria-label="Blackjack Trainer 首頁">
           <img src="${pageIconUrl}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : sectionKey === "cardcounting" ? "Blackjack Card Counting 教學圖示" : "二十一點算牌訓練器 App 圖示"}" class="brand-icon">
           <span>
             <strong>Blackjack</strong>
@@ -748,7 +742,13 @@
             <span>${section.label}</span>
             <small>${section.subtitle}</small>
           </div>
-          <nav class="side-nav" aria-label="內容選單"></nav>
+          <div class="mobile-nav-bar">
+            <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobileSectionNav">
+              <span class="mobile-nav-toggle-icon" aria-hidden="true"></span>
+              <span class="mobile-nav-toggle-label">${item.title}</span>
+            </button>
+          </div>
+          <nav class="side-nav" id="mobileSectionNav" aria-label="內容選單"></nav>
         </aside>
         <section class="content-panel">
           <div class="content-heading">
@@ -824,6 +824,8 @@
       </section>`;
 
     const sideNav = shell.querySelector(".side-nav");
+    const sidebar = shell.querySelector(".sidebar");
+    const mobileNavToggle = shell.querySelector(".mobile-nav-toggle");
     section.items.forEach((navItem, index) => {
       const link = document.createElement("a");
       link.className = `side-link ${navItem.path === path ? "is-active" : ""}`;
@@ -831,6 +833,24 @@
       link.textContent = navItem.title;
       sideNav.append(link);
     });
+
+    if (mobileNavToggle && sidebar) {
+      mobileNavToggle.addEventListener("click", () => {
+        const isOpen = sidebar.classList.toggle("is-open");
+        mobileNavToggle.setAttribute("aria-expanded", String(isOpen));
+        positionMobileSectionNav();
+      });
+
+      sideNav.addEventListener("click", (event) => {
+        const link = event.target.closest(".side-link");
+        if (!link || window.innerWidth > 820) {
+          return;
+        }
+        sidebar.classList.remove("is-open");
+        mobileNavToggle.setAttribute("aria-expanded", "false");
+        positionMobileSectionNav();
+      });
+    }
 
     const contentPanel = shell.querySelector(".content-panel");
     article.querySelector("h1, h2")?.remove();
@@ -912,12 +932,15 @@
     const topbar = document.querySelector(".topbar");
     const sidebar = document.querySelector(".sidebar");
     const siteShell = document.querySelector(".site-shell");
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
     if (!topbar || !sidebar || !siteShell) {
       return;
     }
     if (window.innerWidth > 820) {
       document.documentElement.style.removeProperty("--mobile-nav-top");
       siteShell.style.removeProperty("paddingTop");
+      sidebar.classList.remove("is-open");
+      mobileNavToggle?.setAttribute("aria-expanded", "false");
       return;
     }
     const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height);
@@ -929,6 +952,13 @@
   }
 
   document.addEventListener("click", (event) => {
+    const sidebar = document.querySelector(".sidebar");
+    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+    if (window.innerWidth <= 820 && sidebar?.classList.contains("is-open") && !event.target.closest(".sidebar")) {
+      sidebar.classList.remove("is-open");
+      mobileNavToggle?.setAttribute("aria-expanded", "false");
+      positionMobileSectionNav();
+    }
     handleLocalInternalLink(event);
     if (event.target.matches("#imageLightbox, #lightboxClose")) {
       closeImageLightbox();

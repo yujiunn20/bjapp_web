@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ブラックジャック カウントトレーナー アプリ概要</title>
+  <meta name="description" content="ブラックジャック カウントトレーナーの概要。基本戦略、Hi-Lo、Hi-Opt I、練習、統計、リプレイ、シミュレーション機能を紹介します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/app/overview">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/overview">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/overview">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/overview">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/overview">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blackjack.yuchunlab.com/ja/content/app/overview">
+  <meta property="og:title" content="ブラックジャック カウントトレーナー">
+  <meta property="og:description" content="練習、統計、リプレイでブラックジャックの基本戦略とカードカウントを安定した習慣にします。">
+  <meta property="og:image" content="https://blackjack.yuchunlab.com/assets/img/app/blackjack-icon.png">
+  <link rel="icon" href="../../../assets/img/app/blackjack-icon.png">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260620-1">
+</head>
+<body>
+  <article>
+    <h1>概要</h1>
+    <p class="lead">このアプリは、ブラックジャック学習を戦略表だけで終わらせず、練習・統計・リプレイを通してカウントの流れと長期結果を理解するためのものです。</p>
+
+    <p>カードカウントを学ぶときの課題は、Hi-Lo の値を知っていることだけではありません。実戦に近い状況で Running Count を安定して追跡し、True Count に換算し、TC に応じてベットを調整し、ミスを見直せるかどうかです。練習だけでなく、アプリは大量シミュレーションと統計によって、EV、ROI、分散、bet ramp、session ルールがブラックジャックの長期成績にどう影響するかを理解しやすくします。</p>
+
+    <h3 class="simulation-heading">デモ動画</h3>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube.com/embed/iOKuaX3BDGI"
+        title="ブラックジャック カウントトレーナー Demo"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <p class="video-fallback">プレイヤーを読み込めない場合は、<a href="https://www.youtube.com/watch?v=iOKuaX3BDGI" target="_blank" rel="noopener">YouTube でデモ動画を開く</a>。</p>
+
+    <h3>主な機能</h3>
+    <div class="feature-grid">
+      <section class="feature-item">
+        <h4>戦略とディビエーション練習</h4>
+        <p>基本戦略、ハードハンド、ソフトハンド、ペア、ダブル、サレンダー、インシュランス、カウントによるディビエーションを練習できます。</p>
+      </section>
+
+      <section class="feature-item">
+        <h4>RC / TC トレーニング</h4>
+        <p>Running Count と True Count の練習で、カード追跡からベット判断までの流れに慣れます。</p>
+      </section>
+
+      <section class="feature-item">
+        <h4>カウントシステム</h4>
+        <p>Hi-Lo と Hi-Opt I に対応し、ルール、デッキ数、ペネトレーション、bet ramp を変えてテストできます。</p>
+      </section>
+
+      <section class="feature-item">
+        <h4>リプレイと統計</h4>
+        <p>Replay で過去の判断を見直し、大量シミュレーションで ROI、EV、SD、bankroll、利確・損切り、長期結果を確認できます。</p>
+      </section>
+    </div>
+
+    <h3 class="simulation-heading">学習ルート</h3>
+    <ol>
+      <li>まず Decision Training で基本戦略、サレンダー、インシュランス、ペア、よく出る deviation を安定させます。戦略表を理解するだけでなく、問題の中で一貫した判断ができるか確認します。</li>
+      <li>次に Running Count Drill で Hi-Lo の加算速度を鍛え、True Count Drill で RC と残りカード数の換算を練習します。count を概念のままにせず、素早いベット判断につなげます。</li>
+      <li>その後、Hi-Lo Count Drill と Game モードに進み、複数プレイヤーへの配牌、異なる速度、完整なテーブル進行の中で count を追跡し、True Count と Bet Ramp に基づくベット調整を練習します。</li>
+      <li>プレイ後は Replay でミスを確認します。特にベット、アクション、insurance の Mistakes を見て、繰り返し起こる問題を見つけ、対応するトレーニングモードに戻って補強します。</li>
+      <li>最後に Round Stats と Session Stats でルール、Bet Ramp、損切り・利確、異なる戦略の長期差をテストします。単発の勝敗だけでなく、EV、ROI、分散を理解するためです。</li>
+    </ol>
+
+    <div class="note">目的はブラックジャックをカジュアルゲームにすることではなく、反復練習、データ確認、ミス修正、統計による変動理解ができるカウント練習ツールを提供することです。</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260620-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

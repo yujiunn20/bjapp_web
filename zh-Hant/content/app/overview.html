@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二十一點算牌訓練器 App 概要｜Blackjack Card Counting Trainer</title>
+  <meta name="description" content="二十一點算牌訓練器 App 概要，介紹 blackjack 基本策略、Hi-Lo、Hi-Opt I、訓練、統計、回放與模擬功能。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/overview">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/overview">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/overview">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/app/overview">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/app/overview">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260620-1">
+</head>
+<body>
+  <article>
+    <h1>概要</h1>
+    <p class="lead">這個 app 是為了讓 blackjack 學習不只停留在策略表，而是能透過練習、統計與回放，把算牌流程和長期結果一起看懂。</p>
+
+    <p>學習算牌時，常見問題不是只知道 Hi-Lo 牌值，而是能不能在接近實戰的情境中穩定追蹤 Running Count、換算 True Count、依照 TC 調整下注，並回頭檢討錯誤。除了練習之外，app 也能用大量模擬和統計結果，幫助理解 EV、ROI、變異數、bet ramp 和 session 規則如何影響 blackjack 的長期表現。</p>
+
+    <h3 class="simulation-heading">Demo 影片</h3>
+    <div class="video-embed">
+      <iframe
+        src="https://www.youtube.com/embed/iOKuaX3BDGI"
+        title="二十一點算牌訓練器 Demo"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+    <p class="video-fallback">如果播放器無法載入，可以<a href="https://www.youtube.com/watch?v=iOKuaX3BDGI" target="_blank" rel="noopener">在 YouTube 開啟 Demo 影片</a>。</p>
+
+    <h3>主要功能</h3>
+    <div class="feature-grid">
+      <section class="feature-item">
+        <h4>策略與偏離練習</h4>
+        <p>練習基本策略、硬牌、軟牌、對子、加倍、投降、保險，以及算牌偏離。</p>
+      </section>
+
+      <section class="feature-item">
+        <h4>RC / TC 訓練</h4>
+        <p>透過 Running Count 和 True Count 練習，熟悉從牌序追蹤到下注區間判斷的流程。</p>
+      </section>
+
+      <section class="feature-item">
+        <h4>算牌系統</h4>
+        <p>支援 Hi-Lo 與 Hi-Opt I，並可搭配不同桌規、牌組數、穿透率與 bet ramp 測試。</p>
+      </section>
+
+      <section class="feature-item">
+        <h4>回放與統計</h4>
+        <p>用 Replay 檢討過去決策，並透過大量模擬觀察 ROI、EV、SD、bankroll、停利停損和長期結果。</p>
+      </section>
+    </div>
+
+    <h3 class="simulation-heading">學習路線</h3>
+    <ol>
+      <li>先用 Decision Training 把基本策略、投降、保險、對子和常見 deviation 練穩，確認自己不是只看得懂策略表，而是能在題目中做出一致決策。</li>
+      <li>接著用 Running Count Drill 練 Hi-Lo 累加速度，再用 True Count Drill 練 RC 和剩餘牌數的換算，讓 count 不只停留在概念，而是能快速變成下注判斷。</li>
+      <li>再進入 Hi-Lo Count Drill 和 Game 模式，在多人發牌、不同速度與完整牌桌流程中追蹤 count，並練習依照 True Count 和 Bet Ramp 調整下注。</li>
+      <li>玩完後用 Replay 檢查錯誤，特別是下注、動作與 insurance 的 Mistakes，把常犯問題抓出來，再回到對應的訓練模式補強。</li>
+      <li>最後用 Round Stats 和 Session Stats 測試規則、Bet Ramp、停損停利和不同策略的長期差異，理解 EV、ROI 和變異數，而不是只看單次輸贏。</li>
+    </ol>
+
+    <div class="note">目標不是把 blackjack 做成休閒遊戲，而是提供一個能反覆練習、觀察數據、修正錯誤，並用統計理解遊戲波動的算牌訓練工具。</div>
+  </article>
+  <script src="../../../content/layout.js?v=20260620-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

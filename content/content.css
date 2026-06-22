@@ -221,6 +221,78 @@ a {
   top: 88px;
 }
 
+.mobile-nav-bar {
+  display: none;
+}
+
+.mobile-nav-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-weight: 750;
+  text-align: left;
+}
+
+.mobile-nav-toggle-icon,
+.mobile-nav-toggle-icon::before,
+.mobile-nav-toggle-icon::after {
+  display: block;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+.mobile-nav-toggle-icon {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.mobile-nav-toggle-icon::before,
+.mobile-nav-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.mobile-nav-toggle-icon::before {
+  top: -5px;
+}
+
+.mobile-nav-toggle-icon::after {
+  top: 5px;
+}
+
+.mobile-nav-toggle-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar.is-open .mobile-nav-toggle-icon {
+  background: transparent;
+}
+
+.sidebar.is-open .mobile-nav-toggle-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.sidebar.is-open .mobile-nav-toggle-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 .sidebar-heading {
   padding-bottom: 14px;
   border-bottom: 1px solid var(--line);
@@ -729,26 +801,34 @@ body.lightbox-open {
     display: none;
   }
 
+  .mobile-nav-bar {
+    display: block;
+  }
+
   .side-nav {
-    display: flex;
+    display: none;
     gap: 8px;
-    margin-top: 0;
+    margin-top: 8px;
     width: 100%;
-    overflow-x: auto;
+    max-height: min(48vh, 340px);
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+  }
+
+  .sidebar.is-open .side-nav {
+    display: grid;
   }
 
   .side-link {
-    flex: 0 0 auto;
-    width: auto;
+    width: 100%;
     min-height: 36px;
-    padding: 0 12px;
+    padding: 0 12px 0 14px;
     border: 1px solid var(--line);
-    border-radius: 999px;
+    border-radius: 12px;
     background: #fff;
-    font-size: 0.95rem;
-    white-space: nowrap;
+    font-size: 0.92rem;
+    white-space: normal;
   }
 
   .side-link::after {
@@ -764,8 +844,8 @@ body.lightbox-open {
   .download-band {
     width: 100%;
     grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-    padding: 9px 10px;
+    gap: 8px;
+    padding: 8px 10px;
     border-right: 0;
     border-left: 0;
     border-radius: 0;
@@ -789,8 +869,8 @@ body.lightbox-open {
   }
 
   .download-copy h2 {
-    font-size: 1rem;
-    max-width: 42vw;
+    font-size: 0.94rem;
+    max-width: 48vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -806,28 +886,40 @@ body.lightbox-open {
     min-width: 0;
     flex: 1 1 calc(50% - 4px);
     max-width: none;
-    padding: 10px 10px 9px;
-    gap: 7px;
-    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 6px 8px;
+    gap: 8px;
+    border-radius: 10px;
+    min-height: 40px;
   }
 
   .platform-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    flex: 0 0 auto;
   }
 
   .platform-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .download-platforms--cardcounting .platform-copy {
+    justify-items: start;
+    text-align: left;
+    gap: 0;
   }
 
   .platform-copy em {
-    font-size: 0.56rem;
+    font-size: 0.5rem;
   }
 
   .platform-copy strong {
-    font-size: 0.84rem;
+    font-size: 0.74rem;
+    line-height: 1.1;
   }
 
   .play-badge,

@@ -17,17 +17,38 @@
     <h1>トレーニング</h1>
     <p class="lead">Training モードは練習を 4 種の独立したモードに分割します。判断精度・Running Count の累積スピード・True Count 換算、そして実際の配牌リズムを再現したフルセッションのカウント追跡に、それぞれ特化しています。Count Drill では 7 種のカウントシステムすべてに切り替えられます。</p>
 
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/TrainingPage.png" alt="トレーニングホーム。Decision Training と 7 種のカウントシステム別ドリルエントリを表示" data-lightbox-image>
+    </figure>
+
+    <h3>トレーニング概要</h3>
+    <p>Training は 2 つの主要な訓練方向に分かれています：</p>
+    <ul>
+      <li><strong>Decision Training</strong>：ブラックジャックの判断練習に特化。基本戦略・カスタム Strategy Profile・カウント Deviation を含み、あらゆるレベルで正確な判断の基礎を固めるのに適しています。</li>
+      <li><strong>カウントシステム別ドリル</strong>：7 種のカウントシステム（Hi-Lo・KO・Red 7・FELT・Zen・Hi-Opt I・Omega II）それぞれに専用のドリルエントリがあり、Running Count Drill（高速累積練習）と Count Drill（実戦配牌リズムでのフルハンド追跡）を提供。True Count 換算を使用するシステムには True Count Drill（換算暗算練習）も追加されます。</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/DecisionTraining.png" alt="Decision Training 画面。Mode・カウントシステム・テーブルルール・Strategy Profile の選択肢を表示" data-lightbox-image>
+    </figure>
+
     <h3>Decision Training</h3>
     <p>ブラックジャックの判断そのもの（基本戦略とカウント Deviation）に集中した練習です。</p>
     <ul>
-      <li><strong>Mode 切り替え</strong>：Basic・Hi-Lo・Hi-Opt I を選択し、同じハンドを異なる判断基準で練習できます。</li>
+      <li><strong>Mode</strong>：トレーニングモードを選択し、使用できるアクションの範囲と判断基準を決定します。</li>
+      <li><strong>カウントシステムとテーブルルール</strong>：カウントシステム（7 種すべて対応）とテーブルルール（H17 / S17）を個別に選択。出題内容はその設定に合わせて生成されます。</li>
+      <li><strong>Strategy Profile</strong>：セッションで使用する戦略の出典を選択。組み込みの Preset を使うか、Strategies ページで作成したカスタム Strategy Profile を適用できます。自分でカスタマイズした Deviation ルールを実際の練習に活かす主要な手段です。</li>
       <li><strong>Question Type</strong>：Hard Totals・Soft Totals・Pairs・Doubles・Surrender・Insurance・Deviations から練習カテゴリを指定、またはミックス出題。</li>
       <li><strong>即時フィードバック</strong>：各選択後に正誤と戦略理由を即座に表示。</li>
     </ul>
     <p>Deviations カテゴリはカウント依存の逸脱判断に絞った出題で、実戦ではあまり遭遇しないレアな状況を集中して練習できます。</p>
 
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/HiLoTraining.png" alt="カウントシステム別トレーニングエントリ（Hi-Lo の例）。Running Count Drill・Count Drill・True Count Drill を表示" data-lightbox-image>
+    </figure>
+
     <h3>Running Count Drill</h3>
-    <p>カードを順番に見る際の Hi-Lo 累積スピードを練習します。</p>
+    <p>選択したカウントシステムの Running Count 累積スピードを、素早いカードシーケンスで練習します。7 種のカウントシステムそれぞれに専用の Running Count Drill エントリがあります。</p>
     <ul>
       <li>配牌速度とシーケンス長を設定可能。短くゆっくりから始め、徐々に長く速くしていきます。</li>
       <li>開始 RC を 0 固定またはランダムに設定し、カウント途中から続ける練習ができます。</li>
@@ -36,19 +57,18 @@
     </ul>
 
     <h3>True Count Drill</h3>
-    <p>Running Count と残りカード枚数から True Count を換算する練習です。</p>
+    <p>Running Count と残りカード枚数から True Count を換算する練習です。True Count 換算を使用するカウントシステム（Hi-Lo・FELT・Zen・Hi-Opt I・Omega II）が対象です。</p>
     <ul>
       <li>RC と残りカード数が与えられ、True Count を暗算します。</li>
       <li>さまざまな RC / デッキ組み合わせを繰り返し練習することで、実戦でのベット判断スピードと精度が向上します。</li>
     </ul>
 
     <h3>Count Drill</h3>
-    <p>実際のテーブルに最も近いカウント練習。ディーラーと複数プレイヤーの配牌を順番にシミュレートし、フルハンドのリズムの中でカウントを追跡します。</p>
+    <p>実際のテーブルに最も近いカウント練習。ディーラーと複数プレイヤーの配牌を順番にシミュレートし、フルハンドのリズムの中でカウントを追跡します。7 種のカウントシステムそれぞれに専用の Count Drill エントリがあります。</p>
     <ul>
       <li>練習開始時に初期 RC と残りカード数が与えられ、設定された人数と速度で 1 ハンドをシミュレート。</li>
       <li>配牌終了後に最終 RC または残りデッキ数を回答し、実戦に近いペースで安定してカウントを追跡できているか確認。</li>
       <li>プレイヤー数と配牌速度を調整可能。</li>
-      <li>7 種のカウントシステムに対応：Hi-Lo・KO・Red 7・FELT・Zen・Hi-Opt I・Omega II。各システムに専用のドリルエントリがあります。</li>
     </ul>
 
     <div class="note">推奨する練習順序：Decision Training で基本戦略と Deviation を安定させる → RC Drill で累積スピードを鍛える → TC Drill で換算を練習する → Count Drill でフルハンドリズムの中にすべての能力を統合する。</div>

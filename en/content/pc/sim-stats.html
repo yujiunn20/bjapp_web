@@ -14,25 +14,92 @@
 </head>
 <body>
   <article>
-    <h1>Sim &amp; Stats</h1>
-    <p class="lead">Sim &amp; Stats runs Monte Carlo simulations via a Python backend. Configure hand count, table rules, counting system, and Bet Ramp to generate long-term data comparing EV, ROI, and variance across strategies and rule sets.</p>
+    <h1>Stats</h1>
+    <p class="lead">The Stats page has three sections: Play Stats summarizes your actual play results from Play mode, Simulation Stats analyzes Monte Carlo simulation output, and Files manages stored play and simulation log files.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/Simulation.png" alt="Sim setup page showing Trial settings, table rules, counting system, Bet Ramp, and Output Name options" data-lightbox-image>
+    </figure>
 
     <h3>Sim</h3>
-    <p>The Sim page is where you configure and launch simulations. The Python engine runs in the background and can handle large hand counts.</p>
+    <p>The Sim page is where you configure and launch simulations. The Python engine runs in the background and saves results as a <code>.jsonl.gz</code> file when complete, which you then load in Stats for analysis.</p>
+    <p>Simulations use a <strong>Trial structure</strong>: each run performs <strong>num_trials</strong> independent sessions, each playing <strong>hands_per_trial</strong> hands. The two values multiplied give the total hand count.</p>
     <ul>
-      <li><strong>Hand Count</strong>: Set how many hands to simulate.</li>
-      <li><strong>Table Rules</strong>: Configure H17 / S17, deck count, penetration, Double rules, and more to model different table conditions.</li>
-      <li><strong>Counting System</strong>: Choose Basic, Hi-Lo, or another system for the simulation.</li>
-      <li><strong>Bet Ramp</strong>: Set True Count thresholds and multipliers to observe how betting strategy affects long-term outcomes.</li>
+      <li><strong>num_trials (session count)</strong>: Each trial is one independent session — the shoe resets, the count starts from zero, and trials have no effect on each other. The distribution of results across trials shows how stable and variable a configuration is over the long run.</li>
+      <li><strong>hands_per_trial (hands per session)</strong>: How many hands each trial plays — the "length" of a single session. Larger values simulate longer play; combining many trials gives a distribution of long-term outcomes.</li>
     </ul>
-    <p>Results are saved as statistics and viewable in Stats after the simulation completes.</p>
-
-    <h3>Stats</h3>
-    <p>The Stats page displays simulation results for comparing long-term performance across configurations.</p>
+    <p><strong>Limits (FREE / PRO)</strong>: FREE allows up to 50 trials, up to 2,000 hands per trial, and no more than 100,000 total hands. PRO allows up to 300 trials, up to 20,000 hands per trial, and no more than 4,000,000 total hands.</p>
     <ul>
-      <li><strong>Net Profit &amp; ROI</strong>: See overall profitability of a strategy across the simulated hand count.</li>
-      <li><strong>EV &amp; Variance</strong>: Understand expected value and standard deviation to evaluate strategy stability.</li>
-      <li><strong>Multi-Run Comparison</strong>: Run multiple simulations with different settings and compare them side by side in Stats.</li>
+      <li><strong>Table Rules</strong>: H17 / S17, deck count (up to 12), penetration, Double After Split, Blackjack payout, Surrender, and Insurance — configure to match specific table conditions.</li>
+      <li><strong>Counting System</strong>: Basic (no counting) or any of the seven supported systems (Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, Omega II).</li>
+      <li><strong>Bet Ramp</strong>: Set count signal thresholds and bet multipliers to see how betting strategy affects long-term EV and ROI.</li>
+      <li><strong>Strategy Profile (PRO)</strong>: Apply a custom Strategy Profile created in Strategies to simulate long-term EV using your own Deviation rules.</li>
+      <li><strong>Multi-seat comparison</strong>: Add multiple players to one run, each using different systems or Bet Ramps. All seat results are saved together and directly comparable in Stats.</li>
+      <li><strong>Output Name</strong>: Name the output file so you can quickly find it in Stats later.</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/PlayStats.png" alt="Play Stats page showing overall stats, TC range filter, and per-round Rounds table" data-lightbox-image>
+    </figure>
+
+    <h3>Play Stats</h3>
+    <p>Play Stats loads play logs (<code>.jsonl.gz</code>) recorded in Play mode and summarizes your actual results. Select a log file from the dropdown to view its stats.</p>
+    <ul>
+      <li><strong>Overall Summary</strong>: Total hands, Win/Loss/Push rates (W/L/P), total units wagered, net units won, ROI (= net / total wager), and average bet multiplier.</li>
+      <li><strong>TC Filter</strong>: Set TC min / TC max to isolate rounds where True Count at bet time falls within a specific range and see stats only for those rounds — useful for confirming whether high-count performance matches expectations.</li>
+      <li><strong>Rounds Table</strong>: Lists each round with its timestamp, TC at bet (TC@bet), bet multiplier (Bet&times;), wager, net units (Net), and outcome for round-by-round review.</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/SimStats.png" alt="Simulation Stats main page showing overall player comparison, grouped breakdown, conditional signal split, and Count Signal Buckets" data-lightbox-image>
+    </figure>
+
+    <h3>Simulation Stats</h3>
+    <p>Simulation Stats loads a <code>.jsonl.gz</code> result file generated by Sim and runs multi-angle statistical analysis. Select a file then click <strong>Run</strong> to load results. Use signal min / max to filter a specific signal range (balanced systems use TC; KO / Red 7 use RC) — leave blank to include all rounds.</p>
+    <ul>
+      <li><strong>Player comparison (overall)</strong>: Per-player aggregate stats including Total wager, Net, ROI, EV/100 rounds, Var/100 rounds, SD/100 rounds, and Deviation metrics (Deviation round rate, Deviation net, Deviation EV/100). A Combined row aggregates all players.</li>
+      <li><strong>Grouped comparison</strong>: Breaks down results by counting system, Strategy, and betting type (ramp / flat) — useful for comparing different configurations within the same simulation run.</li>
+      <li><strong>Conditional split (signal &gt; k)</strong>: Splits results at threshold k, separately showing performance when signal ≤ k (low-count) vs signal &gt; k (high-count), directly quantifying the counting signal's contribution to profitability.</li>
+      <li><strong>Count Signal Buckets</strong>: Divides results by custom bucket edges (e.g., 1, 3, 5, 7), showing Avg bet&times;, Net, ROI, and other metrics per bucket — confirms whether EV trends across count states match strategy expectations.</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/SimStatsPlots.png" alt="Simulation Stats Plots showing cumulative net units over hands with mean and confidence band across trials" data-lightbox-image>
+    </figure>
+
+    <p><strong>Plots (time series)</strong>: Visualizes cumulative net units over hands within each trial. Multiple players can be overlaid simultaneously to compare long-term trends under identical simulation conditions.</p>
+    <ul>
+      <li><strong>Band</strong>: When enabled, shows mean ± n_sigma &times; std across all trials, visualizing the spread of outcomes.</li>
+      <li><strong>step</strong>: Sampling interval in hands — smaller values produce a smoother curve; larger values compute faster.</li>
+      <li><strong>n_sigma</strong>: Band width. 1 = mean ± 1 std; 2 = mean ± 2 std.</li>
+      <li>Charts can be downloaded as SVG or PNG.</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/SimStatsStopWinLoss.png" alt="Stop Win/Loss simulation showing per-trial outcome distribution and probability stats" data-lightbox-image>
+    </figure>
+
+    <p><strong>Stop Win / Loss simulation</strong>: Applies stop-win and stop-loss rules to each trial in the Sim results, reporting the distribution of final units and how often each trial ends by hitting the win target, the loss limit, or max hands.</p>
+    <ul>
+      <li><strong>Stop win</strong>: The trial ends as "win" when cumulative net units reach the stop-win threshold.</li>
+      <li><strong>Stop loss</strong>: The trial ends as "loss" when cumulative losses reach the stop-loss threshold.</li>
+      <li><strong>Max hands</strong>: If neither stop is triggered, the trial ends after max_hands hands, recorded as "max_hands".</li>
+      <li><strong>Output stats</strong>: Trials count, Mean / Median final units, P(profit), P(stop win), P(stop loss), Mean hands played, and p5 / p25 / p75 / p95 percentile distribution.</li>
+      <li><strong>Sessions table</strong>: Per-trial detail — hands played, final units, and reason for ending (win / loss / max_hands).</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/StatsFiles.png" alt="Files tab showing a list of simulation log files with Download, Rename, and Delete actions" data-lightbox-image>
+    </figure>
+
+    <h3>Files</h3>
+    <p>The Files tab manages all log files stored by the local backend. Use the <strong>play</strong> / <strong>sim</strong> toggle in the top-right to switch between play logs and simulation results.</p>
+    <ul>
+      <li><strong>Filename</strong>: Files are named with a timestamp prefix in the format <code>YYYYMMDD_HHMMSS_name.jsonl.gz</code> for easy chronological identification.</li>
+      <li><strong>Size / Modified</strong>: Shows file size and last-modified time — useful for confirming which file is the latest simulation run.</li>
+      <li><strong>Download</strong>: Download a <code>.jsonl.gz</code> file for backup or custom analysis in external tools.</li>
+      <li><strong>Rename</strong>: Rename a file to organize logs by content, date, or configuration.</li>
+      <li><strong>Delete</strong>: Remove log files that are no longer needed.</li>
     </ul>
 
     <div class="note">Simulation results show how strategies, rules, Bet Ramp, and variance interact — they do not guarantee the same outcome in live play. Blackjack edges are small and short-term variance is large; running the same configuration multiple times helps evaluate the stability of the result distribution.</div>

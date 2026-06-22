@@ -14,25 +14,92 @@
 </head>
 <body>
   <article>
-    <h1>シミュ・統計</h1>
-    <p class="lead">Sim &amp; Stats は Python バックエンドで Monte Carlo シミュレーションを実行します。手数・テーブルルール・カウントシステム・Bet Ramp を設定し、異なる戦略やルールセット間の EV・ROI・分散を比較する長期データを生成できます。</p>
+    <h1>統計</h1>
+    <p class="lead">Stats ページは 3 つのセクションで構成されています。Play Stats は Play モードの実際のプレイ結果を集計し、Simulation Stats は Monte Carlo シミュレーション結果を分析し、Files はプレイログとシミュレーション結果ファイルを管理します。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/Simulation.png" alt="Sim 設定ページ。Trial 設定・テーブルルール・カウントシステム・Bet Ramp・Output Name のオプションを表示" data-lightbox-image>
+    </figure>
 
     <h3>Sim（シミュレーション）</h3>
-    <p>Sim ページではシミュレーションの設定と実行を行います。Python エンジンがバックグラウンドで動作し、大量の手数を計算できます。</p>
+    <p>Sim ページではシミュレーションの設定と実行を行います。Python エンジンがバックグラウンドで動作し、完了後に結果を <code>.jsonl.gz</code> ファイルとして保存。その後 Stats ページで読み込んで分析できます。</p>
+    <p>シミュレーションは <strong>Trial 構造</strong>を採用しています：1 回の実行で <strong>num_trials</strong> 個の独立したセッションを実行し、各セッションで <strong>hands_per_trial</strong> 手をプレイします。2 つを掛け合わせた値が総シミュレーション手数です。</p>
     <ul>
-      <li><strong>手数設定</strong>：シミュレートする手数を指定。</li>
-      <li><strong>テーブルルール</strong>：H17 / S17・デッキ数・ペネトレーション・Double ルールなどを設定し、さまざまなテーブル条件を再現。</li>
-      <li><strong>カウントシステム</strong>：Basic・Hi-Lo などのシステムを選択してシミュレート。</li>
-      <li><strong>Bet Ramp</strong>：True Count しきい値と倍率を設定し、ベット戦略が長期結果に与える影響を観察。</li>
+      <li><strong>num_trials（セッション数）</strong>：各 trial は独立した 1 回のプレイで、シューのリシャッフル・カウントのリセットが行われ、他の trial とは互いに影響しません。複数 trial の結果の分布から、同じ設定での長期的な安定性と変動幅を確認できます。</li>
+      <li><strong>hands_per_trial（1 セッションあたりの手数）</strong>：各 trial でプレイする手数——単一セッションの「長さ」です。値が大きいほど長いプレイをシミュレート。複数 trial と組み合わせると長期結果の分布が確認できます。</li>
     </ul>
-    <p>シミュレーション完了後、結果は統計データとして保存され、Stats ページで確認できます。</p>
-
-    <h3>Stats（統計）</h3>
-    <p>Stats ページではシミュレーション結果を確認し、設定間の長期パフォーマンスを比較します。</p>
+    <p><strong>上限（FREE / PRO）</strong>：FREE は最大 50 trial・1 trial あたり最大 2,000 手・合計 10 万手まで。PRO は最大 300 trial・1 trial あたり最大 20,000 手・合計 400 万手まで。</p>
     <ul>
-      <li><strong>純利益と ROI</strong>：シミュレーション手数における戦略の総合的な収益結果を確認。</li>
-      <li><strong>EV と分散</strong>：期待値と標準偏差を把握し、戦略の安定性を評価。</li>
-      <li><strong>複数設定の比較</strong>：異なる設定で複数のシミュレーションを実行し、Stats で結果を並べて比較。</li>
+      <li><strong>テーブルルール</strong>：H17 / S17・デッキ数（最大 12）・ペネトレーション・Double After Split・Blackjack 賠率・Surrender・保険を設定し、特定のテーブル条件を再現。</li>
+      <li><strong>カウントシステム</strong>：Basic（カウントなし）または 7 種のシステム（Hi-Lo・KO・Red 7・FELT・Zen・Hi-Opt I・Omega II）から選択。</li>
+      <li><strong>Bet Ramp</strong>：カウントシグナルのしきい値とベット倍率を設定し、ベット戦略が長期 EV と ROI に与える影響を確認。</li>
+      <li><strong>Strategy Profile（PRO）</strong>：Strategies ページで作成したカスタム Strategy Profile を適用し、自分の Deviation ルールを使った場合の長期期待値をシミュレート。</li>
+      <li><strong>複数席位の比較</strong>：同一シミュレーションに複数のプレイヤーを追加し、それぞれ異なるシステムや Bet Ramp を設定。1 回の実行で Stats に全結果が保存され、直接比較できます。</li>
+      <li><strong>Output Name</strong>：出力ファイルに名前を付けて、後で Stats から素早く見つけられるようにします。</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/PlayStats.png" alt="Play Stats ページ。総合統計・TC フィルター・ラウンド別テーブルを表示" data-lightbox-image>
+    </figure>
+
+    <h3>Play Stats</h3>
+    <p>Play Stats は Play モードで記録した遊玩ログ（<code>.jsonl.gz</code>）を読み込み、実際のプレイ結果を集計します。ドロップダウンからログファイルを選択すると統計が表示されます。</p>
+    <ul>
+      <li><strong>総合統計</strong>：総手数・勝/負/引分率（W/L/P）・総ベット量（単位）・純収益（Net units）・ROI（= 純収益 ÷ 総ベット量）・平均ベット倍率。</li>
+      <li><strong>TC フィルター</strong>：TC min / TC max を設定してベット時の True Count が指定範囲内のラウンドだけを集計し、特定カウント状態での実際のパフォーマンスを単独で確認できます。</li>
+      <li><strong>ラウンドテーブル</strong>：各ラウンドの日時・ベット時 TC（TC@bet）・ベット倍率（Bet&times;）・ウェージャー・純収益（Net）・勝敗結果（Outcome）を一覧表示。</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/SimStats.png" alt="Simulation Stats メインページ。プレイヤー比較・Grouped 比較・カウントシグナル条件分析・Count Signal Buckets を表示" data-lightbox-image>
+    </figure>
+
+    <h3>Simulation Stats</h3>
+    <p>Simulation Stats は Sim が生成した <code>.jsonl.gz</code> 結果ファイルを読み込み、多角的な統計分析を行います。ファイルを選択して <strong>Run</strong> をクリックすると結果が読み込まれます。signal min / max で特定のシグナル範囲に絞り込めます（均衡システムは TC を、KO / Red 7 は RC を使用）。空欄にするとフィルターなし。</p>
+    <ul>
+      <li><strong>Player comparison (overall)</strong>：各プレイヤーの総合統計。Total wager・Net・ROI・EV/100 rounds・Var/100 rounds・SD/100 rounds と Deviation 関連指標（Deviation ラウンド率・Deviation 純収益・Deviation EV/100）を表示。Combined 行はすべてのプレイヤーの合計。</li>
+      <li><strong>Grouped comparison</strong>：カウントシステム・Strategy・ベット方式（ramp / flat）でグループ化し、同一シミュレーション内の異なる設定の結果を直接比較。</li>
+      <li><strong>Conditional split（signal &gt; k）</strong>：k をしきい値として signal ≤ k（低カウント状態）と signal &gt; k（高カウント状態）の結果を個別に集計し、カウントシグナルが収益に与える貢献を定量化。</li>
+      <li><strong>Count Signal Buckets</strong>：Bucket edges（例：1,3,5,7）でシグナルを複数区間に分割し、区間ごとに Avg bet&times;・Net・ROI などを表示。各カウント状態での期待値の傾向が戦略の予測と一致しているか確認できます。</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/SimStatsPlots.png" alt="Simulation Stats Plots。trial ごとの累積純収益の平均と信頼帯を手数に対してプロット" data-lightbox-image>
+    </figure>
+
+    <p><strong>Plots（時系列グラフ）</strong>：各 trial における手数の推移に対する累積純収益をグラフで確認できます。複数のプレイヤーを重ねて表示し、同じシミュレーション条件下での長期トレンドを直接比較できます。</p>
+    <ul>
+      <li><strong>Band</strong>：有効にすると mean ± n_sigma &times; std の信頼帯を表示し、trial 間のばらつきを視覚化。</li>
+      <li><strong>step</strong>：サンプリング間隔（手数）。値が小さいほど曲線が細かく、値が大きいほど高速に計算。</li>
+      <li><strong>n_sigma</strong>：帯の幅。1 = mean ± 1 標準偏差；2 = mean ± 2 標準偏差。</li>
+      <li>グラフは SVG または PNG でダウンロード可能。</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/SimStatsStopWinLoss.png" alt="Stop Win/Loss シミュレーション。各 trial の停止理由と最終収益の分布・確率統計を表示" data-lightbox-image>
+    </figure>
+
+    <p><strong>Stop Win / Loss シミュレーション</strong>：Sim の各 trial に停利（stop win）と停損（stop loss）の条件を適用し、各 trial が利益目標・損失上限・最大手数のどれで終了したかと、最終収益の分布を集計します。</p>
+    <ul>
+      <li><strong>Stop win</strong>：累積純収益が設定値（単位）に達した時点で trial を終了（理由: win）。</li>
+      <li><strong>Stop loss</strong>：累積損失が設定値（単位）に達した時点で trial を終了（理由: loss）。</li>
+      <li><strong>Max hands</strong>：停利・停損どちらも発動しない場合、max_hands 手後に終了（理由: max_hands）。</li>
+      <li><strong>出力統計</strong>：Trials 数・Mean / Median final（平均 / 中央値最終収益）・P(profit)（利益確率）・P(stop win)（停利発動確率）・P(stop loss)（停損発動確率）・Mean hands（平均プレイ手数）・p5 / p25 / p75 / p95 百分位数分布。</li>
+      <li><strong>Sessions テーブル</strong>：trial ごとの詳細結果。プレイ手数（hands）・最終収益（final）・終了理由（win / loss / max_hands）を一覧表示。</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/StatsFiles.png" alt="Files タブ。シミュレーションログファイルの一覧と Download・Rename・Delete 操作を表示" data-lightbox-image>
+    </figure>
+
+    <h3>Files</h3>
+    <p>Files タブではローカルバックエンドに保存されたすべてのログファイルを管理します。右上の <strong>play</strong> / <strong>sim</strong> トグルで遊玩ログとシミュレーション結果を切り替えられます。</p>
+    <ul>
+      <li><strong>Filename</strong>：ファイル名は <code>YYYYMMDD_HHMMSS_名前.jsonl.gz</code> 形式でタイムスタンプ付きで保存されます。</li>
+      <li><strong>Size / Modified</strong>：ファイルサイズと最終更新日時を表示。最新のシミュレーション結果を確認するのに便利。</li>
+      <li><strong>Download</strong>：<code>.jsonl.gz</code> ファイルをダウンロードしてバックアップ、または外部ツールで分析。</li>
+      <li><strong>Rename</strong>：ファイル名を変更し、内容・日付・設定ごとに整理。</li>
+      <li><strong>Delete</strong>：不要になったログファイルを削除。</li>
     </ul>
 
     <div class="note">シミュレーション結果は、戦略・ルール・Bet Ramp・分散の関係を理解するためのものであり、実際のプレイで同じ結果が保証されるわけではありません。ブラックジャックのエッジは小さく短期分散は大きいため、同じ設定で複数回実行して結果分布の安定性を確認することをお勧めします。</div>

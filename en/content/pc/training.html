@@ -17,17 +17,38 @@
     <h1>Training</h1>
     <p class="lead">Training mode breaks practice into four independent modes targeting decision accuracy, Running Count speed, True Count conversion, and full-session count tracking that simulates real table pacing. All seven counting systems are available in Count Drill.</p>
 
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/TrainingPage.png" alt="Training home screen showing Decision Training and per-system counting drill entries for all seven counting systems" data-lightbox-image>
+    </figure>
+
+    <h3>Training Overview</h3>
+    <p>Training is organized into two main tracks:</p>
+    <ul>
+      <li><strong>Decision Training</strong>: Focused on blackjack decision-making — basic strategy, custom Strategy Profiles, and count Deviations. A solid foundation for correct play at any level.</li>
+      <li><strong>Per-system counting drills</strong>: All seven counting systems (Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, Omega II) each have a dedicated drill entry offering Running Count Drill (fast accumulation practice) and Count Drill (full-hand tracking under real-table pacing). Systems that use True Count conversion also include a True Count Drill.</li>
+    </ul>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/DecisionTraining.png" alt="Decision Training screen showing Mode, counting system, table rules, and Strategy Profile options" data-lightbox-image>
+    </figure>
+
     <h3>Decision Training</h3>
     <p>Focuses on blackjack decisions — basic strategy and counting Deviations.</p>
     <ul>
-      <li><strong>Mode Switch</strong>: Choose Basic, Hi-Lo, or Hi-Opt I to practice the same hand under different judgment standards.</li>
+      <li><strong>Mode</strong>: Selects the training mode, determining which actions are available and what judgment standard is applied.</li>
+      <li><strong>Counting System &amp; Table Rules</strong>: Independently choose the counting system (all seven supported) and table rules (H17 / S17). Questions are generated to match the selection.</li>
+      <li><strong>Strategy Profile</strong>: Choose the strategy source for the session — use a built-in Preset or apply a custom Strategy Profile created in Strategies. This is the primary way to practice against your own custom Deviation rules.</li>
       <li><strong>Question Type</strong>: Select specific categories — Hard Totals, Soft Totals, Pairs, Doubles, Surrender, Insurance, Deviations — or mix them.</li>
       <li><strong>Instant Feedback</strong>: Shows whether the answer was correct and the strategy reason immediately after each choice.</li>
     </ul>
     <p>The Deviations category targets count-dependent departures from basic strategy, useful for drilling rare situations that don't come up often in live play.</p>
 
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/HiLoTraining.png" alt="Per-system training entry, shown here for Hi-Lo, with Running Count Drill, Count Drill, and True Count Drill" data-lightbox-image>
+    </figure>
+
     <h3>Running Count Drill</h3>
-    <p>Practices Hi-Lo accumulation speed as cards are dealt in sequence.</p>
+    <p>Practices Running Count accumulation speed for the selected counting system through a quick card sequence. Each of the seven counting systems has its own dedicated Running Count Drill entry.</p>
     <ul>
       <li>Configurable deal speed and sequence length — start short and slow, then increase both.</li>
       <li>Starting RC can be fixed at 0 or randomized to practice picking up from mid-count.</li>
@@ -36,19 +57,18 @@
     </ul>
 
     <h3>True Count Drill</h3>
-    <p>Practices converting Running Count and remaining cards into True Count.</p>
+    <p>Practices converting Running Count and remaining cards into True Count. Available for counting systems that use True Count conversion: Hi-Lo, FELT, Zen, Hi-Opt I, and Omega II.</p>
     <ul>
       <li>Each question gives an RC and remaining card count; you calculate the True Count mentally.</li>
       <li>Repeated practice with different RC / deck combinations builds speed and accuracy for real-time bet decisions at the table.</li>
     </ul>
 
     <h3>Count Drill</h3>
-    <p>The practice mode closest to live play. Simulates dealer and multi-player dealing in sequence so you track the count throughout a full hand rhythm.</p>
+    <p>The practice mode closest to live play. Simulates dealer and multi-player dealing in sequence so you track the count throughout a full hand rhythm. Each of the seven counting systems has its own dedicated Count Drill entry.</p>
     <ul>
       <li>Each session starts with a given RC and remaining cards, then simulates a hand at the configured player count and speed.</li>
       <li>At the end, you answer the final RC or remaining deck count to confirm you can track stably under near-live pacing.</li>
       <li>Player count and deal speed are adjustable.</li>
-      <li>Supports all seven counting systems: Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, Omega II — each with its own drill entry.</li>
     </ul>
 
     <div class="note">Suggested practice order: stabilize basic strategy and Deviations with Decision Training → build RC speed with RC Drill → practice TC conversion with TC Drill → integrate everything under full-hand rhythm in Count Drill.</div>

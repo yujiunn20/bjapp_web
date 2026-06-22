@@ -680,7 +680,13 @@
     setCanonical(path);
     setAlternateLinks(path);
 
-    const pageIconUrl = assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : "assets/img/app/blackjack-icon.png");
+    const pageIconUrl = assetUrl(
+      sectionKey === "pc"
+        ? "assets/img/pc/pc-icon.png"
+        : sectionKey === "cardcounting"
+          ? "assets/img/cardcounting/mixed_icon.png"
+          : "assets/img/app/blackjack-icon.png"
+    );
     const existingFavicon = document.querySelector('link[rel="icon"]');
     if (existingFavicon) {
       existingFavicon.href = pageIconUrl;
@@ -696,7 +702,7 @@
     header.innerHTML = `
       <div class="topbar-inner">
         <a class="brand" href="${relativeUrl(sectionKey === "pc" ? "content/pc/overview.html" : "content/app/overview.html")}" aria-label="Blackjack Trainer 首頁">
-          <img src="${pageIconUrl}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : "二十一點算牌訓練器 App 圖示"}" class="brand-icon">
+          <img src="${pageIconUrl}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : sectionKey === "cardcounting" ? "Blackjack Card Counting 教學圖示" : "二十一點算牌訓練器 App 圖示"}" class="brand-icon">
           <span>
             <strong>Blackjack</strong>
             <small>${t.brandSubtitle}</small>
@@ -729,7 +735,7 @@
           <p class="hero-subtitle">${t.heroBody}</p>
         </div>
         <div class="hero-card" aria-label="App preview">
-          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : "assets/img/app/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App icon" : "二十一點算牌訓練器 App icon"}">
+          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : sectionKey === "cardcounting" ? "assets/img/cardcounting/mixed_icon.png" : "assets/img/app/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App icon" : sectionKey === "cardcounting" ? "Blackjack Card Counting icon" : "二十一點算牌訓練器 App icon"}">
           <div>
             <strong>${t.appName}</strong>
             <span>${t.appTagline}</span>
@@ -753,14 +759,44 @@
       </main>
       <section class="download-band" aria-labelledby="downloadTitle">
         <div class="download-copy">
-          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : "assets/img/app/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : "二十一點算牌訓練器 App 圖示"}" class="download-icon">
+          <img src="${assetUrl(sectionKey === "pc" ? "assets/img/pc/pc-icon.png" : sectionKey === "cardcounting" ? "assets/img/cardcounting/mixed_icon.png" : "assets/img/app/blackjack-icon.png")}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : sectionKey === "cardcounting" ? "Blackjack Card Counting 教學圖示" : "二十一點算牌訓練器 App 圖示"}" class="download-icon">
           <div>
             <p class="eyebrow">${t.downloadEyebrow}</p>
             <h2 id="downloadTitle">${t.appName}</h2>
             <p>${t.downloadBody}</p>
           </div>
         </div>
-        ${sectionKey === "pc" ? `
+        ${sectionKey === "cardcounting" ? `
+        <div class="download-platforms download-platforms--cardcounting">
+          <a class="platform-card platform-card--play" href="${playUrl}" target="_blank" rel="noopener" aria-label="前往 Google Play 下載二十一點算牌訓練器">
+            <span class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 36" aria-hidden="true">
+                <path fill="#00c3ff" d="M2.2 1.1 19.7 18 2.2 34.9A3 3 0 0 1 1 32.5v-29A3 3 0 0 1 2.2 1.1z"/>
+                <path fill="#00e070" d="m19.7 18 4.9-4.7L5 1.9a3.1 3.1 0 0 0-2.8-.8L19.7 18z"/>
+                <path fill="#ffd400" d="m19.7 18-17.5 17a3.1 3.1 0 0 0 2.8-.8l19.6-11.5-4.9-4.7z"/>
+                <path fill="#ff4b55" d="m24.6 13.3 5.2 3a2 2 0 0 1 0 3.4l-5.2 3-4.9-4.7 4.9-4.7z"/>
+              </svg>
+            </span>
+            <span class="platform-copy">
+              <em>Android</em>
+              <strong>Google Play</strong>
+            </span>
+          </a>
+          <a class="platform-card platform-card--ms" href="${msStoreUrl}" target="_blank" rel="noopener" aria-label="前往 Microsoft Store 下載 Blackjack Card Counting Trainer PC 版">
+            <span class="platform-icon" aria-hidden="true">
+              <svg viewBox="0 0 21 21" aria-hidden="true" width="21" height="21">
+                <rect x="0" y="0" width="10" height="10" fill="#f25022"/>
+                <rect x="11" y="0" width="10" height="10" fill="#7fba00"/>
+                <rect x="0" y="11" width="10" height="10" fill="#00a4ef"/>
+                <rect x="11" y="11" width="10" height="10" fill="#ffb900"/>
+              </svg>
+            </span>
+            <span class="platform-copy">
+              <em>Windows</em>
+              <strong>Microsoft Store</strong>
+            </span>
+          </a>
+        </div>` : sectionKey === "pc" ? `
         <a class="ms-badge" href="${msStoreUrl}" target="_blank" rel="noopener" aria-label="前往 Microsoft Store 下載 Blackjack Card Counting Trainer PC 版">
           <svg viewBox="0 0 21 21" aria-hidden="true" width="21" height="21">
             <rect x="0" y="0" width="10" height="10" fill="#f25022"/>
@@ -782,8 +818,8 @@
         <div class="download-meta">
           <span>© 2026 CHANG YU-CHUN</span>
           <a href="mailto:yj.apps.devs@gmail.com"><strong>Support</strong> yj.apps.devs@gmail.com</a>
-          <a href="${relativeUrl("content/app/privacy.html")}"><strong>Privacy</strong> Policy</a>
-          <a href="https://blackjack.yuchunlab.com/"><strong>Website</strong> blackjack.yuchunlab.com</a>
+          ${sectionKey === "cardcounting" ? "" : `<a href="${relativeUrl(sectionKey === "pc" ? "content/pc/privacy.html" : "content/app/privacy.html")}"><strong>Privacy</strong> Policy</a>`}
+          <a class="${sectionKey === "cardcounting" ? "download-meta-website" : ""}" href="https://blackjack.yuchunlab.com/"><strong>Website</strong> blackjack.yuchunlab.com</a>
         </div>
       </section>`;
 

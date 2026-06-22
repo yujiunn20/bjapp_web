@@ -221,12 +221,20 @@ a {
   top: 88px;
 }
 
-.mobile-nav-bar {
+.mobile-section-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
 }
 
 .mobile-nav-toggle {
-  width: 100%;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -272,23 +280,19 @@ a {
   top: 5px;
 }
 
-.mobile-nav-toggle-label {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.sidebar.is-open .mobile-nav-toggle-icon {
+.sidebar.is-open .mobile-nav-toggle-icon,
+.mobile-section-toggle[aria-expanded="true"] .mobile-nav-toggle-icon {
   background: transparent;
 }
 
-.sidebar.is-open .mobile-nav-toggle-icon::before {
+.sidebar.is-open .mobile-nav-toggle-icon::before,
+.mobile-section-toggle[aria-expanded="true"] .mobile-nav-toggle-icon::before {
   top: 0;
   transform: rotate(45deg);
 }
 
-.sidebar.is-open .mobile-nav-toggle-icon::after {
+.sidebar.is-open .mobile-nav-toggle-icon::after,
+.mobile-section-toggle[aria-expanded="true"] .mobile-nav-toggle-icon::after {
   top: 0;
   transform: rotate(-45deg);
 }
@@ -720,13 +724,22 @@ body.lightbox-open {
   }
 
   .section-tabs {
-    grid-column: 1 / -1;
+    grid-column: 1;
+    grid-row: 2;
     flex: 1 1 auto;
     justify-content: flex-start;
     gap: 12px;
     min-width: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-section-toggle {
+    display: inline-flex;
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: end;
+    align-self: center;
   }
 
   .tab-button {
@@ -789,20 +802,23 @@ body.lightbox-open {
     right: 0;
     z-index: 35;
     margin: 0;
-    padding: 8px 10px 9px;
-    background: #f7f8f5;
-    border-top: 0;
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 8px 18px rgba(36, 48, 60, 0.08);
-    backdrop-filter: blur(12px);
+    padding: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
   }
 
   .sidebar-heading {
     display: none;
   }
 
-  .mobile-nav-bar {
-    display: block;
+  .sidebar.is-open {
+    padding: 8px 10px 9px;
+    background: #f7f8f5;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 18px rgba(36, 48, 60, 0.08);
+    backdrop-filter: blur(12px);
   }
 
   .side-nav {
@@ -911,6 +927,14 @@ body.lightbox-open {
     justify-items: start;
     text-align: left;
     gap: 0;
+  }
+
+  body.cardcounting-section .download-copy h2 {
+    max-width: none;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.12;
   }
 
   .platform-copy em {

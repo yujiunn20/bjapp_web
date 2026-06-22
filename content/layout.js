@@ -709,6 +709,9 @@
             <a class="tab-button ${sectionKey === "app" ? "is-active" : ""}" href="${relativeUrl("content/app/overview.html")}">${t.tabApp}</a>
             <a class="tab-button ${sectionKey === "pc" ? "is-active" : ""}" href="${relativeUrl("content/pc/overview.html")}">${t.tabPC}</a>
           </nav>
+          <button class="mobile-section-toggle" type="button" aria-expanded="false" aria-controls="mobileSectionNav" aria-label="開啟內容選單">
+            <span class="mobile-nav-toggle-icon" aria-hidden="true"></span>
+          </button>
           <label class="language-picker">
             <span>${t.languageLabel}</span>
             <select id="languageSelect" aria-label="選擇語言" onchange="window.__setBlackjackLanguage && window.__setBlackjackLanguage(this.value)">
@@ -742,12 +745,6 @@
           <div class="sidebar-heading">
             <span>${section.label}</span>
             <small>${section.subtitle}</small>
-          </div>
-          <div class="mobile-nav-bar">
-            <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobileSectionNav">
-              <span class="mobile-nav-toggle-icon" aria-hidden="true"></span>
-              <span class="mobile-nav-toggle-label">${item.title}</span>
-            </button>
           </div>
           <nav class="side-nav" id="mobileSectionNav" aria-label="內容選單"></nav>
         </aside>
@@ -826,7 +823,7 @@
 
     const sideNav = shell.querySelector(".side-nav");
     const sidebar = shell.querySelector(".sidebar");
-    const mobileNavToggle = shell.querySelector(".mobile-nav-toggle");
+    const mobileNavToggle = header.querySelector(".mobile-section-toggle");
     section.items.forEach((navItem, index) => {
       const link = document.createElement("a");
       link.className = `side-link ${navItem.path === path ? "is-active" : ""}`;
@@ -933,7 +930,7 @@
     const topbar = document.querySelector(".topbar");
     const sidebar = document.querySelector(".sidebar");
     const siteShell = document.querySelector(".site-shell");
-    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+    const mobileNavToggle = document.querySelector(".mobile-section-toggle");
     if (!topbar || !sidebar || !siteShell) {
       return;
     }
@@ -947,7 +944,9 @@
     const topbarHeight = Math.ceil(topbar.getBoundingClientRect().height);
     document.documentElement.style.setProperty("--mobile-nav-top", `${Math.max(0, topbarHeight - 1)}px`);
     requestAnimationFrame(() => {
-      const navHeight = Math.ceil(sidebar.getBoundingClientRect().height);
+      const navHeight = sidebar.classList.contains("is-open")
+        ? Math.ceil(sidebar.getBoundingClientRect().height)
+        : 0;
       siteShell.style.paddingTop = `${topbarHeight + navHeight + 16}px`;
     });
   }

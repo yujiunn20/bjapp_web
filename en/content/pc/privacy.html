@@ -15,13 +15,46 @@
 <body>
   <article>
     <h1>Privacy Policy</h1>
-    <p class="lead">Blackjack Trainer does not collect, store, or transmit any personal data.</p>
+    <p class="lead">Blackjack Card Counting Trainer does not collect, store, or transmit any personal data. This policy explains how the application handles data.</p>
 
-    <p>All gameplay records, simulation results, and user settings are stored locally on the user's device. The application does not require account registration and does not connect to external servers for gameplay purposes.</p>
+    <h3>No Personal Data Collected</h3>
+    <p>This application:</p>
+    <ul>
+      <li>Requires no account or personal information to use.</li>
+      <li>Does not collect names, email addresses, device identifiers, or any personally identifiable information.</li>
+      <li>Contains no advertising tracking or usage analytics.</li>
+    </ul>
 
-    <p>No real-money gambling or online betting functionality is included.</p>
+    <h3>Data Stored Locally</h3>
+    <p>The following data is stored only on the user's local device and is never sent to any external server:</p>
+    <ul>
+      <li><strong>Play logs</strong>: Per-round records from Play mode, stored as <code>.jsonl.gz</code> files in the local backend log directory.</li>
+      <li><strong>Simulation results</strong>: Monte Carlo simulation output files, also stored as <code>.jsonl.gz</code> files in the local log directory.</li>
+      <li><strong>App settings</strong>: Table rules, Bet Ramp, counting system preferences, and other settings, stored in the local app data directory.</li>
+      <li><strong>Strategy Profiles</strong>: User-created Basic Strategy Tables and Deviation rule sets, stored locally on the device.</li>
+      <li><strong>PRO unlock status</strong>: After a PRO purchase through Microsoft Store, the unlock status is recorded locally on the device.</li>
+    </ul>
+    <p>All of the above data is under the user's full control. Individual log files can be deleted through the Files section in Stats, or the entire app data directory can be removed directly through the file system.</p>
 
-    <p class="note">Last updated: 2026</p>
+    <h3>Network Connections</h3>
+    <p>The application starts a local Python backend service (running on localhost) so the UI can communicate with the game engine. This connection is entirely local and does not go through the internet.</p>
+    <p>Microsoft Store handles network communication for app installation, updates, and PRO plan purchases. This is managed by Microsoft and is outside the control of this application.</p>
+
+    <h3>Third-Party Services</h3>
+    <p>This application is distributed through the <strong>Microsoft Store</strong>; installation and purchases are handled by the Microsoft platform. Microsoft's privacy policy applies to interactions with Microsoft Store — please refer to the Microsoft Privacy Statement for details.</p>
+    <p>No other third-party analytics, advertising, or social services are integrated into this application.</p>
+
+    <h3>No Real-Money Gambling</h3>
+    <p>This application is an educational training tool. It does not include real-money gambling, online betting, or in-app virtual currency purchases. All in-app "bets" and "chips" are training metrics only and have no real monetary value.</p>
+
+    <h3>Changes to This Policy</h3>
+    <p>If this Privacy Policy is updated significantly, the content on this page will be revised and the date below will be updated accordingly.</p>
+
+    <h3>Contact</h3>
+    <p>For privacy-related questions, please contact:</p>
+    <p><a href="mailto:yj.apps.devs@gmail.com">yj.apps.devs@gmail.com</a></p>
+
+    <p class="note">Last updated: 2026-06-22</p>
   </article>
   <script src="../../../content/layout.js?v=20260620-1"></script>
   <script src="../../../content/translate.js?v=20260527-6"></script>

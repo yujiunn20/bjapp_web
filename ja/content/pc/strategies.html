@@ -15,37 +15,44 @@
 <body>
   <article>
     <h1>戦略カスタム</h1>
-    <p class="lead">Strategies ページでは、8 種のカウントシステムに対してカスタム Deviation ルールセットを作成できます。各ルールの Index しきい値（True Count トリガー）を調整し、Play モードと Training モードの判断に適用します。</p>
+    <p class="lead">Strategies は PRO 版機能で、各カウントシステムごとに Basic Strategy Table と Deviation ルールセットをカスタマイズし、Play・Training・Simulation の判断に適用できます。</p>
 
-    <h3>Strategy Profiles</h3>
-    <p>アプリは 8 種の Strategy Profile を提供しており、それぞれ異なる判断基準に対応しています：</p>
-    <ul>
-      <li>Basic（カウントなし）</li>
-      <li>Hi-Lo</li>
-      <li>Hi-Opt I（PRO 限定）</li>
-      <li>KO</li>
-      <li>Red 7</li>
-      <li>FELT</li>
-      <li>Zen</li>
-      <li>Omega II</li>
-    </ul>
-    <p>各 Profile はそれぞれ独立した Deviation ルールセットを保持しており、互いに干渉しません。</p>
+    <h3>Strategy Profile 概要</h3>
+    <p>左のサイドバーで<strong>カウントシステム</strong>（Basic・Hi-Lo・KO・Red 7・FELT・Zen・Hi-Opt I・Omega II）と<strong>ディーラールール</strong>（H17 / S17）を絞り込むと、該当する Profile がリストに表示されます。</p>
+    <p>アプリには読み取り専用の <strong>Preset Profile</strong>（各システム 1 つ）が付属しています。カスタマイズするには <strong>Duplicate</strong> でコピーするか、<strong>+ Add Custom</strong> で新規作成してください。Custom Profile のみ編集・保存・削除が可能です。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/StrategyTable.png" alt="Strategy Table エディタ。Hard Totals・Soft Totals・Pairs の 3 テーブルとアクション選択セルを表示" data-lightbox-image>
+    </figure>
+
+    <h3>Strategy Table のカスタマイズ</h3>
+    <p>各 Profile には <strong>Hard Totals</strong>・<strong>Soft Totals</strong>・<strong>Pairs</strong> の 3 セクションからなる Basic Strategy Table が含まれます。横軸はディーラーのアップカード（2–10・A）、縦軸はプレイヤーのハンド値またはペア種別で、各セルにはその状況の標準アクションが表示されます。</p>
+    <p>Custom Profile ではセルのドロップダウンからアクション（Hit / Stand / Double / Split / Surrender）を変更できます。変更済みのセルはゴールドでハイライトされます。<strong>Clear Overrides</strong> をクリックすると、すべての変更を一度にデフォルトに戻せます。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/StrategyDeviations.png" alt="Deviation ルールエディタ。ハンドタイプ・ディーラーカード・トリガーしきい値・アクションを表示" data-lightbox-image>
+    </figure>
 
     <h3>Deviation ルールのカスタマイズ</h3>
-    <p>各 Profile 内で、それぞれの Deviation ルールに対して以下を設定できます：</p>
+    <p>テーブル下の Deviation セクションにすべてのカスタムルールが一覧表示されます。ルールの追加・有効 / 無効切り替え・削除が可能です。各ルールには以下を設定します：</p>
     <ul>
-      <li><strong>有効 / 無効</strong>：Play と Training の判断にそのルールを含めるかどうかを選択。</li>
-      <li><strong>Index 変更</strong>：Deviation をトリガーする True Count しきい値を調整。例えば Insurance のしきい値を +3 から +2 に変更したり、16 vs 10 の Stand しきい値を調整したりできます。</li>
+      <li><strong>Hand Type</strong>：Hard / Soft / Pair / Insurance。</li>
+      <li><strong>Player value vs Dealer upcard</strong>：このルールが適用されるハンドとディーラーのアップカードの組み合わせ。ワイルドカード <code>*</code> 使用可。</li>
+      <li><strong>Trigger</strong>：カウントシグナルのしきい値（&gt;= / &gt; / &lt;= / &lt; + 値）。均衡システム（Hi-Lo・FELT・Zen・Hi-Opt I・Omega II）は True Count、KO / Red 7 は Running Count を使用。</li>
+      <li><strong>Action</strong>：シグナルがしきい値に達したときのアクション（Hit / Stand / Double / Split / Surrender / Insurance）。</li>
+      <li><strong>有効 / 無効</strong>：ルールごとに個別に切り替え可能。削除せず無効化できます。</li>
+      <li><strong>Notes</strong>：自由記述のメモフィールド。</li>
     </ul>
-    <p>設定を保存すると、Play モードの判断提案や Decision Training の Deviation 問題で、カスタマイズしたルールセットが使用されます。</p>
 
     <h3>適用範囲</h3>
+    <p>保存した Custom Profile は以下の 3 か所で選択できます：</p>
     <ul>
-      <li><strong>Play モード</strong>：Mode が対応するカウントシステムに設定されているとき、ベット推奨と正誤フィードバックがカスタム Index しきい値を使用。</li>
-      <li><strong>Decision Training</strong>：Deviation 問題のカテゴリで、カスタムルールに基づいて出題・採点。</li>
+      <li><strong>Play モード</strong>：Settings で各席に Strategy Profile を割り当てると、Play のベット推奨と判断の正誤フィードバックがカスタム Table と Deviation ルールに基づいて判定されます。</li>
+      <li><strong>Training — Decision Training</strong>：Strategy Profile を選択すると、Deviation 問題がカスタムルールに従って出題・採点され、自作の Deviation を集中練習できます。</li>
+      <li><strong>Simulation（PRO）</strong>：Sim 設定で Strategy Profile を選ぶと、カスタム戦略でシミュレーションを実行し、長期的な EV と ROI を評価できます。</li>
     </ul>
 
-    <div class="note">Hi-Opt I の Strategy Profile カスタマイズ（Ace サイドカウントのオプションを含む）は PRO 版限定機能です。他の 7 種のシステムのルールセットカスタマイズは FREE 版でも使用できます。</div>
+    <div class="note">Strategies は PRO 版機能です。FREE ユーザーは Preset Profile の内容を閲覧できますが、Custom Profile の作成や設定の変更はできません。</div>
 
     <nav class="related-links" aria-label="関連ページ" data-seo-related="true">
       <h3>関連ページ</h3>

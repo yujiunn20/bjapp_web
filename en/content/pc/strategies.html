@@ -15,37 +15,44 @@
 <body>
   <article>
     <h1>Strategies</h1>
-    <p class="lead">The Strategies page lets you build custom Deviation rule sets for eight counting systems. Adjust the Index threshold (True Count trigger) for each rule and apply the customized set to Play and Training decision judgment.</p>
+    <p class="lead">Strategies is a PRO feature that lets you customize a Basic Strategy Table and Deviation rule set for each counting system, then apply them to Play, Training, and Simulation decision judgment.</p>
 
-    <h3>Strategy Profiles</h3>
-    <p>The app provides eight Strategy Profiles, one per judgment standard:</p>
-    <ul>
-      <li>Basic (no counting)</li>
-      <li>Hi-Lo</li>
-      <li>Hi-Opt I (PRO only)</li>
-      <li>KO</li>
-      <li>Red 7</li>
-      <li>FELT</li>
-      <li>Zen</li>
-      <li>Omega II</li>
-    </ul>
-    <p>Each Profile stores its own Deviation rule set independently.</p>
+    <h3>Strategy Profile Overview</h3>
+    <p>The left sidebar filters by <strong>counting system</strong> (Basic, Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, Omega II) and <strong>dealer rule</strong> (H17 / S17), and the matching profiles appear in the list below.</p>
+    <p>The app ships with read-only <strong>Preset profiles</strong> (one per system). To customize, click <strong>Duplicate</strong> to copy a preset, or <strong>+ Add Custom</strong> to start from scratch. Only Custom profiles can be edited, saved, and deleted.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/StrategyTable.png" alt="Strategy Table editor showing Hard Totals, Soft Totals, and Pairs tables with override-able action cells" data-lightbox-image>
+    </figure>
+
+    <h3>Strategy Table Customization</h3>
+    <p>Each profile includes a Basic Strategy Table with three sections: <strong>Hard Totals</strong>, <strong>Soft Totals</strong>, and <strong>Pairs</strong>. The horizontal axis shows dealer upcards (2–10, A); the vertical axis shows player hand values or pair types. Each cell shows the standard action for that situation.</p>
+    <p>In a Custom profile, click any cell's dropdown to change the action (Hit / Stand / Double / Split / Surrender). Modified cells are highlighted in gold. Click <strong>Clear Overrides</strong> to revert all customizations to the base default at once.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/StrategyDeviations.png" alt="Deviation rule editor showing hand type, dealer upcard, trigger signal threshold, and action for each rule" data-lightbox-image>
+    </figure>
 
     <h3>Deviation Rule Customization</h3>
-    <p>Within each Profile, each Deviation rule can be:</p>
+    <p>The Deviation section below the table lists all custom rules. You can add, enable/disable, or delete each rule. Each rule specifies:</p>
     <ul>
-      <li><strong>Enabled / Disabled</strong>: Choose whether the rule is included in Play and Training judgment.</li>
-      <li><strong>Index Modified</strong>: Adjust the True Count threshold that triggers the Deviation — for example, changing the Insurance threshold from +3 to +2, or adjusting the Stand threshold for 16 vs 10.</li>
-    </ul>
-    <p>After saving, Play mode's decision suggestions and Decision Training's Deviation questions will use the customized rule set for the corresponding system.</p>
-
-    <h3>Where Changes Apply</h3>
-    <ul>
-      <li><strong>Play Mode</strong>: When Mode is set to the corresponding system, bet recommendations and correctness feedback use the custom Index thresholds.</li>
-      <li><strong>Decision Training</strong>: Deviation question types are generated and scored according to the custom rules.</li>
+      <li><strong>Hand Type</strong>: Hard / Soft / Pair / Insurance.</li>
+      <li><strong>Player value vs Dealer upcard</strong>: The hand and dealer upcard combination that triggers this rule. Wildcard <code>*</code> is supported.</li>
+      <li><strong>Trigger</strong>: A count signal threshold (&gt;= / &gt; / &lt;= / &lt; + value). Balanced systems (Hi-Lo, FELT, Zen, Hi-Opt I, Omega II) use True Count; KO and Red 7 use Running Count.</li>
+      <li><strong>Action</strong>: The action to take when the signal meets the threshold (Hit / Stand / Double / Split / Surrender / Insurance).</li>
+      <li><strong>Enable / Disable</strong>: Toggle each rule individually — disable rules you're not using without deleting them.</li>
+      <li><strong>Notes</strong>: Free-text memo field.</li>
     </ul>
 
-    <div class="note">Hi-Opt I Strategy Profile customization (including Ace side count options) is a PRO-only feature. Rule set customization for the other seven systems is available in the FREE tier.</div>
+    <h3>Where Custom Profiles Apply</h3>
+    <p>Once saved, a Custom Profile can be selected in three places:</p>
+    <ul>
+      <li><strong>Play Mode</strong>: Assign a Strategy Profile to each seat in Settings. Bet recommendations and decision correctness feedback in Play will use the custom Table and Deviation rules.</li>
+      <li><strong>Training — Decision Training</strong>: Select a Strategy Profile to have Deviation questions generated and graded against your custom rules — useful for drilling your own deviations.</li>
+      <li><strong>Simulation (PRO)</strong>: Choose a Strategy Profile in the Sim setup to run simulations using your custom strategy and evaluate its long-term EV and ROI.</li>
+    </ul>
+
+    <div class="note">Strategies is a PRO feature. FREE users can view Preset profile contents but cannot create Custom profiles or change any settings.</div>
 
     <nav class="related-links" aria-label="Related" data-seo-related="true">
       <h3>Related</h3>

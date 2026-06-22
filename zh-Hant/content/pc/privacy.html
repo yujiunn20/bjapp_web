@@ -15,13 +15,46 @@
 <body>
   <article>
     <h1>隱私權政策</h1>
-    <p class="lead">Blackjack Trainer 不會蒐集、儲存或傳送任何個人資料。</p>
+    <p class="lead">Blackjack Card Counting Trainer 不會蒐集、儲存或傳送任何個人資料。本政策說明本應用程式如何處理資料。</p>
 
-    <p>所有遊戲紀錄、模擬結果與使用者設定皆僅儲存在本機裝置內。本應用程式無需帳號註冊，亦不會因遊戲用途連線至外部伺服器。</p>
+    <h3>不蒐集個人資料</h3>
+    <p>本應用程式：</p>
+    <ul>
+      <li>無需帳號或個人資料即可使用。</li>
+      <li>不會蒐集姓名、電子郵件、裝置識別碼或任何可識別個人身分的資訊。</li>
+      <li>不包含廣告追蹤或使用分析功能。</li>
+    </ul>
 
-    <p>本應用程式不包含任何真實金錢賭博或線上下注功能。</p>
+    <h3>本機儲存的資料</h3>
+    <p>以下資料僅儲存在使用者的本機裝置上，不會傳送至任何外部伺服器：</p>
+    <ul>
+      <li><strong>遊玩紀錄</strong>：Play 模式產生的逐局紀錄，以 <code>.jsonl.gz</code> 格式存放在本機後端的日誌目錄中。</li>
+      <li><strong>模擬結果</strong>：Simulation 產生的蒙地卡羅結果檔案，同樣以 <code>.jsonl.gz</code> 格式存放在本機日誌目錄中。</li>
+      <li><strong>應用程式設定</strong>：桌規、Bet Ramp、算牌系統等偏好設定，儲存在本機裝置的應用程式資料目錄中。</li>
+      <li><strong>Strategy Profile</strong>：使用者自訂的 Basic Strategy Table 與 Deviation 規則集，儲存在本機裝置中。</li>
+      <li><strong>PRO 解鎖狀態</strong>：透過 Microsoft Store 完成購買後，解鎖狀態記錄在本機裝置。</li>
+    </ul>
+    <p>上述所有資料皆由使用者自行控制，可透過 Stats 頁面的 Files 功能刪除個別紀錄，或透過系統檔案總管直接刪除應用程式資料目錄。</p>
 
-    <p class="note">最後更新：2026</p>
+    <h3>網路連線</h3>
+    <p>應用程式在本機啟動一個 Python 後端服務（運行於 localhost），讓前端介面與後端引擎通訊。此連線僅在本機進行，不經過網際網路。</p>
+    <p>Microsoft Store 會在應用程式安裝、更新及 PRO 方案購買時進行網路通訊，此部分由 Microsoft 負責處理，不在本應用程式的控制範圍內。</p>
+
+    <h3>第三方服務</h3>
+    <p>本應用程式透過 <strong>Microsoft Store</strong> 發布，安裝與購買由 Microsoft 平台處理。Microsoft 的隱私權政策適用於與 Microsoft Store 的相關互動，請參閱 Microsoft 官方隱私聲明。</p>
+    <p>本應用程式不整合其他任何第三方分析、廣告或社群服務。</p>
+
+    <h3>不含真實賭博功能</h3>
+    <p>本應用程式為教育性訓練工具，不包含任何真實金錢賭博、線上下注或虛擬幣購買功能。所有遊戲內的「下注」與「籌碼」僅作為訓練指標使用，不具備任何真實貨幣價值。</p>
+
+    <h3>政策變更</h3>
+    <p>若本隱私權政策有重大變更，將於本頁面更新內容並修改更新日期。</p>
+
+    <h3>聯絡方式</h3>
+    <p>如有隱私相關疑問，請透過以下方式聯絡：</p>
+    <p><a href="mailto:yj.apps.devs@gmail.com">yj.apps.devs@gmail.com</a></p>
+
+    <p class="note">最後更新：2026-06-22</p>
   </article>
   <script src="../../../content/layout.js?v=20260620-1"></script>
   <script src="../../../content/translate.js?v=20260527-6"></script>

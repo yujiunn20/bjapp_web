@@ -929,7 +929,7 @@ body.lightbox-open {
     gap: 0;
   }
 
-  body.cardcounting-section .download-copy h2 {
+  .download-copy h2 {
     max-width: none;
     white-space: normal;
     overflow: visible;
@@ -1035,7 +1035,7 @@ body.lightbox-open {
   }
 
   .download-copy h2 {
-    max-width: 36vw;
+    max-width: none;
   }
 
   .play-badge,

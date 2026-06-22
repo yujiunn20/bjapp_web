@@ -953,8 +953,13 @@
 
   document.addEventListener("click", (event) => {
     const sidebar = document.querySelector(".sidebar");
-    const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
-    if (window.innerWidth <= 820 && sidebar?.classList.contains("is-open") && !event.target.closest(".sidebar")) {
+    const mobileNavToggle = document.querySelector(".mobile-section-toggle");
+    if (
+      window.innerWidth <= 820 &&
+      sidebar?.classList.contains("is-open") &&
+      !event.target.closest(".sidebar") &&
+      !event.target.closest(".mobile-section-toggle")
+    ) {
       sidebar.classList.remove("is-open");
       mobileNavToggle?.setAttribute("aria-expanded", "false");
       positionMobileSectionNav();

@@ -22,6 +22,13 @@
 
     <p>プリセット戦略はアプリのゲームとトレーニングモードにプリロードされた index spec に対応しており、完全な deviation ルールテーブルを確認できますが編集はできません。ルールを変更するにはカスタム戦略を作成する必要があります。</p>
 
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/app/StrategyPage.jpg" alt="戦略ページにカウントシステムの切り替えタブ、H17/S17 フィルター、プリセットとカスタム戦略カードの一覧を表示">
+        <figcaption>上部でカウントシステムと H17/S17 フィルターを切り替えられます。ロックされた Preset カードがシステムプリセット戦略、カスタム戦略カードの右側には削除ボタンがあり、右下の「New Profile」から新しい戦略を作成できます。</figcaption>
+      </figure>
+    </div>
+
     <h3>カスタム戦略の作成</h3>
     <p>右下の「戦略を追加」をタップして名前を入力すると、現在選択しているシステムと H17/S17 設定のプリセット戦略をベースに新しい編集可能な戦略がコピーされます。作成後すぐに編集に入ることも、後から変更することもできます。</p>
 
@@ -42,6 +49,17 @@
     </ul>
 
     <div class="note">KO システムのしきい値は Running Count（RC）単位で、他のシステム（Hi-Lo、FELT、Zen、Hi-Opt I、Omega II 等）は True Count（TC）単位です。編集画面では現在の戦略のシステムに合わせてフィールドラベルが自動的に切り替わります。</div>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/app/StrategySelfdefine.jpg" alt="カスタム戦略詳細ページに Hard/Soft/Pair ルールテーブル、色付きの偏離セル、Count Deviations リストを表示">
+        <figcaption>戦略詳細ページでは Hard、Soft、Pair タブ別にルールテーブルを表示します。色付きセルはデフォルト基本戦略からの偏離を示し、下部の Count Deviations に各カウントルールが一覧表示されます。</figcaption>
+      </figure>
+      <figure class="app-screenshot-card">
+        <img src="../../../assets/img/app/StrategyDeviation.jpg" alt="Count Deviations リストに各ルールのトグル、編集、削除ボタンを表示">
+        <figcaption>Count Deviations セクションで各ルールを個別に管理できます：トグルで有効・無効を切り替え、しきい値を編集、または削除できます。右下の「Add Deviation」から新しいルールを追加できます。</figcaption>
+      </figure>
+    </div>
 
     <h3>カスタム戦略をゲームに適用</h3>
     <p>カスタム戦略を作成したら、Settings の「Advisor mode」セクションでドロップダウンから戦略名を選択します。ゲームと Decision Training がカスタムルールに基づいてアドバイスを提供します。「Default」を選択するとシステム内蔵のプリセット index spec に戻ります。</p>

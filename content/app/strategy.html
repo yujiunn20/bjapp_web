@@ -22,6 +22,13 @@
 
     <p>預設策略對應 App 遊戲與訓練模式預載的 index spec，可以直接點進去查看完整的 deviation 規則表，但無法編輯。若想修改規則，需要先建立一份自訂策略。</p>
 
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../assets/img/app/StrategyPage.jpg" alt="策略頁面顯示算牌系統切換標籤、H17/S17 篩選器，以及 Preset 與自訂策略卡片列表">
+        <figcaption>頂部可切換算牌系統與 H17/S17 篩選器。上鎖的 Preset 卡片為系統預設策略，自訂策略卡片右側有刪除按鈕，右下角「New Profile」可建立新策略。</figcaption>
+      </figure>
+    </div>
+
     <h3>建立自訂策略</h3>
     <p>點右下角的「新增策略」，輸入名稱後，App 會以目前選取系統和 H17/S17 設定的預設策略為基礎複製一份新的可編輯策略。建立後可以直接進入編輯，也可以之後再修改。</p>
 
@@ -42,6 +49,17 @@
     </ul>
 
     <div class="note">KO 系統的門檻以 Running Count（RC）為單位，其他系統（Hi-Lo、FELT、Zen、Hi-Opt I、Omega II 等）以 True Count（TC）為單位。編輯介面會依目前策略的系統自動顯示對應的欄位標籤。</div>
+
+    <div class="app-screenshot-grid">
+      <figure class="app-screenshot-card">
+        <img src="../../assets/img/app/StrategySelfdefine.jpg" alt="自訂策略詳細頁面顯示 Hard/Soft/Pair 策略表格，顏色標記偏離格子，以及 Count Deviations 列表">
+        <figcaption>策略詳細頁面依 Hard、Soft、Pair 分頁顯示策略表格，顏色標記格子表示已偏離預設基本策略，下方 Count Deviations 區塊列出各條算牌偏離規則。</figcaption>
+      </figure>
+      <figure class="app-screenshot-card">
+        <img src="../../assets/img/app/StrategyDeviation.jpg" alt="Count Deviations 列表顯示各條規則的啟用 Toggle、編輯和刪除按鈕">
+        <figcaption>Count Deviations 區塊可管理每條算牌偏離規則：個別 Toggle 啟用或停用、編輯門檻值，以及刪除，右下角「Add Deviation」可新增規則。</figcaption>
+      </figure>
+    </div>
 
     <h3>套用自訂策略到遊戲</h3>
     <p>建立自訂策略後，到 Settings 的「Advisor mode」區塊，在下拉選單中選取對應的策略名稱，遊戲與 Decision Training 就會依照自訂規則給出建議。如果選「Default」，則使用系統內建的預設 index spec。</p>

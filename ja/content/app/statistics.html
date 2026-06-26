@@ -20,18 +20,18 @@
     <p>ここでの統計は、戦略、ルール、ベット段階、分散の関係を理解するためのものであり、実際のプレイで同じ結果になることを保証するものではありません。Blackjack の優位は通常小さく、短期の変動は大きいです。シミュレーションで特定設定の EV や ROI が良く見えても、実際の結果は牌の変動、ルール、ペネトレーション、テーブルリミット、資金、実行の安定性に影響されます。これらの数値は学習と比較のためのもので、安定利益の約束として読むべきではありません。</p>
 
     <h3 class="simulation-heading">ラウンド統計</h3>
-    <p>Round Stats の基本は、まずテーブルルールと戦略を設定し、その条件に従ってコンピューターが大量のラウンドをシミュレーションすることです。戦略は Basic、Hi-Lo、Hi-Opt I から選べ、異なる Bet Ramp も組み合わせられます。surrender や insurance などを戦略や deviation に従って判断するかも設定できます。最大 500,000 ラウンドまで実行でき、完了後に統計結果で長期成績を比較します。</p>
+    <p>Round Stats の基本は、まずテーブルルールと戦略を設定し、その条件に従ってコンピューターが大量のラウンドをシミュレーションすることです。戦略は Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II から選べ、異なる Bet Ramp も組み合わせられます。surrender や insurance などを戦略や deviation に従って判断するかも設定できます。最大 500,000 ラウンドまで実行でき、完了後に統計結果で長期成績を比較します。</p>
 
     <p>Blackjack の結果には明確な短期変動が残り、特にカウント戦略で bet ramp を使う場合はそれが目立ちます。多くのラウンドを走らせても、結果が理論確率と完全に一致するわけではありません。ただし別の見方をすると、これは実戦にも近い状態です。実際のプレイでは、すべての区間が EV 通りになるわけではなく、変動が起こります。同じ設定を何度か走らせることで、短期結果と長期期待値の距離を確認できます。</p>
 
-    <p>ラウンド数に加えて、Round Stats では TC threshold の k 値も設定できます。カウントが正の EV になり得る主な理由は、True Count が高い有利な区間にあります。k 値を設定すると、結果は TC が k 未満の区間と k 以上の区間に分けられ、高 TC 区間とそれ以外を比較しやすくなります。</p>
+    <p>各座席では TC threshold の k 値を個別に設定できるため、異なるカウントシステムや Bet Ramp を使う座席ごとに最適なしきい値を指定できます。カウントが正の EV になり得る主な理由は、True Count が高い有利な区間にあります。k 値を設定すると、結果は TC が k 未満の区間と k 以上の区間に分けられ、高 TC 区間とそれ以外を比較しやすくなります。</p>
 
     <p>Round Stats では、テーブルのプレイヤー数と各プレイヤーの戦略も設定できます。同じルール、同じテーブル、同じカード列の条件で、異なる戦略を比較できます。たとえば異なる Bet Ramp、surrender の有無、Basic と Hi-Lo の差などです。結果には純利益、ROI、EV / 100 ラウンド、SD / 100 ラウンドに加えて、surrender、insurance、split の回数、勝敗率などの詳細も表示され、各戦略が実際にどのような状況に遭遇するか理解しやすくなります。</p>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
-        <img src="../../../assets/img/app/stats1.jpg" alt="Round Stats は最大 500,000 ラウンドをシミュレーションし、TC threshold で結果を分析できます">
-        <figcaption>Round Stats は最大 500,000 ラウンドをシミュレーションでき、戦略、ルール、Bet Ramp を調整できます。TC threshold で TC 区間を分け、高カード区間との差を見られます。</figcaption>
+        <img src="../../../assets/img/app/stats1.jpg" alt="Round Stats は最大 500,000 ラウンドをシミュレーションし、戦略とルールを調整できます">
+        <figcaption>Round Stats は最大 500,000 ラウンドをシミュレーションでき、戦略、ルール、Bet Ramp を調整できます。</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">
@@ -40,8 +40,8 @@
       </figure>
 
       <figure class="app-screenshot-card">
-        <img src="../../../assets/img/app/stats3.jpg" alt="Round Stats は座席数を調整し、異なる座席戦略を比較できます">
-        <figcaption>座席数を調整し、同じ条件で異なる座席や戦略、たとえば異なる Bet Ramp の長期結果を比較できます。</figcaption>
+        <img src="../../../assets/img/app/stats3.jpg" alt="Round Stats は座席数と Split Threshold を調整し、異なる座席戦略を比較できます">
+        <figcaption>座席数を調整し、同じ条件で異なる座席や戦略、たとえば異なる Bet Ramp の長期結果を比較できます。各座席では Split Threshold を個別に設定し、高 TC 区間とその他の区間に分けた統計を確認できます。</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">

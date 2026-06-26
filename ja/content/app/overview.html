@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ブラックジャック カウントトレーナー アプリ概要</title>
-  <meta name="description" content="ブラックジャック カウントトレーナーの概要。基本戦略、Hi-Lo、Hi-Opt I、練習、統計、リプレイ、シミュレーション機能を紹介します。">
+  <meta name="description" content="ブラックジャック カウントトレーナーの概要。基本戦略、7 つのカウントシステム（Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II）、カスタム戦略、練習、統計、リプレイ機能を紹介します。">
   <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/app/overview">
   <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/overview">
   <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/overview">
@@ -50,7 +50,12 @@
 
       <section class="feature-item">
         <h4>カウントシステム</h4>
-        <p>Hi-Lo と Hi-Opt I に対応し、ルール、デッキ数、ペネトレーション、bet ramp を変えてテストできます。</p>
+        <p>Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II の 7 つのシステムに対応し、ルール、デッキ数、ペネトレーション、bet ramp を変えてテストできます。</p>
+      </section>
+
+      <section class="feature-item">
+        <h4>カスタム戦略</h4>
+        <p>各カウントシステム向けにカスタム deviation ルールセットを作成し、index のしきい値を変更したり特定のルールを削除して、ゲームと Decision Training で差異を確認できます。</p>
       </section>
 
       <section class="feature-item">
@@ -62,8 +67,8 @@
     <h3 class="simulation-heading">学習ルート</h3>
     <ol>
       <li>まず Decision Training で基本戦略、サレンダー、インシュランス、ペア、よく出る deviation を安定させます。戦略表を理解するだけでなく、問題の中で一貫した判断ができるか確認します。</li>
-      <li>次に Running Count Drill で Hi-Lo の加算速度を鍛え、True Count Drill で RC と残りカード数の換算を練習します。count を概念のままにせず、素早いベット判断につなげます。</li>
-      <li>その後、Hi-Lo Count Drill と Game モードに進み、複数プレイヤーへの配牌、異なる速度、完整なテーブル進行の中で count を追跡し、True Count と Bet Ramp に基づくベット調整を練習します。</li>
+      <li>次に Running Count Drill で Hi-Lo の加算速度を鍛え、True Count Drill で RC と残りカード数の換算を練習します。count を概念のままにせず、素早いベット判断につなげます。慣れたら他のカウントシステムに切り替えられます。各システムに独立したトレーニング入口があります。</li>
+      <li>その後、Count Drill と Game モードに進み、複数プレイヤーへの配牌、異なる速度、完整なテーブル進行の中で count を追跡し、True Count と Bet Ramp に基づくベット調整を練習します。</li>
       <li>プレイ後は Replay でミスを確認します。特にベット、アクション、insurance の Mistakes を見て、繰り返し起こる問題を見つけ、対応するトレーニングモードに戻って補強します。</li>
       <li>最後に Round Stats と Session Stats でルール、Bet Ramp、損切り・利確、異なる戦略の長期差をテストします。単発の勝敗だけでなく、EV、ROI、分散を理解するためです。</li>
     </ol>

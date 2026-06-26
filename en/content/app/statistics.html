@@ -20,18 +20,18 @@
     <p>These statistics are for understanding the relationship between strategy, rules, bet ramps, and variance. They do not guarantee that real play will produce the same results. Blackjack edges are usually small, while short-term swings are large; even if a simulation shows better EV or ROI for certain settings, real outcomes are still affected by variance, table rules, penetration, table limits, bankroll, and execution consistency. These numbers are for learning and comparison, not a promise of stable profit.</p>
 
     <h3 class="simulation-heading">Round Stats</h3>
-    <p>The core idea of Round Stats is to set the table rules and strategy first, then let the computer simulate many rounds under those conditions. Strategies can be Basic, Hi-Lo, or Hi-Opt I, with different Bet Ramps, and you can decide whether surrender, insurance, and related decisions follow strategy or deviations. The simulation can run up to 500,000 rounds, then compare long-term performance across settings.</p>
+    <p>The core idea of Round Stats is to set the table rules and strategy first, then let the computer simulate many rounds under those conditions. Strategies can be Basic, Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, or Omega II, with different Bet Ramps, and you can decide whether surrender, insurance, and related decisions follow strategy or deviations. The simulation can run up to 500,000 rounds, then compare long-term performance across settings.</p>
 
     <p>Blackjack results can still swing noticeably, especially when a counting strategy uses a bet ramp. Even after many simulated rounds, the result will not perfectly match theoretical probability. From another angle, that is closer to real play: real results do not land exactly on EV every stretch, and swings are part of the game. Running the same settings multiple times helps reveal the gap between short-term outcomes and long-term expectation.</p>
 
-    <p>In addition to round count, Round Stats can set the TC threshold k. Counting becomes positive EV mainly because higher True Count zones are favorable. After setting k, results are split into TC below k and TC greater than or equal to k, making it easier to compare high-TC zones against the rest.</p>
+    <p>Each seat can set its own TC threshold k independently, so different counting systems or Bet Ramps can each use the most suitable threshold. Counting becomes positive EV mainly because higher True Count zones are favorable. After setting k, results are split into TC below k and TC greater than or equal to k, making it easier to compare high-TC zones against the rest.</p>
 
     <p>Round Stats can also set the number of players at the table and the strategy used by each player. This allows comparison under the same rules, table, and shoe sequence, such as different Bet Ramps, surrender versus no surrender, or Basic versus Hi-Lo. Results include net profit, ROI, EV / 100 rounds, and SD / 100 rounds, plus details such as surrender, insurance, split counts, and win/loss rates to show what each strategy actually encounters.</p>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
-        <img src="../../../assets/img/app/stats1.jpg" alt="Round Stats can simulate up to 500,000 rounds and analyze results by TC threshold">
-        <figcaption>Round Stats can simulate up to 500,000 rounds with custom strategy, rules, and Bet Ramp. TC threshold splits TC ranges to compare high-card zones with other zones.</figcaption>
+        <img src="../../../assets/img/app/stats1.jpg" alt="Round Stats can simulate up to 500,000 rounds with custom strategy and rules">
+        <figcaption>Round Stats can simulate up to 500,000 rounds with custom strategy, rules, and Bet Ramp.</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">
@@ -40,8 +40,8 @@
       </figure>
 
       <figure class="app-screenshot-card">
-        <img src="../../../assets/img/app/stats3.jpg" alt="Round Stats can adjust seats and compare player strategies">
-        <figcaption>Adjust seat count and compare different seats or strategies under the same game conditions, such as long-term results from different Bet Ramps.</figcaption>
+        <img src="../../../assets/img/app/stats3.jpg" alt="Round Stats can adjust seats, Split Threshold, and compare player strategies">
+        <figcaption>Adjust seat count and compare different seats or strategies under the same game conditions, such as long-term results from different Bet Ramps. Each seat has its own Split Threshold to split results into high-TC versus other zones, making it easy to compare how different systems perform across TC ranges.</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">

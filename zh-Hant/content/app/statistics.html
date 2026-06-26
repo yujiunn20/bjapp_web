@@ -20,18 +20,18 @@
     <p>這裡的統計是用來理解策略、規則、下注級距和變異數之間的關係，不是保證實際遊玩一定會得到相同結果。Blackjack 的優勢通常很小，但短期波動很大；即使模擬結果顯示某些設定有較好的 EV 或 ROI，真實結果仍會受到牌局波動、桌規、穿透率、桌限、資金和執行穩定度影響。這些數據適合用來學習與比較，不應被解讀成穩定獲利承諾。</p>
 
     <h3 class="simulation-heading">Round Stats</h3>
-    <p>Round Stats 的核心概念，是先設定桌面規則與策略，再讓電腦依照這些條件大量模擬牌局。策略可以選 Basic、Hi-Lo 或 Hi-Opt I，也可以搭配不同 Bet Ramp，並決定是否依照策略或 deviation 來處理 surrender、insurance 等決策。模擬局數最多可以設定到 500000 局，完成後再用統計結果比較不同設定的長期表現。</p>
+    <p>Round Stats 的核心概念，是先設定桌面規則與策略，再讓電腦依照這些條件大量模擬牌局。策略可以選 Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I 或 Omega II，也可以搭配不同 Bet Ramp，並決定是否依照策略或 deviation 來處理 surrender、insurance 等決策。模擬局數最多可以設定到 500000 局，完成後再用統計結果比較不同設定的長期表現。</p>
 
     <p>Blackjack 的結果仍然會有明顯短期波動，尤其是算牌策略搭配 bet ramp 時。即使跑很多局，結果仍然不會完全等於理論機率。不過從另一個角度看，這也比較接近真實狀況：真實遊戲不是每一段結果都剛好等於 EV，而是會有明顯波動。你可以多跑幾次同樣設定，觀察每次結果之間的差異，理解短期結果和長期期望值之間的距離。</p>
 
-    <p>除了模擬局數之外，Round Stats 也可以設定 TC threshold 的 k 值。算牌能變成正 EV，主要來自 True Count 較高時的有利區間；設定 k 值後，結果會拆成 TC 小於 k 和 TC 大於等於 k 的統計，方便比較高 TC 區間和其他區間的差異。</p>
+    <p>每個座位可以個別設定 TC threshold 的 k 值，讓不同算牌系統或不同 Bet Ramp 的座位各自使用最適合的門檻。算牌能變成正 EV，主要來自 True Count 較高時的有利區間；設定 k 值後，結果會拆成 TC 小於 k 和 TC 大於等於 k 的統計，方便比較高 TC 區間和其他區間的差異。</p>
 
     <p>Round Stats 也能設定一桌的玩家數，以及每個玩家使用的策略。這樣可以在同樣規則、同一個牌桌與同一組牌序條件下，比較不同策略的表現，例如不同 Bet Ramp、是否使用 surrender、Basic 和 Hi-Lo 的差異。結果除了淨利、ROI、EV / 100 局與 SD / 100 局之外，也會列出 surrender、insurance、split 次數與輸贏比例等詳細數據，幫助理解不同策略實際遇到的狀況。</p>
 
     <div class="app-screenshot-grid">
       <figure class="app-screenshot-card">
-        <img src="../../../assets/img/app/stats1.jpg" alt="Round Stats 可模擬最多 500000 局並依 TC threshold 分析結果">
-        <figcaption>Round Stats 可模擬最多 500000 局，並自行調整策略、規則與 Bet Ramp。TC threshold 可以用來拆分不同 TC 區間，觀察高牌區間與其他區間的表現差異。</figcaption>
+        <img src="../../../assets/img/app/stats1.jpg" alt="Round Stats 可模擬最多 500000 局並設定策略與規則">
+        <figcaption>Round Stats 可模擬最多 500000 局，並自行調整策略、規則與 Bet Ramp。</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">
@@ -40,8 +40,8 @@
       </figure>
 
       <figure class="app-screenshot-card">
-        <img src="../../../assets/img/app/stats3.jpg" alt="Round Stats 可調整座位數並比較不同座位策略">
-        <figcaption>可調整座位數，並在同一組遊戲條件下比較不同座位或不同策略，例如不同 Bet Ramp 的長期表現。</figcaption>
+        <img src="../../../assets/img/app/stats3.jpg" alt="Round Stats 可調整座位數、Split Threshold 並比較不同座位策略">
+        <figcaption>可調整座位數，並在同一組遊戲條件下比較不同座位或不同策略，例如不同 Bet Ramp 的長期表現。每個座位可以個別設定 Split Threshold，將結果拆成高 TC 與其他區間，方便觀察各系統在不同 TC 區間的差異。</figcaption>
       </figure>
 
       <figure class="app-screenshot-card">

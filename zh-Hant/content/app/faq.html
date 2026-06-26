@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
@@ -24,16 +24,19 @@
     <p>可以，但完全新手建議先從網站上的 blackjack 規則和基本策略開始，再進入 app 的 Decision Training。這個 app 功能比較完整，不是只做最簡化的新手教學；如果只想隨便玩 blackjack，可能一般遊戲 app 會更簡單。這個 app 比較適合想認真理解策略、算牌和長期結果的人。</p>
 
     <h3 class="simulation-heading">我應該照什麼順序使用這個 app？</h3>
-    <p>建議先用 Decision Training 練基本策略和常見決策，再用 Running Count Drill、True Count Drill 練算牌基礎。熟悉後可以進入 Hi-Lo Count Drill 和 Game 模式，最後用 Replay 檢查錯誤，並用 Round Stats / Session Stats 理解長期結果。概要頁上方的「學習路線」也整理了完整順序。</p>
+    <p>建議先用 Decision Training 練基本策略和常見決策，再用 Running Count Drill、True Count Drill 練算牌基礎。熟悉後可以進入 Count Drill 和 Game 模式，最後用 Replay 檢查錯誤，並用 Round Stats / Session Stats 理解長期結果。概要頁上方的「學習路線」也整理了完整順序。</p>
 
     <h3 class="simulation-heading">Decision Training 可以練什麼？</h3>
-    <p>Decision Training 主要用來練 blackjack 決策，包括基本策略、硬牌、軟牌、對子、加倍、投降、保險，以及算牌後才會出現的 deviation。使用者也可以選擇不同 Question Type，集中練習自己比較弱或實戰中較少遇到的題型。</p>
+    <p>Decision Training 主要用來練 blackjack 決策，包括基本策略、硬牌、軟牌、對子、加倍、投降、保險，以及算牌後才會出現的 deviation。上方的 Mode 可以選擇 Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I 或 Omega II，也可以搭配自訂策略，集中練習自己比較弱或實戰中較少遇到的題型。</p>
 
-    <h3 class="simulation-heading">Running Count Drill、True Count Drill 和 Hi-Lo Count Drill 有什麼差別？</h3>
-    <p>Running Count Drill 專注在看到牌後快速累加 Hi-Lo Running Count。True Count Drill 則練習把 Running Count 和剩餘牌數換算成 True Count。Hi-Lo Count Drill 更接近真實牌桌，會模擬莊家和多個玩家發牌，讓使用者在一局牌的節奏中追蹤 count。</p>
+    <h3 class="simulation-heading">Running Count Drill、True Count Drill 和 Count Drill 有什麼差別？</h3>
+    <p>Running Count Drill 專注在看到牌後快速累加 Running Count，七套算牌系統各有獨立版本。True Count Drill 練習把 Running Count 和剩餘牌數換算成 True Count，適用於平衡系統（Hi-Lo、FELT、Zen、Hi-Opt I、Omega II）。Count Drill 更接近真實牌桌，會模擬莊家和多個玩家發牌，讓使用者在一局牌的節奏中追蹤 count，每套算牌系統各有獨立版本。</p>
 
     <h3 class="simulation-heading">這個 app 支援哪些算牌系統？</h3>
-    <p>目前 app 主要支援 Basic、Hi-Lo 和 Hi-Opt I。Basic 用來練基本策略；Hi-Lo 是最常見、實用性高的算牌系統；Hi-Opt I 則是更進階的系統，搭配 ace side count 和不同 true count 判斷，用來測試更細的策略差異。</p>
+    <p>目前支援 Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 共八種模式。Basic 用來練基本策略；Hi-Lo 是最常見的入門算牌系統；KO 和 Red 7 是不平衡系統，省略 True Count 換算；FELT 和 Zen 是多級平衡系統；Hi-Opt I 和 Omega II 是進階系統，可搭配 ace side count 做更精確的下注與保險判斷。每套系統都有獨立的訓練選單與策略預設。</p>
+
+    <h3 class="simulation-heading">策略功能是什麼？可以修改什麼？</h3>
+    <p>策略功能讓使用者針對八套算牌系統各自建立自訂的 deviation 規則集。每個系統在 H17 和 S17 規則下各有一份預設策略，可以直接查看但無法編輯。若想修改，可複製預設建立自訂版本，並調整個別 deviation 的 count 門檻、比較方向（&gt;= 或 &lt;）和覆蓋動作。KO 的門檻以 Running Count 為單位，其他系統以 True Count 為單位。建立後到 Settings → Advisor mode 套用自訂策略，遊戲和 Decision Training 就會依照自訂規則給出建議。</p>
 
     <h3 class="simulation-heading">Bet Ramp 是什麼？App 會怎麼使用 Bet Ramp？</h3>
     <p>Bet Ramp 是把 True Count 轉換成下注大小的規則。當 True Count 較高時，代表牌堆對玩家可能更有利，Bet Ramp 會決定在不同 TC threshold 下應該下注幾倍。app 會用 Bet Ramp 產生建議下注，也會在 Replay 中檢查下注是否符合目前設定。</p>

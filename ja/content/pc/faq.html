@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC アプリ よくある質問 | ブラックジャック カウントトレーナー</title>
+  <meta name="description" content="PC アプリの FAQ。モバイルとの違い、カウントシステム、FREE vs PRO、Sim 機能、Strategies カスタム、データ保存、動作環境を説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/pc/faq">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/faq">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/faq">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/faq">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/faq">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260620-1">
+</head>
+<body>
+  <article>
+    <h1>よくある質問</h1>
+    <p class="lead">ここでは PC アプリの目的、モバイルとの違い、対応カウントシステム、FREE vs PRO、Sim、Strategies 機能、データ管理、動作環境を整理しています。</p>
+
+    <h3 class="simulation-heading">PC アプリはモバイル アプリと何が違いますか？</h3>
+    <p>PC アプリは Windows 専用のトレーニングプラットフォームで、モバイルアプリと同じ blackjack 学習の目標を共有しながら、モバイルにはないいくつかの機能を追加しています。主な違いとして、Python を使ったモンテカルロシミュレーションエンジン（深い統計分析）、7 つの完全なカウントシステム（Hi-Lo は FREE、KO・Red 7・FELT・Zen・Hi-Opt I・Omega II は PRO が必要）、最大 7 つのプレイヤー席、各システムのカスタム deviation ルールセットを作成できる Strategies 機能、ローカルに .jsonl.gz 形式で保存されるゲーム記録があります。</p>
+
+    <h3 class="simulation-heading">どのカウントシステムに対応していますか？</h3>
+    <p>合計 8 つのモードに対応しています：Basic（基本戦略のみ）、Hi-Lo（FREE）、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II（後の 6 つは PRO が必要）。各システムに独立した Decision Training、Count Drill、Bet Ramp、deviation index、Strategies のカスタマイズが用意されています。Hi-Opt I は Side A / Side B の ace side count 設定もサポートしており、より正確なベットとインシュランス判断が可能です。</p>
+
+    <h3 class="simulation-heading">FREE と PRO の違いは何ですか？</h3>
+    <p>FREE には完全な blackjack ゲーム（1 席）、Hi-Lo の Decision Training と Count Drill、基本戦略練習、Replay、サイトの全学習コンテンツが含まれます。PRO では最大 7 席、追加の 6 つのカウントシステム（KO・Red 7・FELT・Zen・Hi-Opt I・Omega II）、Python Monte Carlo シミュレーションエンジン（Sim &amp; Stats）、Strategy Profile カスタマイズ、Bet Ramp 設定のカスタマイズ、Hi-Opt I の Side A / Side B 設定が使えるようになります。</p>
+
+    <h3 class="simulation-heading">Sim 機能はどのように動作しますか？</h3>
+    <p>Sim は Windows マシン上でローカルに動作する Python Monte Carlo シミュレーションエンジンを使用します。テーブルルール、カウントシステム、Bet Ramp、ラウンド数を設定してシミュレーションを実行すると、数十万ラウンドにわたる長期 EV、ROI、SD / 100 を取得できます。システムや設定間で結果を比較することもできます。Python バックエンドは完全ローカルで動作し、データは外部サーバーには送信されません。</p>
+
+    <h3 class="simulation-heading">Strategies 機能とは何ですか？</h3>
+    <p>Strategies では、8 つのシステム（Basic と 7 つのカウントシステム）それぞれに対してカスタム deviation ルールセットを作成・管理できます。各 Strategy Profile 内で個々の deviation の index しきい値を調整できます。Strategy Profile をゲームやトレーニングセッションに適用すると、アプリはデフォルトの代わりにカスタムルールを使用します。異なる index 値のテストや特定のハウスルールへの対応に役立ちます。</p>
+
+    <h3 class="simulation-heading">データはどこに保存されますか？</h3>
+    <p>すべてのゲーム記録は .jsonl.gz 形式の圧縮ファイルとして Windows マシンにローカル保存されます。Python シミュレーションバックエンドも完全にローカルで動作します。個人データ、ゲーム記録、シミュレーション結果は外部サーバーにはアップロードされません。</p>
+
+    <h3 class="simulation-heading">PC アプリにインターネット接続は必要ですか？</h3>
+    <p>必要ありません。ゲーム、トレーニング、シミュレーション、Replay、Strategies 機能はすべてオフラインで動作します。インターネット接続が必要なのは、初めて Microsoft Store からアプリを購入またはインストールするときと、Microsoft Store のライセンス確認のときだけです。</p>
+
+    <h3 class="simulation-heading">必要な Windows バージョンは何ですか？</h3>
+    <p>Windows 10 または Windows 11 が必要です。アプリは Microsoft Store を通じて配布されています。</p>
+
+    <h3 class="simulation-heading">カウントすれば必ず勝てますか？</h3>
+    <p>いいえ。カウントは、ルール、ペネトレーション、ベットスプレッド、実行精度が適切な場合に長期期待値を改善できる可能性があるだけです。長期 EV が良くなっても、短期結果は分散に大きく左右されます。実戦では資金、テーブルリミット、心理的プレッシャー、ゲーム速度、カジノ側の対策なども問題になります。</p>
+
+    <h3 class="simulation-heading">このアプリはギャンブルを勧めるものですか？</h3>
+    <p>いいえ。このアプリは blackjack の確率、戦略、カウント概念を学ぶための教育ツールです。リアルマネーのギャンブル機能はなく、カウントを確実に稼げる方法として扱っていません。利用者は所在地の法律とプラットフォーム規約を守り、blackjack にはリスク、短期変動、資金面のプレッシャーがあることを理解する必要があります。</p>
+
+    <nav class="related-links" aria-label="関連ページ" data-seo-related="true">
+      <h3>関連ページ</h3>
+      <ul>
+        <li><a href="/ja/content/pc/overview">PC アプリ概要</a></li>
+        <li><a href="/ja/content/pc/training">トレーニングモード</a></li>
+        <li><a href="/ja/content/pc/sim-stats">シミュ・統計</a></li>
+        <li><a href="/ja/content/pc/strategies">戦略カスタム</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260620-1"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

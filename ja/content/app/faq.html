@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ブラックジャック・カウントトレーナー FAQ | アプリのよくある質問</title>
-  <meta name="description" content="ブラックジャック・カウントトレーナーのFAQ。アプリの目的、練習順序、Decision Training、RC/TC Drill、Bet Ramp、Replay、統計シミュレーション、カウントのリスクを説明します。">
+  <meta name="description" content="ブラックジャック・カウントトレーナーのFAQ。アプリの目的、練習順序、Decision Training、RC/TC Drill、カウントシステム、Strategy カスタマイズ、Bet Ramp、Replay、統計シミュレーション、カウントのリスクを説明します。">
   <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/app/faq">
   <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/faq">
   <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/faq">
@@ -24,16 +24,19 @@
     <p>使えます。ただし完全な初心者は、まずサイト内の blackjack ルールと基本戦略を読んでから Decision Training に進むのがおすすめです。このアプリは機能をかなり揃えているため、初心者向けに極端に単純化したチュートリアルだけではありません。気軽に blackjack を遊びたいだけなら、一般的なゲームアプリのほうが簡単に感じるかもしれません。このアプリは、戦略、カウント、長期結果を本気で理解したい人に向いています。</p>
 
     <h3 class="simulation-heading">どの順番で使うのがおすすめですか？</h3>
-    <p>まず Decision Training で基本戦略とよく出る判断を練習し、その後 Running Count Drill と True Count Drill でカウントの基礎を固めるのがおすすめです。慣れてきたら Hi-Lo Count Drill と Game モードに進み、最後に Replay でミスを確認し、Round Stats / Session Stats で長期結果を理解します。Overview ページの「学習ルート」にも全体の順序を整理しています。</p>
+    <p>まず Decision Training で基本戦略とよく出る判断を練習し、その後 Running Count Drill と True Count Drill でカウントの基礎を固めるのがおすすめです。慣れてきたら Count Drill と Game モードに進み、最後に Replay でミスを確認し、Round Stats / Session Stats で長期結果を理解します。Overview ページの「学習ルート」にも全体の順序を整理しています。</p>
 
     <h3 class="simulation-heading">Decision Training では何を練習できますか？</h3>
-    <p>Decision Training は blackjack の判断に集中するモードです。基本戦略、ハードハンド、ソフトハンド、ペア、ダブル、サレンダー、インシュランス、カウント後に出る deviation を練習できます。Question Type を選ぶことで、苦手な分野や通常プレイでは出にくい状況を集中して練習できます。</p>
+    <p>Decision Training は blackjack の判断に集中するモードです。基本戦略、ハードハンド、ソフトハンド、ペア、ダブル、サレンダー、インシュランス、カウント後に出る deviation を練習できます。上部の Mode セレクターで Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II から選択でき、カスタム Strategy プロフィールを適用して苦手な分野や通常プレイでは出にくい状況を集中して練習することもできます。</p>
 
-    <h3 class="simulation-heading">Running Count Drill、True Count Drill、Hi-Lo Count Drill の違いは何ですか？</h3>
-    <p>Running Count Drill は、表示されたカードを見て Hi-Lo の Running Count を素早く足し引きする練習です。True Count Drill は、Running Count と残りデッキ数から True Count に変換する練習です。Hi-Lo Count Drill はより実戦に近く、ディーラーと複数プレイヤーへの配牌をシミュレートし、1 ラウンドの流れの中で count を追跡します。</p>
+    <h3 class="simulation-heading">Running Count Drill、True Count Drill、Count Drill の違いは何ですか？</h3>
+    <p>Running Count Drill は、表示されたカードを見て Running Count を素早く足し引きする練習で、7 つのカウントシステムそれぞれに独立したバージョンがあります。True Count Drill は、Running Count と残りデッキ数から True Count に変換する練習で、平衡システム（Hi-Lo、FELT、Zen、Hi-Opt I、Omega II）に対応しています。Count Drill はより実戦に近く、ディーラーと複数プレイヤーへの配牌をシミュレートし、1 ラウンドの流れの中で count を追跡します。各カウントシステムに独立したバージョンがあります。</p>
 
     <h3 class="simulation-heading">どのカウントシステムに対応していますか？</h3>
-    <p>現在は Basic、Hi-Lo、Hi-Opt I に対応しています。Basic は基本戦略の練習用です。Hi-Lo はもっとも一般的で実用性の高いカウントシステムです。Hi-Opt I はより進んだシステムで、ace side count や異なる true count 判断と組み合わせて、より細かい戦略差を確認できます。</p>
+    <p>アプリは合計 8 つのモードに対応しています：Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II。Basic は基本戦略の練習用です。Hi-Lo はもっとも一般的な入門カウントシステムです。KO と Red 7 は不平衡システムで、True Count 換算を省略します。FELT と Zen は多レベル平衡システムです。Hi-Opt I と Omega II は上級システムで、ace side count と組み合わせてより正確なベットとインシュランス判断が可能です。各システムに独立したトレーニングメニューと戦略プリセットがあります。</p>
+
+    <h3 class="simulation-heading">Strategies 機能とは何ですか？何を変更できますか？</h3>
+    <p>Strategies 機能では、8 つのカウントシステムそれぞれに対してカスタム deviation ルールセットを作成できます。各システムには H17 と S17 のテーブルルール向けのプリセットがあり、内容は確認できますが編集はできません。変更するには、プリセットをコピーしてカスタム版を作成し、各 deviation のカウント threshold、比較方向（&gt;= または &lt;）、上書きアクションを調整します。KO の threshold は Running Count 単位、その他のシステムは True Count 単位です。作成後は Settings → Advisor mode でカスタム戦略を適用すると、ゲームと Decision Training がカスタムルールに従って提案を出します。</p>
 
     <h3 class="simulation-heading">Bet Ramp とは何ですか？ アプリではどう使われますか？</h3>
     <p>Bet Ramp は True Count をベット額に変換するルールです。True Count が高いほど、デッキがプレイヤーに有利である可能性が高くなり、Bet Ramp は各 TC threshold で何単位ベットするかを決めます。アプリは Bet Ramp を使って推奨ベットを表示し、Replay でもそのハンドのベットが現在の設定に合っていたかを確認します。</p>

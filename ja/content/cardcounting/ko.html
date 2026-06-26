@@ -95,6 +95,16 @@
       </tbody>
     </table>
 
+    <h3 class="simulation-heading">アプリのシミュレーション統計</h3>
+    <p>以下は Hi-Lo と KO をそれぞれ 100,000 ラウンド走らせた比較です。Hi-Lo は Bet Ramp 2/4/6/8/10（TC ベース）、KO は RC しきい値 −4 / 0 / 3 / 7 をベットサイズ 2 / 4 / 8 / 12 に対応させています。この結果では、Hi-Lo の ROI は 0.24%、EV / 100 は 5.05、SD / 100 は 302.50、KO の ROI は 0.21%、EV / 100 は 4.49、SD / 100 は 325.88 です。KO の EV は若干低く SD / 100 もやや高い結果になっており、TC 換算を省くトレードオフと一致しています。</p>
+
+    <figure class="content-figure" style="max-width: 500px;">
+      <img src="../../../assets/img/cardcounting/hilo-vs-KO.png" alt="Hi-Lo と KO の 100,000 ラウンドシミュレーション比較">
+      <figcaption>Hi-Lo vs KO、100,000 ラウンドのシミュレーション結果</figcaption>
+    </figure>
+
+    <p>KO の実践的な利点は True Count 換算ステップをなくすことです。通常のテーブル条件では、特にカウント速度を構築中のプレイヤーにとって正確な実行が大幅に容易になります。Hi-Lo との EV 差は実在しますが小さく、割り算を省いて得られる実行の安定性が EV の損失を上回ると判断するプレイヤーも多いでしょう。</p>
+
     <div class="note">これらの deviations は本アプリで採用している KO index spec に基づいています。KO は True Count 換算なしに Running Count で判断するため、しきい値も RC 値で示します。IRC が異なると RC しきい値の意味が変わりますが、アプリのトレーニングとゲームモードではデッキ数に応じた起点値を処理済みです。</div>
 
     <nav class="related-links" aria-label="関連コンテンツ" data-seo-related="true">

@@ -95,6 +95,16 @@
       </tbody>
     </table>
 
+    <h3 class="simulation-heading">App 模擬統計</h3>
+    <p>以下是 Hi-Lo 與 KO 各跑 100000 局的比較。Hi-Lo 使用 Bet Ramp 2/4/6/8/10（TC-based），KO 使用 RC 門檻 −4 / 0 / 3 / 7 對應下注 2 / 4 / 8 / 12。這組結果中，Hi-Lo 的 ROI 是 0.24%、EV / 100 是 5.05、SD / 100 是 302.50；KO 的 ROI 是 0.21%、EV / 100 是 4.49、SD / 100 是 325.88。KO 的 EV 略低、SD / 100 也略高；差距不大，但符合省去 TC 換算所帶來的代價。</p>
+
+    <figure class="content-figure" style="max-width: 500px;">
+      <img src="../../assets/img/cardcounting/hilo-vs-KO.png" alt="Hi-Lo 與 KO 跑 100000 局的模擬比較">
+      <figcaption>Hi-Lo vs KO，100000 局模擬結果</figcaption>
+    </figure>
+
+    <p>KO 最實際的優勢在於省掉了 True Count 的換算步驟。在一般桌面條件下，這讓 KO 明顯更容易準確執行，尤其對還在建立計數速度的玩家更有利。和 Hi-Lo 的 EV 差距雖然存在但很小——對很多玩家來說，省去除法換算所帶來的執行穩定度，比損失的那一點優勢更值得。</p>
+
     <div class="note">這些 deviations 依目前 app 採用的 KO index spec 整理。KO 使用 Running Count 做判斷，不需換算 True Count，因此門檻值也直接以 RC 標示。IRC 不同時，RC 門檻的實際意義會隨之改變，但 app 的訓練與遊戲模式已依牌組數處理好起始值。</div>
 
     <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">

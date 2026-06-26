@@ -35,6 +35,9 @@
     <h3 class="simulation-heading">這個 app 支援哪些算牌系統？</h3>
     <p>目前支援 Basic、Hi-Lo、KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 共八種模式。Basic 用來練基本策略；Hi-Lo 是最常見的入門算牌系統；KO 和 Red 7 是不平衡系統，省略 True Count 換算；FELT 和 Zen 是多級平衡系統；Hi-Opt I 和 Omega II 是進階系統，可搭配 ace side count 做更精確的下注與保險判斷。每套系統都有獨立的訓練選單與策略預設。</p>
 
+    <h3 class="simulation-heading">策略功能是什麼？可以修改什麼？</h3>
+    <p>策略功能讓使用者針對八套算牌系統各自建立自訂的 deviation 規則集。每個系統在 H17 和 S17 規則下各有一份預設策略，可以直接查看但無法編輯。若想修改，可複製預設建立自訂版本，並調整個別 deviation 的 count 門檻、比較方向（&gt;= 或 &lt;）和覆蓋動作。KO 的門檻以 Running Count 為單位，其他系統以 True Count 為單位。建立後到 Settings → Advisor mode 套用自訂策略，遊戲和 Decision Training 就會依照自訂規則給出建議。</p>
+
     <h3 class="simulation-heading">Bet Ramp 是什麼？App 會怎麼使用 Bet Ramp？</h3>
     <p>Bet Ramp 是把 True Count 轉換成下注大小的規則。當 True Count 較高時，代表牌堆對玩家可能更有利，Bet Ramp 會決定在不同 TC threshold 下應該下注幾倍。app 會用 Bet Ramp 產生建議下注，也會在 Replay 中檢查下注是否符合目前設定。</p>
 

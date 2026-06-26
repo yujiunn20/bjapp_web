@@ -1,10 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blackjack Card Counting Trainer FAQ | Blackjack App Questions</title>
-  <meta name="description" content="FAQ for the Blackjack Card Counting Trainer, covering app purpose, training order, Decision Training, RC/TC drills, Bet Ramp, Replay, statistics, simulations, and counting risks.">
+  <meta name="description" content="FAQ for the Blackjack Card Counting Trainer, covering app purpose, training order, Decision Training, RC/TC drills, counting systems, Strategy customization, Bet Ramp, Replay, simulations, and counting risks.">
   <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/app/faq">
   <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/app/faq">
   <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/faq">
@@ -24,16 +24,19 @@
     <p>Yes, but complete beginners should start with the blackjack rules and basic strategy pages on the website, then move into Decision Training. This app is more complete than a simplified beginner-only tutorial. If someone only wants to play casual blackjack, a normal game app may feel easier. This app is better suited for users who want to understand strategy, counting, and long-term results seriously.</p>
 
     <h3 class="simulation-heading">What order should I use this app in?</h3>
-    <p>A practical path is to start with Decision Training for basic strategy and common decisions, then use Running Count Drill and True Count Drill for counting fundamentals. After that, move into Hi-Lo Count Drill and Game mode, then use Replay to review mistakes and Round Stats / Session Stats to understand long-term results. The learning path on the Overview page also gives a full sequence.</p>
+    <p>A practical path is to start with Decision Training for basic strategy and common decisions, then use Running Count Drill and True Count Drill for counting fundamentals. After that, move into Count Drill and Game mode, then use Replay to review mistakes and Round Stats / Session Stats to understand long-term results. The learning path on the Overview page also gives a full sequence.</p>
 
     <h3 class="simulation-heading">What can Decision Training practice?</h3>
-    <p>Decision Training focuses on blackjack decisions, including basic strategy, hard hands, soft hands, pairs, doubles, surrender, insurance, and counting deviations. Users can also choose different Question Types to focus on weak areas or situations that do not appear often during normal play.</p>
+    <p>Decision Training focuses on blackjack decisions, including basic strategy, hard hands, soft hands, pairs, doubles, surrender, insurance, and counting deviations. The Mode selector at the top lets you choose Basic, Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, or Omega II, and you can also apply a custom Strategy profile to focus on weak areas or situations that do not appear often during normal play.</p>
 
-    <h3 class="simulation-heading">What is the difference between Running Count Drill, True Count Drill, and Hi-Lo Count Drill?</h3>
-    <p>Running Count Drill focuses on quickly adding Hi-Lo count values as cards appear. True Count Drill practices converting Running Count and remaining decks into True Count. Hi-Lo Count Drill is closer to a real table because it simulates dealer and player cards, letting users track the count through the rhythm of a full round.</p>
+    <h3 class="simulation-heading">What is the difference between Running Count Drill, True Count Drill, and Count Drill?</h3>
+    <p>Running Count Drill focuses on quickly adding count values as cards appear, with separate versions for all seven counting systems. True Count Drill practices converting Running Count and remaining decks into True Count, and applies to balanced systems (Hi-Lo, FELT, Zen, Hi-Opt I, Omega II). Count Drill is closer to a real table because it simulates dealer and player cards, letting users track the count through the rhythm of a full round, with separate versions for each counting system.</p>
 
     <h3 class="simulation-heading">Which counting systems does the app support?</h3>
-    <p>The app currently supports Basic, Hi-Lo, and Hi-Opt I. Basic is used for basic strategy practice. Hi-Lo is the most common and practical counting system. Hi-Opt I is a more advanced system that can be used with ace side count and different true count decisions to test finer strategy differences.</p>
+    <p>The app supports eight modes: Basic, Hi-Lo, KO, Red 7, FELT, Zen, Hi-Opt I, and Omega II. Basic is for basic strategy practice. Hi-Lo is the most common entry-level counting system. KO and Red 7 are unbalanced systems that skip True Count conversion. FELT and Zen are multi-level balanced systems. Hi-Opt I and Omega II are advanced systems that can be paired with ace side count for more precise betting and insurance decisions. Each system has its own training menu and strategy preset.</p>
+
+    <h3 class="simulation-heading">What is the Strategy feature, and what can I change?</h3>
+    <p>The Strategy feature lets you build custom deviation rule sets for each of the eight counting systems. Each system has preset profiles for both H17 and S17 table rules, which you can view but not edit. To make changes, copy a preset to create a custom version, then adjust individual deviation thresholds, comparison directions (&gt;= or &lt;), and override actions. KO uses Running Count thresholds; all other systems use True Count. Once created, go to Settings → Advisor mode to apply your custom strategy — the game and Decision Training will then follow your custom rules.</p>
 
     <h3 class="simulation-heading">What is Bet Ramp, and how does the app use it?</h3>
     <p>Bet Ramp is the rule that converts True Count into bet size. When True Count is higher, the deck may be more favorable to the player, and the Bet Ramp decides how many betting units to use at each TC threshold. The app uses Bet Ramp to generate recommended bets and to check in Replay whether the bet matched the current settings.</p>

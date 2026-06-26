@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC App FAQ | Blackjack Card Counting Trainer Windows</title>
+  <meta name="description" content="FAQ for Blackjack Card Counting Trainer PC app, covering PC vs mobile differences, counting systems, FREE vs PRO, Sim, Strategies, data storage, and platform requirements.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/pc/faq">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/faq">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/faq">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/faq">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/faq">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260620-1">
+</head>
+<body>
+  <article>
+    <h1>FAQ</h1>
+    <p class="lead">These questions cover the PC app's purpose, differences from the mobile app, supported counting systems, FREE vs PRO features, Sim, Strategies, data storage, and platform requirements.</p>
+
+    <h3 class="simulation-heading">How is the PC app different from the mobile app?</h3>
+    <p>The PC app is a Windows-only training platform that shares the same core blackjack learning goal as the mobile app but adds several features not available on mobile. Key differences include a Python Monte Carlo simulation engine for deep statistical analysis, seven full counting systems (Hi-Lo FREE; KO, Red 7, FELT, Zen, Hi-Opt I, and Omega II in PRO), up to seven player seats, a Strategies feature for building custom deviation rule sets per system, and game records stored locally as .jsonl.gz files.</p>
+
+    <h3 class="simulation-heading">What counting systems does the PC app support?</h3>
+    <p>The PC app supports eight modes in total: Basic (basic strategy only), Hi-Lo (FREE), and KO, Red 7, FELT, Zen, Hi-Opt I, and Omega II (the last six require PRO). Each system has its own Decision Training, Count Drill, Bet Ramp, deviation index, and Strategies customization. Hi-Opt I also supports a Side A / Side B ace side count configuration for more precise betting and insurance decisions.</p>
+
+    <h3 class="simulation-heading">What is included in FREE vs PRO?</h3>
+    <p>FREE includes the full blackjack game (one player seat), Decision Training and Count Drill for Hi-Lo, basic strategy practice, Replay, and access to all site learning content. PRO unlocks up to seven player seats, six additional counting systems (KO, Red 7, FELT, Zen, Hi-Opt I, Omega II), the Python Monte Carlo simulation engine (Sim &amp; Stats), Strategy Profile customization, custom Bet Ramp configuration, and Hi-Opt I Side A / Side B setup.</p>
+
+    <h3 class="simulation-heading">How does the Sim feature work?</h3>
+    <p>Sim uses a Python Monte Carlo simulation engine running locally on your Windows machine. You configure the table rules, counting system, Bet Ramp, and number of rounds, then run the simulation to get long-term EV, ROI, and SD / 100 across hundreds of thousands of rounds. Results can be compared between systems or configurations. The Python backend runs entirely locally — no data is sent to any external server.</p>
+
+    <h3 class="simulation-heading">What is the Strategies feature?</h3>
+    <p>Strategies lets you build and manage custom deviation rule sets for each of the eight supported counting systems (Basic plus the seven counting systems). Within each Strategy Profile you can adjust individual deviation index thresholds. When you apply a Strategy Profile to a game or training session, the app uses your custom rules instead of the defaults. This is useful for testing different index values or adapting to specific house rules.</p>
+
+    <h3 class="simulation-heading">Where is my data stored?</h3>
+    <p>All game records are stored locally on your Windows machine as .jsonl.gz compressed files. The Python simulation backend also runs entirely locally. No personal data, game records, or simulation results are uploaded to any external server.</p>
+
+    <h3 class="simulation-heading">Does the PC app require an internet connection?</h3>
+    <p>No. The game, training, simulation, Replay, and Strategies features all run entirely offline. An internet connection is only needed when you first purchase or install the app from the Microsoft Store, and for Microsoft Store license checks.</p>
+
+    <h3 class="simulation-heading">What Windows version is required?</h3>
+    <p>The app requires Windows 10 or Windows 11. It is distributed through the Microsoft Store.</p>
+
+    <h3 class="simulation-heading">Does card counting guarantee winning?</h3>
+    <p>No. Card counting can only improve long-term expected value under suitable table rules, penetration, bet spread, and consistent execution. Even with better long-term EV, short-term results can still be dominated by variance. Real play also involves bankroll limits, table limits, psychological pressure, game speed, and casino countermeasures.</p>
+
+    <h3 class="simulation-heading">Does this app encourage gambling?</h3>
+    <p>No. This app is an educational training tool for learning blackjack probability, strategy, and card counting concepts. It does not involve real-money gambling and does not present card counting as a guaranteed profit method. Users should comply with local laws and platform policies, and understand that blackjack involves risk, short-term variance, and bankroll pressure.</p>
+
+    <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/en/content/pc/overview">PC App Overview</a></li>
+        <li><a href="/en/content/pc/training">Training Modes</a></li>
+        <li><a href="/en/content/pc/sim-stats">Sim &amp; Stats</a></li>
+        <li><a href="/en/content/pc/strategies">Strategies</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260620-1"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

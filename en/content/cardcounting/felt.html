@@ -85,6 +85,16 @@
       </tbody>
     </table>
 
+    <h3 class="simulation-heading">App Simulation Stats</h3>
+    <p>The result below runs Hi-Lo and FELT each for 500,000 rounds. Hi-Lo uses Bet Ramp 4/8/12/16/20 and FELT uses 3/6/9/12/15. Hi-Lo shows ROI 0.55%, EV / 100 of 18.7, and SD / 100 of 580.49; FELT shows ROI 0.57%, EV / 100 of 24.78, and SD / 100 of 686.31.</p>
+
+    <figure class="content-figure" style="max-width: 500px;">
+      <img src="../../../assets/img/cardcounting/hilo-vs-felt.png" alt="500,000-round simulation comparison of Hi-Lo and FELT">
+      <figcaption>Hi-Lo vs FELT, 500,000-round simulation result</figcaption>
+    </figure>
+
+    <p>Reading these numbers directly as a head-to-head comparison has limited meaning, because the two systems use different TC scales and different bet ramp structures. What the numbers do reflect is a key trait of FELT: its wider count range (−2 to +2) causes TC to swing more sharply, which naturally produces a higher SD / 100. When the deck turns favorable, FELT detects it with a stronger signal — which is also why its EV in favorable zones can be higher — but the same amplification applies to downswings as well.</p>
+
     <div class="note">FELT has more deviations than Hi-Lo, including double situations like 8 vs 5 and 8 vs 6 that Hi-Lo does not cover. Because the count range is wider, TC moves faster at high counts, making these edge cases trigger more often than in Hi-Lo.</div>
 
     <nav class="related-links" aria-label="Related Reading" data-seo-related="true">

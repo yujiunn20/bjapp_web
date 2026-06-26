@@ -47,6 +47,7 @@
         { title: "模擬統計", path: "content/pc/sim-stats.html" },
         { title: "回放", path: "content/pc/replay.html" },
         { title: "策略自訂", path: "content/pc/strategies.html" },
+        { title: "常見問題", path: "content/pc/faq.html" },
         { title: "隱私權政策", path: "content/pc/privacy.html" }
       ]
     }
@@ -129,6 +130,7 @@
             { title: "Sim & Stats", path: "content/pc/sim-stats.html" },
             { title: "Replay", path: "content/pc/replay.html" },
             { title: "Strategies", path: "content/pc/strategies.html" },
+            { title: "FAQ", path: "content/pc/faq.html" },
             { title: "Privacy Policy", path: "content/pc/privacy.html" }
           ]
         }
@@ -195,6 +197,7 @@
             { title: "シミュ・統計", path: "content/pc/sim-stats.html" },
             { title: "リプレイ", path: "content/pc/replay.html" },
             { title: "戦略カスタム", path: "content/pc/strategies.html" },
+            { title: "よくある質問", path: "content/pc/faq.html" },
             { title: "プライバシーポリシー", path: "content/pc/privacy.html" }
           ]
         }
@@ -477,6 +480,7 @@
         "content/pc/sim-stats.html": "PC 版模擬與統計功能｜Blackjack 算牌訓練器 Windows",
         "content/pc/replay.html": "PC 版回放功能介紹｜Blackjack 算牌訓練器 Windows",
         "content/pc/strategies.html": "PC 版策略自訂功能｜Blackjack 算牌訓練器 Windows",
+        "content/pc/faq.html": "PC 版常見問題｜Blackjack 算牌訓練器 Windows",
         "content/pc/privacy.html": "PC 版隱私權政策｜Blackjack 算牌訓練器 Windows"
       },
       en: {
@@ -508,6 +512,7 @@
         "content/pc/sim-stats.html": "PC App Simulation and Statistics | Blackjack Card Counting Trainer Windows",
         "content/pc/replay.html": "PC App Replay Guide | Blackjack Card Counting Trainer Windows",
         "content/pc/strategies.html": "PC App Strategy Customization | Blackjack Card Counting Trainer Windows",
+        "content/pc/faq.html": "PC App FAQ | Blackjack Card Counting Trainer Windows",
         "content/pc/privacy.html": "PC App Privacy Policy | Blackjack Card Counting Trainer Windows"
       },
       ja: {
@@ -539,6 +544,7 @@
         "content/pc/sim-stats.html": "PC アプリ シミュレーションと統計 | ブラックジャック カウントトレーナー",
         "content/pc/replay.html": "PC アプリ リプレイ機能 | ブラックジャック カウントトレーナー",
         "content/pc/strategies.html": "PC アプリ 戦略カスタマイズ | ブラックジャック カウントトレーナー",
+        "content/pc/faq.html": "PC アプリ よくある質問 | ブラックジャック カウントトレーナー",
         "content/pc/privacy.html": "PC アプリ プライバシーポリシー | ブラックジャック カウントトレーナー"
       }
     };
@@ -582,6 +588,7 @@
         "content/pc/sim-stats.html": "PC 版 Sim 與 Stats 功能說明，介紹 Python Monte Carlo 模擬設定與長期統計結果比較。",
         "content/pc/replay.html": "PC 版 Replay 回放功能說明，介紹遊玩紀錄、錯誤篩選與 Timeline 逐手查看。",
         "content/pc/strategies.html": "PC 版 Strategies 策略自訂功能說明，介紹八套系統的 Deviation 規則集建立與 Index 門檻修改。",
+        "content/pc/faq.html": "PC 版常見問題，說明 PC App 與行動 App 的差異、算牌系統、FREE vs PRO、Sim 功能、Strategies 自訂、資料儲存與平台需求。",
         "content/pc/privacy.html": "PC 版隱私權政策，說明 app 不收集個人資料、所有資料本機儲存，以及不含真實賭博功能。"
       },
       en: {
@@ -613,6 +620,7 @@
         "content/pc/sim-stats.html": "PC app Sim and Stats guide covering Python Monte Carlo simulation setup and long-term performance statistics.",
         "content/pc/replay.html": "PC app Replay guide covering game session records, mistake filtering, and Timeline step-by-step hand review.",
         "content/pc/strategies.html": "PC app Strategies guide covering custom deviation rule sets for eight counting systems, index threshold editing, and PRO features.",
+        "content/pc/faq.html": "FAQ for Blackjack Card Counting Trainer PC app, covering PC vs mobile differences, counting systems, FREE vs PRO, Sim, Strategies, data storage, and platform requirements.",
         "content/pc/privacy.html": "Privacy policy for Blackjack Card Counting Trainer PC app — no personal data collected, all data stored locally, no real-money gambling."
       },
       ja: {
@@ -644,6 +652,7 @@
         "content/pc/sim-stats.html": "PC アプリの Sim と Stats 説明。Python Monte Carlo シミュレーション設定と長期統計比較を扱います。",
         "content/pc/replay.html": "PC アプリの Replay 機能説明。プレイ記録、ミスの絞り込み、Timeline の手順確認を扱います。",
         "content/pc/strategies.html": "PC アプリの Strategies 機能説明。8 システムの deviation ルールセット作成、Index しきい値編集、PRO 機能を扱います。",
+        "content/pc/faq.html": "PC アプリの FAQ。モバイルとの違い、カウントシステム、FREE vs PRO、Sim 機能、Strategies カスタム、データ保存、動作環境を説明します。",
         "content/pc/privacy.html": "PC アプリのプライバシーポリシー。個人情報を収集せず、すべてのデータはローカルに保存され、実際の賭博機能はないことを説明します。"
       }
     };

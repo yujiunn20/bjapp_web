@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PC 版常見問題｜Blackjack 算牌訓練器 Windows</title>
+  <meta name="description" content="PC 版常見問題，說明 PC App 與行動 App 的差異、算牌系統、FREE vs PRO、Sim 功能、Strategies 自訂、資料儲存與平台需求。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/content/pc/faq">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/faq">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/faq">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/faq">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/faq">
+  <link rel="stylesheet" href="../content.css?v=20260620-1">
+</head>
+<body>
+  <article>
+    <h1>常見問題</h1>
+    <p class="lead">這些問題整理 PC 版 App 的定位、系統差異、算牌支援、FREE vs PRO、Sim、Strategies 功能與資料管理，幫助使用者快速了解這個工具的範圍與使用方式。</p>
+
+    <h3 class="simulation-heading">PC 版和行動 App 有什麼不同？</h3>
+    <p>PC 版是 Windows 專屬的訓練平台，和行動 App 共享 blackjack 學習的核心目標，但加入了幾個行動版沒有的功能。主要差異包括：Python 蒙地卡羅模擬引擎（可做深度統計分析）、七套完整算牌系統（Hi-Lo 免費；KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 需 PRO）、最多七個玩家席位、Strategies 功能（可為每套系統建立自訂 deviation 規則集），以及以 .jsonl.gz 格式儲存在本機的遊戲紀錄。</p>
+
+    <h3 class="simulation-heading">PC 版支援哪些算牌系統？</h3>
+    <p>PC 版共支援八種模式：Basic（僅基本策略）、Hi-Lo（免費），以及 KO、Red 7、FELT、Zen、Hi-Opt I、Omega II（後六種需 PRO）。每套系統各有獨立的 Decision Training、Count Drill、Bet Ramp、deviation index 和 Strategies 自訂設定。Hi-Opt I 另外支援 Side A / Side B ace side count 設定，可做更精確的下注與保險判斷。</p>
+
+    <h3 class="simulation-heading">免費版和 PRO 版有什麼差別？</h3>
+    <p>免費版包含完整 blackjack 遊戲（一個席位）、Hi-Lo 的 Decision Training 和 Count Drill、基本策略訓練、Replay 回放與所有網站學習內容。PRO 解鎖最多七個席位、另外六套算牌系統（KO、Red 7、FELT、Zen、Hi-Opt I、Omega II）、Python 模擬引擎（Sim &amp; Stats）、Strategies 策略自訂、自訂 Bet Ramp 設定，以及 Hi-Opt I 的 Side A / Side B 設定。</p>
+
+    <h3 class="simulation-heading">Sim 功能怎麼運作？</h3>
+    <p>Sim 使用在本機 Windows 上執行的 Python 蒙地卡羅模擬引擎。可以設定桌規、算牌系統、Bet Ramp 和模擬局數，然後執行模擬，取得數十萬局的長期 EV、ROI 和 SD / 100。可以比較不同系統或設定的結果。Python 後端完全在本機執行，不會傳送任何資料到外部伺服器。</p>
+
+    <h3 class="simulation-heading">Strategies 功能是什麼？</h3>
+    <p>Strategies 可以為八套系統（Basic 加上七套算牌系統）各自建立和管理自訂 deviation 規則集。在每個 Strategy Profile 中可以調整各 deviation 的 index 門檻。將 Strategy Profile 套用到遊戲或訓練時，App 會使用自訂規則，而不是預設值。這對測試不同 index 值或配合特定桌規很有用。</p>
+
+    <h3 class="simulation-heading">資料儲存在哪裡？</h3>
+    <p>所有遊戲紀錄以 .jsonl.gz 壓縮檔格式儲存在本機 Windows 裝置上。Python 模擬後端也完全在本機執行。沒有任何個人資料、遊戲紀錄或模擬結果會上傳到外部伺服器。</p>
+
+    <h3 class="simulation-heading">PC 版需要網路連線嗎？</h3>
+    <p>不需要。遊戲、訓練、模擬、回放和 Strategies 功能全部可以離線使用。只有在首次從 Microsoft Store 購買或安裝 App 時，以及 Microsoft Store 授權驗證時才需要網路。</p>
+
+    <h3 class="simulation-heading">需要什麼 Windows 版本？</h3>
+    <p>App 需要 Windows 10 或 Windows 11，透過 Microsoft Store 下載安裝。</p>
+
+    <h3 class="simulation-heading">算牌是不是保證可以贏？</h3>
+    <p>不是。算牌只能在桌規、穿透率、下注級距和執行穩定度都合適時改善長期期望值。即使長期 EV 變好，短期結果仍可能被變異數主導。實戰中還有資金、桌限、心理壓力、牌速和賭場注意等問題。</p>
+
+    <h3 class="simulation-heading">這個 App 是否鼓勵賭博？</h3>
+    <p>不是。這個 App 是用來學習 blackjack 機率、策略和算牌概念的教學工具，不含真錢賭博功能，也不把算牌包裝成穩賺方法。使用者仍應遵守所在地法律和平台規範，並理解 blackjack 涉及風險、短期波動和資金壓力。</p>
+
+    <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
+      <h3>相關閱讀</h3>
+      <ul>
+        <li><a href="/content/pc/overview">PC 版概要</a></li>
+        <li><a href="/content/pc/training">訓練模式</a></li>
+        <li><a href="/content/pc/sim-stats">模擬統計</a></li>
+        <li><a href="/content/pc/strategies">策略自訂</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../layout.js?v=20260620-1"></script>
+  <script src="../translate.js?v=20260527-6"></script>
+</body>
+</html>

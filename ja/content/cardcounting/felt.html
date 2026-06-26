@@ -85,6 +85,16 @@
       </tbody>
     </table>
 
+    <h3 class="simulation-heading">アプリのシミュレーション統計</h3>
+    <p>以下は Hi-Lo と FELT をそれぞれ 500,000 ラウンド走らせた結果です。Hi-Lo は Bet Ramp 4/8/12/16/20、FELT は 3/6/9/12/15 を使用しています。Hi-Lo の ROI は 0.55%、EV / 100 は 18.7、SD / 100 は 580.49；FELT の ROI は 0.57%、EV / 100 は 24.78、SD / 100 は 686.31 です。</p>
+
+    <figure class="content-figure" style="max-width: 500px;">
+      <img src="../../../assets/img/cardcounting/hilo-vs-felt.png" alt="Hi-Lo と FELT の 500,000 ラウンドシミュレーション比較">
+      <figcaption>Hi-Lo vs FELT、500,000 ラウンドのシミュレーション結果</figcaption>
+    </figure>
+
+    <p>この数値を両システムの優劣として直接比較することはあまり意味がありません。TC のスケールも bet ramp の構造も異なるためです。この数値が示しているのは FELT の特性です。カード値の幅が広い（−2 〜 +2）ため TC の振れも大きく、SD / 100 が自然に高くなります。デッキが有利方向に傾くと FELT はより強いシグナルを検知し、有利な局面での EV が高くなる一方、逆方向の振れも同様に増幅されます。</p>
+
     <div class="note">FELT は Hi-Lo より deviation が多く、8 vs 5、8 vs 6 など Hi-Lo にないダブルケースを含みます。カウント幅が広いため高カウント時に TC の動きが速く、これらのボーダーケースが Hi-Lo より頻繁に発動します。</div>
 
     <nav class="related-links" aria-label="関連コンテンツ" data-seo-related="true">

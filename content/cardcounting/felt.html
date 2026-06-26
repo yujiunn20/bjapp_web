@@ -85,6 +85,16 @@
       </tbody>
     </table>
 
+    <h3 class="simulation-heading">App 模擬統計</h3>
+    <p>以下是 Hi-Lo 與 FELT 各跑 500000 局的結果。Hi-Lo 使用 Bet Ramp 4/8/12/16/20，FELT 使用 3/6/9/12/15。Hi-Lo 的 ROI 是 0.55%、EV / 100 是 18.7、SD / 100 是 580.49；FELT 的 ROI 是 0.57%、EV / 100 是 24.78、SD / 100 是 686.31。</p>
+
+    <figure class="content-figure" style="max-width: 500px;">
+      <img src="../../assets/img/cardcounting/hilo-vs-felt.png" alt="Hi-Lo 與 FELT 跑 500000 局的模擬比較">
+      <figcaption>Hi-Lo vs FELT，500000 局模擬結果</figcaption>
+    </figure>
+
+    <p>把這組數字直接拿來比較兩個系統的優劣，意義不大——兩者的 TC 量尺不同，bet ramp 結構也不同。這組數字更能說明的是 FELT 本身的特性：由於牌值幅度較大（−2 到 +2），TC 的波動也更劇烈，SD / 100 自然偏高。牌堆往有利方向偏時，FELT 的信號更強，有利時段的 EV 可以更高；但反方向的波動同樣被放大。</p>
+
     <div class="note">FELT 的 deviation 數量比 Hi-Lo 多，包含 8 vs 5、8 vs 6 等 Hi-Lo 沒有的雙倍情境。因為牌值幅度較大，TC 在高計數時移動更快，這些邊界情境比 Hi-Lo 更容易觸發。</div>
 
     <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">

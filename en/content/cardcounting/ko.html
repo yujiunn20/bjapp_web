@@ -95,6 +95,16 @@
       </tbody>
     </table>
 
+    <h3 class="simulation-heading">App Simulation Stats</h3>
+    <p>Below is a 100,000-round comparison of Hi-Lo and KO. Hi-Lo uses Bet Ramp 2/4/6/8/10 (TC-based), while KO uses RC thresholds −4 / 0 / 3 / 7 mapped to bet sizes 2 / 4 / 8 / 12. In this result, Hi-Lo achieves ROI 0.24%, EV / 100 of 5.05, and SD / 100 of 302.50, while KO achieves ROI 0.21%, EV / 100 of 4.49, and SD / 100 of 325.88. KO shows slightly lower EV and slightly higher SD / 100; the gap is modest but consistent with the trade-off of skipping TC conversion.</p>
+
+    <figure class="content-figure" style="max-width: 500px;">
+      <img src="../../../assets/img/cardcounting/hilo-vs-KO.png" alt="100,000-round simulation comparison of Hi-Lo and KO">
+      <figcaption>Hi-Lo vs KO, 100,000-round simulation result</figcaption>
+    </figure>
+
+    <p>The practical advantage of KO is the removal of the True Count conversion step. Under standard table conditions, this makes KO notably easier to execute accurately, especially for players still building counting speed. The EV difference versus Hi-Lo is real but small — for many players, the execution reliability gained from skipping the division outweighs the edge loss.</p>
+
     <div class="note">These deviations follow the KO index spec used in this app. KO uses Running Count for all decisions without converting to True Count, so thresholds are listed as RC values. When IRC differs, the meaning of RC thresholds shifts accordingly, but the app's training and game modes handle the starting value based on deck count.</div>
 
     <nav class="related-links" aria-label="Related Reading" data-seo-related="true">

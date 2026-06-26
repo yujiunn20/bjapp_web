@@ -26,14 +26,14 @@
     <p>量級直覺：若每手下 1 unit，-0.5% 大約等於長期每 200 手輸 1 unit，但短期波動通常遠大於這個數字。</p>
 
     <h3 class="simulation-heading">基本策略模擬</h3>
-    <p>以下結果使用基本策略、不算牌，共跑約 500000 局。整體 ROI 是 -0.70%，EV / 100 局是 -7.90，SD / 100 局是 114.84。</p>
+    <p>以下結果使用基本策略、不算牌，共跑約 500000 局。整體 ROI 是 -0.78%，EV / 100 局是 -8.85，SD / 100 局是 115.06。</p>
 
     <figure class="content-figure">
       <img src="../../../assets/img/cardcounting/basic-strategy-stats.png" alt="基本策略不算牌的 ROI、EV 與變異數模擬統計">
       <figcaption>基本策略（不算牌）模擬結果</figcaption>
     </figure>
 
-    <p>這組數字和前面的量級直覺接近：不算牌時 ROI 落在負值，長期會慢慢被莊家優勢吃掉；但每 100 局的 SD 仍有 114.84，表示短期輸贏可能遠大於期望值本身。</p>
+    <p>這組數字和前面的量級直覺接近：不算牌時 ROI 落在負值，長期會慢慢被莊家優勢吃掉；但每 100 局的 SD 仍有 115.06，表示短期輸贏可能遠大於期望值本身。</p>
 
     <h3>加入算牌（Hi-Lo + ramp）</h3>
     <ul>
@@ -52,14 +52,14 @@
     </ul>
 
     <h3 class="simulation-heading">App 模擬統計</h3>
-    <p>以下結果使用 Hi-Lo，搭配 Bet Ramp 2/4/6/8/12，共跑 500000 局。整體 ROI 是 +0.08%，EV / 100 局是 +1.66，SD / 100 局是 315.10。</p>
+    <p>以下結果使用 Hi-Lo，搭配 Bet Ramp 2/4/6/8/12，共跑 500000 局。整體 ROI 是 +0.26%，EV / 100 局是 +5.54，SD / 100 局是 326.89。</p>
 
     <figure class="content-figure">
       <img src="../../../assets/img/cardcounting/ev-var-per100.png" alt="Hi-Lo 搭配 Bet Ramp 2/4/6/8/12 跑 500000 局的 EV 與變異數統計">
       <figcaption>Hi-Lo + Bet Ramp 2/4/6/8/12，500000 局模擬結果</figcaption>
     </figure>
 
-    <p>這組數字可以對照前面的量級觀念：ROI 是正的，但只有 +0.08%，仍然是很小的長期優勢。換成每 100 局來看，EV 是 +1.66，但 SD 是 315.10；TC &gt;= k 時 ROI 提高到 +1.22%、EV / 100 局提高到 83.37，不過 SD / 100 局也提高到 741.40。也就是說，算牌能改善長期期望值，但短期仍會被變異數主導。</p>
+    <p>這組數字可以對照前面的量級觀念：ROI 是正的，達到 +0.26%，是一個小但穩定的長期優勢。換成每 100 局來看，EV 是 +5.54，SD 是 326.89。也就是說，算牌能改善長期期望值，但短期仍會被變異數主導。</p>
     <nav class="related-links" aria-label="相關閱讀" data-seo-related="true">
       <h3>相關閱讀</h3>
       <ul>

@@ -61,7 +61,7 @@
     <p>Insurance は本質的に、ディーラーのホールカードが 10 点カードかどうかに賭けるものです。配当が 2:1 なので、残りのシューにある 10 点カードの割合が損益分岐点を超えるときだけ取る価値があります。これが Hi-Lo で TC >= +3 が insurance の基準としてよく使われる理由です。</p>
     <p>長期的には、正しく insurance を取る主な価値は EV を上げることです。高 TC では、このサイドベットが通常の負の期待値から、プレイヤーに有利な正の期待値に変わる可能性があります。</p>
     <p>Insurance は変動にも影響します。ディーラーが blackjack のときにメインベットの損失を相殺でき、特に高 TC では大きなベットになりやすいため、結果分布をより滑らかにし、大きなベットがディーラー blackjack に当たる下振れを抑える可能性があります。ただし insurance 自体も追加のサイドベットです。より正確には、正しい insurance の主目的は EV を上げることであり、同時に一部の高リスク状況の変動を滑らかにする可能性がある、という理解になります。すべての統計的な見方で variance が必ず下がるという意味ではありません。</p>
-    <p>下のシミュレーションは Hi-Lo と Bet Ramp 4/8/12/16/20 を使い、500000 回実行したものです。Threshold の TC >= k は k = 3 に設定し、TC >= 3 の区間を確認しています。</p>
+    <p>下のシミュレーションは Hi-Lo と Bet Ramp 4/8/12/16/20 を使い、500000 回実行したものです。Threshold は TC > 3 に設定しています。</p>
     <div class="content-figure-grid">
       <figure class="content-figure">
         <img src="../../../assets/img/cardcounting/insurance.png" alt="Seat 1: Hi-Lo、Bet Ramp 4/8/12/16/20、insurance ありの 500000 回シミュレーション結果">
@@ -72,7 +72,7 @@
         <figcaption>Seat 2：insurance なし</figcaption>
       </figure>
     </div>
-    <p>上の図を見ると、insurance ありの Seat 1 は純利益がプラスです。このシミュレーションでは、insurance の ROI は 4.17% です。Seat 2 と比べると、Seat 1 は EV / 100 が高く（35.16 vs. 23.32）、SD / 100 もやや小さくなっています（593.12 vs. 595.6）が、SD の差は大きくありません。この結果は前述の考え方と一致します。正しい insurance は主に EV を高め、同時に高 TC・大きなベットでディーラー blackjack に当たる場面の変動を少し滑らかにする可能性があります。</p>
+    <p>上の図を見ると、insurance ありの Seat 1 は全体 ROI が高く（0.93% vs. 0.64%）、EV / 100 も高くなっています（31.76 vs. 21.48）。SD / 100 はほぼ同じです（581.56 vs. 582.50）。この結果は前述の考え方と一致します。正しい insurance は主に EV を高め、同時に高 TC・大きなベットでディーラー blackjack に当たる場面の変動を少し滑らかにする可能性があります。</p>
     <nav class="related-links" aria-label="関連ページ" data-seo-related="true">
       <h3>関連ページ</h3>
       <ul>

@@ -26,14 +26,14 @@
     <p>Scale intuition: with a 1-unit bet each hand, -0.5% is about losing 1 unit per 200 hands in the long run, but short-term swings are usually much larger.</p>
 
     <h3 class="simulation-heading">Basic Strategy Simulation</h3>
-    <p>The result below uses basic strategy without counting over about 500,000 rounds. Overall ROI is -0.70%, EV / 100 rounds is -7.90, and SD / 100 rounds is 114.84.</p>
+    <p>The result below uses basic strategy without counting over about 500,000 rounds. Overall ROI is -0.78%, EV / 100 rounds is -8.85, and SD / 100 rounds is 115.06.</p>
 
     <figure class="content-figure">
       <img src="../../../assets/img/cardcounting/basic-strategy-stats.png" alt="Basic strategy simulation statistics for ROI, EV, and variance without counting">
       <figcaption>Basic strategy simulation result, without counting</figcaption>
     </figure>
 
-    <p>These numbers match the earlier scale intuition: without counting, ROI is negative and the house edge slowly takes over in the long run. But SD / 100 rounds is still 114.84, so short-term results can be much larger than the expectation itself.</p>
+    <p>These numbers match the earlier scale intuition: without counting, ROI is negative and the house edge slowly takes over in the long run. But SD / 100 rounds is still 115.06, so short-term results can be much larger than the expectation itself.</p>
 
     <h3>Adding Card Counting (Hi-Lo + Ramp)</h3>
     <ul>
@@ -52,14 +52,14 @@
     </ul>
 
     <h3 class="simulation-heading">App Simulation Stats</h3>
-    <p>The result below uses Hi-Lo with Bet Ramp 2/4/6/8/12 over 500,000 rounds. Overall ROI is +0.08%, EV / 100 rounds is +1.66, and SD / 100 rounds is 315.10.</p>
+    <p>The result below uses Hi-Lo with Bet Ramp 2/4/6/8/12 over 500,000 rounds. Overall ROI is +0.26%, EV / 100 rounds is +5.54, and SD / 100 rounds is 326.89.</p>
 
     <figure class="content-figure">
       <img src="../../../assets/img/cardcounting/ev-var-per100.png" alt="Hi-Lo with Bet Ramp 2/4/6/8/12 over 500,000 rounds, EV and variance statistics">
       <figcaption>Hi-Lo + Bet Ramp 2/4/6/8/12, 500,000-round simulation result</figcaption>
     </figure>
 
-    <p>These numbers match the scale idea above: ROI is positive, but only +0.08%, still a small long-term edge. Per 100 rounds, EV is +1.66 while SD is 315.10. When TC >= k, ROI rises to +1.22% and EV / 100 rounds rises to 83.37, but SD / 100 also rises to 741.40. Counting improves long-term expectation, but short-term results are still dominated by variance.</p>
+    <p>These numbers match the scale idea above: ROI is positive at +0.26%, a modest long-term edge. Per 100 rounds, EV is +5.54 while SD is 326.89. Counting improves long-term expectation, but short-term results are still dominated by variance.</p>
     <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
       <h3>Related Reading</h3>
       <ul>

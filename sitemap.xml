@@ -631,6 +631,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://blackjack.yuchunlab.com/en/content/pc/sim-examples</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples"/>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/zh-Hant/content/pc/sim-examples</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples"/>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blackjack.yuchunlab.com/ja/content/pc/sim-examples</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-examples"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples"/>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://blackjack.yuchunlab.com/en/content/app/privacy</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/app/privacy"/>
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/zh-Hant/content/app/privacy"/>

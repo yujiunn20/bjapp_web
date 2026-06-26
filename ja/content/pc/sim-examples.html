@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>シミュレーション検証例 | ブラックジャック カウントトレーナー PC アプリ</title>
+  <meta name="description" content="PC アプリのシミュレーション検証例。Monte Carlo シミュレーションの 95% 信頼区間と Session 統計を使って、算牌戦略と Bet Ramp 設定が統計的に優位であることを確認する方法を説明します。">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-examples">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/sim-examples">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-examples">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/sim-examples">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260620-1">
+</head>
+<body>
+  <article>
+    <h1>シミュレーション検証例</h1>
+    <p class="lead">Sim の主な使い方の一つは、統計データを用いて算牌戦略が特定の設定において優位かどうかを検証することです。以下の 2 つの例では、シミュレーション結果から戦略の有効性を確認する方法と、Session 統計を使って損切り・利確設定を検討する方法を説明します。</p>
+
+    <h3 class="simulation-heading">累積 ROI の信頼区間</h3>
+    <p>以下のグラフは Hi-Lo、KO、FELT、Hi-Opt I の 4 つのカウントシステムを、それぞれ対応する Bet Ramp と組み合わせて、100 局から 1000 局までの累積 ROI の推移を 95% 信頼区間（CI）付きで比較したものです。シミュレーション条件は 1000 trial、各 trial 1000 局です。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/4counts_CI.png" alt="4 つのカウントシステムの累積 ROI 95% 信頼区間。CI の下界が全体を通して 0% を上回っている" data-lightbox-image>
+      <figcaption>各 Bet Ramp と組み合わせた 4 つのカウントシステムの累積 ROI（mean ± 95% CI）。100 局から 1000 局にかけて、CI の下界が全体を通じて 0% を上回っています。</figcaption>
+    </figure>
+
+    <p>重要なのは CI の下界です。95% CI の下界が全体を通して 0% を上回っているということは、これらの戦略と Bet Ramp 設定のもとで、最も保守的な統計的推定でも累積 ROI がプラスであることを意味します。これは、シミュレーションで使用したテーブルルールとペネトレーションのもとで、戦略が統計的に優位であることを示しています。</p>
+
+    <p>4 つのシステムはそれぞれ異なる Bet Ramp を使用しているため、このグラフの目的は各システムの戦略を個別に検証することであり、どのシステムが優れているかを比較するものではありません。システム間を直接比較するには、同じ Bet Ramp を各システムに適用した別のシミュレーションが必要です。</p>
+
+    <h3 class="simulation-heading">KO Session 損切り・利確統計</h3>
+    <p>累積 ROI に加えて、Sim では損切り・利確条件を含む Session 結果もシミュレーションでき、資金管理設定の妥当性を評価できます。以下の例は KO システム（idx=1）を使用し、損切りと利確をそれぞれ 100 unit、1 session 最大 300 局の設定で 1000 session をシミュレーションしたものです。</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/KO_session.png" alt="KO Session 統計。損切り・利確各 100 unit、最大 300 局で 1000 session のシミュレーション結果" data-lightbox-image>
+      <figcaption>KO（idx=1）Session 統計。損切り・利確各 100 unit、最大 300 局の設定。1000 session の Mean final は +9.01 unit で、95% CI は完全にプラスの範囲に収まっています。</figcaption>
+    </figure>
+
+    <p>結果は Mean final +9.01 unit、95% CI が 4.44～13.58 でプラスの範囲のみです。P(profit) は 54.3%、P(stop win) 21.8% が P(stop loss) 15.3% を上回っています。これは、この KO 算牌・Bet Ramp・損切り利確設定のもとで、session 統計上は利益が出ており、一定の統計的信頼があることを示しています。</p>
+
+    <p>損切りと利確の値を変えて再シミュレーションすることで、異なる資金管理設定が結果分布にどう影響するかを比較し、自分のリスク許容度に合った設定を見つけることができます。</p>
+
+    <nav class="related-links" aria-label="関連ページ" data-seo-related="true">
+      <h3>関連ページ</h3>
+      <ul>
+        <li><a href="/ja/content/pc/sim-stats">シミュ・統計</a></li>
+        <li><a href="/ja/content/pc/strategies">戦略カスタム</a></li>
+        <li><a href="/ja/content/cardcounting/ev-variance">EV と分散</a></li>
+        <li><a href="/ja/content/cardcounting/bet-ramp">Bet Ramp</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260620-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

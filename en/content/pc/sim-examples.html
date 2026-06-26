@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulation Validation Examples | Blackjack Card Counting Trainer PC App</title>
+  <meta name="description" content="PC app simulation validation examples showing how Monte Carlo simulation confidence intervals and session statistics confirm that a card counting strategy and Bet Ramp have a statistically significant edge.">
+  <link rel="canonical" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples">
+  <link rel="alternate" hreflang="zh-Hant" href="https://blackjack.yuchunlab.com/content/pc/sim-examples">
+  <link rel="alternate" hreflang="en" href="https://blackjack.yuchunlab.com/en/content/pc/sim-examples">
+  <link rel="alternate" hreflang="ja" href="https://blackjack.yuchunlab.com/ja/content/pc/sim-examples">
+  <link rel="alternate" hreflang="x-default" href="https://blackjack.yuchunlab.com/content/pc/sim-examples">
+  <link rel="stylesheet" href="../../../content/content.css?v=20260620-1">
+</head>
+<body>
+  <article>
+    <h1>Simulation Validation Examples</h1>
+    <p class="lead">One of the main uses of Sim is to validate with statistical data whether a card counting strategy has an edge under specific settings. The examples below show how to read simulation output to confirm whether a strategy is effective, and how to use session statistics to support stop-loss and stop-win decisions.</p>
+
+    <h3 class="simulation-heading">Cumulative ROI Confidence Interval</h3>
+    <p>The chart below compares four counting systems — Hi-Lo, KO, FELT, and Hi-Opt I — each paired with its own Bet Ramp, showing cumulative ROI from 100 to 1000 rounds with a 95% confidence interval (CI) band. The simulation used 1,000 trials of 1,000 rounds each.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/4counts_CI.png" alt="Cumulative ROI 95% confidence interval for four counting systems, with the CI lower bound staying above 0% throughout" data-lightbox-image>
+      <figcaption>Cumulative ROI (mean ± 95% CI) for four counting systems each paired with its own Bet Ramp. From 100 to 1,000 rounds, the lower bound of the CI stays above 0% throughout.</figcaption>
+    </figure>
+
+    <p>The key is the lower bound of the CI. When the 95% CI lower bound stays above 0% throughout, it means that even the most conservative statistical estimate still shows positive cumulative ROI under these strategy and Bet Ramp settings. This confirms that the strategy has a statistically significant edge under the table rules and penetration used in the simulation.</p>
+
+    <p>Note that each of the four systems uses a different Bet Ramp, so this chart validates each system's strategy independently rather than comparing which system performs better. To compare systems directly, a separate simulation with the same Bet Ramp applied to each would be needed.</p>
+
+    <h3 class="simulation-heading">KO Session Stop-Loss / Stop-Win Statistics</h3>
+    <p>Beyond cumulative ROI, Sim can also model session results with stop-loss and stop-win conditions, helping evaluate bankroll management settings. The example below uses the KO system (idx=1) with stop-loss and stop-win both set to 100 units and a maximum of 300 rounds per session, run over 1,000 sessions.</p>
+
+    <figure class="content-figure">
+      <img src="../../../assets/img/pc/KO_session.png" alt="KO session statistics with stop-loss and stop-win at 100 units, max 300 rounds, across 1,000 sessions" data-lightbox-image>
+      <figcaption>KO (idx=1) session statistics with stop-loss and stop-win at 100 units and a 300-round maximum. Mean final across 1,000 sessions is +9.01 units, with the 95% CI entirely in positive territory.</figcaption>
+    </figure>
+
+    <p>The results show a mean final of +9.01 units with a 95% CI of 4.44 to 13.58, entirely above zero. P(profit) is 54.3%, and P(stop win) at 21.8% exceeds P(stop loss) at 15.3%. This confirms that under this KO counting, Bet Ramp, and stop-loss/stop-win configuration, session results are statistically profitable with meaningful confidence.</p>
+
+    <p>By adjusting the stop-loss and stop-win values and re-running the simulation, you can compare how different bankroll management settings shift the result distribution and find a combination that matches your risk tolerance.</p>
+
+    <nav class="related-links" aria-label="Related Reading" data-seo-related="true">
+      <h3>Related Reading</h3>
+      <ul>
+        <li><a href="/en/content/pc/sim-stats">Sim &amp; Stats</a></li>
+        <li><a href="/en/content/pc/strategies">Strategies</a></li>
+        <li><a href="/en/content/cardcounting/ev-variance">EV and Variance</a></li>
+        <li><a href="/en/content/cardcounting/bet-ramp">Bet Ramp</a></li>
+      </ul>
+    </nav>
+  </article>
+  <script src="../../../content/layout.js?v=20260620-1"></script>
+  <script src="../../../content/image-lightbox.js?v=20260526-3"></script>
+  <script src="../../../content/translate.js?v=20260527-6"></script>
+</body>
+</html>

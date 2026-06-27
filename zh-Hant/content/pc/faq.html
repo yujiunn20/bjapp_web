@@ -18,13 +18,13 @@
     <p class="lead">這些問題整理 PC 版 App 的定位、系統差異、算牌支援、FREE vs PRO、Sim、Strategies 功能與資料管理，幫助使用者快速了解這個工具的範圍與使用方式。</p>
 
     <h3 class="simulation-heading">PC 版和行動 App 有什麼不同？</h3>
-    <p>PC 版是 Windows 專屬的訓練平台，和行動 App 共享 blackjack 學習的核心目標，但加入了幾個行動版沒有的功能。主要差異包括：Python 蒙地卡羅模擬引擎（可做深度統計分析）、七套完整算牌系統（Hi-Lo、KO、Red 7、FELT、Zen 免費；Hi-Opt I、Omega II 需 PRO）、最多七個玩家席位、Strategies 功能（可為每套系統建立自訂 deviation 規則集），以及以 .jsonl.gz 格式儲存在本機的遊戲紀錄。</p>
+    <p>PC 版是 Windows 專屬的訓練平台，和行動 App 共享 blackjack 學習的核心目標，但加入了幾個行動版沒有的功能。主要差異包括：Python 蒙地卡羅模擬引擎（可做深度統計分析）、七套完整算牌系統（Hi-Lo 免費；KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 需 PRO）、最多七個玩家席位、Strategies 功能（可為每套系統建立自訂 deviation 規則集），以及以 .jsonl.gz 格式儲存在本機的遊戲紀錄。</p>
 
     <h3 class="simulation-heading">PC 版支援哪些算牌系統？</h3>
-    <p>PC 版共支援八種模式：Basic（僅基本策略）、Hi-Lo、KO、Red 7、FELT、Zen（均免費），以及 Hi-Opt I、Omega II（需 PRO）。每套系統各有獨立的 Decision Training、Count Drill、Bet Ramp、deviation index 和 Strategies 自訂設定。Hi-Opt I 另外支援 Side A / Side B ace side count 設定，可做更精確的下注與保險判斷。</p>
+    <p>PC 版共支援八種模式：Basic（僅基本策略）與 Hi-Lo（均免費），以及 KO、Red 7、FELT、Zen、Hi-Opt I、Omega II（均需 PRO）。每套系統各有獨立的 Decision Training、Count Drill、Bet Ramp、deviation index 和 Strategies 自訂設定。Hi-Opt I 另外支援 Side A / Side B ace side count 設定，可做更精確的下注與保險判斷。</p>
 
     <h3 class="simulation-heading">免費版和 PRO 版有什麼差別？</h3>
-    <p>FREE 版包含完整 blackjack 遊戲、Hi-Lo、KO、Red 7、FELT、Zen 的 Decision Training 和 Count Drill、Strategy Profile 自訂、Hi-Lo Bet Ramp 設定、桌規自訂，以及 Sim 引擎（最多 10 萬手）。PRO 解鎖 Hi-Opt I 與 Omega II 算牌系統、Hi-Opt I Side A / Side B ace side count、Hi-Opt I 與 Omega II 的 Strategy Profile 自訂、全七套系統的 Bet Ramp 自訂，以及模擬上限擴展（最多 500 萬手）。</p>
+    <p>FREE 版包含完整 blackjack 遊戲、Hi-Lo 的 Decision Training 和 Count Drill、桌規自訂，以及 Sim 引擎（最多 10 萬手）。PRO 解鎖 KO、Red 7、FELT、Zen、Hi-Opt I、Omega II 算牌系統、Strategy Profile 自訂，以及模擬上限擴展（最多 500 萬手）。</p>
 
     <h3 class="simulation-heading">Sim 功能怎麼運作？</h3>
     <p>Sim 使用在本機 Windows 上執行的 Python 蒙地卡羅模擬引擎。可以設定桌規、算牌系統、Bet Ramp 和模擬局數，然後執行模擬，取得長期 EV、ROI 和 SD / 100。FREE 版最多可跑 10 萬手；PRO 版最多可達 500 萬手，讓結果更接近理論期望值。可以比較不同系統或設定的結果。Python 後端完全在本機執行，不會傳送任何資料到外部伺服器。</p>

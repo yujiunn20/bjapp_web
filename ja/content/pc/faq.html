@@ -18,13 +18,13 @@
     <p class="lead">ここでは PC アプリの目的、モバイルとの違い、対応カウントシステム、FREE vs PRO、Sim、Strategies 機能、データ管理、動作環境を整理しています。</p>
 
     <h3 class="simulation-heading">PC アプリはモバイル アプリと何が違いますか？</h3>
-    <p>PC アプリは Windows 専用のトレーニングプラットフォームで、モバイルアプリと同じ blackjack 学習の目標を共有しながら、モバイルにはないいくつかの機能を追加しています。主な違いとして、Python を使ったモンテカルロシミュレーションエンジン（深い統計分析）、7 つの完全なカウントシステム（Hi-Lo・KO・Red 7・FELT・Zen は FREE；Hi-Opt I・Omega II は PRO が必要）、最大 7 つのプレイヤー席、各システムのカスタム deviation ルールセットを作成できる Strategies 機能、ローカルに .jsonl.gz 形式で保存されるゲーム記録があります。</p>
+    <p>PC アプリは Windows 専用のトレーニングプラットフォームで、モバイルアプリと同じ blackjack 学習の目標を共有しながら、モバイルにはないいくつかの機能を追加しています。主な違いとして、Python を使ったモンテカルロシミュレーションエンジン（深い統計分析）、7 つの完全なカウントシステム（Hi-Lo は FREE；KO・Red 7・FELT・Zen・Hi-Opt I・Omega II は PRO が必要）、最大 7 つのプレイヤー席、各システムのカスタム deviation ルールセットを作成できる Strategies 機能、ローカルに .jsonl.gz 形式で保存されるゲーム記録があります。</p>
 
     <h3 class="simulation-heading">どのカウントシステムに対応していますか？</h3>
-    <p>合計 8 つのモードに対応しています：Basic（基本戦略のみ）、Hi-Lo・KO・Red 7・FELT・Zen（いずれも FREE）、Hi-Opt I・Omega II（PRO が必要）。各システムに独立した Decision Training、Count Drill、Bet Ramp、deviation index、Strategies のカスタマイズが用意されています。Hi-Opt I は Side A / Side B の ace side count 設定もサポートしており、より正確なベットとインシュランス判断が可能です。</p>
+    <p>合計 8 つのモードに対応しています：Basic（基本戦略のみ）と Hi-Lo（いずれも FREE）、KO・Red 7・FELT・Zen・Hi-Opt I・Omega II（いずれも PRO が必要）。各システムに独立した Decision Training、Count Drill、Bet Ramp、deviation index、Strategies のカスタマイズが用意されています。Hi-Opt I は Side A / Side B の ace side count 設定もサポートしており、より正確なベットとインシュランス判断が可能です。</p>
 
     <h3 class="simulation-heading">FREE と PRO の違いは何ですか？</h3>
-    <p>FREE には完全な blackjack ゲーム、Hi-Lo・KO・Red 7・FELT・Zen の Decision Training と Count Drill、Strategy Profile カスタマイズ、Hi-Lo の Bet Ramp 設定、テーブルルールのカスタマイズ、Sim エンジン（最大 10 万手）が含まれます。PRO では Hi-Opt I と Omega II のカウントシステム、Hi-Opt I の Side A / Side B ace side count、Hi-Opt I と Omega II の Strategy Profile カスタマイズ、7 つのカウントシステム全てに対応した Bet Ramp カスタマイズ、シミュレーション上限の拡張（最大 500 万手）が利用可能になります。</p>
+    <p>FREE には完全な blackjack ゲーム、Hi-Lo の Decision Training と Count Drill、テーブルルールのカスタマイズ、Sim エンジン（最大 10 万手）が含まれます。PRO では KO・Red 7・FELT・Zen・Hi-Opt I・Omega II のカウントシステム、Strategy Profile カスタマイズ、シミュレーション上限の拡張（最大 500 万手）が利用可能になります。</p>
 
     <h3 class="simulation-heading">Sim 機能はどのように動作しますか？</h3>
     <p>Sim は Windows マシン上でローカルに動作する Python Monte Carlo シミュレーションエンジンを使用します。テーブルルール、カウントシステム、Bet Ramp、ラウンド数を設定してシミュレーションを実行すると、長期 EV、ROI、SD / 100 を取得できます。FREE は最大 10 万手、PRO は最大 500 万手まで対応しており、理論期待値により近い結果を得られます。システムや設定間で結果を比較することもできます。Python バックエンドは完全ローカルで動作し、データは外部サーバーには送信されません。</p>

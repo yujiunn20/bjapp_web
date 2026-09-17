@@ -315,7 +315,7 @@
 
   function relativeUrl(path) {
     if (window.location.protocol !== "file:") {
-      return localizedRoute(path, activeLanguage, { withExtension: true });
+      return localizedRoute(path, activeLanguage, { withExtension: false });
     }
 
     if (isHomePage()) {
@@ -335,7 +335,7 @@
 
   function relativeUrlForLanguage(path, language) {
     if (window.location.protocol !== "file:") {
-      return localizedRoute(path, language, { withExtension: true });
+      return localizedRoute(path, language, { withExtension: false });
     }
     const targetPath = localizedPath(path, language);
     if (isHomePage()) {

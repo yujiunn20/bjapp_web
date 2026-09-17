@@ -1,0 +1,113 @@
+name: One-time SEO head normalization follow-up
+
+on:
+  push:
+    branches:
+      - fix/seo-indexing-20260917
+
+permissions:
+  contents: write
+
+jobs:
+  normalize-heads:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize canonical and hreflang lines exactly once
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          BASE = "https://blackjack.yuchunlab.com"
+          LANGS = ("en", "zh-Hant", "ja")
+
+          def route_for(prefix: str, relative: str) -> str:
+              no_ext = relative[:-5] if relative.endswith(".html") else relative
+              return f"/{prefix}/{no_ext}"
+
+          def rewrite(path: Path, lang: str, relative: str, legacy: bool = False):
+              text = path.read_text(encoding="utf-8-sig")
+              lines = text.splitlines()
+
+              # Remove every existing canonical/hreflang line. Line-based removal avoids
+              # regex whitespace edge cases and leaves exactly one authoritative block.
+              cleaned = []
+              for line in lines:
+                  stripped = line.strip()
+                  if stripped.startswith('<link rel="canonical"'):
+                      continue
+                  if stripped.startswith('<link rel="alternate"') and 'hreflang=' in stripped:
+                      continue
+                  cleaned.append(line)
+
+              canonical_lang = "zh-Hant" if legacy else lang
+              canonical = BASE + route_for(canonical_lang, relative)
+              block = [
+                  f'  <link rel="canonical" href="{canonical}">',
+                  f'  <link rel="alternate" hreflang="zh-Hant" href="{BASE + route_for("zh-Hant", relative)}">',
+                  f'  <link rel="alternate" hreflang="en" href="{BASE + route_for("en", relative)}">',
+                  f'  <link rel="alternate" hreflang="ja" href="{BASE + route_for("ja", relative)}">',
+                  f'  <link rel="alternate" hreflang="x-default" href="{BASE + route_for("en", relative)}">',
+              ]
+
+              insert_idx = None
+              for i, line in enumerate(cleaned):
+                  if '<meta name="description"' in line:
+                      insert_idx = i + 1
+                      break
+              if insert_idx is None:
+                  for i, line in enumerate(cleaned):
+                      if '<meta name="viewport"' in line:
+                          insert_idx = i + 1
+                          break
+              if insert_idx is None:
+                  raise SystemExit(f"No head insertion point in {path}")
+
+              cleaned[insert_idx:insert_idx] = block
+              out = "\n".join(cleaned) + "\n"
+
+              if legacy and '<meta name="robots" content="noindex,follow">' not in out:
+                  raise SystemExit(f"Legacy noindex missing before follow-up in {path}")
+
+              path.write_text(out, encoding="utf-8")
+
+          files = []
+          for lang in LANGS:
+              for path in sorted((Path(lang) / "content").rglob("*.html")):
+                  rel = path.relative_to(lang).as_posix()
+                  rewrite(path, lang, rel, legacy=False)
+                  files.append(path)
+
+          for section in ("app", "cardcounting", "pc"):
+              root = Path("content") / section
+              if root.exists():
+                  for path in sorted(root.glob("*.html")):
+                      rel = path.as_posix()
+                      rewrite(path, "zh-Hant", rel, legacy=True)
+                      files.append(path)
+
+          # Exact-count validation.
+          for path in files:
+              raw = path.read_text(encoding="utf-8")
+              if raw.count('<link rel="canonical"') != 1:
+                  raise SystemExit(f"Canonical count != 1 in {path}")
+              for code in ("zh-Hant", "en", "ja", "x-default"):
+                  if raw.count(f'hreflang="{code}"') != 1:
+                      raise SystemExit(f"hreflang {code} count != 1 in {path}")
+
+          print(f"Validated exact canonical/hreflang counts in {len(files)} HTML pages")
+          PY
+
+      - name: Commit follow-up and remove one-time workflow
+        shell: bash
+        run: |
+          git rm .github/workflows/seo-indexing-followup.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix: deduplicate canonical and hreflang tags"
+          git push origin HEAD:fix/seo-indexing-20260917

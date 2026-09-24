@@ -209,8 +209,15 @@
   };
 
   const canonicalBase = "https://blackjack.yuchunlab.com/";
+  const appStoreUrl = "https://apps.apple.com/app/bj-card-counting-trainer/id6786175631";
   const playUrl = "https://play.google.com/store/apps/details?id=com.yujiunn.blackjack_mobile";
   const msStoreUrl = "https://apps.microsoft.com/detail/9NG595NFHPZK";
+  const appleBadgeLocales = { "zh-Hant": "zh-tw", en: "en-us", ja: "ja-jp" };
+  const storeTrademarkNotes = {
+    "zh-Hant": "Apple、Apple 標誌及 App Store 是 Apple Inc. 在美國及其他國家或地區註冊的商標。Google Play 及 Google Play 標誌是 Google LLC 的商標。",
+    en: "Apple, the Apple logo, and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions. Google Play and the Google Play logo are trademarks of Google LLC.",
+    ja: "Apple、Apple ロゴ、および App Store は、米国およびその他の国や地域で登録された Apple Inc. の商標です。Google Play および Google Play ロゴは Google LLC の商標です。"
+  };
   const languagePrefixes = { "zh-Hant": "zh-Hant", en: "en", ja: "ja" };
   let activeLanguage = languageFromUrl() || document.documentElement.lang || localStorage.getItem("blackjackLanguage") || "zh-Hant";
   let isSwitchingLanguage = false;
@@ -682,6 +689,9 @@
 
     const t = translations[activeLanguage] || translations["zh-Hant"];
     const { path, sectionKey, section, item } = currentPageInfo(t);
+    const appleBadgeLocale = appleBadgeLocales[activeLanguage] || "en-us";
+    const appleBadgeUrl = `https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/${appleBadgeLocale}?size=250x83`;
+    const storeTrademarkNote = storeTrademarkNotes[activeLanguage] || storeTrademarkNotes.en;
 
     if (sectionKey === "pc") document.body.classList.add("pc-section");
     if (sectionKey === "cardcounting") document.body.classList.add("cardcounting-section");
@@ -822,20 +832,20 @@
           </svg>
           <span><em>GET IT FROM</em><strong>Microsoft Store</strong></span>
         </a>` : `
-        <a class="play-badge" href="${playUrl}" target="_blank" rel="noopener" aria-label="前往 Google Play 下載二十一點算牌訓練器">
-          <svg viewBox="0 0 32 36" aria-hidden="true">
-            <path fill="#00c3ff" d="M2.2 1.1 19.7 18 2.2 34.9A3 3 0 0 1 1 32.5v-29A3 3 0 0 1 2.2 1.1z"/>
-            <path fill="#00e070" d="m19.7 18 4.9-4.7L5 1.9a3.1 3.1 0 0 0-2.8-.8L19.7 18z"/>
-            <path fill="#ffd400" d="m19.7 18-17.5 17a3.1 3.1 0 0 0 2.8-.8l19.6-11.5-4.9-4.7z"/>
-            <path fill="#ff4b55" d="m24.6 13.3 5.2 3a2 2 0 0 1 0 3.4l-5.2 3-4.9-4.7 4.9-4.7z"/>
-          </svg>
-          <span><em>GET IT ON</em><strong>Google Play</strong></span>
-        </a>`}
+        <div class="store-badges" aria-label="App download links">
+          <a class="app-store-badge" href="${appStoreUrl}" target="_blank" rel="noopener noreferrer" aria-label="在 App Store 下載 Blackjack Card Counting Trainer">
+            <img src="${appleBadgeUrl}" alt="Download on the App Store">
+          </a>
+          <a class="app-store-badge" href="${playUrl}" target="_blank" rel="noopener noreferrer" aria-label="在 Google Play 下載 Blackjack Card Counting Trainer">
+            <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+          </a>
+        </div>`}
         <div class="download-meta">
           <span>© 2026 CHANG YU-CHUN</span>
           <a href="mailto:yj.apps.devs@gmail.com"><strong>Support</strong> yj.apps.devs@gmail.com</a>
           ${sectionKey === "cardcounting" ? "" : `<a href="${relativeUrl(sectionKey === "pc" ? "content/pc/privacy.html" : "content/app/privacy.html")}"><strong>Privacy</strong> Policy</a>`}
           <a class="${sectionKey === "cardcounting" ? "download-meta-website" : ""}" href="https://blackjack.yuchunlab.com/"><strong>Website</strong> blackjack.yuchunlab.com</a>
+          <span class="download-meta-trademark">${storeTrademarkNote}</span>
         </div>
       </section>`;
 

@@ -794,7 +794,14 @@
         </div>
         ${sectionKey === "cardcounting" ? `
         <div class="download-platforms download-platforms--cardcounting">
-          <a class="platform-card platform-card--play" href="${playUrl}" target="_blank" rel="noopener" aria-label="前往 Google Play 下載二十一點算牌訓練器">
+          <a class="platform-card platform-card--apple" href="${appStoreUrl}" target="_blank" rel="noopener noreferrer" aria-label="前往 App Store 下載 Blackjack Card Counting Trainer">
+            <span class="platform-icon platform-icon--text" aria-hidden="true">iOS</span>
+            <span class="platform-copy">
+              <em>iPhone &amp; iPad</em>
+              <strong>App Store</strong>
+            </span>
+          </a>
+          <a class="platform-card platform-card--play" href="${playUrl}" target="_blank" rel="noopener noreferrer" aria-label="前往 Google Play 下載二十一點算牌訓練器">
             <span class="platform-icon" aria-hidden="true">
               <svg viewBox="0 0 32 36" aria-hidden="true">
                 <path fill="#00c3ff" d="M2.2 1.1 19.7 18 2.2 34.9A3 3 0 0 1 1 32.5v-29A3 3 0 0 1 2.2 1.1z"/>
@@ -808,7 +815,7 @@
               <strong>Google Play</strong>
             </span>
           </a>
-          <a class="platform-card platform-card--ms" href="${msStoreUrl}" target="_blank" rel="noopener" aria-label="前往 Microsoft Store 下載 Blackjack Card Counting Trainer PC 版">
+          <a class="platform-card platform-card--ms" href="${msStoreUrl}" target="_blank" rel="noopener noreferrer" aria-label="前往 Microsoft Store 下載 Blackjack Card Counting Trainer PC 版">
             <span class="platform-icon" aria-hidden="true">
               <svg viewBox="0 0 21 21" aria-hidden="true" width="21" height="21">
                 <rect x="0" y="0" width="10" height="10" fill="#f25022"/>

@@ -848,8 +848,8 @@
           </a>
         </div>`}
         <div class="download-meta">
-          <span>© 2026 CHANG YU-CHUN</span>
-          <a href="mailto:yj.apps.devs@gmail.com"><strong>Support</strong> yj.apps.devs@gmail.com</a>
+          <span>© 2026 Yuchun Lab Co., Ltd.<br>${activeLanguage === "zh-Hant" ? "統一編號：62046121" : activeLanguage === "ja" ? "台湾統一番号：62046121" : "Taiwan Unified Business Number: 62046121"}</span>
+          <a href="mailto:yc@yuchunlab.com"><strong>Support</strong> yc@yuchunlab.com</a>
           ${sectionKey === "cardcounting" ? "" : `<a href="${relativeUrl(sectionKey === "pc" ? "content/pc/privacy.html" : "content/app/privacy.html")}"><strong>Privacy</strong> Policy</a>`}
           <a class="${sectionKey === "cardcounting" ? "download-meta-website" : ""}" href="https://blackjack.yuchunlab.com/"><strong>Website</strong> blackjack.yuchunlab.com</a>
           <span class="download-meta-trademark">${storeTrademarkNote}</span>

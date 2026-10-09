@@ -340,6 +340,12 @@
     return path.replace("content/", "../");
   }
 
+  function homeUrl() {
+    return window.location.protocol === "file:"
+      ? fileUrl(localizedPath("index.html"))
+      : `/${activeLanguage}/`;
+  }
+
   function relativeUrlForLanguage(path, language) {
     if (window.location.protocol !== "file:") {
       return localizedRoute(path, language, { withExtension: false });
@@ -724,7 +730,7 @@
     header.className = "topbar";
     header.innerHTML = `
       <div class="topbar-inner">
-        <a class="brand" href="${relativeUrl("content/cardcounting/rules.html")}" aria-label="Blackjack Trainer 首頁">
+        <a class="brand" href="${homeUrl()}" aria-label="Blackjack Trainer 首頁">
           <img src="${pageIconUrl}" alt="${sectionKey === "pc" ? "Blackjack Card Counting Trainer PC App 圖示" : sectionKey === "cardcounting" ? "Blackjack Card Counting 教學圖示" : "二十一點算牌訓練器 App 圖示"}" class="brand-icon">
           <span>
             <strong>Blackjack</strong>

@@ -83,7 +83,7 @@ const languages = [
 languages[1].labels = languages[0].labels;
 
 const routes = {
-  overview: "home",
+  overview: "content/app/overview",
   game: "content/app/game",
   training: "content/app/training",
   statistics: "content/app/statistics",

@@ -1,23 +1,51 @@
-# Blackjack Website Template
+# Blackjack Card Counting Trainer Website
 
-這是 `blackjack.yuchunlab.com` 的靜態網站模板。
+Static content site at https://blackjack.yuchunlab.com.
 
-## 檔案結構
+## Site architecture
+- `index.html`: indexable language gateway (x-default, canonical /).
+- `{en,zh-Hant,ja}/index.html`: indexable localized homepages.
+- `{en,zh-Hant,ja}/content/{app,cardcounting,pc}/*.html`: 93 localized canonical content pages.
+- `content/layout.js`: shared article layout and navigation.
+- `assets/css/home.css`: homepage CSS, designed to match the existing style.
+- `content/{app,cardcounting,pc}/*.html`: legacy language-less pages; retain their noindex + canonical behavior, exclude them from sitemap.
+- `tools/add-seo-links.js`: related article links. Uses the App Overview route rather than an obsolete /home shortcut.
 
-- `index.html`：主頁面、上方分類、左側選單、App Store / Google Play 導流區。
-- `assets/css/styles.css`：整體視覺樣式。
-- `assets/js/main.js`：切換「算牌學習 / App 介紹」與左側選單。
-- `assets/img/app/blackjack-icon.png`：App icon。
-- `content/cardcounting/*.html`：算牌教學內容。
-- `content/app/*.html`：App 功能介紹內容。
+## SEO maintenance
 
-## 編輯方式
+Using Node.js 18+ in the repository root:
 
-之後要補內容時，直接修改 `content` 資料夾裡的 HTML 檔。若要新增左側選單項目，先新增內容檔，再到 `assets/js/main.js` 的 `sections` 裡加入項目。
+```sh
+node tools/generate-sitemap.js
+node tools/check-seo.js
+```
 
-## App 商店連結
+The sitemap must list the 93 content routes plus 4 homepages (97 total). Don't add legacy unprefixed HTML files to the sitemap.
 
-目前已設定為：
+## Critical deployment routing requirement
 
-- App Store：https://apps.apple.com/app/bj-card-counting-trainer/id6786175631
-- Google Play：https://play.google.com/store/apps/details?id=com.yujiunn.blackjack_mobile
+Public canonical article URLs omit the file extension, for example
+`https://blackjack.yuchunlab.com/en/content/cardcounting/rules`.
+The actual checked-in file is `en/content/cardcounting/rules.html`.
+
+**The host must serve the extensionless canonical URL with HTTP 200**; if supported, configure server-side 301/308 redirects from old `.html` URLs to canonical URLs. Do NOT use JavaScript or meta refresh as a workaround.
+
+This repository does not establish which hosting platform/routing rules are deployed. Determine the host first (Cloudflare Pages / Workers, GitHub Pages or another platform). Do not assume a host-specific `_redirects` file works everywhere.
+
+After deployment verify the full redirect chain, response status and HTML metadata for:
+- `/`, `/en/`, `/zh-Hant/`, `/ja/`
+- `/en/content/cardcounting/rules` (should be 200)
+- `/en/content/cardcounting/rules.html` (ideally a 301/308 to the above)
+- `/robots.txt` and `/sitemap.xml`
+- Internal links and mobile language switching, including local `file://` opening.
+
+## Google Search Console baseline (2026-10-09)
+
+0 indexed pages; 20 crawled but not indexed, 78 discovered but not crawled, and 1 redirect error. The previous sitemap of 93 URLs was accepted.
+
+A valid sitemap and successful URL Inspection **do not guarantee Google indexing**. After deployment inspect a few primary pages first, then track coverage over several weeks rather than repeatedly resubmitting everything.
+
+## Store links
+- iOS: https://apps.apple.com/app/bj-card-counting-trainer/id6786175631
+- Android: https://play.google.com/store/apps/details?id=com.yujiunn.blackjack_mobile
+- Windows: https://apps.microsoft.com/detail/9NG595NFHPZK
